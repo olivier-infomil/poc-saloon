@@ -1,0 +1,125 @@
+{
+  "configVersion": 1,
+  "timestamp": 1752817757986,
+  "index": "/poc-saloon/index.csr.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/poc-saloon/favicon.ico",
+        "/poc-saloon/index.csr.html",
+        "/poc-saloon/main-5TT73ZLT.js",
+        "/poc-saloon/manifest.webmanifest",
+        "/poc-saloon/polyfills-FFHMD2TL.js",
+        "/poc-saloon/styles-CXZAPJMH.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/poc-saloon/appli/accueil-fidelite/1.png",
+        "/poc-saloon/appli/accueil-fidelite/10.png",
+        "/poc-saloon/appli/accueil-fidelite/11.png",
+        "/poc-saloon/appli/accueil-fidelite/12.png",
+        "/poc-saloon/appli/accueil-fidelite/13.png",
+        "/poc-saloon/appli/accueil-fidelite/14.png",
+        "/poc-saloon/appli/accueil-fidelite/15.png",
+        "/poc-saloon/appli/accueil-fidelite/16.png",
+        "/poc-saloon/appli/accueil-fidelite/17.png",
+        "/poc-saloon/appli/accueil-fidelite/18.png",
+        "/poc-saloon/appli/accueil-fidelite/19.png",
+        "/poc-saloon/appli/accueil-fidelite/2.png",
+        "/poc-saloon/appli/accueil-fidelite/20.png",
+        "/poc-saloon/appli/accueil-fidelite/3.png",
+        "/poc-saloon/appli/accueil-fidelite/4.png",
+        "/poc-saloon/appli/accueil-fidelite/5.png",
+        "/poc-saloon/appli/accueil-fidelite/6.png",
+        "/poc-saloon/appli/accueil-fidelite/7.png",
+        "/poc-saloon/appli/accueil-fidelite/8.png",
+        "/poc-saloon/appli/accueil-fidelite/9.png",
+        "/poc-saloon/icons/icon-128x128.png",
+        "/poc-saloon/icons/icon-144x144.png",
+        "/poc-saloon/icons/icon-152x152.png",
+        "/poc-saloon/icons/icon-192x192.png",
+        "/poc-saloon/icons/icon-384x384.png",
+        "/poc-saloon/icons/icon-512x512.png",
+        "/poc-saloon/icons/icon-72x72.png",
+        "/poc-saloon/icons/icon-96x96.png",
+        "/poc-saloon/rotate-screen.webp",
+        "/poc-saloon/svg/chevron-down.svg",
+        "/poc-saloon/svg/cta-back.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/poc-saloon/appli/accueil-fidelite/1.png": "0b042becbac0bb032ae04b870ca8eb5ad062c7ce",
+    "/poc-saloon/appli/accueil-fidelite/10.png": "41d40e248648a8cd8baf54bc5950569d3448e254",
+    "/poc-saloon/appli/accueil-fidelite/11.png": "858a5a175865fee7506b58330d02250e6662c27a",
+    "/poc-saloon/appli/accueil-fidelite/12.png": "41d40e248648a8cd8baf54bc5950569d3448e254",
+    "/poc-saloon/appli/accueil-fidelite/13.png": "245e556085e7f71a3a3e4c2fe75dd61dcf24f788",
+    "/poc-saloon/appli/accueil-fidelite/14.png": "7d08b6d7f8552c7e46392722d916286444061518",
+    "/poc-saloon/appli/accueil-fidelite/15.png": "2042a7e215f860acdd818ee6aa0cf35f95661691",
+    "/poc-saloon/appli/accueil-fidelite/16.png": "9f75acfbbc4bc2097db1878bbc418d44dfc3fbe3",
+    "/poc-saloon/appli/accueil-fidelite/17.png": "b4fe05418727d77663292d84092c1e7f130dcb3a",
+    "/poc-saloon/appli/accueil-fidelite/18.png": "917d6c179fdad5e59c92d6b4ad843817849f5a56",
+    "/poc-saloon/appli/accueil-fidelite/19.png": "2169978e7911551fdf762748eed48d8d31a184f5",
+    "/poc-saloon/appli/accueil-fidelite/2.png": "b76add82bcb114da370e2de9efb9c4585658a62f",
+    "/poc-saloon/appli/accueil-fidelite/20.png": "92307d9e82f0f3cfc208e3ab2936c5ac1f058b0a",
+    "/poc-saloon/appli/accueil-fidelite/3.png": "d415766076b3fd124dca27f79a7732e3db2be1cb",
+    "/poc-saloon/appli/accueil-fidelite/4.png": "41d40e248648a8cd8baf54bc5950569d3448e254",
+    "/poc-saloon/appli/accueil-fidelite/5.png": "7de17760d16a6be937213d934c121073e0933687",
+    "/poc-saloon/appli/accueil-fidelite/6.png": "41d40e248648a8cd8baf54bc5950569d3448e254",
+    "/poc-saloon/appli/accueil-fidelite/7.png": "5ba93faa190ff64806655727795238968c02f18c",
+    "/poc-saloon/appli/accueil-fidelite/8.png": "41d40e248648a8cd8baf54bc5950569d3448e254",
+    "/poc-saloon/appli/accueil-fidelite/9.png": "f224e77ad6b388bb69fe08db8a51464ed3d77fa7",
+    "/poc-saloon/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
+    "/poc-saloon/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
+    "/poc-saloon/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
+    "/poc-saloon/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
+    "/poc-saloon/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
+    "/poc-saloon/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
+    "/poc-saloon/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
+    "/poc-saloon/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
+    "/poc-saloon/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
+    "/poc-saloon/index.csr.html": "dbf3e334ac99bca64d1bdfd5d1533dcd4cd07033",
+    "/poc-saloon/main-5TT73ZLT.js": "3f4aa274c12ecd68b20b7cd3aac2d67cb1cda6cf",
+    "/poc-saloon/manifest.webmanifest": "841092832c3567d56c6b2042c517c1981b92c2cb",
+    "/poc-saloon/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
+    "/poc-saloon/rotate-screen.webp": "b3d60440100886cc470660ef5a54038e5e39424c",
+    "/poc-saloon/styles-CXZAPJMH.css": "18d35b452ee34126398048e99d8082f5f4c52d8e",
+    "/poc-saloon/svg/chevron-down.svg": "f496407c6539f6e69260b82672dda6d107bd8013",
+    "/poc-saloon/svg/cta-back.svg": "a1f7d6a7be7a9a6f717ed4f02b9cec70c9c33da9"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
