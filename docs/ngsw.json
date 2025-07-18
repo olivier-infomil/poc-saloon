@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1752817757986,
+  "timestamp": 1752820116093,
   "index": "/poc-saloon/index.csr.html",
   "assetGroups": [
     {
@@ -22,7 +22,7 @@
     },
     {
       "name": "assets",
-      "installMode": "lazy",
+      "installMode": "prefetch",
       "updateMode": "prefetch",
       "cacheQueryOptions": {
         "ignoreVary": true
