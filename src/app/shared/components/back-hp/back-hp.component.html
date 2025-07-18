@@ -1,0 +1,11 @@
+<div class="bck">
+    <div class="bckHP" [ngClass]="{'show': show}">
+        <button class="btnBckHP" [routerLink]="['/']">
+            <img src="svg/cta-back.svg" alt="" />
+            Retour à l'accueil
+        </button>
+    </div>
+    <button class="chevronShow" (click)="show = !show">
+        <img src="svg/chevron-down.svg" alt="" />
+    </button>
+</div>

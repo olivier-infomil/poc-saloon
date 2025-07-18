@@ -1,0 +1,5 @@
+<nav>
+    @for (item of navItems; track $index) {
+        <button type="button" (click)="routeTo(item.route)">{{ item.title }}</button>
+    }
+</nav>
