@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22.5" height="45" viewBox="0 0 22.5 45">
+  <defs>
+    <style>
+      .a{fill:#fff;
+      overflow: visible;
+      width: 100%;}
+      .a,.b{stroke-width:1.25px;}
+      #moins_noir {stroke:#586168;}
+      #moins_gris {stroke:#808080;}
+      .b,.d{fill:none;}
+      .b{stroke-linecap:round;}
+      .c{stroke:none;}</style>
+  </defs>
+  <g id="moins_noir" class="a" width="22.5" height="22.5">
+    <circle class="c" cx="9" cy="9" r="9"/>
+    <circle class="d" cx="9" cy="9" r="8.375"/>
+    <line class="b" x2="8" transform="translate(5 9)"/>
+  </g>
+
+  <g id="moins_gris" class="a" width="22.5" height="22.5" transform="translate(0, 22.5)">
+    <circle class="c" cx="9" cy="9" r="9"/>
+    <circle class="d" cx="9" cy="9" r="8.375"/>
+    <line class="b" x2="8" transform="translate(5 9)"/>
+  </g>
+  <view id="moins_noir-view" viewBox="0 0 22.5 22.5" />
+  <view id="moins_gris-view" viewBox="0 22.5 22.5 22.5" />
+</svg>

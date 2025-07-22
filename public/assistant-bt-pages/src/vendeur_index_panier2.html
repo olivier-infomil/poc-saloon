@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href="css/assistantBT.css" rel="stylesheet" />
+
+    <script src="includes/jquery-3.3.1.min.js"></script>
+    <script src="scripts/synthese.js" charset="UTF-8"></script>
+    <script src="scripts/bascule-vendeur.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        $(document).ready(function () { init(); initVendeur(); });
+    </script>
+</head>
+
+<body>
+    <section class="conteneurprincipal">
+
+        <div class="voilenoirrecherche"></div>
+
+        <header class="header">
+            <div class="partiegauche">
+                <div class="header-menu js-headerMenu">
+                    <div class="burgerconteneur">
+                        <button class="menu"><span></span></button>
+                    </div>
+                    <div class="voletconteneur">
+                        <div class="voilenoir"></div>
+                        <div class="fillerbandeau"></div>
+                        <div class="navigationlisteconteneur">
+                            <div class="menu-block__item">
+                                <div>Tableau de bord</div>
+                            </div>
+                            <div class="menu-block__item itemcataloguebt">
+                                <div class="italique">Catalogue BT</div>
+                            </div>
+                            <div class="menu-block__item">
+                                <div class="sousitem">GEM</div>
+                            </div>
+                            <div class="menu-block__item">
+                                <div class="sousitem">PEM</div>
+                            </div>
+                            <div class="menu-block__item jsmenutv">
+                                <div class="sousitem">TV-VIDEO</div>
+                                <img src="assets/icones.svg#chevron-right-view" class="chevron jschevrontv">
+                            </div>
+                            <div class="menu-block__item">
+                                <div class="sousitem">HIFI-SON</div>
+                            </div>
+                            <div class="menu-block__item">
+                                <div class="sousitem">PHOTOS</div>
+                            </div>
+                            <div class="menu-block__item jsmenumicroinfo">
+                                <div class="sousitem">MICRO-INFORMATIQUE</div>
+                                <img src="assets/icones.svg#chevron-right-view" class="chevron jschevronmicroinfo">
+                            </div>
+                            <div class="menu-block__item">
+                                <div class="sousitem">TELEPHONIE</div>
+                            </div>
+                        </div>
+                        <div class="voletdroit jsvolettv">
+                            <div class="detailcategorieconteneur">
+                                <div class="souscategorie">
+                                    <div class="souscategorietitre"> IMAGE-TV (620) </div>
+                                    <div class="souscategorieitem"> TV </div>
+                                    <div class="souscategorieitem"> VIDEOPROJECTEUR </div>
+                                </div>
+                            </div>
+                            <div class="lientoutle"> TOUT LE TV-VIDEO &gt;&gt; </div>
+                        </div>
+                        <div class="voletdroit jsvoletmicroinfo">
+                            <div class="detailcategorieconteneur">
+                                <div class="souscategorie">
+                                    <div class="souscategorietitre"> MICRO INFORMATIQUE MATERIEL (1610) </div>
+                                    <div class="souscategorieitem"> ORDINATEUR </div>
+                                    <div class="souscategorieitem"> MONITEUR </div>
+                                    <div class="souscategorieitem"> TABLETTE </div>
+                                </div>
+                                <div class="souscategorie">
+                                    <div class="souscategorietitre"> MICRO INFORM PERIPH, LOGIC NON (2057) </div>
+                                    <div class="souscategorieitem"> MEMOIRE </div>
+                                    <div class="souscategorieitem"> IMPRESSION - SCANNER </div>
+                                    <div class="souscategorieitem"> CONSOMMABLE </div>
+                                    <div class="souscategorieitem"> PERIPHERIQUE </div>
+                                    <div class="souscategorieitem"> LECTEUR </div>
+                                    <div class="souscategorieitem"> COMPOSANTS </div>
+                                    <div class="souscategorieitem"> LOGICIELS PC NON JEUX </div>
+                                </div>
+                            </div>
+                            <div class="lientoutle"> TOUT LE MICRO-INFORMATIQUE &gt;&gt; </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="logoassistant"><img src="assets/images/logo.svg"></div>
+            </div>
+            <div class="header-navbar">
+                <div class="euroconteneur" onclick="location.href = './vendeur_connexion_caisse.html'">
+                    <img class="euro" />
+                </div>
+                <div class="rechercheconteneur">
+                    <img src="assets/icones.svg#loupe-view" class="rechercheicone">
+                    <input type="search" placeholder="Rechercher" class="recherchetexte">
+                </div>
+                <div class="caddieconteneur" onclick="location.href = './vendeur_panier.html'">
+                    <img src="assets/icones.svg#caddie-view" class="caddie">
+                    <div class="badge">
+                        <div class="badgenumero">2</div>
+                    </div>
+                </div>
+                <div class="identification">
+                    <div class="nomutilisateur">
+                        <div class="nomtexte">J. MARILLON</div>
+                        <div class="vendeuroupas"> (Vendeur) </div>
+                    </div>
+                    <img src="assets/icones.svg#chevron-left-view">
+                    <div class="menuidentification">
+                        <div class="optionmenu" onclick="location.href = '../index.html'">Passer en mode gestionnaire</div>
+                        <div class="optionmenu">Déconnexion</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="bandeaunavigation">
+            <div>
+                <div class="filariane">
+                    <div class="titresniveauxconteneur">
+                        <div class="titredernierniveau">
+                            Tableau de bord
+                        </div>
+                    </div>
+                </div>
+                <div class="onglets">
+                    <div class="onglet estactif">
+                        <div class="titreonglet">SYNTHÈSE</div>
+                    </div>
+                    <div class="onglet" onclick="location.href = './vendeur_categories_panier.html'">
+                        <div class="titreonglet">CATÉGORIES</div>
+                    </div>
+                    <div class="onglet desactive" title="Sélectionnez une catégorie pour voir la liste des articles">
+                        <div class="titreonglet">ARTICLES</div>
+                    </div>
+                    <div class="curseuractif onglet1"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pageconteneur">
+            <div class="briqueschiffresconteneur">
+                <div class="chiffrescles">
+                    <div class="chiffreconteneur aucentre">
+                        <div class="chiffre">
+                            <span>19 045</span>
+                        </div>
+                        <div class="chiffretitre">STOCK (UVC)</div>
+                    </div>
+                </div>
+                <div class="briquesconteneur">
+                    <div class="categoriebrique">
+                        <div class="brique">
+                            <div class="briquetitre">PROMOS</div>
+                            <div class="blocinfosbriques">
+                                <div class="infosbrique">
+                                    <div class="quantite"> 327 </div>
+                                    <div class="unite">PROMOS</div>
+                                </div>
+                                <div class="iconeconteneur">
+                                    <img src="assets/icones.svg#promo_orange-view">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="categoriebrique">
+                        <div class="brique">
+                            <div class="briquetitre">OFFRE BTLEC</div>
+                            <div class="blocinfosbriques noncliquable">
+                                <div class="infosbrique">
+                                    <div class="quantite"> 69 </div>
+                                    <div class="unite">NOUVEAUX</div>
+                                </div>
+                                <div class="iconeconteneur">
+                                    <img src="assets/icones.svg#new_pink-view">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
+

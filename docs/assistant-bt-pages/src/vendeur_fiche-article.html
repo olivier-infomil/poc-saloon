@@ -1,0 +1,395 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href="css/assistantBT.css" rel="stylesheet" />
+
+    <script src="includes/jquery-3.3.1.min.js"></script>
+    <script src="scripts/fiche-article.js" charset="UTF-8"></script>
+    <script src="scripts/bascule-vendeur.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        $(document).ready(function () { init(); initVendeur(); });
+    </script>
+</head>
+
+<body>
+    <section class="conteneurprincipal">
+
+        <header class="header">
+            <div class="partiegauche">
+                <div class="header-menu js-headerMenu">
+                    <div class="burgerconteneur">
+                        <button class="menu"><span></span></button>
+                    </div>
+                </div>
+                <div class="logoassistant" onclick="location.href = './vendeur_index.html'"><img src="assets/images/logo.svg"></div>
+            </div>
+            <div class="header-navbar">
+                <div class="euroconteneur" onclick="location.href = './vendeur_connexion_caisse.html'">
+                    <img class="euro" />
+                </div>
+                <div class="rechercheconteneur">
+                    <img src="assets/icones.svg#loupe-view" class="rechercheicone">
+                    <input type="search" placeholder="Rechercher" class="recherchetexte">
+                </div>
+                <div class="caddieconteneur" onclick="location.href = './vendeur_panier.html'">
+                    <img src="assets/icones.svg#caddie-view" class="caddie">
+                </div>
+                <div class="identification">
+                    <div class="nomutilisateur">
+                        <div class="nomtexte">J. MARILLON</div>
+                        <div class="vendeuroupas"> (Vendeur) </div>
+                    </div>
+                    <img src="assets/icones.svg#chevron-left-view">
+                    <div class="menuidentification">
+                        <div class="optionmenu" onclick="location.href = './fiche-article.html'">Passer en mode gestionnaire</div>
+                        <div class="optionmenu">Déconnexion</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="bandeaunavigation">
+            <div class="infosfichearticle">
+                <div class="titreconteneur">
+                    <img src="assets/icones.svg#chevron-left-view" onclick="location.href = './vendeur_articles_tv.html'">
+                    <div class="designation">Akai ATE-48B4544K - Classe 48" TV LED - 4K UHD (2160p) 3840 x 2160 - noir<span>, Akai</span></div>
+                </div>
+                <div class="caconteneur">
+                    <div class="quantite">0 €</div>
+                    <div class="unite">CA TTC</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pageconteneur">
+            <div class="articleconteneur">
+                <div class="switch">
+                    <span class="codeean agauche">4905193001345</span>
+                </div>
+                <div class="boutonsaction">
+                    <button class="boutonimprimer cta cta--clear">Imprimer Fiche Produit</button>
+                    <button class="boutonmail cta cta--clear">Envoyer Fiche Produit</button>
+                </div>
+                <div class="prixetpromo">
+                    <div class="prix">249,<span class="decimales">00</span> €</div>
+                </div>
+                <div class="photoetinfos">
+                    <div class="photoetvignettes">
+                        <div class="photoconteneur">
+                            <img src="assets/images/fiche_tv5.png" class="jsphoto">
+                        </div>
+                        <div class="vignettesconteneur">
+                            <div class="vignette estselectionnee jsvignette1">
+                                <img src="assets/images/fiche_tv5.png">
+                            </div>
+                            <div class="vignette jsvignette2">
+                                <img src="assets/images/fiche_tv6.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infosconteneur">
+                        <div class="stockconteneur">
+                            <div class="stockinfos">
+                                <div class="stock">27</div>
+                                <div class="label">STOCK BTLEC</div>
+                            </div>
+                        </div>
+                        <div class="indicereparabilite">
+                            <img class="logoir" src="assets/images/logo-indice-3.svg">
+                            <p class="indiceir">5,1</p>
+                        </div>
+                        <div class="etiquettesconteneur">
+                            <span class="etiquette">
+                                <img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAB/////////+AAAAAHAAAAAAAAADg1I0IcAAAAAAAAAAY///8gAAAAAAAAAAMAAAAgAAAAAAAAAAEAAABgAAAAAAAAAAGAAABAAAAAAAAAAACAAADAA//7//P/4AD/cA+AA//7//P/8ABAAACAA//7//P/+AB1I0KAA4AAAAAAPAB///+AA4AAAAAAHABAAACAA4AD//MAHABAAACAA4AD//MAHABAAACAA4AD//MAHABAAACAA4AAAAMAPAB/cA+AA4AAAAMAeABAAACAA4AD//P/8AB1I0KAA4AD//P/4AB///+AA4AD//P/wABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAAB+cA+AAAAAAAAA4ABAAACAAAAAAAAB8AB1I0KAAAAAAAABmAB///+AAAAAAAAAGABAAACAAAAAAAAAGABAAACDg8M9GYOx+HhAAACHx+N/GYfxuPxAAACMZjNjGYZzGMx+cA+MBANjGYYzGMBAAACP5AM7GYOzGP51I0KP5AMfGYHzGP5///+MZjMDGcAzGMZAAACO5nMzGeMxuMxAAACHw+M+GbPh+HxAAACAAAMAAAAAAABAAACAAAMAAAAAAAB+cA+AAAMAGAAAAABAAACAAAMAGAAAAAB1I0KAAAMAAAAAAAB///+AAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAf/8A//D/+ABAAACAf/8H//j//wB+cA+Af/8P//j//8BAAACAf/8f//j//8B+cA+AfwAf8Hj//+B///+AfwA/wAD/D/BAAACAfwA/gAD+B/BAAACAfwB/gAD+B/BAAACAfwB/AAD+B/hAAACAfwB/AAD+A/h9cA+AfwB/AAD+A/hAAACAfwB/AAD+A/h9cA+AfwB/AAD+A/h///+AfwB/AAD+A/hAAACAfwB/AAD+B/hAAACAfwA/gAD+B/B0aWiAfwA/wAD+D/BAAACAfwAf4Dj+H+B9cA+AfwAf//j//+BAAACAfwAP//j//8B1I0LAfwAH//j//4D///9AfwAD//j//gCAAABgfwAA//D//AGAAAAgAAAAAAAAAAEAAAAwAAAAAAAAAAMAAAAcAAAAAAAAAA49cA8HAAAAAAAAADgAAAAB/////////+A1I0IAAA==">
+                            </span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKgSURBVHhe7ZyNroMwCIV9/5fe4qamw9JzYLZ2A5Ob3Ezwlq/8FGbu8mhcy7I8Iv00WdRulnBayv90D9m8lMYi4X8Co9miMThA7QIRYDA2Sh4foJgHRJJZYe3X67f0pvr2l1wOUBE8ha3gMm9vzvQ+AkS4vKA2vRiQLOdFKZugivzcOhqFByXhaEUtNKiaByUokXTU0/fW22aOEjlJAXLK++FCD/WyGXrAk442JUPvuzYtXOh5u48ERZJLUAmKJECKpUfNAgqdW8h13i7W1aPk7AdZ25oVWUYkPTanG6ia0V5jW2NqZhCHNoi53wWUtnhtQZrnIY/06jFgujfFnvBBnTzov05jbAT4dlAoDKwL9Brs1SNSwzUz8wRFuoIMkW921loMZPd/deXrksy1RZO8q2/PMLpeuIZnXxN62rSwVd6RzqrLXD0hrX9/Ko/yGuvVYzZARAe3a5YHF7tAvdfgNdar57TlXlBeY716VkjThJ63Onr1EpSHAKkzRTL3nnm8eiSbD7HpQFl6RdQJWI4lCF6CQoS2+11BkWv4CbEERW5TgkpQJAFSLD0qQZEESLH0qARFEiDFhnoU6vbZk/bI1mXIPKrcLKY1CQ+q5gHos30EXBuljByvDPUoNlQsUNhnkikIig3JUaxRrJfJMTO08gKBBEVCTFCzg0JhJpLo6ZscNpxJDlBsiEfJnKJVLQRvr4Q/l6Oso1bLgfNnPApBGO36MDY6C6ih1wIVDVIR6udvijVQESGZQUWFZAIVGRINKjokClRCepdTWPXQMaFzVZ7m8Qeo8tSLTtLRvOywdwfDTiQjgnoxKj1oGl+fZCFl6sl/tNXYlI9GXDagk2zm7cuQhSz/GaDYEi0HV18JjpawmRlX893p2gzpnz9rxfsTc5A65PhiW3UAAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,Qk0uGgAAAAAAADYEAAAoAAAASgAAAEoAAAABAAgAAAAAAAAAAADEDgAAxA4AAAABAAAAAQAAAAAA//////8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wEBAQEBAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEBAQEBAAABAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEBAQAAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEAAAEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAAABAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAAAAAAAAAAAAAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAAAAAQEBAQEBAQEBAQEBAQAAAAAAAAAAAAABAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQAAAAEBAQEBAQEBAQEBAQEAAAAAAAAAAAAAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAAAABAQEBAQEBAQEBAQEBAAAAAAAAAAAAAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAAAAAQEBAQEBAQEBAQEBAQAAAAAAAAAAAAABAQEBAQEAAAAAAAAAAAABAQEAAAAAAAAAAAABAQEAAAAAAAEBAQEBAQAAAAAAAQEBAQAAAAEAAAAAAQEBAQEBAQEAAAAAAAAAAAAAAQEBAQEBAAAAAAAAAAAAAQEBAAAAAAAAAAAAAQEAAAAAAAAAAQEBAQAAAAAAAAABAQEAAAAAAAAAAAABAQEBAQEBAAAAAAAAAAAAAAEBAQEBAQAAAAEBAQEBAQEBAQEBAQAAAAEBAQEBAAAAAQEAAAABAQEAAAABAAAAAQEBAAAAAAEBAAAAAAEBAQEBAQAAAAAAAAAAAAABAQEBAQEBAAAAAQEBAQEBAQEBAQEAAAABAQEBAAAAAQEBAAAAAQEAAAABAQEAAAABAQAAAAEBAQEAAAABAQEBAQEAAAAAAAAAAAAAAQEBAQEBAQEAAAABAQEBAQEBAQEBAAAAAQEBAQAAAAEBAQAAAAEBAAAAAQEBAAAAAQEAAAABAQEBAAAAAQEBAQEBAAAAAAAAAAAAAAEBAQEBAQEBAQAAAAABAQEBAQEBAQAAAAEBAQEAAAABAQEAAAABAQAAAAEBAQAAAAEBAAAAAQEBAQAAAAEBAQEBAQAAAAAAAAAAAAABAQEBAQEBAQEBAAAAAAEBAQEBAQEAAAABAQEBAAAAAAAAAAABAQEAAAABAQEAAAABAQAAAAEBAQEAAAABAQEBAQEAAAAAAAAAAAAAAQEBAQEBAQEBAQEAAAAAAQEBAQEBAAAAAQEBAQAAAAEAAAABAQEBAAAAAQEBAAAAAQEAAAAAAQEAAAAAAQEBAQEBAAAAAAAAAAAAAAEBAQEBAQEBAQEBAQAAAAEBAQEBAQAAAAEBAQEAAAABAQEBAQEBAQAAAAEBAQAAAAEBAAAAAAAAAAAAAQEBAQEBAQAAAAAAAAAAAAABAQEBAQEAAAABAQEAAAABAQEAAQEAAAABAQEBAAAAAQEBAQEBAQEAAAABAQEAAAABAQAAAAEAAAAAAQEBAQEBAQEAAAAAAAAAAAAAAQEBAQEBAAAAAQEBAAAAAQEBAAAAAAAAAQEBAQEAAAABAQAAAAEBAQAAAAEAAAABAQEBAQEBAQEBAQEBAQEBAQEBAAAAAAAAAAAAAAEBAQEBAQEAAAAAAAAAAQEBAQEAAAAAAAEBAQEBAAAAAAAAAAEBAQEAAAAAAAAAAQEBAQEBAQEBAQEBAQEBAQEBAQAAAAAAAAAAAAABAQEBAQEBAQAAAAAAAQEBAQEBAQAAAAABAQEBAQEBAAAAAAEBAQEBAQAAAAAAAQEBAQEBAQEBAQEBAQEBAQEBAQEAAAAAAAAAAAAAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAAAAAAAAAAAAAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQAAAAAAAAAAAAABAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAAAAAAEBAQEBAQEBAAAAAAEBAQAAAAAAAQEBAAAAAQEBAQEBAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQAAAAABAQEBAQEAAAAAAAABAQEAAAAAAAEBAQAAAAEBAQEBAQEBAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEAAAAAAQEBAQAAAAAAAAAAAQEBAAAAAAABAQEAAAABAQEAAAAAAAEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQEBAQEBAQEAAAEBAQAAAAEBAAAAAAABAQEAAAAAAAEBAQAAAAEBAQAAAAAAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEBAQEBAQEBAAABAQAAAAEBAQAAAAAAAQEBAAAAAAABAQEAAAABAQEAAAAAAAEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAABAQEAAAAAAAAAAAEBAQEAAAAAAAEBAQAAAAAAAQEBAAAAAQEBAAAAAAAAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQAAAQEBAAAAAAAAAQEBAQEBAAAAAAABAQEBAQEBAQEBAQAAAAEBAQAAAAAAAAEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAEBAQAAAAAAAAEBAQEBAQAAAAAAAQEBAQEBAQEBAQEAAAABAQEAAAAAAAABAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQABAQEAAAAAAQAAAAEBAQEAAAAAAAEBAQAAAAAAAQEBAAAAAQEBAAAAAAAAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQEBAAAAAAEBAAAAAQEBAAAAAAABAQEAAAAAAAEBAQAAAAEBAQAAAAAAAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEBAQAAAAABAQEAAAABAQAAAAAAAAEBAQAAAAAAAQEBAAAAAQEBAAAAAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQEAAAAAAQEBAQAAAAAAAAAAAAABAQEAAAAAAAEBAQAAAAEBAQEBAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEBAAAAAAEBAQEBAQAAAAAAAAAAAQEBAAAAAAABAQEAAAABAQEBAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEBAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEBAQEAAAAAAQEBAQEBAQEAAAAAAQEBAAAAAAABAQEAAAAAAQEBAQEAAAAAAAEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEBAQEBAQEAAAABAQEBAQEBAQAAAAABAQEAAAAAAAEBAQAAAAEBAQEBAQAAAAABAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAQAAAQEBAQAAAQEBAAAAAAAAAAAAAQEBAAAAAAABAQEAAAABAQEAAQEBAAAAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQAAAAABAQEAAAEBAQAAAAAAAAAAAAEBAQAAAAAAAQEBAAAAAQEBAAEBAQEBAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAAAAAAEBAQAAAQEBAAAAAAAAAAAAAQEBAAAAAAABAQEAAAEBAQAAAQEBAQEBAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQAAAAABAQEAAAEBAQAAAAAAAAAAAAEBAQAAAAAAAQEBAAEBAQEAAAABAQEAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEAAAAAAQEBAAABAQEAAAAAAAAAAAABAQEAAAAAAAEBAQEBAQEBAAAAAQEBAAEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQAAAAABAQEAAAEBAQAAAAAAAAAAAAEBAQAAAAAAAQEBAQEBAQEAAAABAQEBAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEAAAAAAQEBAAABAQEAAAAAAAAAAAABAQEAAAAAAAEBAQAAAQEBAQAAAAEBAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAAAAAAEBAQAAAQEBAAAAAAAAAAAAAQEBAAAAAAABAQEAAAABAQEAAAABAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEAAAAAAQEBAAABAQEAAAAAAAAAAAABAQEAAAAAAAEBAQAAAQEBAAAAAAEBAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAAAAAAEBAQAAAQEBAAAAAAAAAQEBAQEBAQEBAAABAQEBAQEBAQAAAAABAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQAAAAABAQEAAAEBAQAAAAAAAAEBAQEBAQEBAQAAAQEBAQEBAQEAAAAAAAEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAAABAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQAAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEAAAEBAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQEBAAABAQEBAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAQEBAQAA"></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM7SURBVHhe7ZwBTsMwDEV7/0sDg7XKQuz/7HRspJ6EQKqbxC/fjmMQ24fz2bbt40pfLovRwxaO9/JKz5TPW+usMl4JjOWLxeAAtRtcAQbxsefxAIoMcCWbG6z98/1TqWm8/S2XA9SVlBLxdVfV1/efEqA+vqq+QdXHJ3AXU4FSQilQitD9eYEqUJAANCtFFShIAJq5irLaK97YmXeOK0LX0iGX1r+qAU1Qqgc1ciLzjgXJqu28OaA4UmZDUP1iyI6P3rHGoZB7u9k5UoS88mAWVLsg0t+i4WqNReaYgXR7N3TqeQqZ2W0CKjo3UeMoUkReZFeY6GJJ6PVqIKrp8xeZp1HFQ0sp+K4GRQaMJlqlQiuEnwUKnOY2qJHzYMCH39yQY16FQVTNZE6y+d26YqD2CVQeyDj3zNCLliIDRevQs2LcU0IElArbyFjqhItGSfjUyyREWmq8EpQC+1JQJIecncxPD72ozKP29DDwcmC0qPUg9afoaH3DgtOK4SiQyKmiTr1M2DsOD/+eAmzg72Tu5YzRDih7sms9jDMdtcammzlU1IxMMydKNIwyc9BDReROVh6Q02FVG1dRqzqd8atAQWoFqkBBAtCsFFWgIAFoVor6C1BWNU7mtvpO3v1u5h2yptQVRg2srixgUvnnkJk5VLtG+XVqZT66DgTvTLJVnJkj8w4FF85R0Q6CdY9TYWQ9p/NH748KWBhUf2H2QBBIVldBgVS5jK5LAer8nb8Uq9DrHfdAqLFGzlGlWRujgKUVFdlR5Zgai7RV3h4UceIZoHplvDWoLKQbuEjo7VC8+d4W1AykKCiSmP8NKJUMvTwUCU0LyFuCypxKlwcVVVJfh5E6qrWhynl5wXmGmlSO6p9byVyVFdY4mc0N11GjJJ5J7KTyVnOp3HbWpjbAeWWuFr8/V7tGQI0UQcbPbBxcLwelBlz1eTj0VgWh/CpQitD9eYEqUJAANCtFFShIAJqVogoUJADNSlEFChKAZoeirHYHHGdps+PuuF8+l/Z2wrmjzdPe0ifGW/LVtltR/2jL2eKH7upuR3o9S8rGcKrnUf8MsANlNRWHXTvagVxJYcpnt71JW7+r2Hkb/wnYSYdfsgnchQAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAN0SURBVHhe7ZuNdoMwCIV9/5fu1rVmEfm5BNQY03N21tYkwpcLAXe2vJTXsiyvJ/2oLLiLNRxt8kjXLJ+X2llr8EhgJF8kBgXUOuAJMBAfKY8NKGSBJ415w1pff++mmvjtr7kUUE9SisfXVVW/vz8lwHzpqvoDNV8fAuKJ9xHTHtRZZcLRavasr/n8vfYcUIZixMC6HNTZId8aKU2gdoVYdRggfSHXCdD8YO28ZAOdtznehb6VuzfdwG5BcbWdtAl0LAenFI0VLO671GSOKkpyYFPtCmrUQFEHgdPqv7pWQHHrku98yRwBhTqD7L7kgBV+liq7UNQVoLR7IqGnHSyhHEVzhhUuXPy3KMq6L7ImF/7cuq7Qk04Sy+DWHAXkil0TzyV6buOkfKZBqubMFsaq58TQsyY+7foEBe74BDVBgQTAYVNRExRIAByWqijtyQFiT2R+ZK7DtlgdpRkpdeO1cVfP7w5U3Ta0gIrOR4BIY8KhB5b+4t8Ns+dbPVwrrOFAURDWRqDgwqC0BpY2oFLoSM0rMt8CYV0/HRR3Q6mjdxon/q0tA6TTltipZyRA1VHNUAu0dZ0DqakasCUfFOIEYJhLTRyEqB0kteSCihqHzkfGIWOQ8EtL5pLMPVKXCs9IaHcHyuukdYyv650RnqcqKrpzLfOROciY00BFjYnMt+ok6zoCqUor7ck84mTG8W2BsK5PUF8C3YJCd4i2Pkjy9lb/UbXX9wuXB9Jph56C0flaWZKlpsNylOY8WhagoCVlZkIaClRGwQvUbO2nnjcn3XV8OEfd1XGv3RMUSGyCmqBAAuCwqagJCiQADpuK6hlUXTVr/RvoAzustXeU7nmJojRQFkQU3mNAoUDQ3rF1PdJL5rUwkiLQJpcqof7MvX9/xzwOKf/RmqzQOCgNBPo0gQsX9DEM9xQhqiJmA3JB1Z087eq5z9RJj0JQuFFoaclcS55SONVhg4SsBl07PWl4tkDrDpSWnKlSPZ+jsA4DJSVhTygiCtLUSvNbi5LST71IMkfCdlWEdipyCT2rnkpTFN19z05ng+JCMqKmar34qRc1pPf5RVHRZNe7oxH7SlpZpRVZbOS5JT8eEdOjgNuc3vVpMYqDWX5simKthci64R3X2Z3cWm91RwejNovt1NF9UtTws+ZLgErEaYagjzlGGaex+AE+OCayvzuHFwAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAD/////////+AAAEAH//////////gAAAAf//////////4AAAA///////////8AAAA///////////8AAAB///////////+AAAB///////////+AMkD////////////AAAD////////////AAAD////////////AAAD////////////A8L/////////////AAAD////////////HAAD////////////AAAD////////////hAAD////////////AAAD////////////AAAD////////////AAAD////////////AAACAAAAAAAAf///AAACAAAAAAAAP///AAACAAAAAAAAD///AAACAAAAAAAAD///AAACAAAAAAAAA///AAACAAAAAAAAAf//AAACAAAAAAAAAP//AAACAAAAAAAAAH//AAACAAAPAPAAAB//AAACAAAPAPAAAA//AAACAAAHgeAAAAf/ZpQGAAAHgeA4AAP/AAACAAAHgeA4AAD/AAACAAAHgeA4AAB/AAACAAAD/8A4AAA/vogGAAAD/8A4AAAPhAACAAAD/8A4AAAPAowGAAADw8A4AAADHANCAAABw4//wAABAAACAAAB54//wAADAAACAAAB54//wAAHAAACAAAA5wA4AAAfAAACAAAA5wA4AAA/AAACAAAA5wA4AAB/AAACAAAA/wA4AAD/AAACAAAAfgA4AAH/AAACAAAAfgA4AAf/AAACAAAAfgA4AA//AAACAAAAfgAAAB//AAACAAAAPAAAAD//gAACAAAAPAAAAP//AAACAAAAAAAAAf//AAACAAAAAAAAA///AAACAAAAAAAAB///AAACAAAAAAAAH///AAACAAAAAAAAP///AAACAAAAAAAAf///AAAD////////////AAAD////////////AAAD////////////A8D/////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAB///////////+AAAB///////////+AAAA///////////8AAAA///////////8A8H8f//////////4AAAAH//////////gQIAAB/////////+AAccgAAA=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJrSURBVHhe7ZyBkoMgDET9/5/2rnfFSSmQDSSCus7cXDtGCI8lRLRse+PYtm1/0l+TRemkhNO6+E7ntDZvsrGa8Z3A1NpSY3CASgZPgIG0MefxAQop4Ek2L1jp+PtENZW7X3I5QK2klNpMO8PHpKrf//8pwErHaqDe/lwD0szOXA6UltzOUj1BgeSXAqWpiUPv3asEBcgbgfR4RZUgySR4hfvPJWJUDuq4ZSgs8QDiDDGZDqqmJioq6++amghKgGqpiaAaqUAeXDSQIcGoUui0GIWmAy07ggIfaBAUQdk0wBgF8iIoggIJgGZUFEGBBEAzKoqgQAIXNJt2C3M1VgQF9hhBERRIADSjoggKJACafSmqJ8lrrXuDfixhBqzfi7fKOh4RARV0v1ksCXqsilp8LdS9Lij5dDgCVKt8gspGTQICqC1OUT3BZ+TJsRYvLQ9cT1UUQQkCWi9aYV1WUdYg2pqpEGgEBb55TFB3B6UNF2BaNf0y4rKKIqjjJzBxeZR1IrDkOTKrRpLGl42l/FPzKIIC86hRUNpNcR4WtJzOTVFaPHrqea5wgj1PUAQFEgDN3BQ1GrTPvB5k82HmAurMRnrVZYXlCspa+Qz7BNpaN0GBxAiKoMoElh16uWNnf6/d4oBCOszCh57XLNVTTgnG0oqSyxv5ckjk92VBldaHrBKPtJeqtNbjMvTyBTGrE2fYO0Da3TaxGXEmEtaoX2mkuG6LNOqUN7BRf2Twd99oa9Q5L1gefsi4G7J1W890HnVNL/ivnE8W5NEL+ZQfBQAptwdSjUFx8yhPYD3OzrhGa3Nzly2k1+5k0+qgH4icT3tEBj2xAAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,Qk22AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHgDAADEDgAAxA4AAAAAAAAAAAAAAAAAAP///wD+AAAAAAAAAB/AAAD4/////////8fAAADj//////////HAAADP//////////zAAADf//////////7AAACf//////////5AAAC///////////9AAAA///////////8AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB//4B/8B/AD/+AAAB//wA/wA/AAf+AAAB//gAfgAfAAf+AAAB//AAfgAPAAP+AAAB//B4PB4PB4H+AAAB//D4PD8PB8H+AAAB//D8PD8PB8H+AAAB/+D8Pj8PB8H+AAAB/+D8H/4PB8H+AAAB/+D8H/wPB8H+AAAB/+D8H/gfB4P+AAAB/+D8H/AfAAP+AAAB/+D8H+A/AAf+AAAB/+D8H4B/AA/+AAAB/+D8HwH/AAf+AAAB/+D8HwP/B4P+AAAB/+D8Hgf/B4P+AAAB/+D8Hg//B8P+AAAB/+D8Hh8/B8P+AAAB/+D8Hh8PB4P+AAAB/+D8Hg4PBwP+AAAB/+D8HgAPAAP+AAAB/+D8HwAfAAf+AAAB/+D8HwA/AA/+AAAB/+D8H8B/AD/+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAA///////////8AAAC///////////9AAACf//////////5AAADf//////////7AAADP//////////zAAADj//////////HAAAD4/////////8fAAAD+AAAAAAAAAB/AAAA="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMqSURBVHhe7ZyJbgMhDET3/3+6TdOwohQz4zHswRKpaiQu++3YGJJ2+2q8tm37etJPk0WtMYfTGjxTG/J5y51FnWcCY/liMdhBpQ5PgMH4WPL4A4qZ4El9fmCl1/vdUlP98edcdlBPUorH16Sq1+/fEmC92qp6g1qvNoGPmBYoJJQwqLuEbdTOEKg7FadRW2VQ0YWR1Ee0R2yWQEUWHAHAM6dquxuUupDHmdF9FR9coJQFRjutzu/1hQaVTzzjewR8gSJPJTSo/OA8QyU/LPT2q4bsahjJ9artXkiZSHxHGGWhq0BTbXeFXu6suuCZwCI2y6DulrMikOTQqynrTKUwa596KGYMnKVPKPRmgcD4sUAxlF59ZFCe5GgdeZCN6rjavOyxy7JJAlUu2nIYGQgMM7/3gCCX7cgOlOzdoGoLqs5axkWdQoryQnaXB95QsJSHFKmOY5U9DBR6wqyirMo+P2SrEFlI+VoeYFToKaBUh9VxHlCejSjN6wZVHl2sJ6Q6rI5TQaEk7gKFdhCUPGswW0DUNjYFeHOtO5kXdJvfgIkow9pZPTtuj3xYmUO/j+oderXQbuVIT0JWlH/p0PPAejwoNt/cHlSpCmVDiIQKCxDl0uGhh8oI1sAoYLQOaj8VFDKu9xGmx3xUwak+VVTRW8WeMs5Te12qjrJqLqQmdRyaF8FHOW2oopDTpHH/7qTUJK8oKZSjkIMztkuKmhEE8mmBQoQ+7QvUAkUSILstRS1QJAGy21LUAkUSILstRV0VVORaN3IEIXmY3Q5VFDqYsvfv6ocMEViHgbKcQ6d+6wLwaFingmIU5ukTUQwaOwUo5GSP9luCssKxBxBrjtuCKmGNhJSt5fukWDGKyTU155lx1m6p2HkLRS1QLwKsMvJ+tVyU1POY8sCCwII6OqHvyXx0nPdW1JGgdtvToj2TXz6XAokJMaaq7+HTbkv+dHpMXM6BHGq1q229/EjrvxmlSUeGn+qwOq4nqJ1PDmoULGuXQmpjkn7+1HsBqkXZYf8MkMlVoODr9icfLaDlzvtPUVYCHvGUGCWhXNdbSRagJqgyHBk1zNCnJYpvAAbEBsUeJMAAAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMYSURBVHhe7ZyNboMwDIR5/5feb0FpavvOsWkhMdK0SpgQf7mYM5u6fRnHtm1fK/2YLKSTLRzr4pnOoZy3NlkUPBMYLReNwQFqD1gBBpNjz+MJFDPASjG/sPbj71OpSV7+lssBaiWleHLdVfXz+98C1GGr6g9UHTaBh5h8oFZUoBtU79JXUaILlNbKrACLBoX6vdlhUaB6S//kLZqmeWZYEJTU97xY+wVgmaDU5lDwXbM30xSofktp9mBm2wC3nvWuauaapIijDCda9BRFRf2VdD2auHWerZeW5UlVFPJWTA8ZhazVT1Qvmbm38w8pSmpnvOrIBOW5t3fuaaDalZUmYT0UPAlqW84D3Jqfdu4UUEx9QdJnxmjfzHpAHa92gR9st+/SoBiVd1DH7AEqmOw2kZQxoqjIOL3K+tzSFOWRvvT4ZusaAugdh7UIbwcFimX4r0FZoE71UVpxRbLO2DLMPZia9NanHqsa9ORrDR/acqOgkGHd55C29RgfxYDxbh2UKAsYzb9ACSQN1x6zB/0WGVHFyDVMzRmJKVAPap4WJr1GsX7EY0JHCjSrTLZepjjzaK+FCuhUoCxYnieOZztY47KK0hZBa8tCTz0PiLvHFihyBQtUgSIJkGGlqAJFEiDDSlEFiiRAhpWiChRJgAy7haK0BpbMMSXs0qCYDj+FAjHIrUBpDTiRZzjksqCy3iaECT0GuCWorOQ941wCFFOLvDEeCEzsx0F5AbDxTPKemI+CapNGbxwRIKnQe0Cg2MuBGgUmXYeS95wvUCQtExR40f5yCy1em4u09ZCikJeyxiSZiGEUqN+g9pCAjExwGlD96vWrHa0LI8X8korSQLSKGlGSpE70VNPu2as7Oh9QJvA/aaBEEvY/9WU5l1YUU2AjoJhiby3UGffux3Tbg37CZ0/yTCV75u4G1Urfc6NIrAYrMqb32iFQ3pvMEH+A6r3SDMll5XAoet9OWQPPNs4uovpaJGNln/xb+/ifTQ3RfNqSVF/dptB8cf1aSxFdjbter7VBYv9yVs90ZXgoZ7PRQ854tvPWQn4DiXI2sHcQKBkAAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJTSURBVHhe7ZzbbsMgEET9/z+dxmmwMNnLWeKHCI+lqlE9UO9hdkGBZHsE17Ztjzv9hCysmz2cqPFK97KYtz7YTLwSGC8Wj8EBqgnuAIPEOPI4gSId3Emzw2rX65XcZA9/z+UAdSenVGJtrnr+/l8C6Ipd9QKlKybwNpNAZUYRqIzQ+75ACRQkAGVylEBBAlAmRwkUJABlcpRAQQJQJkcJFCQAZXKUQEECUCZHCRQkAGVylEBBAlBWctS4te79D6rb21e0M/qIQ2WzF4Oyzh9YD2HpvPfkK1oL0jebIpMDlL9nTkB5gVsBVbQRpBlYJJbRBMhRdOQtK3v2rmhHUC2ISupYbSrtU1DRyPfUPStbf69oo7o0mT7mMaaspgsU3PwNQY3WjEaQpFgr6hWtl3ae06jLqG5I2c9iXkmZb4Kppm+mpwCorgTKK4TeQ1eCybTVQchqDYklWPacHZVN3ZUZK3PmrUG1WlStI1fNhsRVl6UeWXXPuoEAme2bQIqWHF77dHlAHthbAFZmyWyE6Qyc9XNpjUqouscYs9oWQc8CpH1n/fwEKMvSfb0aB8AKPkodov8JUDT/V9SVatSKAGhMAgVJCZRAQQJQJkcJFCQAZXKUQEECUCZHCRQkAGVylEBBAlAmRwkUJABlcpRAQQJQJkcJFCQAZXKUQEECUCZHCRQkAGVyVBVUtFEJ+1pWdmyq7hEKlD/OjY2+FinIheaml5maTq76JNYz0Ve3OY7q3XRyVKtVo2DZKp0AGjPM/HxHf3zmLqCymMMPwmQHuFa7H5niD0ktGxIL/FrKAAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJzSURBVHhe7ZyJjsMgDETz/z/dbbsBOcjH0CAgMJGqPXDAfh4oUJrj5VzHcbx2erkstEIJx7t5pbIo5kMGGxmvBMaKxWKQQSWDHWAgMZY8LqCQCnay+cBK1/c3qklPv+SSQe2klJpYk6reP/+nALx8VX1B8fIJnGIiqEgoBBUROssJiqBAAqAZFUVQIAHQjIoiKJAAaEZFERRIADSjoggKJACaUVEEBRIAzagoggIJgGZUFEGBBEAzKoqgQAKgGRVFUCAB0IyKaglKOx8F1r+MWago7xDZMhSAQFxQ2jmhXc9PNQPlAbRU+UmkdZ93TymAmrY18SDJrwYVNRSp0OvK8gwE2uXRJNxNyG1QpQO/gNKUVQKIbLzylNxUZ/l3ShCgTP2QRoUkL8eGfnGoFrjVbWXbiP+yh3QBpTVYk7k7oNC2ZdfWfGsKqiagXqC0sQ0Z8JFYihjwrhdVHo1RUZfxxouatj0/ahIIgSqDigZYrRwZhCMbpN4a36Ju53RR/8Sd9hZsDYLlQB5BQLJrgbIS6fkW+a35L9qZ72hi7TuWNr9r+b/TH4KKoBJUROgsJ6ingwL972Y2raK6EQAbIqiVQFlzGzDGJmaPUNT2oLQZv7bAjVYGTSQTVDJUURYobWHsLWO2AxXtLPQAYrUxjaKsxbGER1DyC87igRQlPIIiKF8DyG6oNW71Vtejxiht57EXsMeBGgVrKKheamjRDkGBFAmKoEACoFlW1KhBEvRzqFmexqS5ylBvJm48L9JnWU/NyEruhfFBW06GLvtjMy0+Z1JVubPKhwEW2bE+zlc/T7eMZ8p4a1+imN2DB9527YplHvw/dEgeD+pwB5EAAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHXSURBVHhe7dyBToMwFIVh3v+l50CKBXvbn4ER6E9i1HFY1m9nMOPNhldlG4bh1dNX1aK0M8epHfykfa01D/liW+EnwURriQwWqBToAYOsceuxgiJ30FNmxErb9JNtKj/9ucsC1VNT9qw1ter9/fstgFu9VROUW11gLpNQraII1RKa9wslFBSAMRslFBSAMRslFBSAMRslFBSAMRslFBSAMRslFBSAMRslFBSAMRslFBSAMRslFBSAMRslFBSAMRv1X1ClSZBwOiSYvcofe226Zju3lY77i4mc0xt1BtRqMGKDGSFGx8DCNGOXgYraELVmzHfZKAqVDUwIlQ+NbFvzSKhoka2TbguqdL+3PkcJVblGfHrVI+eo7Qm89Ht0W/Oy1gjc6qonVD5Qmr1vIu3Y0+AjrbpMoz59T9Q1FP0T5tbnqCP1vvKxp7/0rrzYI49NKKgnlFBQAMZslFBQAMZslFBQAMZslFBQAMZslFBQAMZslFBQAMZslFBQAMZslFBQAMZslFBQAMZs1F6ofMgBHttNbPnf4bhioeLnfRk1SlBi/cZajSCl3UKVoRafHEqsH6y8TdOrLncsDT10c9aeFxoZFD8TqUew1pqrHx5VGi988m21V88X5qOCxqbUAsgAAAAASUVORK5CYII="></span><span class="etiquette">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIjSURBVHhe7ZyLbsMgEAT5/59O6zRYlNxjMDSq7UWqGok1cMMeWAK5PIJSSnnc6S9kYVW2cKKHr1SXxVzaYDPxlcB4sXgMdlBVcAcYJMaexy9QpIE7aTZYtTx/yU329LdcdlB3cspIrNVV3/9/XgFUYlc9QanEBF5mEqjMKAKVEXrVC5RAQQJQJkcJFCQAZXKUQEECUCZHCRQkAGVylEBBAlAmRwkUJABlcpRAQQJQJkcJFCQAZXKUQEECUCZHCRQkAGVy1KdBWXeo+jEQzfZMdKPGu6tV+/LqZw95lzgqGhwJIAPa1md9nQaU5QjLISOu8UBZk5BpYaa9yZY7yhrICKgsPY+2dRRQNxlzR+p9cFEqZQMeBRX1Hbk2G4cTwxyoPt22AR5NgZnFemaCMnBLUs9bsLM1JAssS7OVTv4oKA8MTYFsR6MbxegEZZCafudTL0q1zBkjrxBRW5lDCRBPsyT1+pe5PpgjoEbc6TmWOpkAXAoq2rGytKLBUuhWmhIgf+ooa9frd75MswpU2++/c9TMTJ3l2SWpd5ZgZ8YpUJCeQAkUJABlcpRAQQJQJkcJFCQAZXKUQEECUCZHCRQkAGVylEBBAlAmRwkUJABlcpRAQQJQJkcJFCQAZXLUKCjreAm2cXnZfuy1RSpQ/nxXNvosUpAT7XUBfWgrAVWr9ek2B9Tb5ZNWt/K8/qyrvHsPwgrojsCymMNbZNF1nSvWRVnwBU+DTPyQLt+TAAAAAElFTkSuQmCC">
+                            </span>
+                        </div>
+                        <div class="infosgarantie">
+                            <div class="garantie">Garantie <span class="emphase">24 mois </span><span> étendue à <span class="emphase">60 mois </span> pour <span class="emphase">79€</span></span></div>
+                            <div class="dispopieces">Disponibilité pièces détachées : <span class="emphase">NC</span></div>
+                        </div>
+                        <div class="lignesinfoconteneur">
+                            <div>
+                                <div class="ligneinfo">
+                                    <div class="infogauche">Prochaine commande</div>
+                                    <div class="infodroite emphase">1 CAR (1 UVC)</div>
+                                </div>
+                                <div class="ligneinfo">
+                                    <div class="infogauche">001181 PERMANENT</div>
+                                    <div class="infodroite emphase">mer. 28/09 (21:00)</div>
+                                </div>
+                                <div class="ligneinfo">
+                                    <div class="infogauche">Livraison</div>
+                                    <div class="infodroite emphase">30/09</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="boutonpanierconteneur">
+                    <button class="cta cta--filter">Ajouter au panier</button>
+                </div>
+                <div class="detailsconteneur">
+                    <div class="separateurinfosdetails"></div>
+
+                    <div class="infosmagasinconteneur prix seul">
+                        <div class="titreinfos">
+                            <span class="js-accordionTitle accordionTitle">Prix de la concurrence
+                                <img class="flechebas" src="assets/icones.svg#chevron_bas-view" />
+                                <img class="flechehaut hidden" src="assets/icones.svg#chevron_bas-view" />
+                            </span>
+                        </div>
+
+                        <div class="js-accordionContent accordionContent tableauinfos hidden">
+                            <div class="lignetableau entetetableau">
+                                <div class="cellule prixmagasin">Magasin</div>
+                                <div class="cellule prixdate">Date du relevé</div>
+                                <div class="cellule prixprix">Prix</div>
+                                <div class="cellule prixecart">Ecart</div>
+                            </div>
+                            <div class="lignetableau">
+                                <div class="cellule prixmagasin">Mon magasin</div>
+                                <div class="cellule prixdate">_</div>
+                                <div class="cellule prixprix monprix jsmonprix">
+                                    <div class="texteprix">549,00 €</div>
+                                    <img class="iconecrayon" src="assets/images/crayon.svg" />
+                                    <div class="traitprix"></div>
+                                </div>
+                                <div class="cellule prixecart">_</div>
+                            </div>
+                            <div class="lignetableau">
+                                <div class="cellule prixmagasin">E.Leclerc Blagnac</div>
+                                <div class="cellule prixdate">02/09/2022</div>
+                                <div class="cellule prixprix">559,99€</div>
+                                <div class="cellule prixecart">-10,99€</div>
+                            </div>
+                            <div class="lignetableau">
+                                <div class="cellule prixmagasin">Roufiac-T.</div>
+                                <div class="cellule prixdate">03/09/2022</div>
+                                <div class="cellule prixprix">545,50€</div>
+                                <div class="cellule prixecart enrouge">+3,50€</div>
+                            </div>
+                            <div class="lignetableau">
+                                <div class="cellule prixmagasin">Carrefour Purpan</div>
+                                <div class="cellule prixdate">03/09/2022</div>
+                                <div class="cellule prixprix">589,90€</div>
+                                <div class="cellule prixecart">-40,90€</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="separateurinfosdetails"></div>
+
+                    <div class="colonnedetail">
+                        <div class="titredetail">Les caractéristiques détaillées</div>
+                        <div>
+                            <div class="infodetail">Type de Produit : TV LCD avec rétroéclairage par LED</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Classe énergétique : Classe A+</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Consommation électrique en mode marche : 52 Watt</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Consommation d'énergie annuelle : 76 kWh</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Classe de diagonale : 48"</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Présence de syntonisateur TV : Oui</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">PVR prolongé : Oui</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Interface vidéo : Composant, HDMI, SCART</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Qté de ports HDMI : 4 ports</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Modes : Mode hôtel</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Dimensions : Sans support</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Largeur : 109.586 cm</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Profondeur : 3.21 cm</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Hauteur : 64.136 cm</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Poids : 11.21 kg</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Couleur du boîtier : Noir</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Résolution : 3840 x 2160</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Format d'affichage : 4K UHD (2160p)</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Format de l'image : 16:9</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Technologie de rétroéclairage LCD : Rétroéclairage par LED</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Rapport de contraste d'image : 4000:1</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Taux de contraste dynamique : 250000:1</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Luminosité : 220 cd/m²</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Langue du menu d'affichage : Multilingual</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Fonctions supplémentaires : Lecture et enregistrement simultanés</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Pied : Inclus</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Type de support : De table</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Interface de montage VESA : 200 x 200 mm</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Tuner TV analogique : PAL, SECAM</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Accès conditionnel : Logement CI (Common Interface)</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Système de réception stéréo : NICAM</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Tuner TV numérique : DVB-T</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Tuner TVHD : Oui</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Service de télévision numérique : TNT, TNT HD</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Télétexte : Oui</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Verrouillage de chaînes par les parents : Oui</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Port USB : Oui</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Qté de ports USB : 1</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Type : Télécommande standard</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Système de haut-parleurs : 2 haut-parleurs</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Alimentation en sortie / Total : 16 Watt</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Haut-parleurs : 2 x haut-parleur - intégré - 8 Watt</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Type de connecteur : 4 x entrée HDMI ¦ SCART ¦ 2 x USB 2.0 ¦ Casque ¦ Sortie audio numérique (coaxial) ¦ Entrée de ligne audio ¦ Entrée vidéo du composant</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Périphérique d'alimentation : Alimentation électrique</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Tension nominale : CA 120/230 V (50/60 Hz)</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Dimensions &amp; Poids - Détails : Panneau sans support au sol - 109.586 cm x 3.21 cm x 64.136 cm x 11.21 kg ¦ Panneau avec support au sol - 109.586 cm x 25 cm x 68.32 cm x 12.5 kg</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Largeur (emballée) : 118.5 cm</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Profondeur (emballée) : 15 cm</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Hauteur (Expédition) : 74 cm</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Poids (Expédition) : 14.2 kg</div>
+                        </div>
+                    </div>
+                    <div class="colonnedetail">
+                        <div class="titredetail">Les points forts</div>
+                        <div>
+                            <div class="infodetail">TV 48'' LED</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Tuner TV</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Chaînes favorites</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Recherche manuelle et automatique des chaînes</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Port compatible USB - PVR</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Fonctions Timer</div>
+                        </div>
+                        <div>
+                            <div class="infodetail">Lecture des fichiers audio, vidéo &amp; photo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photopleinecranconteneur">
+                <div class="zonecliquable"></div>
+                <div class="photoprecedente desactive">
+                    <img src="assets/icones.svg#chevron-droit_fonce-view" class="chevron gauche">
+                </div>
+                <div class="photo">
+                    <img src="assets/images/fiche_tv5.png" class="jsphotozoom">
+                </div>
+                <div class="vignettes">
+                    <div class="vignette estselectionnee jsvignette1zoom">
+                        <img src="assets/images/fiche_tv5.png">
+                    </div>
+                    <div class="vignette jsvignette2zoom">
+                        <img src="assets/images/fiche_tv6.png">
+                    </div>
+                </div>
+                <div class="photosuivante">
+                    <img src="assets/icones.svg#chevron-droit_fonce-view" class="chevron gauche">
+                </div>
+                <div class="croixconteneur">
+                    <img src="assets/icones.svg#croix_gris-view">
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
+

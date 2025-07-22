@@ -1,0 +1,5 @@
+<svg id="avertissementBatterie" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 40">
+  <title>icn_batterie_orange</title>
+  <rect fill="#ffd6a9" x="1.11" y="6.26" width="25.53" height="27.49" transform="translate(27.75 40) rotate(180)"/>
+  <path fill="#fdb44d" d="M51,34.43.62,34.3.69,5.57l50.39.13,0,7.8h4.33l0,14H51ZM1.62,33.3,50,33.42l0-6.93h4.33l0-12H50.05l0-7.79L1.68,6.58Z"/>
+</svg>

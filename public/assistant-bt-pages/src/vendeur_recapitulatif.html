@@ -1,0 +1,498 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href="css/assistantBT.css" rel="stylesheet" />
+
+    <script src="includes/jquery-3.3.1.min.js"></script>
+    <script src="scripts/bascule-vendeur.js" charset="UTF-8"></script>
+    <script src="scripts/vendeur_recapitulatif.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        $(document).ready(function () { initVendeur(); initRecap(); });
+    </script>
+</head>
+
+<body>
+    <section class="conteneurprincipal">
+
+        <header class="header">
+            <div class="partiegauche">
+                <div class="header-menu js-headerMenu">
+                    <div class="burgerconteneur">
+                        <button class="menu"><span></span></button>
+                    </div>
+                </div>
+                <div class="logoassistant" onclick="location.href = './vendeur_index.html'"><img src="assets/images/logo.svg"></div>
+            </div>
+            <div class="header-navbar">
+                <div class="euroconteneur" onclick="location.href = './vendeur_connexion_caisse.html'">
+                    <img class="euro" />
+                </div>
+                <div class="rechercheconteneur">
+                    <img src="assets/icones.svg#loupe-view" class="rechercheicone">
+                    <input type="search" placeholder="Rechercher" class="recherchetexte">
+                </div>
+                <div class="caddieconteneur">
+                    <img src="assets/icones.svg#caddie-view" class="caddie">
+                    <div class="badge">
+                        <div class="badgenumero">2</div>
+                    </div>
+                </div>
+                <div class="identification">
+                    <div class="nomutilisateur">
+                        <div class="nomtexte">J. MARILLON</div>
+                        <div class="vendeuroupas"> (Vendeur) </div>
+                    </div>
+                    <img src="assets/icones.svg#chevron-left-view">
+                    <div class="menuidentification">
+                        <div class="optionmenu" onclick="location.href = '../index.html'">Passer en mode gestionnaire</div>
+                        <div class="optionmenu">Déconnexion</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="bandeaunavigation">
+            <div class="infosfichearticle">
+                <div class="etapespanierconteneur">
+                    <div class="etapepanier" onclick="location.href = './vendeur_panier.html'">
+                        <div class="designation">Panier</div>
+                        <img class="iconechevron" src="assets/icones.svg#chevron-left-view" />
+                    </div>
+
+                    <div class="etapepanier" onclick="location.href = './vendeur_informations-client.html'">
+                        <div class="designation">Informations client</div>
+                        <img class="iconechevron" src="assets/icones.svg#chevron-left-view" />
+                    </div>
+
+                    <div class="etapepanier" onclick="location.href = './vendeur_livraison_creneaux.html'">
+                        <div class="designation">Livraison</div>
+                        <img class="iconechevron" src="assets/icones.svg#chevron-left-view" />
+                    </div>
+
+                    <div class="etapepanier etapecourante">
+                        <div class="designation">Récapitulatif</div>
+                        <img class="iconechevron" src="assets/icones.svg#chevron-left-view" />
+                    </div>
+
+                    <div class="etapepanier noncliquable">
+                        <div class="designation">Paiement</div>
+                    </div>
+                </div>
+
+                <div class="totalpanierconteneur">
+                    <div class="quantite"> <span class="jsquantite">992</span>,<span class="centimes">99</span> € </div>
+                    <div class="unite">TTC</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pageconteneur">
+            <div class="devisconteneur">
+                <div class="boutonsaction">
+                    <button class="boutonimprimer cta cta--clear">Imprimer devis</button>
+                    <button class="boutonmail cta cta--clear">Envoyer devis</button>
+                </div>
+                <div class="informationsclient">
+                    <div class="titrecategorie titreclient">Informations client</div>
+                    <div class="informations">
+                        <div>Dominique</div>
+                        <div>Martin</div>
+                        <div>17 rue du bois fleuri, 31300 Toulouse</div>
+                        <div>dominique.martin@mail.com</div>
+                        <div class="livraison">Adresse de livraison identique</div>
+                    </div>
+                </div>
+
+                <div class="informationscommentaire">
+                    <div class="titrecategorie">Commentaires <span>(optionnel)</span></div>
+                    <div class="commentairesconteneur">
+                        <div class="predefinis">
+                            <div class="titre">Commentaires prédéfinis</div>
+
+                            <div class="selectionmodelivraison">
+                                <div class="choixconteneur jschoixcommentaires">
+                                    <div class="personneselectionnee">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <div class="personne">Sélectionner un ou plusieurs</div>
+                                        <img class="chevron" src="assets/icones.svg#chevron_bas-view" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="listecommentaires" hidden>
+                                <div class="lignecommentaire">
+                                    <div class="textestatique">INVERSION PORTE</div>
+                                    <img src="assets/images/suppression_moins.svg#moins_noir-view" class="iconeconteneur">
+                                </div>
+                                <div class="lignecommentaire">
+                                    <div class="textestatique">REPRISE ANCIEN APPAREIL</div>
+                                    <img src="assets/images/suppression_moins.svg#moins_noir-view" class="iconeconteneur">
+                                </div>
+                                <div class="lignecommentaire">
+                                    <div class="champconteneur">
+                                        <span class="labeltexte">Digicode</span>
+                                        <div class="champtexte">
+                                            <input type="text" value="10E" class="champtextecommentaire">
+                                        </div>
+                                    </div>
+                                    <img src="assets/images/suppression_moins.svg#moins_noir-view" class="iconeconteneur">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="libre">
+                            <div class="titre">Commentaire libre</div>
+                            <div class="textelibreconteneur">
+                                <textarea maxlength="500" class="textearea"></textarea>
+                            </div>
+                            <div class="nbcaracteres"> Caractères restants : 500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="informationscommande">
+                    <div class="titrecategorie titrecommande">Informations produits</div>
+
+                    <div class="infotypearticle">Paiement et retrait immédiat</div>
+
+                    <div class="informationsconteneur">
+                        <div class="article">
+                            <div class="photo">
+                                <img src="assets/images/article_tv2.png">
+                            </div>
+                            <div class="informationsarticle">
+                                <div class="ligne">
+                                    <div class="gauche">
+                                        <div class="designation">LG 55UK6950 - Classe 55" TV LED - Smart TV - webOS, ThinQ AI - 4K UHD (2160p) 3840 x 2160 - HDR - système de rétroéclairage en bordure par DEL Edge-Lit, local dimming</div>
+                                    </div>
+                                    <div class="droite">
+                                        <div class="prix"> 509,<span class="centimes">99 </span>€ </div>
+                                    </div>
+                                </div>
+                                <div class="ligne">
+                                    <div class="gauche">
+                                        <div class="champtexte">
+                                            <input class="champtexteimei" type="text" placeholder="Saisissez le numéro de série ou IMEI (Optionnel)">                                        
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                        </div>
+                                    </div>
+                                    <div class="droite">
+                                    </div>
+                                </div>
+                                <div class="ligne">
+                                    <div class="gauche">
+                                        <div class="texteretrait"></div>
+                                    </div>
+                                    <div class="droite"></div>
+                                </div>
+                                <div class="ligne">
+                                    <div class="gauche"></div>
+                                    <div class="droite"></div>
+                                </div>
+                                <div class="ligne">
+                                    <div class="gauche">
+                                        <div class="texteretrait">Extension de garantie à 84 mois</div>
+                                    </div>
+                                    <div class="droite">
+                                        <div class="supplement">+ 99,00 €</div>
+                                    </div>
+                                </div>
+                                <div class="ligne">
+                                    <div class="gauche">
+                                        <div class="texteretrait">
+                                            Emporté surface de vente
+                                        </div>
+                                    </div>
+                                    <div class="droite">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="infotypearticle">
+                        Livraison magasin
+                        <span class="textedatelivraison">Livraison programmée le jeudi 06 octobre matin</span>
+                    </div>
+
+                    <div class="informationsconteneur">
+
+                        <div class="article">
+                            <div class="photo">
+                                <img src="assets/images/fiche_lave-linge6.png">
+                            </div>
+                            <div class="informationsarticle">
+                                <div class="ligne">
+                                    <div class="gauche">
+                                        <div class="designation">Candy GrandÓ Vita GVS1410DWC3-47 - Machine à laver - indépendant - largeur : 60 cm - profondeur : 54 cm - hauteur : 85 cm - chargement frontal - 62 litres - 10 kg - 1400 tours/min - blanc</div>
+                                    </div>
+                                    <div class="droite">
+                                        <div class="prix"> 369,<span class="centimes">00 </span>€ </div>
+                                    </div>
+                                </div>
+                                <div class="ligne">
+                                    <div class="gauche">
+                                        <div class="champtexte">
+                                            <input class="champtexteimei" type="text" placeholder="Saisissez le numéro de série ou IMEI (Optionnel)">                                        
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                        </div>
+                                    </div>
+                                    <div class="droite">
+                                    </div>
+                                </div>
+                                <div class="ligne">
+                                    <div class="gauche">
+                                        <div class="texteretrait"></div>
+                                    </div>
+                                    <div class="droite"></div>
+                                </div>
+                                <div class="ligne">
+                                    <div class="gauche"></div>
+                                    <div class="droite"></div>
+                                </div>
+                                <div class="ligne">
+                                    <div class="gauche">
+                                    </div>
+                                    <div class="droite">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="infosupplementaireligne avecbordure">
+                        <div class="gauche">
+                            <div class="texte">Frais de livraison</div>
+                        </div>
+                        <div class="droite">
+                            <div class="prix">
+                                15,<span class="centimes">00 </span>€
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="infosupplementaireligne montantrestant">
+                        <div class="gauche">
+                            <div class="texte">Montant à régler aujourd'hui</div>
+                        </div>
+                        <div class="droite">
+                            <div class="prix">
+                                992,<span class="centimes">99 </span>€
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="infosupplementaireligne resteapayer">
+                        <div class="gauche">
+                            <div class="texte">Reste à payer</div>
+                        </div>
+                        <div class="droite">
+                            <div class="prix">
+                                0,<span class="centimes">00 </span>€
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="infosupplementaireligne prixtotal">
+                        <div class="gauche">
+                            <div class="texte">Prix Total TTC</div>
+                        </div>
+                        <div class="droite">
+                            <div class="prix">
+                                992,<span class="centimes">99 </span>€
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="informationsconteneur sansbordure">
+
+                        <div class="article articlevide">
+                            <div class="informationsarticle">
+                                <div class="ligne voirplus">
+                                    <div class="gauche">
+                                        <div class="boutonvoirplus">
+                                            <div class="textevoirplus">Voir plus</div>
+                                            <img src="assets/icones.svg#chevron-right-view" class="chevron">
+                                        </div>
+
+                                    </div>
+                                    <div class="droite"></div>
+                                </div>
+
+
+                                <div class="ligne remise">
+                                    <div class="gauche">
+                                        <div class="doubleCol flex">
+                                            <div>
+                                                <div class="modeExamplaire">
+                                                    <span class="active">Globale</span>
+                                                    <span>Par article</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="modeExamplaire">
+                                                    <span class="active">&euro;</span>
+                                                    <span>%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="remiseconteneur">
+                                            <div class="inputremise">
+                                                <div class="flex">
+                                                    <input type="text" required="" value="0" class="jsvaleurinputremise">
+                                                    <span class="typeRemise">&euro;</span>
+                                                </div>
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="motifremiseconteneur">
+                                            <h4>Motif de remise</h4>
+                                            <div class="motifremise">
+                                                <div class="motifremisetexte">&nbsp;</div>
+                                                <img src="assets/icones.svg#chevron-right-view" class="chevron">
+                                            </div>
+
+                                            <button class="cta cta--clear js-btnValiderRemise desactive">Valider la remise</button>
+                                        </div>
+                                    </div>
+                                    <div class="droite">
+                                        
+                                    </div>
+                                </div>
+                                <!--<div class="ligne total totalremise">
+                                    <div class="gauche">
+                                        <div class="texte">Prix Total remisé TTC</div>
+                                    </div>
+                                    <div class="droite">
+                                        <div class="prix"> <span class="jsunitestotal">977</span>,<span class="centimes">99</span> € </div>
+                                    </div>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="infosupplementaireligne totalremise hidden">
+                        <div class="gauche">
+                            <div class="texte">Prix Total remisé TTC</div>
+                        </div>
+                        <div class="droite avecPrixRemise">
+                            <div class="prixRemise jsmontantremise"> -20,<span class="centimes">00 </span>€ </div>
+                            <div class="prix">
+                                <div class="prix"> <span class="jsunitestotal">992</span>,<span class="centimes">99</span> € </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="boutonsfincommande">
+                    <div class="informationscommande">
+                        <div class="choixBonBt">
+                            <div class="choiximprimante">
+                                <span class="txtLabel">Examplaire client</span>
+                                <div class="modeExamplaire">
+                                    <span class="active">Impression</span>
+                                    <span>Email</span>
+                                    <span>Aucun</span>
+                                </div>
+                                <div class="texteimprimante">Le bon sera imprimé sur : <span class="emphase">Imp109</span> <img src="assets/images/pencil.PNG" alt="" width="20" height="20" style="margin-top: -3px"/></div>
+                                <div class="boutoncheckbox">
+                                    <label class="checkboxcontainer">
+                                        <span class="label">Facture sans prix pour bon cadeau</span>
+                                        <span class="checkmark"></span>
+                                        <input type="checkbox">
+                                    </label>
+                                </div>
+                                <!-- <div>
+                                    <button class="cta cta--clear"> Modifier </button>
+                                </div> -->
+                            </div>
+
+                            <div class="texteMillieu">Bons BT</div>
+
+                            <div class="choiximprimante">
+                                <span class="txtLabel">Examplaire(s) magasin</span>
+                                <div class="modeExamplaire">
+                                    <span>Impression</span>
+                                    <span class="active">Email</span>
+                                    <span>Aucun</span>
+                                </div>
+
+                                <div class="champtexte champEmail">
+                                    <label>E-mail</label>
+                                    <input class="champtexteimei" type="text" value="laure.baissac@lango.leclerc" placeholder="Saisissez l'email">                                        
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <img src="assets/images/save.PNG" alt="" width="20" height="20" style="position: absolute; right: -20px; bottom: 5px"/>
+                                </div>
+                                <!-- <div>
+                                    <button class="cta cta--clear"> Modifier </button>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button class="cta cta--filter jsboutonvalider">Valider la vente (<span class="jsprixtotalremise">992,99</span> €)</button>
+                    </div>
+                    <div>
+                        <button class="cta cta--clear cta--flat">Enregistrer devis</button>
+                    </div>
+                </div>
+
+                <div class="messageerreur" hidden>
+                    <div class="erreurtexteconteneur avecbouton">
+                        <div class="erreurtexte">
+                            <div message="">
+                                <div>La commande de D. Martin a bien été validée.</div>
+                                <div>Le bon de vente numéro 879642 est disponible sur ABACO.</div>
+                                <div>&nbsp;</div>
+                                <div>Impression de la facture en cours sur l’imprimante&nbsp;:</div>
+                                <div>«&nbsp;Imp109&nbsp;»</div>
+                            </div>
+                        </div>
+                        <div class="boutonsaction">
+                            <div boutons="">
+                                <button class="cta cta--clear cta--flat" onclick="location.href = './vendeur_index.html'">Abandonner l'encaissement</button>
+                                <button class="cta cta--filter jsboutonpoursuivre">Poursuivre l'encaissement</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="encaissementbackground ticketclient" hidden>
+                    <div class="ticketclientcontaineur">                        
+                        <img id="jsticketclient" class="connexioncaisseecranmobile" src="assets/images/01.png"/>
+                    </div>
+                </div>
+
+                <div class="encaissementbackground paiementclient" hidden>
+                    <div class="ticketclientcontaineur">                      
+                        <img id="jsmodepaiement" class="connexioncaisseecranmobile" src="assets/images/02.png"/>               
+                    </div>    
+                </div>
+
+                <div class="encaissementbackground cbclient" hidden>
+                    <div class="ticketclientcontaineur">                       
+                        <img id="jsclientpaiement" class="connexioncaisseecranmobile" src="assets/images/03.png"/>        
+                    </div>           
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
+

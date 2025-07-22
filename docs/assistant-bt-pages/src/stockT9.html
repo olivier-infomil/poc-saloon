@@ -1,0 +1,604 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href="css/assistantBT.css" rel="stylesheet" />
+
+    <script src="includes/jquery-3.3.1.min.js"></script>
+    <script src="scripts/bascule-vendeur.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        $(document).ready(function () { initVendeur(); });
+    </script>
+</head>
+
+<body>
+    <section class="conteneurprincipal">
+
+        <header class="header">
+            <div class="partiegauche">
+                <div class="header-menu js-headerMenu">
+                    <div class="burgerconteneur">
+                        <button class="menu"><span></span></button>
+                    </div>
+                </div>
+                <div class="logoassistant" onclick="location.href = '../index.html'"><img src="assets/images/logo.svg"></div>
+            </div>
+            <div class="header-navbar">
+                <div class="rechercheconteneur">
+                    <img src="assets/icones.svg#loupe-view" class="rechercheicone">
+                    <input type="search" placeholder="Rechercher" class="recherchetexte">
+                </div>
+                <div class="identification">
+                    <div class="nomutilisateur">
+                        <div class="nomtexte">J. MARILLON</div>
+                        <div class="vendeuroupas"> (Gestionnaire) </div>
+                    </div>
+                    <img src="assets/icones.svg#chevron-left-view">
+                    <div class="menuidentification">
+                        <div class="optionmenu selectionvendeur" onclick="location.href = './vendeur_index.html'">Passer en mode vendeur</div>
+                        <div class="optionmenu">Déconnexion</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="bandeaunavigation">
+            <div>
+                <div class="filariane">
+                    <div class="titresniveauxconteneur">
+                        <div class="titredernierniveau">
+                            Tableau de bord
+                        </div>
+                    </div>
+                </div>
+                <div class="onglets">
+                    <div class="onglet" onclick="location.href = '../index.html'">
+                        <div class="titreonglet">SYNTHÈSE</div>
+                    </div>
+                    <div class="onglet" onclick="location.href = './categories.html'">
+                        <div class="titreonglet">CATÉGORIES</div>
+                    </div>
+                    <div class="onglet estactif">
+                        <div class="titreonglet">ARTICLES</div>
+                    </div>
+                    <div class="curseuractif onglet3"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pageconteneur">
+            <div class="articlesconteneur">
+                <div>
+                    <div class="boutonfiltresconteneur">
+                        <div class="boutonfiltres">
+                            <div class="boutonfiltrestexte">Filtres</div>
+                            <img src="assets/icones.svg#pointe_bleu-view">
+                        </div>
+                        <div class="totalarticles">
+                            231 articles
+                        </div>
+                        <div class="filtrebadge">
+                            <img src="assets/icones.svg#croix_blanc-view">
+                            <div class="filtrebadgetexte">Présent sur BTLEC</div>
+                        </div>
+                        <div class="filtrebadge">
+                            <img src="assets/icones.svg#croix_blanc-view">
+                            <div class="filtrebadgetexte">En stock</div>
+                        </div>
+                        <div class="filtrebadge">
+                            <img src="assets/icones.svg#croix_blanc-view">
+                            <div class="filtrebadgetexte">T9</div>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="infomil-table">
+                    <tbody>
+                        <tr class="table-header">
+                            <th class="table-header__item selectionne cliquable"><div class="item-label">Sélectionné <br>dans l'offre</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                            <th class="table-header__item icones"></th>
+                            <th class="table-header__item designation cliquable colonnetriee"><div class="item-label">Désignation</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                            <th class="table-header__item stockdispo alignedroite cliquable"><div class="item-label">Stock <br>disponible</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                            <th class="table-header__item stockbtlec alignedroite cliquable"><div class="item-label">Stock <br>BTLEC</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                            <th class="table-header__item assor alignedroite cliquable"><div class="item-label">Assor.</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                            <th class="table-header__item pvc alignedroite cliquable"><div class="item-label">PVC</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                            <th class="table-header__item marge alignedroite cliquable"><div class="item-label">M3N (%)</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div infinite-scroll="" class="interface-container">
+                    <table class="infomil-table">
+                        <tbody>
+                            <tr class="table-row" id="id_4905191000883">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch39" checked>
+                                        <label class="switch__label" for="switch39">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Akai AM-301K - Micro-système - 40 Watt (Totale)</div>
+                                    <div class="ean">4905191000883</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 3 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 99,00&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 32,19 </td>
+                            </tr>
+                            <tr class="table-row" id="id_0190198107077">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch40" checked>
+                                        <label class="switch__label" for="switch40">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Apple EarPods - Écouteurs avec micro - embout auriculaire - filaire - jack 3,5mm - pour iPad/iPhone/iPod</div>
+                                    <div class="ean">0190198107077</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 12 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> 1&nbsp;680 </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 34,90&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 32,56 </td>
+                            </tr>
+                            <tr class="table-row" id="id_0885909564651">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch41" checked>
+                                        <label class="switch__label" for="switch41">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Apple iPod nano - 7ème génération - lecteur numérique - 16 Go - rose</div>
+                                    <div class="ean">0885909564651</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 3 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 149,00&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> -5,13 </td>
+                            </tr>
+                            <tr class="table-row" id="id_4716659551782">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch42" checked>
+                                        <label class="switch__label" for="switch42">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">ASUS VS247HR - Écran LED - 23.6" - 1920 x 1080 Full HD (1080p) - 250 cd/m² - 2 ms - HDMI, DVI-D, VGA - noir</div>
+                                    <div class="ean">4716659551782</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 1 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 136,00&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 13,12 </td>
+                            </tr>
+                            <tr class="table-row" id="id_3030053052500">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch43">
+                                        <label class="switch__label" for="switch43">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">BaByliss 5250E Compact - Sèche-cheveux</div>
+                                    <div class="ean">3030053052500</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 5 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 19,99&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 42,26 </td>
+                            </tr>
+                            <tr class="table-row" id="id_3030050122060">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch44">
+                                        <label class="switch__label" for="switch44">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">BaByliss D372E - Sèche-cheveux</div>
+                                    <div class="ean">3030050122060</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 1 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 36,99&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 45,23 </td>
+                            </tr>
+                            <tr class="table-row" id="id_3030050075434">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch45" checked>
+                                        <label class="switch__label" for="switch45">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">BaByliss for men E824E Multi.8 Face &amp; Body - Tondeuse - sans fil</div>
+                                    <div class="ean">3030050075434</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 1 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 22,95&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 20,53 </td>
+                            </tr>
+                            <tr class="table-row" id="id_3030050122237">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch46" checked>
+                                        <label class="switch__label" for="switch46">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">BaByliss for men T830E - Tondeuse - sans fil</div>
+                                    <div class="ean">3030050122237</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 1 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 32,85&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 34,61 </td>
+                            </tr>
+                            <tr class="table-row" id="id_3030050128321">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch47" checked>
+                                        <label class="switch__label" for="switch47">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">BaByliss Liss Brush 3D HSB100E - Brosse à cheveux électrique - rose</div>
+                                    <div class="ean">3030050128321</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 13 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 31,50&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> -5,13 </td>
+                            </tr>
+                            <tr class="table-row" id="id_4210201203391">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch48">
+                                        <label class="switch__label" for="switch48">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">BAD SMART SERIES 4100S, ORAL B</div>
+                                    <div class="ean">4210201203391</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 5 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 69,90&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> -7,73 </td>
+                            </tr>
+                            <tr class="table-row" id="id_8690842155673">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch49" checked>
+                                        <label class="switch__label" for="switch49">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Beko DFN16411W - Lave-vaisselle - pose libre - Niche - largeur : 60 cm - profondeur : 57 cm - hauteur : 82 cm - blanc</div>
+                                    <div class="ean">8690842155673</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 1 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 349,00&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 29,33 </td>
+                            </tr>
+                            <tr class="table-row" id="id_8690842189791">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch50" checked>
+                                        <label class="switch__label" for="switch50">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Beko FSS53000DWC - Cuisinière - pose libre - largeur : 50 cm - profondeur : 60 cm - hauteur : 85 cm - avec système auto-nettoyant - classe A - blanc</div>
+                                    <div class="ean">8690842189791</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 2 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 279,00&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 16,80 </td>
+                            </tr>
+                            <tr class="table-row" id="id_8690842109294">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch51" checked>
+                                        <label class="switch__label" for="switch51">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Beko LLF07A2 - Machine à laver - indépendant - largeur : 60 cm - profondeur : 45 cm - hauteur : 84 cm - chargement frontal - 50 litres - 7 kg - 1200 tours/min - anthracite/argenté</div>
+                                    <div class="ean">8690842109294</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 1 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 369,00&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 24,86 </td>
+                            </tr>
+                            <tr class="table-row" id="id_3499550339987">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch52">
+                                        <label class="switch__label" for="switch52">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">BigBen RR70P - Paris - radio-réveil</div>
+                                    <div class="ean">3499550339987</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 3 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 34,90&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 30,57 </td>
+                            </tr>
+                            <tr class="table-row" id="id_5035048642665">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch53" checked>
+                                        <label class="switch__label" for="switch53">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">BLACK+DECKER DustBuster WDB115WA - Aspirateur - Aspirateur à main - sans sac - bleu</div>
+                                    <div class="ean">5035048642665</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 1 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 34,95&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 15,38 </td>
+                            </tr>
+                            <tr class="table-row" id="id_4242002992860">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch54" checked>
+                                        <label class="switch__label" for="switch54">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Bosch Readyy'y BBHL21841 - Aspirateur - balai - sans sac - argent minéral</div>
+                                    <div class="ean">4242002992860</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 1 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 179,00&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 39,71 </td>
+                            </tr>
+                            <tr class="table-row" id="id_4242005039548">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch55" checked>
+                                        <label class="switch__label" for="switch55">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Bosch Serie | 2 TDS2140 - Centrale vapeur avec fermeture automatique - semelle : PalladiumGlissée - 2400 Watt - bleu nuit</div>
+                                    <div class="ean">4242005039548</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 1 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 89,95&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 13,30 </td>
+                            </tr>
+                            <tr class="table-row" id="id_4242005132829">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch56" checked>
+                                        <label class="switch__label" for="switch56">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Bosch Serie 4 HXR39IG50 - Cuisinière - pose libre - largeur : 60 cm - profondeur : 60 cm - hauteur : 85 cm - avec système auto-nettoyant - acier inoxydable</div>
+                                    <div class="ean">4242005132829</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 1 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 449,00&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 11,32 </td>
+                            </tr>
+                            <tr class="table-row" id="id_6133826004335">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch57" checked>
+                                        <label class="switch__label" for="switch57">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Brandt BT8602B - Machine à laver - indépendant - largeur : 40 cm - profondeur : 60 cm - hauteur : 85 cm - chargement par le dessus - 42 litres - 6 kg - 1200 tours/min - blanc</div>
+                                    <div class="ean">6133826004335</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 1 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 339,00&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 18,75 </td>
+                            </tr>
+                            <tr class="table-row" id="id_4210201112587">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch58" checked>
+                                        <label class="switch__label" for="switch58">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Braun Series 3 3030s - Rasoir - sans fil - rouge</div>
+                                    <div class="ean">4210201112587</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 1 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 56,00&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 3,97 </td>
+                            </tr>
+                            <tr class="table-row" id="id_4210201151562">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch59">
+                                        <label class="switch__label" for="switch59">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Braun Series 3 Shave&amp;Style 3010BT - Rasoir - sans fil - bleu</div>
+                                    <div class="ean">4210201151562</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 2 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 56,90&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 9,34 </td>
+                            </tr>
+                            <tr class="table-row" id="id_4210201116233">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch60">
+                                        <label class="switch__label" for="switch60">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Braun Silk-épil 7 7-521 - Épilateur - sans fil</div>
+                                    <div class="ean">4210201116233</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 5 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 79,95&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 31,83 </td>
+                            </tr>
+                            <tr class="table-row" id="id_8710103861621">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch61" checked>
+                                        <label class="switch__label" for="switch61">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">BRE640/11 SATINELLE ADVANCED W&amp;, PHILIPS</div>
+                                    <div class="ean">8710103861621</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 1 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 67,00&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 17,20 </td>
+                            </tr>
+                            <tr class="table-row" id="id_4549292093841">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch62" checked>
+                                        <label class="switch__label" for="switch62">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                    <img src="assets/icones.svg#planning-48h-view" class="iconetableau" title="Planning 48h">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Canon EOS M100 - Appareil photo numérique - sans miroir - 24.2 MP - APS-C - 1080p / 60 pi/s - 3x zoom optique lentille EF-M 15-45 mm - Wi-Fi, NFC, Bluetooth - blanc</div>
+                                    <div class="ean">4549292093841</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 1 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> 8 </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 499,00&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 12,45 </td>
+                            </tr>
+                            <tr class="table-row" id="id_4549292093681">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch63">
+                                        <label class="switch__label" for="switch63">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                    <img src="assets/icones.svg#planning-48h-view" class="iconetableau" title="Planning 48h">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Canon EOS M100 - Appareil photo numérique - sans miroir - 24.2 MP - APS-C - 1080p / 60 pi/s - 3x zoom optique lentille EF-M 15-45 mm - Wi-Fi, NFC, Bluetooth - noir</div>
+                                    <div class="ean">4549292093681</div>
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 1 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> 7 </td>
+                                <td class="alignedroite assor table-row__item"> T9 </td>
+                                <td class="alignedroite pvc table-row__item"> 499,00&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 12,45 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="voletnavigationconteneur">
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
+

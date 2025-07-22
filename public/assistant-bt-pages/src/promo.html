@@ -1,0 +1,580 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href="css/assistantBT.css" rel="stylesheet" />
+
+    <script src="includes/jquery-3.3.1.min.js"></script>
+    <script src="scripts/bascule-vendeur.js" charset="UTF-8"></script>
+    <script src="scripts/articles-promo.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        $(document).ready(function () { initVendeur(); init(); });
+    </script>
+</head>
+
+<body>
+    <section class="conteneurprincipal">
+
+        <header class="header">
+            <div class="partiegauche">
+                <div class="header-menu js-headerMenu">
+                    <div class="burgerconteneur">
+                        <button class="menu"><span></span></button>
+                    </div>
+                </div>
+                <div class="logoassistant" onclick="location.href = '../index.html'"><img src="assets/images/logo.svg"></div>
+            </div>
+            <div class="header-navbar">
+                <div class="rechercheconteneur">
+                    <img src="assets/icones.svg#loupe-view" class="rechercheicone">
+                    <input type="search" placeholder="Rechercher" class="recherchetexte">
+                </div>
+                <div class="identification">
+                    <div class="nomutilisateur">
+                        <div class="nomtexte">J. MARILLON</div>
+                        <div class="vendeuroupas"> (Gestionnaire) </div>
+                    </div>
+                    <img src="assets/icones.svg#chevron-left-view">
+                    <div class="menuidentification">
+                        <div class="optionmenu selectionvendeur" onclick="location.href = './vendeur_promo.html'">Passer en mode vendeur</div>
+                        <div class="optionmenu">Déconnexion</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="bandeaunavigation">
+            <div>
+                <div class="filariane">
+                    <div class="titresniveauxconteneur">
+                        <div class="titredernierniveau">
+                            Tableau de bord
+                        </div>
+                    </div>
+                </div>
+                <div class="onglets">
+                    <div class="onglet" onclick="location.href = '../index.html'">
+                        <div class="titreonglet">SYNTHÈSE</div>
+                    </div>
+                    <div class="onglet" onclick="location.href = './categories.html'">
+                        <div class="titreonglet">CATÉGORIES</div>
+                    </div>
+                    <div class="onglet estactif">
+                        <div class="titreonglet">ARTICLES</div>
+                    </div>
+                    <div class="curseuractif onglet3"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pageconteneur">
+            <div class="articlesconteneur">
+                <div>
+                    <div class="boutonfiltresconteneur">
+                        <div class="boutonfiltres">
+                            <div class="boutonfiltrestexte">Filtres</div>
+                            <img src="assets/icones.svg#pointe_bleu-view">
+                        </div>
+                        <div class="totalarticles">
+                            327 articles
+                        </div>
+                        <div class="filtrebadge">
+                            <img src="assets/icones.svg#croix_blanc-view">
+                            <div class="filtrebadgetexte">En promo</div>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="infomil-table">
+                    <tbody>
+                        <tr class="table-header">
+                            <th class="table-header__item selectionne cliquable"><div class="item-label">Sélectionné <br>dans l'offre</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                            <th class="table-header__item icones"></th>
+                            <th class="table-header__item designation cliquable colonnetriee"><div class="item-label">Désignation</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                            <th class="table-header__item stockdispo alignedroite cliquable"><div class="item-label">Stock <br>disponible</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                            <th class="table-header__item stockbtlec alignedroite cliquable"><div class="item-label">Stock <br>BTLEC</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                            <th class="table-header__item pvc alignedroite cliquable"><div class="item-label">PVC</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                            <th class="table-header__item marge alignedroite cliquable"><div class="item-label">M3N (%)</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="interface-container">
+                    <table class="infomil-table">
+                        <tbody>
+                            <tr class="table-row" id="id_3601029952201">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch4" checked>
+                                        <label class="switch__label" for="switch4">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item"></td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">BOUILLOIRE WK8215Y,,1P, ELSAY</div>
+                                    <div class="ean">3601029952201</div>
+                                    <img class="iconetableau petit" src="assets/icones.svg#promo_t_jaune-view" title="DEPENSER MOINS 16 FT 02/09/2022 - 29/09/2022">
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 18 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> 4104 </td>
+                                <td class="alignedroite pvc table-row__item"> 15,90&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 33,77 </td>
+                            </tr>
+                            <tr class="table-row" id="id_4710180841367">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch7" checked>
+                                        <label class="switch__label" for="switch7">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item"></td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Acer Aspire 7 A715-75G-52FD - Core i5 9300H / 2.4 GHz - Win 10 Familiale 64 bits - 8 Go RAM - 512 Go SSD QLC - 15.6" IPS 1920 x 1080 (Full HD) - GF GTX 1650 - Bluetooth, Wi-Fi - noir charbon - clavier : Français</div>
+                                    <div class="ean">4710180841367</div>
+                                    <img class="iconetableau petit" src="assets/icones.svg#promo_b_bleu-view" title="DEPENSER MOINS 16 FT 02/09/2022 - 29/09/2022">
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 0 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite pvc table-row__item"> 899,00&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 4,11 </td>
+                            </tr>
+                            <tr class="table-row" id="id_4710180119831">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch5" checked>
+                                        <label class="switch__label" for="switch5">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item"></td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Acer Aspire 1 A114-32-P775 - Pentium Silver N5000 / 1.1 GHz - Windows 10 Home 64 bits en mode S - 4 Go RAM - 64 Go eMMC - 14" TN 1366 x 768 (HD) - UHD Graphics 605 - Wi-Fi - Noir vitreux - clavier : Français</div>
+                                    <div class="ean">4710180119831</div>
+                                    <img class="iconetableau petit" src="assets/icones.svg#promo_b_bleu-view" title="DEPENSER MOINS 17 GV - MIX 02/09/2022 - 29/09/2022">
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 1 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite pvc table-row__item"> 249,00&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 2,79 </td>
+                            </tr>
+                            <tr class="table-row" id="id_4710180913231">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch6" checked>
+                                        <label class="switch__label" for="switch6">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item"></td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Acer Aspire 3 A314-22-R1F9 - Ryzen 3 3250U / 2.6 GHz - Win 10 Familiale 64 bits - 8 Go RAM - 256 Go SSD - 14" 1920 x 1080 (Full HD) - Radeon Graphics - Wi-Fi - noir charbon - clavier : Français</div>
+                                    <div class="ean">4710180913231</div>
+                                    <img class="iconetableau petit" src="assets/icones.svg#promo_p_rouge-view" title="Tabloïd Multimédia Rentrée 02/09/2022 - 29/09/2022">
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 1 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite pvc table-row__item"> 399,00&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 3,25 </td>
+                            </tr>
+                            <tr class="table-row" id="id_4710886002758">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch8" checked>
+                                        <label class="switch__label" for="switch8">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                    <img src="assets/icones.svg#planning-48h-view" class="iconetableau" title="Planning 48h">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Acer Aspire C 22 C22-820 - Tout-en-un - Pentium Silver J5040 / 2 GHz - RAM 4 Go - HDD 1 To - UHD Graphics 605 - GigE - LAN sans fil: 802.11a/b/g/n/ac, Bluetooth 4.2 - Win 10 Familiale 64 bits - moniteur : LED 21.5" 1920 x 1080 (Full HD)</div>
+                                    <div class="ean">4710886002758</div>
+                                    <img class="iconetableau petit" src="assets/icones.svg#promo_b_bleu-view" title="Tabloïd Multimédia Rentrée 02/09/2022 - 29/09/2022">
+                                    <img src="assets/icones.svg#new_pink-view" class="iconetableau petit" title="Nouveauté">
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 0 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> 68 </td>
+                                <td class="alignedroite pvc table-row__item"> 399,00&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 4,08 </td>
+                            </tr>
+                            <tr class="table-row" id="id_4710180872231">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch9" checked>
+                                        <label class="switch__label" for="switch9">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item"></td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Acer Aspire XC-830 - SFF - Pentium Silver J5040 / 2 GHz - RAM 8 Go - SSD 128 Go, HDD 1 To - graveur de DVD - UHD Graphics 605 - GigE - LAN sans fil: Bluetooth, 802.11a/b/g/n/ac - Win 10 Familiale 64 bits - moniteur : aucun</div>
+                                    <div class="ean">4710180872231</div>
+                                    <img class="iconetableau petit" src="assets/icones.svg#promo_b_bleu-view" title="Tabloïd Multimédia Rentrée 02/09/2022 - 29/09/2022">
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 6 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite pvc table-row__item"> 379,00&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 3,42 </td>
+                            </tr>
+                            <tr class="table-row" id="id_4710180507508">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch10" checked>
+                                        <label class="switch__label" for="switch10">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item">
+                                    <img src="assets/icones.svg#planning-48h-view" class="iconetableau" title="Planning 48h">
+                                </td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Acer Chromebook 314 CB314-1HT-C6A5 - Celeron N4000 / 1.1 GHz - Chrome OS - 4 Go RAM - 64 Go eMMC - 14" écran tactile 1366 x 768 (HD) - UHD Graphics 600 - Wi-Fi, Bluetooth - argent rosée - clavier : Français</div>
+                                    <div class="ean">4710180507508</div>
+                                    <img class="iconetableau petit" src="assets/icones.svg#promo_b_bleu-view" title="Tabloïd Multimédia Rentrée 02/09/2022 - 29/09/2022">
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 1 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> 197 </td>
+                                <td class="alignedroite pvc table-row__item"> 299,00&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 4,98 </td>
+                            </tr>
+                            <tr class="table-row" id="id_4894461796277">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch11">
+                                        <label class="switch__label" for="switch11">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item"></td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Alcatel 1S - Smartphone - double SIM - 4G LTE - 32 Go - microSDXC slot - GSM - 5.5" - 1440 x 720 pixels - RAM 3 Go - (caméra avant de 5 mégapixels) - 2x caméras arrière - Android - noir métallisé</div>
+                                    <div class="ean">4894461796277</div>
+                                    <img class="iconetableau petit" src="assets/icones.svg#promo_p_rouge-view" title="Tabloïd Multimédia Rentrée 02/09/2022 - 29/09/2022">
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 4 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> _ </td>
+                                <td class="alignedroite pvc table-row__item"> 79,99&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 16,09 </td>
+                            </tr>
+                            <tr class="table-row" id="id_3700601421866">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch12" checked>
+                                        <label class="switch__label" for="switch12">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item"></td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Alcatel Classic F630 Duo - Téléphone sans fil avec ID d'appelant - DECT - (conférence) à trois capacité d'appel - blanc, bleu + combiné supplémentaire</div>
+                                    <div class="ean">3700601421866</div>
+                                    <img class="iconetableau petit" src="assets/icones.svg#promo_b_bleu-view" title="RENTREE DES CLASSES 02/06/2022 - 05/09/2022">
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 10 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> 230 </td>
+                                <td class="alignedroite pvc table-row__item"> 44,99&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 35,86 </td>
+                            </tr>
+                            <tr class="table-row" id="id_3700601421576">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch13" checked>
+                                        <label class="switch__label" for="switch13">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item"></td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Alcatel Classic F630 Duo - Téléphone sans fil avec ID d'appelant - DECT - (conférence) à trois capacité d'appel - gris, blanc + combiné supplémentaire</div>
+                                    <div class="ean">3700601421576</div>
+                                    <img class="iconetableau petit" src="assets/icones.svg#promo_b_bleu-view" title="RENTREE DES CLASSES 02/06/2022 - 05/09/2022">
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 10 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> 140 </td>
+                                <td class="alignedroite pvc table-row__item"> 44,99&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 35,86 </td>
+                            </tr>
+                            <tr class="table-row" id="id_3700601422085">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch14">
+                                        <label class="switch__label" for="switch14">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item"></td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Alcatel Classic F630 Voice - Téléphone sans fil avec ID d'appelant - DECT - (conférence) à trois capacité d'appel - blanc, bleu + combiné supplémentaire</div>
+                                    <div class="ean">3700601422085</div>
+                                    <img class="iconetableau petit" src="assets/icones.svg#promo_b_bleu-view" title="RENTREE DES CLASSES 02/06/2022 - 05/09/2022">
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 7 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> 180 </td>
+                                <td class="alignedroite pvc table-row__item"> 34,99&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 35,81 </td>
+                            </tr>
+                            <tr class="table-row" id="id_3700601421583">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch15" checked>
+                                        <label class="switch__label" for="switch15">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item"></td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Alcatel Classic F630 Voice - Téléphone sans fil avec ID d'appelant - DECT - (conférence) à trois capacité d'appel - gris, blanc</div>
+                                    <div class="ean">3700601421583</div>
+                                    <img class="iconetableau petit" src="assets/icones.svg#promo_b_bleu-view" title="RENTREE DES CLASSES 02/06/2022 - 05/09/2022">
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 9 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> 55 </td>
+                                <td class="alignedroite pvc table-row__item"> 34,99&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 35,81 </td>
+                            </tr>
+                            <tr class="table-row" id="id_3700601421873">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch16" checked>
+                                        <label class="switch__label" for="switch16">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item"></td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Alcatel Classic F630 Voice Duo - Téléphone sans fil avec ID d'appelant - DECT - (conférence) à trois capacité d'appel - blanc, bleu + combiné supplémentaire</div>
+                                    <div class="ean">3700601421873</div>
+                                    <img class="iconetableau petit" src="assets/icones.svg#promo_b_bleu-view" title="RENTREE DES CLASSES 02/06/2022 - 05/09/2022">
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 9 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> 105 </td>
+                                <td class="alignedroite pvc table-row__item"> 54,99&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 35,89 </td>
+                            </tr>
+                            <tr class="table-row" id="id_3700601421590">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch17" checked>
+                                        <label class="switch__label" for="switch17">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item"></td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Alcatel Classic F630 Voice Duo - Téléphone sans fil avec ID d'appelant - DECT - (conférence) à trois capacité d'appel - gris, blanc + combiné supplémentaire</div>
+                                    <div class="ean">3700601421590</div>
+                                    <img class="iconetableau petit" src="assets/icones.svg#promo_b_bleu-view" title="RENTREE DES CLASSES 02/06/2022 - 05/09/2022">
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 10 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> 200 </td>
+                                <td class="alignedroite pvc table-row__item"> 54,99&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 35,89 </td>
+                            </tr>
+                            <tr class="table-row" id="id_3700601421569">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch18">
+                                        <label class="switch__label" for="switch18">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item"></td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Alcatel F630 - Téléphone sans fil avec ID d'appelant - DECT - (conférence) à trois capacité d'appel - bleu</div>
+                                    <div class="ean">3700601421569</div>
+                                    <img class="iconetableau petit" src="assets/icones.svg#promo_b_bleu-view" title="RENTREE DES CLASSES 02/06/2022 - 05/09/2022">
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 1 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> 155 </td>
+                                <td class="alignedroite pvc table-row__item"> 24,99&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 35,75 </td>
+                            </tr>
+                            <tr class="table-row" id="id_3700601421552">
+                                <td class="selectionne table-row__item selectionnable">
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch__input" id="switch19" checked>
+                                        <label class="switch__label" for="switch19">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td class="icones table-row__item"></td>
+                                <td class="designation not-visible table-row__item">
+                                    <div class="emphase">Alcatel F630 - Téléphone sans fil avec ID d'appelant - DECT - (conférence) à trois capacité d'appel - gris, blanc</div>
+                                    <div class="ean">3700601421552</div>
+                                    <img class="iconetableau petit" src="assets/icones.svg#promo_b_bleu-view" title="RENTREE DES CLASSES 02/06/2022 - 05/09/2022">
+                                </td>
+                                <td class="alignedroite stockdispo table-row__item"> 4 </td>
+                                <td class="alignedroite stockbtlec table-row__item"> 425 </td>
+                                <td class="alignedroite pvc table-row__item"> 24,99&nbsp;€ </td>
+                                <td class="alignedroite marge table-row__item"> 35,75 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+
+            <div class="fauxvoletchargement">
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+
+
+            <div class="voletnavigationconteneur jsvolet1">
+                <div class="croixettitre">
+                    <div class="croixconteneur">
+                        <img src="assets/icones.svg#croix_gris-view">
+                    </div>
+                    <div class="titredesignation">Acer Aspire 7 A715-75G-52FD - Core i5 9300H / 2.4 GHz - Win 10 Familiale 64 bits - 8 Go RAM - 512 Go SSD QLC - 15.6" IPS 1920 x 1080 (Full HD) - GF GTX 1650 - Bluetooth, Wi-Fi - noir charbon - clavier : Français<span>, Acer</span></div>
+                </div>
+                <div class="voletinfosconteneur">
+                    <div class="prixetpromo">
+                        <div class="prix">899,<span class="decimales">00</span> €</div>
+                        <div class="promo">
+                            <div class="stickerconteneur"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAB1OSURBVHhe7ZwHfBVV9sfjru6uq66riCgtQF5eQhAERToEkpCEUEQFGypiXxsiKKzoRhQQAZUSIJCQhBBIoffeLfQmSOi99460+z/fMzPk5fFgARGE/57P537ee3fm3jn3N6fPnef3P7rJqPcbj972Rsusu99rNzNv49hpDzjtjdhp970dm3WnifX7k33q/6hAyfcK+oe2j/av9k3zIjV6JLhq9p4cFJ24uESdfutK1kvbUbJe/70l69LS9kjbVrx2ymp3dML8gPBeo/1rdOviH9rprWJV2lXOH1w/jz3lTU+3Fq4YWykgPK6NOzppqrtWyt7g2gNMyONDTUi9waZ43UEmuE6mCaqdboJiBhh3TJrdBuhv+oPrZJni9QbJmCE6JqhWPxMUnbzFHZk4NCAs7t0HyjQtbl/r5qH8VWLdgRE9WrujkhYGxaTagAlYtQcKMP0tEK6wBcv44DrpNqBDpC/1qFxnQkBY19fudEXntVm4Mcm/cmwFd1RiPwHpSMjjw0TCsnTBvoC4Wk0lWoC0wEzbWCy8Vzv/h98sYrN0Y1DRKu1KBUUl9hcJO1mi/nBdVFCtlFwLvRateJ0MEyLXlxu4q1h4XNsHSjf5Y0tknqBKd7lq9mwbFJN2tET9ESJtabKQaw9c7pZiqbgCmbamWPUujW12/1hUNPSriKDofostiRPbdt2BO79hQoqL4wmMShpcuFzzojbr15/ckX1iBbQzMOeL8T9OE2lUJzZc1HvglqJhXRvYS7g+9EDp9/K6o5JH4iCul527spYi0pipNtIV3rOtLOUWa0XXkApXiQ2R+GsZKiuhgxeDN0ITadQYdJgJjE7OyJOn0l320n5/CqwZVz6oVv8txF6+pC4wKuVcc0fnPnax5pZ2JeNogdHOuEvTAuYvFpFkioQnm6C6w+R30rSCFZrday/x96OiYd3KyZ3bFVIXe2cxGxzTzwREJpsHqyaY/NUSTFFhLKBmsraC1RPNA9JfSD59gRIsjfNyxuYeVyQ86bwxTgOwAqGJOpbzAiJTTOEafXUcn9wQ7zHw6h+WZArKuLIN0k3VRlmmRB2JTQVEsY/fFwx59fcDsXA5UVuRPFIuT/Bgns8WX880QyauNrMXbzdzl+7QNvnHTaZX+lJT/91RppAsikV7LgZgQ2QBH3WaZYZPWWtmL9lu5v28w0yScZ2SFpiqLwxSgDwly7km7dVPJ5mBo7PNDwu3yridZurszXq92m+O0BsCqNwkZxyAV200yGSNW2UOHP7VQGs3HTDhLw8xATFDhL+Eyf7+jf9mL/nqUamasfe7o1KWWxF+zmKQlofq9Tcz5m1RZi5Ep06fMd8kL7Al0VoUgFZ/abBZkr3bPut82nvguInt/tO5cVwTCS9df4AZOXWtfdb5dOLX0yY+Y6moabJxCYiM8xfAq4jEbdx2SM/5cdE2M3jCarNoxS7tZ17iV3fNhH72sq8a/ckVmTiGyb1tXr7KfUz7PnOVoUuh55qPVfV0icoXl5Bi2eo99pGL01ufT1GJQi0ZP0gWfinETdNxYj7+Wa6XGTTeGte21xzz9zJx5o5Heug6itd2HCFhzjDjiohrZa/9t1NAeI/PQxS8HOBoGG7UaOb8rcqUJyUNWW6+FCZPnTpj91iUOXalquSDsqh/tZlq9+YQqospOHTEUi+HFizfqepfqHpfU6PxYHPsxCn7iEVI8ZuxU8zazQfsHov2HTxuyjXMEND7mq8T55sjx05q/6hp60zGmJVm2KQ1pnGrCXpTnHWRCATXTj9drOq3YTYEV04BoV9Vl8nOWHGeF4C211u68nwVrP3mcFXvfQdP2D0WLRZ1ccm4+yr2Nt3SFtm9OfTBVzNUUlas3Wv3WMTCUbN7K8Sbpu2n2705lDYy2/i5vzNDJ66xe3Lo5X9PMHkr9Tafdf1Rf2/fdcR8HjfbfNFzjmkXP1ftM4KQszaJE+uJnY9OWUesa0Nx+ZQ35O073RLrWXW33KpLAwg+N2w9qIx5UsMPxpiSYhv37D9u91iEhJR6PM3cL6qfKYbcm1p2/l7BnSuOxJNOiiTXen24+UfZnqZt/By7N4cyx64yd4o64hy86WN7zoSsn/X3frmpg8XZYUNR6bINBurNzr2+FLWHgRHxiTYcl0+u8B7tLLvnOXFOczwqhtjxurQ50iJfHWoeqns+gKgaIQ8qNeH7jXZvDrX6xlosc3jT003HKkgdEubZPTnkAMinN7URabtfJLDJJxNV+iBsYGORzDf+M1kFwYkkcq0xpr9kK5lni1brUNOG5NKpcJVOIcExA475Ul3vBiDcQRqeDGbvfqyneUJUA2/oSQNGZZt8VfpILHb5ADZ4f8wVAYi64uyQ3u5pi7UP+4d3xvahLeFNhphiPqQQ7XNH9V3ockX/1Ybm0sgVGZ9upWnnq653c7IAguCHJbxIHfGLGT55jdmy47AyC50+c1adTflnMjSQveYAyk3jBhM0z5hrhVzc3K07LYl8tfUk9da+1odXDqjx3es2NP+dClWKLRtcJ/2kUz0mXitQLVGD0HNNftPveSEALP9Mpvn1VG6pg44eO6XBMpIA2NcDQCcAh9f/SGw5fe5m8/OqPab/yBWm4nOZPiTQapTB3FHJqx58sM7fbYguToFRfdOQPidwfeK9UeaFj8eb51uMO9f4/fg7o/S4k6IBYLmnM85F+N509qwx//72B021rgeA8AiITtoJD3zXjEXAO88GerQSxIY1ujexIbowFXqkRUBQrbSj2D7Hy67asM9mJTctXbVbpSk/0ikNpgoLUw2ajjYfdpjpM7yhjzt9JU7kagDo2XIKELn7fTXLFibPFoj+bCF1AQqM6NXasX3nAFzvG8AlAgYM1HtnZC4JrS+SiZqTXx73Cnh37T2mUgrY1xvAy2kUYiUeNsUqf1nFhson3RYUnbRYg0gZ5AC43iu6dwhpAsDsdbmDXqhB0zEmpE6q5rKetP/QCVPpuSxV4xsJQPXIIliuiF5xNlbnk3+lzyqK4zjrPKtFtLELz3441rzSeqJE9DkNr/Wk2EYA/FlU2ZsavD9aA2ZvAA8ftTKKB2RBE3+4PAAbXlcAcSaZosaJa/PmDb3Thiw3BYR1/xKX7T2QWIncFWPrNFSwgHwC4JLsXTarOfTUBQA8KDlu5eezdEHjZ/kGME+F3lrW8iQc0FPvjf6vAGb4ADC2+9UBkEIDvsG/UpsaNmS56BZXZOLMy3kwBHhUVeYv22mzmkP13h6p53hnIjv3HlUbmEdy2n4SL3pTM8mFkUDvEhfFg7DGQyRA76WZhTcNHLXS3PZQN5+p3PvtpusN9+b/Shq7KgIienxhY5ZDBUq+VtAdnbTfeiTpe7B3I8wpEJqgRVRvejN2sol5Y/h5mYgWEwR0kvv/dPvJ7s2hTknzNdjeve+Y3WMRzufRpwaqJD3TbKxKpCeNnr5e56XG50ln5cQ6b43QCrWvNVxuU28cmTDJhi2H/Ku0j9a07TK3XmDLWnScabObQwfEWXirL0R9jjFFJaDFmXCeJx3/9ZTZseeo/SuHKI9hOki/AGrBL7nNBsWGbZLnegM7Z+l2jfXQFl/8X27jIb2kdjvudIfeZ0NnUZGqnVsgnr4GXaw5nnr8rA02yxcmvPbDYhepEjMGQFDZ/0aMowJNnk0lG5tc918jzpNSb9opN6LmK0O1hujJ829p7LYQzTtToPxn5W3oLCpSIy7h3Haxy2h4aRbGHcbb/bJmrzl2PCf2+/XkabNOwqAeA5aYMk+IAZY82HlGgQkAxFc+mWQm/bhR7SWSBJ08eUbLZJTlH3lyoGYNzjgacWbUa8PM0ElrNJ/lOhASiATTH9FkqJ7nOe5qNJ4JFa7auZENnUWumvGTrIdFvgddrMEgakJsR+xHxRgv3FBiQSTg4fpp6sVVgnykS2Qx5KgVns00tcRuPt1sjIl8dZgpLYBj/C80DruGND7aIF3LZ4xDMnFS9JMVXW3waAha0WodW9vQWdtqg6MSl+jmRh8DLtaI0Fk8CyVuRKWRMh4C0ZCcCyXpno20CqBYtLP4SxnHNTEJzjgKHMxzKenZlTYALFYjLiegbtkh6+4StVPX685QHwMu1Li7qAh1v+8XbDWNW44/r0JzMzZCvYDIpP42fH5+TdrNzMueZN1GKyegLtg0igRO4EwDLFTVUSfu+B1lemjtb8z0depdCTOQJryl59j8MpZqDaDnzJ9gitjqSXOqJJ6VEc7jupTB9Jicw9M8PnPNf64l6vW5kfDnLJqGysMfDYn1PIaj4Tqafdl9/FYzYPPiNAB0Radk2fD5+bELng3duhdZTmDxeMtGLcaZFz8ab16Q9uLH47XKQpketQySSZG8xi0nmC97zNbjxGcvyScZCE/9XxKJZCx9z0k6SBznZC84lJdkLPYSMGgVJP57udUEU1E+CVUAHPPwjNi2T7793rz26SQBr5/a0/LPpOu14Q8+lVe5TqOPxumzGAoa5OM8BmU9xKtRrw01zb+eaT7sMMOEvTxEbwgmB2f2pKwF/uED/rgOKSw2mb7zAIxMGWLDZwNYN22PAyB3josRhHoTgfBjAg72LXut72e60eIdWYw37dh9RPsprZNHQz0GLDb3V+qjD5ne/cJ6zPmBZA73lI9XSRg5NfdTtgXLdsiik/VJ24Uo/MVBZonwuWnbQZHmJNWMbyX+FB9tnSB0+vQZ81XvuSKN1jYQzoeebz5Os6RSchMOS9o5ftZ65e2yAawpXg0iz31HFtZUFjVovJUmdU1dZO4t38us27RfMwSOcWepOH/UcZaK/OufTdZzeQ78hnwngD4pocY+Ca5DRAVj3himx7v3X6QMoqLvfD5F+95vN838pVR3BRdKH5Nt6ot37Z25RH9jLkrVS9MAntyZAgVgEVMiXSG1U80KCacIg+6rGG9eaz1Jx/GotIkAj5Rn249NkWpu6Hy5MRDbSjADzEGQP27mJQD4Tvs5eR6qm7bNsYGeAKaPzjZ+hToav6LfmMrPZ2ofQHKXNgmDlMT9grqYv5Tsbm4vHacJfV7JZd9uY4PRdpq5tUQ3Pd6mu5W6/UuAqi5SAnWTm+EA+LYNIMexP/sPHtdSGerH9fjs0m+h3KSZpoh4+nvKSZ/wun3PETNXMg4eZHEeG4dWrt9n1m7cL/P2NjPnbdH4ssZLgzSXBrCqL2Tpc5ofxPn9U/rmeBQvEBi9vtzsMTPW+QYwOiXDhs/P75WPvr6rREzKascLOwByAe5i4uBlpq+0nyUjcC4ASCzuqATNU+dsNtPnbtGHRuljVqox53Eh1KrzLM176Xv87ZHa913KAhP6woUBRCowExAbhzhOuISBd5yJ43RKiE2mQLFw+U6xl1aJHpXMXrdPC8GBou6keACKPcW+0XAaSCHZCuMWLNtpfpHfm7Yf0sC/ZN1UPeYLQMIYV0Riig2fn1/Dhn5/dkclzOclFk8AT546ncsOHjn6q6jrNL07MLpizR7NAJYJsMtX7zErhWlEXgG0VdgBkDnZrQD1Sl9iQh0J9FBhB0BqjZS8oGTJgfNVtiopgIYHZf5LAXCl3ODgWilmt5iZpdm71fkpgOI04GeRjMGkBMqYpSt3aYH33S8tO9w5cZ5K8NgLAFisetdvbfgsCoiIH2Xt+cutwkxQqnY/ifO2mGPHTppnxSPeKwYez7VxywFN3e4p20svgmSQVfAdNYQ+FnVjOwbbNTDQ0BeS8lWxzQEqeY8cQ/WcMTwAx9tDk37YoMdYOB68RccZ5gXxuHhPAu2LAbh6wz75bqkzIMIzYQmNUIlix+oN+9XJLFu1W2uQ3CA07aisFYEhRPMFYNFqnZrb0FnkH9qlq7V1LTeAI6asMbeJDav0bIaq60ExrGUkscfObNh6wGSv368LI/qHeRYGEw4YLQVAbIxb+vFoEOWlMk8O0O/sJcSjYzuTxExAzzYfK4DHm4W/7FTbVU8cCDupGAch8WgB17wYgKgiNydeJB76Jmm+2kTMT6e+87UPbSCWxcGgxthHwi6HBou9zwUgz0bqZJhi1To9aUNnkX/VTm+BLCfBXNTrlpecLEk+dwgpaGfvSRk6cbXJJ2oJgBAecLPYjs07Dpntuw6bZz4YozueIHZZrdt0QMC3dkUNmbhKVZBAd5Jd0t8odtapam/YekilD7Vv+MHoc2YEJ+GYkxcl1oMnR4WZG3vsAIh927z9sNiwIyoM5OLOcx3UGlMDrREVJVzBfLBnEBvI+fkkrJryk8UbHj+v/HYAtKoxyScLlGlRyobOosIV2lSWE87yMB1bgZdCbTslzlcJ0exAJuCOTBOnUf7pdHEsP5sfF27Vxc0V8eeTu0iMRzGV8T8t2mbmS2jAQ+zPxQuzQFSPemCZJ9JMypBleveJLweNX2kimgzRRWDjMAkE0dPleptlgcxFGKJORHghQCbcYJNQsszDvGgA2Q3RA/Ohtpxf6dlM03/EL7obda2EX6nDl5vHGqbrzWTcgJErTJLMQfBOH/z/uGir6ZgwT7MoB0B29gdG9V2XN29I7uci/yjY4F53dNI2CoacqOmQLATP5aRfMId00kc6pUUDkSTuuH7ajfPU0znHSJPENnKndcutzEVDBe8TySZzaNtztqkjTgbJ45jDMNdjfBD2S+Zjcc4xp3Eddp969iEEmobJdzw4vAIkGQ7tgarszyGNtDZWcr5mWHq+xVshsZ98MoczLzVTV2TvnBjQkwIj+4y0dt5bJxM20ABMgXQmlgXx2zmuaiOLYIEOeDBDH4CRTnEeY1kUd5y5qKLc9WhPDbLZR4NUAzLjOZ8F0pgXqXTGKW/SOEafwwfHHBtIv7MOeLXmsuahObwixQq2/KY55zGPM68zDw0/UbRGt2Y2ZLmpWPUuTb2r0kxQ4ekMXRxSST5bTdT7Mfl0FlqiTqqp2ijTVH4uQ+uBNIJuPC0qhhpx7mMNZGyjLFPWHsu+vAqS07b6ZpZ5Wuwd2QXHS8onuWglma/Sc8ybqfkxoCCR8AVYXE/nkvnpY054CX0xS3kAIKQH/uEFR6hNxrE7H9tYWhrfrWtZjXOpRTrzOk3f/YtJPeX/2CelbchyU/6yTYOCaqUeC67NS4IWQzC9WLwhW2xRAbaFHZHUCbcPOIQnxHo4CzKHaHE+td8armnQocO/mmbtp+s5MLtGQgbGDhi1QkOh4ZPWSBr2qzl4+IQ5hpOxncTrEkiXl0Xv3X/Mrm6f1dwVO/n4OyN1LMf3yfGssdnn1Pp+8bDxGUt0rl4DF2tmUlKcDE4KIjQh7nO2HZMZUaQg5z1lO6szkjxA3VIX6nyeALLhIDAqcb5AdauFmA9yRfad7IQzCqCo2fotB80GaagXe4sdinl9uPnbw3EaKzlEjssiHcqUPJY0jmqHQyOmrDV3S7gwQxwLNFAATRm2XI08xp8qdo2XBusxsoU+GUvVG0KAGiJxKdUiiH5uLOaB/q07rS1123YeUf6Rwq4CBk5mhXhgaITwmybXqi98dpbQBholjohsK3X4LyokZEPYQE8ASzw+nELqpzZUvskd1u1VR40dAAk2aQ6Ax0+c1Dv2sUge+Siebc++Y9rnAMjd3COLJUO569Ee5oses3UcUgCA/xTpmDVvs+abtz/c3fgFfGv8gruYW4p3UUfixHwUG24L6Wr+Wqr7uT3Orb/7XjXjjEjlSIlT8wuAxGqvfzpRjzt5LSAwF3HprTKHU5zAHJC3E1vGZy7VvodE5TXnFx78gr/Tm4KGOeChle5aqcfdobHBNlS+KaRCs3vFS22z3PX5APL0jZiKeIoqCTYRFRg9ba0CSLrGnQXAcTPXqSqXFjXiOKWo9ZK9kN0A4FSJtXhuTDrXOWmB6SKS0qHPXL1u5CtWHJo46Gd91oLhd7KXQeNWafqFWgMgi0XduAab0cNeHiwp5hkzTq4DgAAA74QpUC0xMzgzKjVxNqj9RPLY8fCdZEZkRxQ7CGkcAEPqi/eN6DPMhuni5IqIb/8QG6wlEfcGkHyRdzv6ywV5QaV5hxkqfdTWoJg3hymAUOe+8zRdavrFVA1ee8vdXrF2n2YkADjxe+tRKHaOLIedXDxRI6yp8fIQPQaASBDVl3ISt2Gjxs1Yr2HNabFlAJhHbOKjTw3QeXhtAUkaK6pN+axcQ57oJekcngASIQAgNw/i2mjHcZuPZz8cc85hsaWDfTFFQztG2BBdnPKXfblQUHS/fe6YgQJgUi4AJwqABL4UFQ4dOWGWrNipr1m9++U0ZcTTBr4nifk8Ca7nL9uuDua11hN1HgdAbCDOp6J4RqrYSDONxVEJhgDw/spWqR7vD2WNY39zjgTeLnaYshmEyUgbulxzdKilmBm2ipC5+AKw50ArzSMKACyLhwEm58UbCdbFpLkjE6cJNLdYCF0C8R8DxcVoYpy9JZDULOylQbaHNCYubfG5CrEngJT0yVYgXi2oLNkA5SIqNgA4U2wgKl4wNEE9JgtVmyXX4V03iAX+XXJV8ukvJdiGeBGHzAgbiEMgj3bybB62U2Ddvc/a3cDN1QKHzOsTQDtPJgz7q9hieLhPztUgnJhTMrMQpK/KV5cmfQ7lD34nj3iwTQHR6RoGbJQcldI7L/PBHOoNqBAPxtn+BmEDn3g3B8CmtmSQ68LU/kPHNb/GC8+0vTC/sa2o9JSfNqmkVrPrhZslwMbpkFZBRAPYSAoaEHk5z1cIPkgdKVrwG4Cnzt6k5wAYr3Sx+R3iJgMg+T3FBOgnmX+MmAZ4mCw88BoEmRhbe91RfQfbsFweFa7y7YuBMYPM7CU7JOfdpsaa3U9stUAlCD127Ga3VboWD7Bf7BYARIqRPOChCkzZv4dIEp5yuagWzgfmKfczBolxGruw2sT9pA+lKFDs3X9cJZ2NmWOmr9X5kFLsIdkLnhVvy64GTAYxIh6a6IB+JPJzmQ+v21XsHdeLlDCJm4njwXFQzTkoMSsOyOEB3gpURwLTDhQo/2mgDcnlkysyYcSjz1h7/cgoyBJ4lYEonddUyzxpZRVE/nwnR6axHYM+zntE7AohAd8ZS8ZBBsNcjCHqdxrjeBUB9Xn4XP9AHYNRJ91y0jn2yzxU1+KHcd6ZQ6CkafQrj3KMKg/fnfyX9dDHOZ48cA688d8KrvALpG2XSkUqNvcPiEzdEVgrQy/qVFP4Th6Jl1ZmhRncvpM/Wt+tBfHdSasYyxx817nkGH1O41xuCOO0j+P2OcxLv9PogwfO97ye0xw+OAfQ4YG5POehj3Oc69Ow+0F1xXHUSpogEFx8U/mlUGCNHk+y7SPYfuh0czf+kCIL57GjSMXW/jYEv51cNXlvjt37vi568zTrVdeM08XCvqtlL/2q0S2SSA+6mUGk2kI5zxXW9QN7zVeX8pV64Q53VNL0mxFEKvH6Tlx4j6/s5f4+lP+xVnnETvx4M4GI5JWg0hwR39Ve5u9LhUu2ukeCy4n6LrEdEtyYTbyz2DzKdwHhvX5fyTuPCha83V0rOQWbYb1TnDuE+OM3y9vydwauGnG/Ldb7LVQsrHvL4Drpp6xHojcKiKkmpD4vFPXf4grtUsdeyvUjV7UuNcWOZGMXrXeM/6hAitTxp4y8jRWdPJY3U+0lXH/Sf3Kr2bsPT+2dB/R/pKZeFqmrPWCvOAvClEsvTV1L8g/tGC0Mz8E2akTvYzHXrpHC9TfFecYTk47UZRYu9+8Qm9U/NP1NbONb7ujkbIBUibzGqo1joxCKRhSPSZlYpGLbKJu3G4fy5St1hyus26sS6szScEFsZHFepfidQh/iOes/pnkolnrMHZU8tEjVDjcecD7oliJV2oW6Ivt0dUenZDvSgWSylUQfWF/2nzhar55aTsGR8n6nAiMT5gVG9G7tX/7Tm+8PuZVEKgtXaRfuCo9r645KnCip4Q5R9bPYSwJagGAL7YUaxzkP1RSTcELGryVHl/maFa7wySNyhf9f/7XPv40XqdK+fNGqnRsVrda5NW8A8RJLYHRqlisyZYjTAqNTMlwRCcnFanT7Rs77kP15BSt8XNIvT9C1++vO/9HVJj+//wMiYLdu3iyLVgAAAABJRU5ErkJggg=="></div>
+                        </div>
+                        <div class="promotexte"><span>Prospectus DEPENSER MOINS 16 FT - Du 02/09 au 29/09</span></div>
+                    </div>
+                    <div class="articleconteneur">
+                        <div class="infosconteneur">
+                            <div class="stockconteneur">
+                            </div>
+                            <div class="etiquettesconteneur">
+                                <span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKFSURBVHhe7ZCBbiMxCETz/z+d6/ZmtiwBzNpRWhmehJplwLXf4xnweDxKVYSZZpd3YvTmS3c0XAHPwflVXZBG+7iIaq68iNL2mv9IL6eoCvDho5Lw++vva7grfOuoJKJfQ1KEkPFdGvRri6IcWRr064qiGDqQvyXo1xRFKfL9+pugX08Uhei3W70D9GuJogzr3YN+HVEU4b3Zy9CvIYoSovd6Ofq1RM1QStQKLSpJi0rSopK0qCQlROGRlyJRJkHWoqxMgqxFWZkEWYuyMgmyFmVlEmQtysokyPYWdUAJLKL7MpMgqyVKE2UEeYvyMoK8RXkZQd6ivIwgf68o/tPRuXLOq78C7vO+C/GBrAg9a9VdrDNYK+CM94jihWRFWPO67mDt65oF++uieBFdEdm5DPIseZ7Xvwv21y7KS1jlkZ3LEp3n9e+A/eUD3PLIzmV551kWOPv3Rem6y8puBpy9LorwW/c1es6qO1j7ulbAGWuHSHgploc1p3vsj7D2vJoF+58X5TGzr3eimgX7+4mSRFkW7P4dUQcz+3JH70VZFuy2qBHY/ayoaCbKIqK9KMuC3bllC16G5eHNyL7OIqK9KMuC3bllC16G5aHnvJJE2YHOrZoF+58XdaBndWnu5lbNgv3fEXWg51kWmZkDPRfNZsE57xO1Ky0qSYtK0qKStKgkLSrJkigs42tvXFEjCcyjmZ3AW++JYublO4L35kWxb2U7gzfnRLFnze8O3j0WxW9rtgJ4eyyKv625KuD9vihZlYGDsajqwMOrDPZGVYHzvfyQnOGgKsB3nqKqPPwO0stpp0W9Ip1cRLWsH7SPixmGlYV5Dkwj3vDOjN4cmpDLFcrn+fwH5ChD2+DUmzUAAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAB//////////AAAAAH//////////g10EEf//////////4///8///////////8AAAA///////////8AAAB///////////+AAAB///////////+AAAD////////////bFQz////////////AAAD4HwPnngf8fB/10EH4DgHnngf8eI/////xzjjnnn/8ec/AAADxxjjnnn/8ec/AAADxxjjnnn/8f8/AAADxxjjnnn/8f8/AAADx/jjnHn/8f8/bFQzx/jjgHgf8f8/AAADx/jjgPgf8ec/10EHxzjjnHn/8eA/////xxjjnnn/8eB/AAADxxjjnnn/8ef/AAADxxjjnnn/8ef/AAADxjjHnHn//+f/AAAD4DwHgHgf8eA/VFQz8P4Pgfgf8eA/AAAD////////////10EH////////////////////////////AAAD////////////AAAD////////////AAACAAAAAAAAP///AAACAAAAAAAAD///UFQyAAAAAAAAA///AAACAAAAAAAAAf//10EGAAAAAAAAAAAD///+AAAAAAAAAAABAAAD////////AAABAAAD////////gAABAAAD////////4AABAAAD////////+AABUFQz/////////AABAAAD///8AB//////10EH///gAAD///////////8AAAAP////AAAD//4H/+AD////AAAD//w///8A////AAAD//j////gf///AAAD//H////8f///UFQz//P/////////AAAD/+P/////////10EH/+fu8x4+/////////+fM8hgcn///AAAD/+fM8nGYh///AAAD/+fM8nP4w///AAAD/+fM8nAI4///AAAD//fM8nAI8f//UFQz//PM4nPI+f//AAAD//PMBnGY+P//UFQz//nMBhg4/P////////3//h54/P//AAAD//7//n/4/P//AAAD///P/n/4/P//AAAD///P///4+P//AAAD////////+f//UFQz///5////8f//AAAD///8f///4///10EH////D///h//////9////4P/+H//+AAAB/////AAAf//+AAAA/////+AH///8AAAA///////////8AAAAf//////////4UFQwH//////////gAAAAB/////////+A10EEAAA=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMLSURBVHhe7ZEBjltBCENz/0unnRZ+HdYwQCbbVcKTUBVjM3/d2z3gdrt91ETQbTb8Tuz+5gd1Z/4EvA6uX59ekMX28VDU8MiXomx7w1+wl6uoKnrEmyzVXMW7qPotmvv9b++I5naz45X+itcD8k8fCCeC+ddEvMobIfnni7Lgju0V69OJeJU3QvK9A/q4l9/tF+jBicj6s74Mku8d0Me9/G6/QA9ORNaf9WWQfO+APu7lO3umWdCDg7D9mi6S7x3Qx1ked2y/YHumWdCDg7D9mi6S7x3Qx20edbtDmIdpFuup/u4g+d4BfTyaCOZjmsV6qr87SL53QB+PxsPzoG53Ctvjb2+HWhXJ9w7o4zaPut0p0T7aLdgetWjXRfK9A/o4y0e7Be6jYbA9atGui+R7B/RxL5/Z7Ybh7at6Bcn3DujjXt7bo54Zi7er6hUk3zugj3t5b+/pSOTxdlW9guR7B/TxKM/2lRzzRDtG1c+QfO+APh7lmYdplsgT7RhVP0PyvQP6eJS3Hvs7wvN6ukfVz5B874A+vsujD2eH5/V0j6qfIfn+gU9hikoyRSWZopJMUUmmqCRTVJIpKskUlWSKSjJFJZmikkxRSaaoJFNUkpcVJYevqWLznRsnkW84+xH6h7HJwHI6/wt5/9wH6B+kY7Ud6FU/074befs1RSlM8/C8nv5dyNs/oyj07byMZ7I75O5rimITUfEiNodzCrl39n9AP9LOjooXsTn8rdqzyK2fWxRqOArTFp7eRW6dObbQj/MmgvlQw1GYtvD0LnLr6LFrFKYx0Ge93o5pC0/vIreOHrtG8XRL5PN2TFt4ehe5dfTYNYqnMzwf6rhj2sLTu8ito8euUZjmgV70V3SmPYvcOnNsoR/nTQaWw7Ewj84p5N65gwv9SDsVWH6NR8XbQW6ePfqOTFFJpqgkU1SSKSrJFJVkikoyRSWZopJMUUmuoqYsH+3nT0NTlI92cxU1ZX0Fe7namaK+gp08FDVl/cP28dCMLj+5MK8D2ohnfmd2f3PYBIY/YXzu918wuHGRZqecAgAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALFSURBVHhe7ZCBbuMwDEP7/z/dgzcpY1VSZroOBzR6gLCapByPt3vD7Xa71HRQ113+JHb/84O6C18B1cFxunpBldrHQ1HDI09F1faGb7CXo6iBcxSFrQ3PZD9fRQ09U5TJFGUyRZlMUSZTlIksKow4PdJ5/5u/elvc+zlF/RXxP+uiqqf0Tyf+5/cV5fr19yLPqFV2GeblWe2lzrwk/H45faYh1XczaipnMgjmd15OJfT+g+xv/k7Oaqjvzgsns2C6yi6qp7Kh9x/M3/WMvFNzMovfaIvU0dtk9SX4u54RzNRBlIac2XtVW6TOphK6viSpv+sO0xhqF1GZd2oLpTMie+4S5imt4uRUZre3cHcTlmXEHd4HE+WljlNhOjvvdp1MorKL9HAY4XkfTBzvzC47s/3Ulb9gXpdfpG9kdGD4ZooymaJMpiiTKcpkijKZokymKJMpymSKMpmiTKYokynKZIoymaJM7KIiKEdxNrPLMtj+mncSd/5NUa9k6uxgOzjvIu479yAHzKs95TNNwbKoof4b4q7XHqTALE5FeUqvYK5mlf4qcdf+svxoHQbLrXFxd9xcBffc/cjZQTodbi7B/G7HzSG4U6cjMv6DMss0hpNJMHs2X884iasxIrN/FCM/0O07mQXmdtmk5vGMkzBtoXQkfO9hlby82z+b6XKVbod5TFsoHQnffxySl3f7uwz6KqPodpnOtIXSkfD7B+YlNad0ZJfZ+R24W/eZzrSF0pHw+0fmJTlKY3QZ9JjvoPaZ7mqMyOwfmZex6ehy6KnZwXbqIMzP6YjM/kGLvBBnR5dFT40L213DcHNI5PwHXZUpymSKMpmiTKYokynKZIoymaJMpiiTKcpkijI5ipqyNNnPV0NTlCa7OYqasp7BXo52pqhnsJOHoqasH2ofD82keeXCVAe0ERX+ZHb/c9sELl9hNPf7P92Kh4lGWUWhAAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,Qk22AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHgDAADEDgAAxA4AAAAAAAAAAAAAAAAAAP///wD+AAAAAAAAAB/AAAD4/////////8fAAADj//////////HAAADP85mZwcPOcfzAAADf85mZgcPOYP7AAACf8RmZmZnEZP5AAAC/4QmZmZmEOf9AAAA/5UmZmZmVM/8AAAB/5EmZmZmRJP+AAAB/5EmJgcORIP+AAAB/5smTycObMf+AAAB/////+f////+AAAB///n/+f////+AAAB///n/+f//+H+AAAB/////+f/8AH+AAAB///////wAAH+AAAB//////gAAAH+AAAB////7gAAAAH+AAAB///wBgAAAAH+AAAB//gABgHAHgH+AAAB/AAABgHAf4H+AAAB+AAABgHA/8H+AAAB+AAABgHA88H+AAAB+AAABgHA4cH+AAAB+AAABgHBwOH+AAAB+AAABgHBwOH+AAAB+AAABgHBwOH+AAAB+AAABgHBwOH+AAAB+AAABgHBwOH+AAAB+AAABgHBwOH+AAAB+AAABhHBwOH+AAAB+AAABh3BwOH+AAAB+AAABh/BwOH+AAAB+AAABg/A4cH+AAAB+AAABgfA88H+AAAB+AAABgPA/8H+AAAB+AAABgHAf4H+AAAB+AAABgHAHgH+AAAB+AAABgAAAAH+AAAB+AAABgAAAAH+AAAB+AAADwAAAAH+AAAB///////////+AAAB///////////+AAAB+AAABgAAAAH+AAAB+AAABgAAAAH+AAAB+AAABgAAAAH+AAAB+AAABgAAAAH+AAAB+AAABgAAAAH+AAAB+AAABgAAAAH+AAAB+AAABgAAAAH+AAAB+AAABgAAAAH+AAAB+AAABgAAAAH+AAAB+AAABgAAAAH+AAAB+AAABgAAAAH+AAAB+AAABgAAAAH+AAAB+AAABgAAAAH+AAAB+AAABgAAAAH+AAAB+AAABgAAAAH+AAAB+AAABgAAAAH+AAAB+AAABgAAAAH+AAAB+AAABgAAAAH+AAAB+AAABgAAAAH+AAAB+AAABgAAAAH+AAAB/gAABgAAAAH+AAAB//wABgAAAAH+AAAB///wBgAAAAH+AAAA////7gAAAAH8AAAC//////gAAAH9AAACf//////wAAH5AAADf///////8AH7AAADP////////+HzAAADv//////////HAAAD//////////8fAAAD+AAAAAAAAAB/AAAA="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOqSURBVHhe7ZCBciIxDEP5/5/uNT2LE0ZKnCw9WMib8UBkxRvr8tXhcrl8VPWQ3erld2K08406Mn8CLoPr6dMDyuQ8boLa3HIXVE5v8xfO5RoUA8OozobaQRWD8/evblbqbKgdVDGk3y9MzZ96d0b7hj4OSnnehcquofug+L/ynZ28m9sz9H5QDZyV96yondyOoY+DakBT/rPhdnH7hV4LqgFd9c5Cb4eBXr/QQM/1X5nR210v9LmgGuj3PK9G5c2uH/rashi6ev8ZHNx1fdEzhXSEw0F9CjuoIoeDigE/5WDPs7xHiflrH8DjUIrs4cooDxej+qjfIGbPD8ejuDKqr7RGRWeyzmdojyTmzg3GY3JlXE/pSmsonTWnP5qYOzcYj8mVcT2nK5RXaQ2nA9VXmiI8fVMPfETNcD2nZ9jHXqU1nA5yP597hG9sdOBDagb30Feaoueb1Rn2cI0I39jowIfcDO6rUow8rud0hj0jLxPemlmBj/VmsCdXZtRvuL7TM+wbeUF4a2YFPjYzw91hPfcY53F6hn0jLwhvzazAx2ZmuDtOz7CPvUrLsGfkZcJbMyvwMTcj9/kMreF0R/byGZoi+1Ajwjc2OvAhN4P7uRjVz8WoPsqRPfncI3xjowMf6s1gj/MqT65MxQOcT2mK8PRNmx1UmR1UkR1UkR1UkR1UkR1UkV8LKgb/lIM9z/JWiTmPDQqPQymyhyujPKiM8qCOEDMeFxQexaXIfT5DA1nnMzSQdT5DWyHurw9g8JhcGddXWkPpI83pq8T99QEMHpMr43pVnc/QGkprOH2GuL8+wIGHqdmuV9FzMbP6DHF/fYADD1OzXc/pDe5VPIzTZ4j76wMceJia7XoVPRczq88Q99cHOPAwNdv1lM4adKU1lNZw+gxxf32AAw9Ts11P6UprKF1pDafPEPfXBzjwMDWbe9yvag2ls+b0VeL++gAHHuZm5z6foTUqOpN1PkNbIe6vD3DgYW4293NllAeVUR7UEWLG/w+qwZ5neavEnMcH9W7soIocCuqMAR/ZVQYVjTjdg37P82pU3uz6oc8FhZ7rvzKjt7te6PWgoKveWejtMNBrF6Ap/9lwu7j9Qh8HhbPynhW1k9sx9H5Q+K98Zyfv5vYM3QfF9a5Udg19HNS7M9o39PsmtFGdDbWDKuaq48Bcm4M6G2oHVQzO16CyYXObyzWdHdQ9nMlNUDusf+Q8bpJB85MDcxnIRJz5nRnt3E2CL39Ceb6+/gBm/iq8RAttVgAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKrSURBVHhe7ZBRbuNADENz/0tnoa7o0rQ0Q/uz1gOEViQ1Sfj5Lvh8Pq+aFaXrHv8ldr/5pO7Cb6Dr4NjeXpCifZyKGs5citL2hv9wL0dRQ81RFLc2XEE/P0UNa6YokynKZIoymaJMpiiTsqgUTwPwf+dVOlj5rsc4OnvOjr+sB6mV4mU6D3R6oB7miXdXj2EPdLvqQWqlmNt5Vw+ofme/6+GvqzteoDuT3tnUA97VA6rvdgaeDtAdVDo0HfbAbmfSqz8M8K4eUH23MysPdBnVu1ywy+rOpHc29YB39YDqd/adB1z9iRfozqR3NnGgw14FZzWjHuaJd1eP2XmB7kx6ZxMHPEB3hvNVZuW7HuPoO4993Zn06seGX6YokynKZIoyKYsarkxRJlOUyRRlMkWZTFEmU5TJFGUyRZlMUSZTlMkUZTJFmTwuKg9/5i53bjnb3XRepz8h3/EfwgdX43DnRrM8zF39CfnO8x+p+w7O7240xzu0oNKCTn9CvuM9hA/lfKV1cHZ302UqvdKCTn9CvvP8IXwR5w3O7m6cDOiylc6azorM7L9MBT4As0KzmA4nA7pspbOmsyIz+y+j4HHMCs3pXqEZ3lkPKk+nYuczmdsHGTyO2aFZ3Ss0wzvrQaUFnR6svIrMeuEAj2N2aL4bpfMqvdKCTg9WXkVmvXCAx+/cKM4bXabSKy24q6/IvHeAx918h/tOlXO1oNIrzSFvvCN8QDea6XAyAeeqAZUWVDprOisysw4BPNiNZjqcDOAsD3NHZ01nRWb2X/jtTFEmU5TJFGUyRZlMUSZTlMkUZTJFmUxRJlOUyRRlMkWZTFEmR1FTVg/6+WloiupBN0dRU9YV7uVoZ4q6wp2cipqyftE+Ts3AfHNhXQdlI134L7P7zcsm+PgN0/P9/gMyQ1S8KE/f2QAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANoSURBVHhe7ZCBbttADEPz/z/dQZ2Y0Qx1JzsZUNR6gICKpC4uH18LHo/HrWaFdbvHv4nd/3xQd+E7UHXw3O5ekKJ9HIoajrwUpe0Nf+FenkUNnmdR3NrwCvr5Luod6KFUXjXdAes8Ow9UerDyzpLvvPcQPgajGtA9YA1/d/fAaWDlnSXfee8hfAxGNaDa2T1QTXfAuvPPkm985JFygGpn90A13QHrzj9LvvGRR8oBqp3dA9V0B6w7/yz5xkceKYdhTX3s6mMPVNM9UE39K+QbH3mkHGblq6Z7oJruAWs6V8n76w8E+IhqmJWvmu6BaroHrOlcJe+vPxDgI/AO79CAeuyrpnugmu6BarpfIe+vPxDgI/AO79CYylOddx2gmu7AaWfI++sPBPgIfsdpoPJU552HUV13UOld8vba8Z2YoppMUU2mqCZTVJMpqsmlovLoZbq4W8xPJb/vM/9kTIez+Z9Afu+1ooDTVpzN/wTye98rysE5zTtN4Yxm/4e3I/OnD5Y/whmdlQ+ch3E+UI331XTIbC8c4PFqNLPbeYBqux2ozjuPeh0y2wsHeJxvVONdR32HeprXHTgN8I1Oh8z2wgEe5xvV1Fc0r6ined2B08DK65D3/Qfwg3yjmu7KWX+3A9V557lC3p47xg+6Ub+zK+zrqM+ozjuPeh0y2wsz+BEeZuU7TeGMZp0G2NPMytuR+f7BXZmimkxRTaaoJlNUkymqybaoDLwMcB6PZtxescqx5zLOj2F2PpO+D+C4GqXyVNfdwRmXUx8DdFf4RseR3tI8HDsNdL0qE7hcDOP03a7AR0Z3Jb2lWR4rqzx7VSZwuRim0gH7PIzTXQ6kt//BDrv8zleqPOs8wHkYsNIc6S3NcpSVF+x8pcqzruNwflcDqb/3A6DrVRmlyjrdacB5K82R3tI8HDsNdL0qo1RZpzsNOG+lOdJbmodjp4HKU91lHHoHnM67+roHqumupOfNAMdulMpTXfeKVY49npUXwzg/xpFe/4MxDud3Nccux75m1FM/6GRA+usPHqaoNlNUkymqyRTVZIpqMkU1maKaTFFNpqgmU1STKarJFNXkWdSUVYN+vhuaomrQzbOoKesV7uXZzhT1CndyKGrK+of2cWgG5p0LqzqwjVTh38zuf142wcd3mJqvrz/bHkeRuq72wAAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL5SURBVHhe7ZCBkqNACETz/z+dOza0hwQGZgdNTnlVVAK0LfbjOeDxeNyqRpjb7MNXIvrm3TQS3wEvg627e0AanccuqGbPW1A6veaFzGULqrHZgpKpeYw0mefP4Kg74Pu3YnMh5skLb/4JjryDva8R1JHwN9YHJefRDnvda+Te0ui57PWOwMzaaVgzFhEwQ3kzQs9RwNpZpcnugdRmdlQevPcFQBpZv/hPZHvMvF6iZzMarSM8rQfvfQGQRvive1DdE1UaMKMleO8LgDTCf90DuZcFZnuiSgOw0+XBe18AtJH+P+o1kV73RJUGjHYWrI8fGBnrXXVPVGnAjJbgvS8AIyO9Q68LzPYA82gPPB2BnS4P3vsCMDKydpiNdiDqAebRHng6gH2kI1gzFjUdVJoOKsnXBsWHcfd5Tg8qG0BWdxZ8TwcVwfd8z0Hg8kHpD4x6gDl2lk5q9I6I9iuwZ52pPjLqAea6gLWjkox2q7Bnnak+MuoJT2PNwGy/CvvVGRLST3vzC7l7kZmt9quwX50hgSNRkt/O0OsCUb8K+9UZEjgSJfntzNJIZvWzsF+dIYEjUZLMDL01A7P9KuxXZwi8Q6O5LmDtqCSj3SrsWWtKeMdGc12S0Y6I9iuwZ63pFemgknRQSTqoJB1Ukg4qSQeVpINK0kElOS0oftFPZZD6meeOgm849gh8KCpC62V9Cn7/9wale8zOht993MvxcbJGeDpvfhb87u8PykPqZ56bhb0PNX+rEVkdIbW6qmHfw4y3o3XvoXWyl3MiO6uAPWtNCRwLb917aJ3s5ZzIzipgz0NMw7Lw9tY8O6uAPWtNLXB89C5PZ82zswrYs9bUAsdn3mVpV2YVsGetqQWOz7xLaq0C1g5VDft+V1CE1MvSZDQVsPfxQf3vdFBJOqgkHVSSDipJB5Wkg0rSQSXpoJJsQXVYPsjnJ6EOygfZbEF1WO/IXLZ0Oqh3ZCa7oDqsf+g8dslgeefAvAzMRDzxlYm+eZiEfPgO5fN8/gE2hhABQwnQXQAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALHSURBVHhe7ZCBbuQwCET3/396K1omR1jAk9q+SglPGm3MAPbO613wer0epYrQZYfvxOg/n6qj5ieQZXCcnh6Qx+dxCqo58xGUT6/5weZyBNXEHEHZ1JpPkM93UE1NB0XSQZF0UCQdFEkHRZIGpYaezlTeX7Prbbr3PkHtQv9zHpT3svrd0f+8LijW998CzrbmGfVEHs7ZHOqRB9Svh+FHNYv32Z5Mnis9Fts/8iCP1usLo198g6s1Wx+dBaZHiOpZr+C9rFfr9YX49mfLyhrTI8zUBNStN+jNl9hvf7bYHi9LVrNcmfttTUA9kkfr+RLgv/1MVIvIZi1Zz8qakNUjtPfaksjLah6mL+sZzQnsLIh6I3QHdyHIPNStPFE9Oo9mmR6Q9QrwrCLU4y4EjHdlNjpH86hnvhB5Vb8An+jJG5ofOiiSDoqkgyLpoEg6KJIOiqSDIumgSDooki1B6dKTRrAzbN9q9K41l+HhmSKiPitP1OO1A939f4ISeaIeL0vkR1qN7p1fjAdClszL6kLmXa2vQvfOL8YDIQtTrzyLrV/xZtGd80vxOIhh9UzlzaI71yzFAyGGqzNVf+XNojv3BAVVRP2ijFFf5c2gO9ctxSO9KqJ+UcSop/Jm0J1rlwp4rNUIZuaKvxLduT4oAQ+2GjGaqTyh8mbQnXuCEvBoiKGa+a03i+7cF5SAh0MM2UxWFypvFt05vxSPi3ZZz/pRDVjP+lldqLxZdOf8UjwOsmReVhcyj61bbwW6c34pHgeBrC5kXlYXvJdpNbp3zWI8spIn6vGyRL7XDnT3uuV4bKSMqBfyRD1Wu9D9+y64Cx0USQdF0kGRdFAkHRRJB0XSQZF0UCQdFEkHRdJBkRxBdVg5yOc7oQ4qB9kcQXVYn9hcjnQ6qE9sJqegOqx/+DxOycB8cmBZBmEiWfOdGf3nMgk7/ATlvN9f1QpXuS3zVosAAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAB/////////+AAAAAHAAAAAAAAADg1zEEcAAAAAAAAAA4///8wAAAAAAAAAAMAAAAgAAAAAAAAAAEAAABgAAAAAAAAAAGAAABAAAAAAAAAAACAAADAAAAAAAAAAADSEEGAAA+AAAAAAABAAACAAA+AAABwAAB1zEGAAA+AAAD4AAB///+AAA+AAAH8AABAAACAAA+AAAP+AABAAACAAA+AAAf/AABAAACAAA+AAA//gABAAACAAA+AAB//wABREEGAAA+AAD//4ABAAACAAA+AAH//8AB1zEGB///4AP//+AB///+B///4Af///ABAAACB///4A////gBAAACB///4B////wBAAACB///4D////4BAAACA+A+AD////4BREEGAfA+AH////8BAAACAfA+AP////+B1zEGAPg+AP////+B///+AHw+Af/////BAAACAHw+Af/////BAAACAD4+Af/////BBAACAD4+Af/////BAAACAB8+Af/////BREEGAA++Af/////BAAACAA++Af/////B1zEGAAf+Af/////B///+AAP+AP////+BAAACAAP+AP////+BAAACAAH+AH//f/8BAAACAAD+AD/+P/4BAAACAAD+AA/4D/gBREEGAAB+AAPgA+ABAAACAAAAAAAAAAAB1zEGAAAAAAAAAAAB///+AAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABREEGMAAAAAAAAAABAAACMAAAAAAAAAAB1zEGMAAAAAAAAAAB///+MAAAAAAAAAABAAACNmDw8eOOPHzBAAACP2Dx+/fffvzBAAACM2GZmzTTZszBAAACM2GZgwGGYMzBQEEGM2GZg/MMfszBAAACM2GZmzZZZszB1zEGP3zx+/fffszx///+Plzw8eOOPMyxAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABQEEGAAAAAAAAAAABAAACAAAAAAAAAAAB1zEHAAAAAAAAAAAD///9AAAAAAAAAAACAAABgAAAAAAAAAAGAAAAgAAAAAAAAAAEAAAAwAAAAAAAAAAMAAAAcAAAAAAAAAA4QEEEHAAAAAAAAADgAAAAB/////////+A1zEEAAA=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL8SURBVHhe7ZFRkuJADEO5/6XZ8q6VNY1sK5mEYQa/Kn0QP3cn4nYvuN1uH5UKOlWXfxPdNz887eRPIOtg+/XpBa2sfTwUNTzyVNTa3vCP2MtW1MDZioqtDc+gn79FDTVTlMgUJTJFiUxRIlOUyBQlMkWJTFEiU5TIFCUyRYlMUSJTlMjhonzxIRl7XIP5SAXzWY7gu+9RFPNYMphbZQ++87OKsjCY10XF/e8vijldVpijRMHd9ywq0s2NzmFzi4K7mhzBJTEZitvNjc5Z50cdhruaHMElMRmK282NambE/cpVnBV3NTmCS2IyFFdxOtQzFGfF3eteylBc5lj2oOwrDsPdfS9k4JKYDNVlnkVF2VUchrv6ywBcEpOhusxDFNheFxX336Mog7kxFcyvsgffeZ+iANtBMpjbRcX99yvKYHsIg3lKFNx9z6IMtmthKJ7iMNzVXxzgkpiMPS6D7VtWFMdQvYh7+17cwAUxGXvcDOUMxTFUL+LeNS8OFK+bG9Fh3jpnjqF6Efd6kYFLkIzO6+ag89Y5cwzVi7jXiwxcgjBWh3ndHHTeOmeOoXoR93qRgUtiVn6CY+lwrxcZuGRPMpjbZYU5ShTcPVaUgcvUZDC3CoN5XVTcP16UgUu7dLAdlgzmdlFx/2tFGbg4yx7YPlLBfJYj+O7Xi/rtTFEiU5TIFCXy0qL8sqcc4axzVPyO64vCx2TZA9tHrsLPf8m/sQVkzyvYDnt2Nn72zywqkj0/Cz/72qIy8GFIR+VXszPwc6eoDj/39UXhgxCFaqeanYGf+7qi8CExKtVeNTsDP/d7i0I6Kr+anYGf+7qiIvgopKPyq9kZ+LnfU5SBD0MqKreanYGfO0V1+LnXFoWXRyLVjJG52fOz8LNfWxTuY8+M7LnBZuzZ2fjZ1xwewUdkiVQzY53HXIWff+0lAPesWenmxupk3hlsd+DHwEE3W1FT1jOxl62dKeqZ2MlDUVPWf9Y+HprB8JMLyzqgjWTyb6b75rKJuPwJybnf/wDMgacxXieBXQAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALSSURBVHhe7ZLR0uowCIR9Bt//Sb3xTP6z26EIgdRqass3sxeSBdI1t2eH2+12KfUwT7PNZyL65lU1Ml8BL4Pl19UD0ug8VkEVa16C0ukV/5G5LEEVNktQMrXiFebzF1TRp4JKUkElqaCS/HxQ+IA/fRLsiJfwMlojRH3yXMsj49kD7Ogv4UUsZcn0aY+UR8azB9gxdhFZk3UP7fd6onOLLT1bwI6xJbwY1UN7KYvo3MLqkTVZb+i65bGAL3+xBodn+qQv6pPnUj0sn1VryLpWBHyxkXAwNUKvT55Z8tAe/ZvIuqUI+GJjg0OpUUZ7M37pkdJYZ1bNA760cdEWRvul3+vRHkpjnVk1D/j6Rg6jtrJlRtQjz6U01plV84Cvb+SwyBfRm2OdyZqsS7RHSmLVrZoHfL6Rg3qeLL1Z1plV02iP/M1aI1vzgC93EU/EqklGzrU8LI9Va8i6VgR8uYt4IlZNEp03pCfyNjyfVZc1rQj4YuMZYUiZ74evgoqA7/xBMRD5rVbNA75rvCiGopUB3msE1WA4VBb4rxPUViqoJBVUkgoqyeGCwoVMzQR3mB8Uw8hoBth9iH9rJYms3+/3l/NvgP3zgsIFFvUY8e4NdlZQEdh5jKAejweqPtL/TbCzgorAzmMEFd1jxLs32DkvqAY/nPeQv736t8HeuUE1GEBGM8Du+UE1GERPs8D+YwRFGIrUbHCPCioC9/jMRfiRs7QnmLl/ULzsbO0F5lVQEZj3kWd6GO0BZlVQEZi1+xM9nN4FcyqoCMzZ9XkeVu+AGRVUBGbs9jQPr62gv4KKQP8uz/JntAX0VlAR6H37Sf6cRkFfBRWBvree489qBPRUUBHo2fwUf15Z4B9rarDn15Vh8fNHlqXxJIqgZwkq09Sg9yzqIT2LM2pqsPFs8pBnq6B6TQ16ziYLfbZyRc1XwMvATMQzn53eN3eTkIFdQT7P5z9Fwdy/EodeXQAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAB/////////+AAAAAHAAAAAAAAADg1nkIcAAAAAAAAAA4///8wAAAAAAAAAAMAAAAgAAAAAAAAAAEAAABgAAAAAAAAAAGAAABAAAAAAAAAAACAAADAAAAAAAAAAADBFg+AAAAD/+AAAABAAACAAAAf//wAAAB1nkKAAAB///8AAAB///+AAAD///+AAABAAACAAAH////AAABAAACAAAP/4//gAABAAACAAAf/wP/wAABAAACAAAf/wH/4AABQFg+AAA//wD/4AABAAACAAA//wB/8AAB1nkKAAB//wA/8AAB///+AAB//wAf8AABAAACAAB//wAP+AABAAACAAD//wQH+AABAAACAAD//wYD+AABAAACAAD+PwcD+AABQFg+AAD8HweB+AABAAACAAD8DweB/AAB1nkKAAD+BwcB/AAB///+AAH+AwYD/AABAAACAAH/AQQH/AABAAACAAH/gAAP/AABBAACAAH/wAAf/AABAAACAAH/4AA//AABQFg+AAH/8AB//AABAAACAAH/+AD//AAB1nkKAAH//AH//AAB///+AAH//gP//AABAAACAAH//AH//AABAAACAAH/+AD//AABAAACAAH/8AB//AABAAACAAH/4AA//AABPFg+AAH/wAAf/AABAAACAAH/gAAP/AAB1nkKAAH/AQQH/AAB///+AAD+AwYD/AABAAACAAD+BwcB/AABAAACAAD8DweB/AABAAACAAD8HweB+AABAAACAAD+PwcD+AABPFg+AAD//wYD+AABAAACAAD//wQH+AAB1nkKAAB//wAP+AAB///+AAB//wAf8AABAAACAAB//wA/8AABAAACAAA//wB/8AABAAACAAA//wD/4AABAAACAAAf/wH/4AABPFg+AAAf/wP/wAABAAACAAAP/4//gAAB1nkKAAAH////gAAB///+AAAD////AAABAAACAAAB///8AAABAAACAAAAf//wAAABAAACAAAAD/+AAAABAAACAAAAAAAAAAABPFg+AAAAAAAAAAABAAACAAAAAAAAAAAB1nkLAAAAAAAAAAAD///9AAAAAAAAAAACAAABgAAAAAAAAAAGAAAAgAAAAAAAAAAEAAAAwAAAAAAAAAAMAAAAcAAAAAAAAAA4PFg8HAAAAAAAAADgAAAAB/////////+A1nkIAAA=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKrSURBVHhe7ZCBcsMwCEP7/z/dnTeRKTSAcZw5XXl3XK8SuKoeT4fH4/FR43Ho9h7/J6L/vFOj5U/A6mD79ukFaXQfu6KKPS9F6faKH7iXrajimK0obq14Rfr5LupuULjvWQ1yVFERyHGvoqQcntUgx32KkmL0rAY57lGUlHI0q0GOtUGkDG9WgxxVVARy3KsoS1sJcqwPopGCZFaDHFVUBHJUURHIUUVFIEcVFYEcVVQEclRREchRRUUgRxUVgRxVVARyVFERyFFFRSDH/Yq6G1VUJ1VUJ1VUJ1VUJ1VUJ1VUJ1VUJ1VUJy9FQdhNRHb/rnj/A9p1RWkvO8yRf3aYDu9XlCWeCG9feyMjHHkzRrD0BjQ/TIS3r72REY68GSNYegOaHyYiux9hvad19oSszzuW3oCWC6PJ7kdY72mdPSHr846lN6Dlwmiy+xHWe1pnT8j6vGPpDWh+mOwwnmdh3WidPSHr846lN6D5YbLDeJ6FdaN19oSszzuW3oDmh8kO43kW1o3W2ROyPu9YegNaLozG2/c8C+tG6+wJWZ93LL0BLRdG4+17noV1o3X2hKzPO5begJYLo/H2tTcygucJWZ93LL0BLRdG4+1rb2QEzxOyPu9YegNaLozG29dedpjIb2R93rH0BrTXB4s9VVQnVVQnVVQn04rCQ28xI+D2XFES4J0mC+7mFPUOjGbFXRUVgbsqKgJ3VVQE7q4rSnt//V0T+Ra4yx8y3o+Lt2KO8DwP3F1blHzyzl98P0Lv9YK7/CEjP372nas5kxN35/+gBJjx1hWcybfdypezbA9OeGsmZ3PJ3VbU6EOMvDPjrRmczcO32wujj2nk8VnvjTIjB9/uijrzKCNv3WFG0fe7l2b8gMBvrZoRrPvD16zl/0z0n90m+PgTxub5/AJzEY9JL+xB0QAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFwSURBVHhe7dBRjoMwDEVR9r9pRnRMGkIcv5Yg0eQeyR/FxVXvsjYsyzLVtFS36ssjif7z4Wn05Rl4DdKn2QOVyh6HUDg6hSrr4V/eJYVCXQqVV8PZ3ucVCm2EEhFKRCgRoUSEEhFKRCgRoUSEEhFKRCgRoUSEEhFKRCgRoUSEEnUNZcfSKMp3vMlF+zvY7/x+qHJ6s7vjhdqmJ7v5nFAK7x3veQ92c4xQm9buCrtHqIjdI1TE7o0TatPafcvuPSdUbUqf7Huxe4SK2L3nhFJE77R237J744Rq7a6we4SK2D1CRezeGKHK5/nuKrt3TyhvcrV9bXK1fW16spvjherN7o4V6g52+57jIyGUiFAiQokIJSKUiFAiQokIJSKUiFAiQokIJSKUiFAiQokIJSKUiFAiQokIJSKUKIUilm/v8ypEKN/eJoUi1lneJdUh1Fne5BCKWG9lj0OZfTlzMK9BtYj35ZFF/7lZIn95hvGt6x99QbqA5+v/4QAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,Qk0uGgAAAAAAADYEAAAoAAAASgAAAEoAAAABAAgAAAAAAAAAAADEDgAAxA4AAAABAAAAAQAAAAAA/yUlJf88PDz/UVFR/2NjY/90dHT/hYWF/5SUlP+jo6P/sbGx/7+/v//MzMz/2dnZ/+bm5v/z8/P//////wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/w8PDw8PDw8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8PDw8PDw8PAAAPDw8PDwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8PDw8PDwAADw8PAAAAAA8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PAAAAAA8PDw8AAA8PAAAADw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PAAAADw8PAAAPAAAADw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8AAAAPDwAADwAADw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDwAADw8AAAAADw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PAAAPAAAAAA8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDwAADwAAAA8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PAAAAAAAPDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDwAAAAAADw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8AAAAAAA8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PAAAAAAAPDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDwAAAAAADw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8AAAAAAA8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PAAAAAAAPDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDwAAAAAADw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8AAAAAAA8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PAAAAAAAPDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDwAAAAAADw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8AAAAAAA8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PAAAAAAAPDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDwAAAAAADw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8AAAAAAA8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PAAAAAAAPDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDwAAAAAADw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8AAAAAAA8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PAAAAAAAPDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDwAAAAAADw8PDw8PDwwIBwcHCw8PDw8PDw8PDwwIBwcIDA8PDw8PDQcHBwcHBwcHBwsPDw8PDw8PDw8PDw8PDw8PDAgHBwoODw8PDw8AAAAAAA8PDw8PDAIAAAAAAAABDA8PDw8PDAIAAAAAAAABCw8PDwsAAAAAAAAAAAAAAgwPDw8PDw8PDw8PDw8LAQAAAAAAAAYODw8PAAAAAAAPDw8PDQAAAAAAAAAAAAANDw8PDAAAAAAAAAAAAAAMDw8LAAAAAAAAAAAAAAACDw8PDw8PDw8PDw8JAAAAAAAAAAAAAg8PDwAAAAAADw8PDwUAAAACBwcEAAAABQ8PDwQAAAAEBwcEAAAABA8PCwAAAQcHBwcHBAAAAAoPDw8PDw8PDw8MAAAAAAYHBgEAAAAHDw8AAAAAAA8PDw8DAAAGDw8PDwgAAAIPDw4AAAAMDw8PDwwAAAAPDwsAAAMPDw8PDw8GAAAHDwsHBwcHBw0PBAAAAg4PDw8PBAAABw8PAAAAAAAPDw8PAAAADg8PDw8PAAAADw8NBwcJDw8PDw8MAAABDw8LAAADDw8PDw8PBQAACA8HAAAAAAALDwAAAA4PDw8PDw4KDw8PDwAAAAAADw8PDwAAAA8PDw8PDwAAAA8PDw8PDw8OCwcCAAAABQ8PCwAAAQcHBwcHAgAAAA0PBwAAAAAACwsAAAMPDw8PDw8PDw8PDw8AAAAAAA8PDw8AAAAPDw8PDw8AAAAPDw8PDwsEAAAAAAAAAg4PDwsAAAAAAAAAAAAAAAoPDwsHBwcHBw0LAAADDw8PDw8PDw8PDw8PAAAAAAAPDw8PAAAADw8PDw8PAAAADw8PDwUAAAAAAAABCA4PDw8LAAAAAAAAAAAAAAkPDw8PDw8PDw8PCwAAAw8PDw8PDw8PDw8PDwAAAAAADw8PDwAAAA8PDw8PDwAAAA8PDwsAAAABBQkNDw8PDw8PCwAAAQcHBwcGAAAACg8PDw8PDw8PDwsAAAMPDw8PDw8PDw8PDw8AAAAAAA8PDw8AAAAPDw8PDw8AAAAPDw8FAAAGDw8PDwoHBw0PDwsAAAMPDw8PDw0AAAMPDw8PDw8PDw8PAAAADg8PDw8PDQoPDw8PAAAAAAAPDw8PAAAADw8PDw8PAAAADw8PAwAACg8PDw4BAAALDw8LAAADDw8PDw8NAAAADw8PDw8PDw8PDwUAAAMODw8PDgIAAAgPDwAAAAAADw8PDwAAAA8PDw8PDwAAAA8PDwgAAAAFBwYBAAAADw8PCwAAAQcHBwcGAQAAAg8PDw8PDw8PDw8MAAAAAAUHBgAAAAAJDw8AAAAAAA8PDw8AAAAPDw8PDw8AAAAPDw8OAAAAAAAAAAAACA8PDwsAAAAAAAAAAAAAAAkPDw8PDw8PDw8PDwkAAAAAAAAAAAAFDw8PAAAAAAAPDw8PAAAADw8PDw8PAAAADw8PDwwCAAAAAAAABw8PDw8LAAAAAAAAAAAAAAYPDw8PDw8PDw8PDw8PCwEAAAAAAAAHDw8PDwAAAAAADw8PDwcHBw8PDw8PDwcHBw8PDw8PDwwIBwcKDg8PDw8PDQcHBwcHBwcHCQ0PDw8PDw8PDw8PDw8PDw8PDAgHBwoODw8PDw8AAAAAAA8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PAAAAAAAPDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDwAAAAAADw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8AAAAAAA8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PAAAAAAAPDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDwAAAAAADw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8AAAAAAA8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PAAAAAAAPDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDwAAAAAADw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8AAAAAAA8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PAAAAAAAPDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDwAAAAAADw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8AAAAAAA8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PAAAAAAAPDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDwAAAAAADw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8AAAAAAA8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PAAAAAAAPDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDwAAAAAADw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8AAAAAAA8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PAAAAAAAPDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDwAAAAAADw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8AAAAAAA8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PAAAAAAAPDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDwAAAAAAAA8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDwAADwAAAAAPDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8AAA8AAA8AAA8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8AAA8PAAAPAAAADw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8AAAAPDwAADw8AAAAPDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8AAAAPDw8AAA8PDwAAAAAPDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDwAAAAAPDw8PAAAPDw8PDwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8PDw8PDwAA"></span>
+                            </div>
+                            <div class="lignesinfoconteneur">
+                                <div>
+                                    <div class="ligneinfo">
+                                        <div class="infogauche">Prochaine commande</div>
+                                        <div class="emphase infodroite">-</div>
+                                    </div>
+                                    <div class="ligneinfo">
+                                        <div class="infogauche">001351 PERMANENT</div>
+                                        <div class="emphase infodroite">mer. 28/09 (12:00)</div>
+                                    </div>
+                                    <div class="ligneinfo">
+                                        <div class="infogauche">Livraison</div>
+                                        <div class="emphase infodroite">30/09</div>
+                                    </div>
+                                    <div class="separateurhorizontal"></div>
+                                </div>
+                                <div class="ligneinfo">
+                                    <div class="infogauche">Dernière réception</div>
+                                    <div class="infodroite">06/09 ( 4 UVC )</div>
+                                </div>
+                                <div class="ligneinfo">
+                                    <div class="infogauche">Dernière vente</div>
+                                    <div class="infodroite">10/09</div>
+                                </div>
+                                <div class="ligneinfo">
+                                    <div class="infogauche">PPMI</div>
+                                    <div class="infodroite">895.90 €</div>
+                                </div>
+                                <div class="ligneinfo">
+                                    <div class="infogauche">P3N actuel</div>
+                                    <div class="infodroite">712.243 €</div>
+                                </div>
+                                <div class="ligneinfo">
+                                    <div class="infogauche">P3N offre</div>
+                                    <div class="infodroite">712.243 €</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boutoncommandeconteneur">
+                        <div class="commandearticleconteneur">
+                            <div class="boutonsconteneur">
+                                <div class="boutonquantite moins desactive">-</div>
+                                <div class="quantitetexte"><span class="emphase">0</span> CAR (0 UVC)</div>
+                                <div class="boutonquantite plus">+</div>
+                            </div>
+                            <div class="textecommander desactive">Commander</div>
+                        </div>
+                    </div>
+                    <div class="voirficheconteneur">
+                        <div class="voirfichetexte">Voir la fiche</div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="voletnavigationconteneur jsvolet2">
+                <div class="croixettitre">
+                    <div class="croixconteneur">
+                        <img src="assets/icones.svg#croix_gris-view">
+                    </div>
+                    <div class="titredesignation">BOUILLOIRE WK8215Y,,1P<span>, ELSAY</span></div>
+                </div>
+                <div class="voletinfosconteneur">
+                    <div class="prixetpromo">
+                        <div class="prix">15,<span class="decimales">90</span> €</div>
+                        <div class="promo">
+                            <div class="stickerconteneur"><img src="data:image/png;base64,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"></div>
+                        </div>
+                        <div class="promotexte"><span>Prospectus DEPENSER MOINS 16 FT - Du 02/09 au 29/09</span></div>
+                    </div>
+                    <div class="articleconteneur">
+                        <div class="infosconteneur">
+                            <div class="stockconteneur">
+                                <div class="stockinfos">
+                                    <div class="stock">18</div>
+                                    <div class="label">STOCK (UVC)</div>
+                                </div>
+                                <div class="stockinfos">
+                                    <div class="stock">4104</div>
+                                    <div class="label">STOCK BTLEC</div>
+                                </div>
+                            </div>
+                            <div class="etiquettesconteneur">
+                            </div>
+                            <div class="lignesinfoconteneur">
+                                <div>
+                                    <div class="ligneinfo">
+                                        <div class="infogauche">Prochaine commande</div>
+                                        <div class="emphase infodroite">-</div>
+                                    </div>
+                                    <div class="ligneinfo">
+                                        <div class="infogauche">013351 GT OCCASION</div>
+                                        <div class="emphase infodroite">mer. 28/09 (16:00)</div>
+                                    </div>
+                                    <div class="ligneinfo">
+                                        <div class="infogauche">Livraison</div>
+                                        <div class="emphase infodroite">30/09</div>
+                                    </div>
+                                    <div class="separateurhorizontal"></div>
+                                </div>
+                                <div class="ligneinfo">
+                                    <div class="infogauche">Dernière réception</div>
+                                    <div class="infodroite">06/09 ( 16 UVC )</div>
+                                </div>
+                                <div class="ligneinfo">
+                                    <div class="infogauche">Dernière vente</div>
+                                    <div class="infodroite">10/09</div>
+                                </div>
+                                <div class="ligneinfo">
+                                    <div class="infogauche">PPMI</div>
+                                    <div class="infodroite">15.50 €</div>
+                                </div>
+                                <div class="ligneinfo">
+                                    <div class="infogauche">P3N actuel</div>
+                                    <div class="infodroite">7.88 €</div>
+                                </div>
+                                <div class="ligneinfo">
+                                    <div class="infogauche">P3N offre</div>
+                                    <div class="infodroite">7.88 €</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boutoncommandeconteneur">
+                        <div class="commandearticleconteneur">
+                            <div class="boutonsconteneur">
+                                <div class="boutonquantite moins desactive">-</div>
+                                <div class="quantitetexte"><span class="emphase">0</span> CAR (0 UVC)</div>
+                                <div class="boutonquantite plus">+</div>
+                            </div>
+                            <div class="textecommander desactive">Commander</div>
+                        </div>
+                    </div>
+                    <div class="voirficheconteneur">
+                        <div class="voirfichetexte">Voir la fiche</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
+

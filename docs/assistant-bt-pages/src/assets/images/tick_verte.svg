@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <clipPath id="clip-icn_paiement_valide">
+      <rect width="32" height="32"/>
+    </clipPath>
+  </defs>
+  <g id="icn_paiement_valide" clip-path="url(#clip-icn_paiement_valide)">
+    <rect width="32" height="32" fill="#fff"/>
+    <g id="Groupe_7466" data-name="Groupe 7466" transform="translate(-1 -1)">
+      <ellipse id="Ellipse_1" data-name="Ellipse 1" cx="15.251" cy="15.251" rx="15.251" ry="15.251" transform="translate(0 3.727) rotate(-7.018)" fill="#12ca95" stroke="#12ca95" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.247"/>
+    </g>
+    <path id="Tracé_10" data-name="Tracé 10" d="M-8526.287-5287.616h0a1.266,1.266,0,0,1-.9-.371l-5.256-5.261a1.265,1.265,0,0,1,0-1.788,1.265,1.265,0,0,1,1.79,0l4.363,4.364,10.167-10.168a1.265,1.265,0,0,1,1.79,0,1.26,1.26,0,0,1,0,1.791l-11.062,11.062A1.277,1.277,0,0,1-8526.287-5287.616Z" transform="translate(8539.801 5311.305)" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-width="0.2"/>
+  </g>
+</svg>

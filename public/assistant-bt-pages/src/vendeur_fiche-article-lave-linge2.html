@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href="css/assistantBT.css" rel="stylesheet" />
+
+    <script src="includes/jquery-3.3.1.min.js"></script>
+    <script src="scripts/vendeur_fiche-article.js" charset="UTF-8"></script>
+    <script src="scripts/bascule-vendeur.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        $(document).ready(function () { init(); initVendeur(); });
+    </script>
+</head>
+
+<body>
+    <section class="conteneurprincipal">
+
+        <header class="header">
+            <div class="partiegauche">
+                <div class="header-menu js-headerMenu">
+                    <div class="burgerconteneur">
+                        <button class="menu"><span></span></button>
+                    </div>
+                </div>
+                <div class="logoassistant" onclick="location.href = './vendeur_index.html'"><img src="assets/images/logo.svg"></div>
+            </div>
+            <div class="header-navbar">
+                <div class="euroconteneur" onclick="location.href = './vendeur_connexion_caisse.html'">
+                    <img class="euro" />
+                </div>
+                <div class="rechercheconteneur">
+                    <img src="assets/icones.svg#loupe-view" class="rechercheicone">
+                    <input type="search" placeholder="Rechercher" class="recherchetexte">
+                </div>
+                <div class="caddieconteneur" onclick="location.href = './vendeur_panier.html'">
+                    <img src="assets/icones.svg#caddie-view" class="caddie">
+                    <div class="badge">
+                        <div class="badgenumero">1</div>
+                    </div>
+                </div>
+                <div class="identification">
+                    <div class="nomutilisateur">
+                        <div class="nomtexte">J. MARILLON</div>
+                        <div class="vendeuroupas"> (Vendeur) </div>
+                    </div>
+                    <img src="assets/icones.svg#chevron-left-view">
+                    <div class="menuidentification">
+                        <div class="optionmenu" onclick="location.href = './fiche-article.html'">Passer en mode gestionnaire</div>
+                        <div class="optionmenu">Déconnexion</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="bandeaunavigation">
+            <div class="infosfichearticle">
+                <div class="titreconteneur">
+                    <img src="assets/icones.svg#chevron-left-view" onclick="location.href = './vendeur_articles_lave-linge-frontal.html'">
+                    <div class="designation">Brandt WF129L - Machine à laver - indépendant - largeur : 60 cm - profondeur : 58.2 cm - hauteur : 84.5 cm - chargement frontal - 59 litres - 9 kg - 1200 tours/min - blanc</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pageconteneur">
+                <div class="articleconteneur">
+                    <div class="switch">
+                        <span class="codeean agauche">3660767953772</span>
+                    </div>
+
+                    <div class="boutonsaction">
+                        <button class="boutonimprimer cta cta--clear">Imprimer Fiche Produit</button>
+                        <button class="boutonmail cta cta--clear">Envoyer Fiche Produit</button>
+                    </div>
+
+                    <div class="prixetpromo">
+                        <div class="prix">379,<span class="decimales">00</span> €</div>
+                    </div>
+                    <div class="photoetinfos">
+                        <div class="photoetvignettes">
+                            <div class="photoconteneur">
+                                <img src="assets/images/fiche_lave-linge4.png">
+                            </div>
+                            <div class="vignettesconteneur">
+                                <div class="vignette estselectionnee">
+                                    <img src="assets/images/fiche_lave-linge4.png">
+                                </div>
+                                <div class="vignette">
+                                    <img src="assets/images/fiche_lave-linge5.png">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="infosconteneur">
+                            <div class="stockconteneur">
+                                <div class="stockinfos">
+                                    <div class="stock">2</div>
+                                    <div class="label">STOCK (UVC)</div>
+                                </div>
+                                <div class="stockinfos">
+                                    <div class="stock">10</div>
+                                    <div class="label">STOCK BTLEC</div>
+                                </div>
+                            </div>
+                            <div class="indicereparabilite">
+                                <img class="logoir" src="assets/images/logo-indice-4.svg">
+                                <p class="indiceir">7,6</p>
+                            </div>
+                            <div class="etiquettesconteneur">
+                                <span class="etiquette"><img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAB/////////+AAAAAHAAAAAAAAADgAAAAYAAAAAAAAAA4AAAAwAAAAAAAAAAMAAAAgAAAAAAAAAAEhAABgAAAAAAAAAAGAAABAAAAAAAAAAACAAADAAAAAAAAAAADAAACAP////////4BAAACAf////////8B2Z++Af////////8BAAACAf///4H///8BAAACAf//+AA///8BA+H+Af//wAAP//8BAAACAf//gAAD//8BA+H+Af/+AAAB//8BAAACAf/8AAAAf/8BA+H+Af/4AAAAf/8BAAACAf/wAAAAH/8BAAACAf/gAAAAH/8BAAACAf/gAAAAD/8BAAFCAf/AAAAAD/8BAAACAf/AAAAAB/8BIk0CAf+AAAAAA/8BAAACAf8AAAAAA/8BAAACAf8AAAAAA/8BAAACAf8AAAAAA/8BMk0CAf8AAAAAAf8BAAACAf8AAAB+Af8BAAACAf8AAAH/Af8BAAACAf8AAAf/gf8BhAACAf8AAA//wf8BplgCAf8AAB//wf8BAAACAf8AAP//wf8B7IACAf8AA///wf8BhAACAf8AD///gf8BAAACAf8D////g/8BEAACAf+D////g/8BAAACAf+B////B/8BhAACAf/B///+B/8B///+Af/A///+B/8BA//+Af/Af//8D/8BAAACAf/wP//4H/8BAAACAf/wH//gH/8BAAACAf/4B//Af/8BA8D+Af/8AP4Af/8BAAACAf/+AAAB//8BHANCAf//gAAD//8BAAACAf//wAAH//8B0k0CAf//8AA///8BAAACAf///wH///8BA8L+Af////////8BAAACAf////////8BA8D+Af////////8BAAACAf////////8BA8L+AAAAAAAAAAABAAACAAAAAAAAAAABA8D+Af////////8B24gCAf////////8BAAACAfHx////wA8BNDACAeDg////wA8BhAACAeDg////wA8BFIQCAeDg////wA8BAAACAfHx////wA8BAAACAf////////8B/AACAP////////4BxIADAAAAAAAAAAAD///9AAAAAAAAAAACAAABgAAAAAAAAAAGAAAAgAAAAAAAAAAEVmBQwAAAAAAAAAAMAAAAcAAAAAAAAAA4AAAAHAAAAAAAAADgAAAAB/////////+ALZ+8AAA=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALlSURBVHhe7ZyBkoIwDET5/5/2Tk+4EpPsBipT7TLjnEoamtdtmiJzyy05lmW5zfRKWXgnWzhZ4286h2Je2mCR8TeBiWKJGGygVoMZYDAxWh47UIyDmWzusNbj8U5q8oe/5bKBmkkplVhXVf3+/SsBdOSqeoDSkRN4ikmgkFAEChF6nhcogSIJkGaUosKSvtkwk9f7WDMIKrpz0BapM6yaKSirJPT5Y+VCdLwEym51MrUxdyR224Om6GX8onSQ9dXjgu6aUKAi4FFATcnv3vTbNpnFm4J2unvBZX2q2NuYu4HycpbdGkWf2xyHpnd03oNf6ZMd3EtBRcqJgrLTJQvUUw6yR/6tTyd9+FsYct5uG+pMDUj2Fh6jEC8wVnHM9D8FykvAXk7KRq+Hopi8WekDWvioHNVD5lVFMddkfFbyZDaDUlDRKsNMi+oKFZUTCAZaIBAoFKOJddzbLChPoinT6zxUVK8LsX4YBbC+etoNCypbqnsCYH0NB8rLGWww77QbEtQ7Az7q+zJQo00lCwwtGt1A2SQcdeToiFbaob54vi4BRV7kkt8OUV/Yij4Y6LyOYrctbHFotzzZVmO1tUWuTfpMgeu1iYrnU6C8bUX0ndcBC7Knv8wXAxEpkcpRWYDZKKHRQgpklIb65imR8XtaUUjylUSZgYogIzCkMl6e3iHbcTnK5pboM7v0XgmqkiKSwR4f1FGFDTX1vDnfjkoka5Sj0PkoP3p1VLZyF/LsOUV5q8pRUFVfCKaXHlCbw1MvKtJm+p4qD2YCEsUqUKQKBEqgSAKkmRQlUCQB0kyKEiiSAGkmRQkUSYA0k6IEiiRAmklRAkUSIM2kKIEiCZBmUpRAkQRIMylKoEgCpJkUJVAkAdJMihIokgBpJkVVQa0/PZPtpjLbfoK/Ry1Q8dhvzy+soATrFdbuKZj1tED5oDY+LSjB+odln7PSPwM0QgoffPPSWGT8zcsdijl93K5tPMP7TAg/nrF3i+EFF3IAAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALKSURBVHhe7ZwJbsQwCEVz/0tPt/HIoYC/sWNwQqSqzQQvvHyWpNIcL+U4juP1pB+VBXexhqMNvtO1ls9H7WzL+E5gJF8kBh9QxeAJMBAfKY8TKGSCJ9n8wCrH71+jarpryNZcPqBGlHJXUEVE799/LcDIcXdQb//GINWhS4FzALXPkAos9XX0Rs+8eZeB0pyhDmjn6LVT0hWa5AkRM19R/0rre/OfClKdSzB6bCVQMwpVNcd8UNRJCZwWHlSVnNOt0ObmsCjLJfRoTkMgFsVottLNmZGrLgfFhQ+qNi30uDm0tSwqYgrL/NA7NWpVcu2palw1lYrE9slcyxFSSLTKf+t6K7Qt6poWepbFZ4yZkX+QfWwHqtV2IE5bbLYFNavso9C2A8XlH9TZEbstQY04bB2boEByYUAh/RHo0yVm7qA0QKsTtkbYFVQPJNoWXCIbZdKQoKTOun5MeQwo62OIFyw3RXGgOJWgdlcrLEGBhBPUnUF55KktFfV4UBwApDqC0TNkFkpRFFSkxxo3UFpTiXTsQ/IwDHYFNQLL4OvQEHdQVlhDXhsGhwBV9i29LYjQnYcCJd3oBAWGQIICQEWAVOXR8X+pAz6fTFAAqF3v+r32rjmqBSFKV+6qqF3aAlKR14ee1BJEemypw9M19Hpg9eaU2fYhQLXCcLbTlvnCgLJsfuWYBAXSTlAJCiQAmqWiEhRIADRzU1TdWIJ7dTVLUCD+BJWgQAKgWSpqR1Bcgo/yNiGMonoh/divPEKAklqFFrzHgqKOJ6hvIsj78ASlgKpzT4IioOgbTu4VsfbZilwVIplLELTWwK3qOS18+qqTVqhRcCuUdFJ7OVm18Mg6Hm8dioimfC3SiPPa2ALGK0fV64f9oi2qHk81/UYdvVtXqcMyL9JvWeZFxvxTcz3I464hm15pIz5ScZt4IrCWz+pjeKuXudt1TblfKv8n6asp5lAAAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMnSURBVHhe7ZyNbsMgDITz/i/drVuJqIt9Z8A0ECJN6xZD8cf5J0zr8TCu4zged/oyWZRu5nCswSvdQz4fubPIeCUwmi8agxNUMrgDDMZHyeMNFDPBnWyesNL196pWTauHas7lBFWjlNVBJRG9vv+3ADXXXUC9/KyDlIcsAl0Cav3uzAtZHyc3UuvvIqp4OCjLGQmKaWxLAOU4uYE9VD8MlHSw9HMJFBqXlGxBbylW4v3Hht5byS08ImmhUxqnhailzoZcHAcK5RFNRey45UBpIVTKJ6VQ+eiSX0pEoGrUUxrTNUdZSdWqkKj6oYo5XTKvXbAHhJW/NNVdour1knbrPD1gWGtoDr1WB2vHo5xVO682bnpQpXDvDSnLr/XtQcSi2DlHQZoeFAu0h920odfDec8cGxRJawgo5lQgf44Dlefjz2ekr01mU4BiQDdRIAaHg2KclD2RXDc7B+FvtclwUN6VaqcL8tkRwfa+r7JZcX1Ua6+DxqP7rYDS+OkUxYRlLzj5PMNBeR9ekWKs0OwJLBRUjyS8QYmzcrZ3WjL0elQs7xxM41oTkqGhJ0s4UkPJATZ8vbnPCysclLUgNhF7YXkhMPZTgNKaSw0g47jXZhpQHmV6ITD2GxRD6dcmFNSIHojNcyQP1exSoJiqV1M5WyFlOTLmodjbAzGg8j5plJrCQXmqlSdZj6x2aV2hoSfexPwPCBQeqJdC41vvDwFlKcvjwDeUNFRRHhhXtR2mqKsCYNe1QZGkNqgNiiRAmm1FbVAkAdJsK2qDIgmQZl0VFX1uTfoUYhYOahV4XwOVAIZsf8CkXwE1o8rCQaHDuIDND5kyHBQ6R8pDEB2joBNNNL6F4DSgLODogLAFUMh5VCn3sL8rHe7lDjLzSJueBWOooko7j2AgtVih20NJl1eUdBLlOgtoD2BTKopxvHcLMjUolJN6wvo6KC3HeEIP5TFGgcjmBPV80XoxlUlzSlY91KhqakG9Vo2P55xpkTWT3GFMElHTxyKtDuotNeThsLrjXv/ylLQ/uk2hJzv7/WGAApRaKFCF8cp1VnvUd5l9AXp0WO2+tck/RCjSFPBkDmYAAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALTSURBVHhe7ZoJcsMgDEV9/0unjRtcmWj5YrExyDOdZopY9PiSQc32Up5t214r/agsuEYKR+s8U5vl80adtYxnAiP5IjE4QCWDFWAgPuY8TqCQAVayecNKz/4p1MRvP+VygFpJKR5fk6p+f/8dAeLRVbWDikcn8BFTgLKEEqAsQp/2ABWgQAKgWShqNFBSBQJc525WWsXwzGHc//q/9QIUsF2aEoDu/3etwtqYZ47bFGWFC+qENU6rzbgFFOJcDSi0bwu7bm89BJLn6sSN1wIAOkZzUCgg70V8KlBeSMsqqhco7WjhVSYaarld09DTwqPmHNVrAzzQuoKiC7kalCesEWBNQWkT3gGqJaxHg0ob0/uwSe6ZY9/10KNBjWqt8HuEoiwnLGWh/YHUMbaiUEdDUSgpoWbl6C6aThV6JOmeinwBiiGAJn4vvFAUSGx4UF6FeO1BTimUx33red5kHlsUUHb0GBeUJ0EHKOGfCq0u3Yi6hs9R1qnbKsEgEBCbqUEhAFCbx4CSclXPvMSE9tjJPN/1K8oqwpz9QaESH9XustAbFQC6rgAFkgpQAQokAJqFogIUSAA0C0UFKJAAaBaKClAgAdAsFFUDSqs75235rR65wHKVAG0cdE7UzrPmrB52vhRrpQurUPZuzwb/+iI9WjKxxqFr8YzpEULyhw29NBBHXlqcZouMQ5VI568FoKnMWjOzJl5R+Y7SgbW2bBd2Uw2wpJzSOaz5PBEDhd6VoDgV9wal5XFhY/05qiXEXKlS6KFKKbHTQpy02aA4MGjIWHkCXKQZwkhu9a7ZFXqaRNG2XMpov1HszLdezUK1vFMz7h19LwH1dDWJOeqOHRt9zrjrgTt0gKJXD7DvMmZH6kgxuIznTkePm0Z+4HOOM7X56c1ND1VTe13g3Kkaop26C8aepsvXVYp6NsOZp3anJAbsV1lWBGb5rH7nR6rdzPp3TY0/pAgozH+RPTEAAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKpSURBVHhe7ZyBbsMgDETz/z/drV2JCAP7bGJDwJGmTcJQ7nFQm6k9XsRzHMdrpx+SRa0xh0N1XqmN03zkYrnglcC0tLQYnKBSwA4wEI0ljwsoZICdYt6w0vP5K9xUX/6cywlqJ6dItCZX/f7+SwHioV31ARUPTeBrpgDFGSVAcYS+7QEqQIEEwLBw1GhQ2hsHsnpnbjJAzaowM0fdDQodT0UB6PQIUCgky8TZDBS3SDXxyLXHv4q+sh2519a0PxJUKbSErgHB9RkCSuKm/GajtrWkY3FAGFf7ljBSB1AwlgWlEdY6zDm3ad1T6+e+9TSgakAoeHcCSmO5gtJCKiZb/feZBZx8zGVAWd+pDQUlcQGadErGlMS6gerZdq2+nufU9KA4wFy7xDVAQW6fR2kFITmXdmwJxMc5ishxLu+GEghI7DBQyOTQhHIZR/UIQfoiMejCDK31eoRwfbn2XkCumXmvGDSHSnF3wXHPzHtBbVPr3QGKg2XhIndHWYvwGN8tPfAQY/kaAQqkG6ACFEgADAtHBSiQABgWjgpQIAEwbApHIZdzoB6zsOlBUQWxGZXKwI8GZXlbULJaAtRbhPXzKFCVat7tMzwBCrSiOyjktrLlnG0chUAqz5u8z7agWreWFJC7bkvBHXeGuW29VlLJCedcKBWsjR8OquYqqaOWSg+oMgVt2+KMQmGgh3npRO2WQvs9aus1ygqXj/kOByU5zLfYeq1DWwOK64NuJ0mcm6NaORMnmksPPN7xsrnbV99p9aTCuXiJK3piXR3VM9HRfQMUuAIBSgrK61AE5zVV2HlOplN9qtlNNJlkovhaJGJRkps+ZsrfuidayCmmkh9J8dVtjSXJ3XRxlHdFPoVlKpNoXj/XJtwKnlXcHfPiNJP1C1dCrNZOAf8B6WDGSodRuzMAAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAD/////////+AAAAAH//////////gAAAAf//////////4HABA///////////8Hdcg///////////8AAAB///////////+AAAB///////////+AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAACAAAAAAAAf///AAACAAAAAAAAP///AAACAAAAAAAAD//////+AAAAAAAAD///0b3CAAAAAAAAA///hbGyAAAAAAAAAf//mMDuAAAAAAAAAP//wMDCAAAAAAAAAH//7MDGAB4B4AAAAB//pdGWAB4B4AAAAA//kYm+AA8DwAAAAAf/wcGyAA8DwHAAcAP/wMDCAA8DwHAAcAD/wOzCAA8DwHAAcAB/wMDCAAf/gHAAcAA/5ZGaAAf/gHAAcAAPyNjeAAf/gHAAcAAP4NTSAAeHgHAAcAADCAACAAOHH//f/8ABAAACAAPPH//f/8ADAAACAAPPH//f/8AHAAACAAHOAHAAcAAfAAACAAHOAHAAcAA/FNkWAAHOAHAAcAB/4OS2AAH+AHAAcAD/yODSAAD8AHAAcAH/BAACAAD8AHAAcAf/+t9+AAD8AHAAcA//AAACAAD8AAAAAB//AAACAAB4AAAAAD//hY2mAAB4AAAAAP//vLy+AAAAAAAAAf//AAACAAAAAAAAA///AAACAAAAAAAAB///DAACAAAAAAAAH///AAACAAAAAAAAP///AAACAAAAAAAAf///AAAD////////////EAAD////////////AAAD////////////AAAD////////////DAAD////////////oEAD////////////AAAD////////////AAAD////////////AAAD////////////vcAD////////////AAAD////////////2YWx///////////+AAAB///////////+AAAA///////////8AAAA///////////8AAAAf//////////4AAAAH//////////gDAAAB/////////+APcMgAAA=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOgSURBVHhe7ZyJbuMwDET9/z/dI117FYXkDCnSpwIULWxZIp+GhxKky5fxWpbl60k/JgvpZgvHevhO95DPS+ssGnwnMJovGoMN1DrgCTAYH3seb6CYCZ405hfW+nr9NdUkb3/LZQP1JKV4fF1V9fP7rwXwvM6Q9CN2e3zcQu5/ixSHdBSwvdf9tx4Pqjdwb4P7XY4oJPLMMCitEKi9SBPmaIyVDrSwQ3O29nrSTRgU06xJRlvHod4JBENrlCPrIpWVgpLUhkL3rRw350wJinXto1ns5vKmjDJQQsV4XWJBITVpYdMrlrWjTFHIUNZAJkyQmrSQbW1EG7QLKClctOrkMRiFzyVCT0rKGTvrga6BQiqNVD53jmIqk5YnIjlqDR+UfLVqyqaA9NBDE971fkhRd4Vh+TVBkbs+QU1QJAFy2FTUkaCs9oC06+OzxMhz7DPMuFRFab2Mdm7TDNSaWc/4jM0SGlr+jbsRY7XzYT+nBxTaHNSoMmpqGuUxUJZjHqeZIxCCKnXiXkVL8FJCjz2yIIMtdRjGqx+1ZYZfOShJJZHwZUNEyCspn1mmgCJa/4837FAIZaghY44ulMdylAcUG0KjTnpzI1JsqaJYYyUoI6DYdRGckvaACSVWTZ68ZuUkVDwOB+XZUU05EUV5q+ahoDIgRRWF1OUBo0RITjL3QLKaS9Rtsw577SGK0jioiFEIiHafBZWhzNT2IAIJORvJUZ5igdYvCb0sp7xdNbMuM4aBltJHZRkzCurXjqqEXgIK5R7HDsJzGlqrvc+sq425PCi2eo5AatYYq3qeXe3DA+wgVFRXlcSvo4xCSgOVYcjZ50gJvbM7mWHfBEVSnKAmKJIAOaxEUVm9C3FIdX/jguTyMewwUJ5uXgK/x2YIXf5YH6UcIM3dnqB+qLG7zSqFHRcNK+a5w0KvP3pIRxHtmvQs4+zImN1ASaHWKwWNaY8/6Ng0AkV69hBQ0vmMOdwKydX8VwOZsHYBpeUspCgr4Wv32PzohVgOyjIchc8E1WynB5YWesx1r4KUlqeuj0L9kgRKy1cMkFuEXlu1pIS+OvlIUFqF00Ch6575RsPtkCMMU6WsPok9Jl029FBeYSvbLUFlSv4sc5X0UWdxLtOODZRUkTIXuvJcW3pYy/GVnam0fRXR/LdIBuW33q7tTSp35opzv7UsfRN3RYcqbG7V9EpPqNepMOLMc6pvC0lGV3W4VwS0RZxlvOdtkDuMtVh8A6D/dGTFstH3AAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANUSURBVHhe7ZyLcuMwCEX9/z/d3XbXHkXhcUCyaytkptNmghU4XNDDabYv47Ft29cn/ZgspBdbONbFK73mxby1wXrGK4HRYtEYHKB2g0+AQWLsebyAIgN8ks03rP3x8xdR093Kkvg8mtT2PQ5Qmdlv1JHs9VcmbVfV39//lgC0uV3ppOdTFnTkuiZeHVJbli/1KsBVZ4vG1rOxEibNzrQKtGtp0v/bMVBedvuF6dEEjUVrnwhP3aSfagtk6o+xrpwHSgqkz5r2XFNv77gH821a79Tv+XM6KCljUvCWo17p0VKRlEr9GwalBaFlsJktXpYfUrBa2UbVpJWy1F81/6aCellfKNLOZNAqK6qmXy89qUnOyKAFPTrT9T3SU2+wL9rNnMxMVul4zVNLgATJ62EzEpcuvcjibFVbtI5aNfhIXAUK0ipQBQoSgGalqAIFCUCzUlSBggSgWSmqQEEC0CylqOiRCNnLafs6a28njTvTXvDJ3xRHA9GCIEclJBHe+No5VhRud1TEQEXexDvekDJ/5vgZf1KKsjLoZa/Liniz9czxNYUS5YYVFQlE64/0zMoLgI4TTZDV13Ez352TDsbgxPH2OSup75Hxbw0q2sxpOUqQH62oLKjo0uAjFZWBVKCMD4FEy3SpHuX1GTDDqJ/ZWhYUnRXJdC7ZkOsuW3BGmvmImkiP0mys7ZHkE9lOhRecI6AiW5MsKC850b2h0jfZXo9IXAr0DFCaL9Ie0kqyZz+kqGjPWcEeb2FWCHYkhgIF6RWoAgUJQLNSVIGCBKBZKapAQQLQrBRVoCABaFaKuhJU5LgC+nU7symK8g7Fbhd1wqHLQT1VfaeB0pJWoJx/t5UO2hIV8GuXnKaoXjnkKNayiZ5oSmONUH4UKAKyP4qWnmeAXQaKlJ51gyAys1pqzkBqYMduLvRvNhJEO1YUlKYW745MBtZtFWUlg9zVeWyPipYeUS1Rxix1PVJRBJBW0tFruwTbXzniDX5GjyKK0havs5v5Md7eFD0gkdU2CWK3IWXZN27a+GeU3vcYP+/fOpGBFVGUFDAFpcGSfJ7VzNtk1hdtGerY1XQoalRVGSXe/Zq31jB7hrg7AM8/tb96Ne4NvMrrGqCjh1qBWhvRFV+zWPwB+C44oFco8I4AAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANVSURBVHhe7ZuLboMwDEX5/5/u1q4g49m+13mVklSaNhUH4pPrRyK2PYLPtm2PmX5CFtZFCScafKdryOdNOouM7wTG88VjcIDaDWaAwfioeZxAMTeYyeYJa/+8/lpqspdfcjlAzaSUjK+7qn5//7UALT+6pfjmyip8aQtJhrK3CAzIlgtXe6/3fPuD0opdoN5LZ3XzXr/WOuxr1ROkiTGKEknx37YI5TArhK3GsFfDPDT0MqCi/eXR14h9qM6LrVU1HJQHAG2j3G2Fs2mfAhQKwyjX9cp3l1SUFVpR7hlRQYeBsnJIxvmMbeuwE3PvX/UyoDLVDLUhraANVZSeNJOgvQqXDc9aYJcHFSlGg+7VQw0PPVZR1l4x6qtkpesFq5uiaqV+tfELFLkiC9QCRRIgzZaiFiiSAGm2FDUSVK/ehfRhiFm1orI7d+ZALmpMM88reZZHvQpUdkOKumvvLAmNA865b+NkpFgMyps8O2lvU4vU1HtcU0WVSJo5KbAU5YUaCsHScc1AlYZBVmnWxpjdVGcgsuGXDr2rgvJOEDIqjaAVg2JzBfHwU7KV9hllXA4Um2yRpJmKOT0oBlI2R91OUSykqUFlIE0LKgtpgUq+3deiUc1U0mYNZ2nVQxUs25Ci+328M28BCrUOkQLYPSZqjPfr7FzSDWcLUNm9InKaVSNSIdEcl797wD4cOYtWmFUSWkj0nG45ipXut9tVh963A2Dnv0CRpBaoBYokQJotRS1QJAHSbCnqrqBKG0Z9GkHyOcygomomlp0MsvdOEtC4/XrN+BBUzY3ZyWfsPrloLii0t2LOiSy5S2e142hhPHv5nCjE9P2tuTy/sz5pUFmA3uTY73XYSCeyG23mmZ5q06EXrUqkoH2lkBI9RVgORI5rldXMTYwN5Xb6x2wULuzktcS1OjzlRN/3WsRLgdIrLkGCcDgWMsphl1GUV4KRwoLE+boUJXhWQS3mFuYoFOeWE1GCZSqSV8EioDr/eQUALRqxKP5RsJU7onxihZAMCZTMPdCXB5VpCO9se4SerkJ3djrr26HyPVyyN5jF/siBVtKeBQLy85RfZZVAA2e7furnvHI6GxTt778GVhpEvcQs4NwWhulRZoCERBK+eBB12ne8FgniB7fzmjBaaHz1AAAAAElFTkSuQmCC"></span><span class="etiquette">
+                                    <img _ngcontent-xmg-c45="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALFSURBVHhe7ZwLjsMgDERz/0t322yJHAT22G4MIY5UbVUGYr8M31a7vZhr27bXk14si1YhhcNVXqlMynmjyUrilcD0cukxOEAVwRNgIDnWPE6gkAaepPnAKtf+Lt3UfvyUywHqSU7R5Fpc9f77vwTIi3fVDiovnsDXTAlKMoob1F26rTdOF6g7LU69sZpBeW8sWf2Kck/MJlCeG14BQNOmNXY1KOuNNMlcrbXkoAJlucHVSVvb1+YCg6INr/heAp6gwF0JDIpunFdYyV/W9Y6jBnI0LNl11nItJGIS3RbGcqNZoFljV3U9mqz1hiOBeWI2g7rbmOWBZO56LWeNdApy76GbYiTAVTSurrcKBCSPBIVQemuGgOptgbiYLXVABpAsFBSyR2xFLdWDMnWKhoKqlxitmUmC5J3NUH5hoOqEe4vXeh/Zq8e1hyav0U0BSjM2oYA1EBDt1KAk10jlCABUMwSUMrju7yKWB8UN0JqulaC+tCQQUjnqXEQ3pOvRKb3lrhK4BEIqRwCgmmGgkC4mgZDKUQiILkEhlCL3er9YcNY5paMIEStg0CiwbOqu19oLogM9TAAUhoHqbYC5Wc9aB8xdJQsFhSTeip5boNabaFX2CnE4KA4WF3cPliJXl3QIKFfEgyonKBB8gkpQIAFQlo5KUCABUJaOSlAgAVCWjkpQIAFQlo5KUCABUJaOmhXUr86faDtgri5ZqKO4c6WShXT2JIF20WAqh4FqOUD6rBzKtc7NI79YIGdouh/kW54a2lU0UNA2LfHWdYY6qpUA6jLylEP+FUGCAu2WoO4ASupmvZmw9TmYr1l2OCriax/t8mAWUEfcZWA041ZUlNZBksvoA42a9Y5lCp1BFDk/Qloexs6IWvwR2SuSPDm4HgsU7SwtpW46OSp6ETcr5d7Y19y/RA2UM8GScmY3epbd/J3rcA/uDy9dom6gTgdgAAAAAElFTkSuQmCC">
+                                </span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMBSURBVHhe7ZyBUoQwDET5/58+9RQm1Ca7oelB29yMoyMF0pdN2JbR7WV8tm17rfRlsqgdlHCsk2c6hua8ycmiwTOB0eaiMThA7QNWgMHMseRxAsVcYKUxP7D2z/unVFM9/ZLLAWolpXjmuqvq+/uvBciPrao3qPzYBP7E5AO1ogLdoEqXvooSXaC0pcwKsGhQaL03OywKVGnpT95CLJpnhgVB1dY9/6z9ArBMUOrisOK7Zl9MU6DKktLswcy2AZaetVc1c09SxJGGEyW9q6IsS4ECO7Y2KlvR7LlyV6TV3nQDhQJj1pcRBpeJwxFLbOnVgqtlFykjGhS6n3W8i6Ks9SC7Vowo2zI5w4LSAkflwk6YTQpzvY8oau8BbOC9QLWY4i6g2KeN5dGkeWUBa8Y4ooy7gUKwmLLTLAJTKuj+XnU9CpSmnChFtYDvBgr1mdK7RDwpWaU1WJW+PorJJAP2qrLYXjiEj1oOFMo624cYcJ5SQ09EdK3wHnUVFCF712v/6DjCQaFGiSYQ0U9QT2yIoW8z9zpzT5l4npZaOaOyE8mPBcWaPSbAVoWiXueMIR6UBYsNDpUQgqidL5dHbCxdehR785HGJSgyWwkqQZEEyGGpqARFEiCHpaISFEmAHJaKSlAkAXJYKipBkQTIYamoBEUSIIelokYCVdtck/GjzTd0PsnCHHa7oiwIaOONOTcCktgg7LPDiYKUE61B0UCJwE9vZq68NEAxFjE8B1Qt8BoA5v0gC4EZd2vp1RSFQFkqK5XGAGDHmKC0TXjv77VgpgO1v5crs6k9mZxZgn+mi3qZjI+Fz8ZI9ygrSKsBM4EgAN4Gf1vpaYHK0mvNIPOIR0AfoSjWyzAKYnpVrf8NBarmXbSm3gLtqee67UFPU/dUSEIk9xjOJ4MpY3MraqTJRcZ6gCq9UuRNRr/W0W72Ghx9Qr3i30WU/xbJIHzyjNIr9crKqNc9mVlrDTfqBCPiLn1i/jPAgqq2LKuaqNY1XERGP30NNGfTbVqL1hmPWcn5Al42JtwasSC+AAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALVSURBVHhe7ZyBjsMgCIb7/i+9221zYUbgR6HVypLLLdFS+PylYJMdD+FzHMdjpz+RRWuQwpEuvtOYFvNBg9Um3wkMFwvH4AuqTNgBBhJjzeMHFGJAm4PmNM3ODOP/sZTP65uXmlBI1IEZgGjb8MWogPJyGIXldb9oO2VRn//fJUDkpwUv8n6etonv50OKXhhPUCQ1xYGStqF3MJH2PnHEgKoh0YdGKuqzrC1ICarSPAcpQRFQEqQEpWy3OsmeUY54J3a3ZK4pydvxs+25gLo7JJc6agdIw6B2gTQEaidILCjtqbQbpC5QO0Iyg9oVkgnUzpBgULtDgkAlpHcP0KzMucO2s9uGme4Hg5rJ6St8gUHtvgW7Qa12lDuqwgQFEnQ5ZuEO5qQ3MJIipevAuH6medibDpQG17rlveyFg7IooBVUfc5uAYXaQ2xODYpC7nnqStdY7bmDsjqAwqB2EZVqfmjjTN71e1M8kjjRrYKA0uZMDao4JwXhlXwt99CgDh0Fc8aRQLXkOaJKLWhOteB1cVuvOGCRehSoXkghihqVPKJIbfVb4yOQpgPFqc6ixghIy4CKKDqtqnSvo3q3nqYabTxKSVWO9UnmWjAjlbJmGwFlVVGjGPYBJW0RJNARkMuD4p5iSGCl3uoFiCwOqrKQHKU94i15THusWyCO1GchoFpbEGlfuOJUunZ5UKikV5kXpqhVAKB+JiiQVIJKUCABcFoqKkGBBMBpqagEBRIAp02hKGuborVIpUcEGUDTLgeF9F8IGM8GWGjY/Y5ZoOX5TKLBtfo8rvfjjnMiYV2qqBYo5PgFPfeyLJo2dzlQkspqgFrwlvEEBdJKUKuCGknwp2y9iNoDWSxreXBFjvr6WFYCCSxijqXgvArUixGVbASIlW3S83r3H9paGUztO01J+dNtzMrWb3/yxwArUFzH0Gz00PbiLtsM6RPFjrinc1/5Gmnh/wD/8FasxoqqDwAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKbSURBVHhe7ZyBbsMgDETz/z/dtV1BjGHfQRPihIs0rVqugF/ODnG1bg/n2LbtsdKPy6J1soTjvflO51DMWxksEt8JjBWLxSCDSoIVYDAx1jz+gGIGWEnzgpWO9yu5qX35Sy4Z1EpO6Yk1uer5+3cLoMN31RuUDp/Ax0wChYwiUIjQ57xACRRJgJTJUQJFEiBlcpRAkQRImRx1Jqi6I0quJbRsyFGoubc8KK93XtphaVDMBwy5wVV9IBE6p8jF0aln9pELKMuD8lKpdW7Z1GNAsTXKSuFWBjBaRvMam9VZmUilXq9DLD2qcx5sxrl7zBsOVKueWaAsbatu1n9j4DH1fKqjUHqx6dtz02BuQi8NOk4D1UrDerF7aFC6p/OhQKFFI8dZQXlA0ZzTQDFFtnXXQTUKuYuBWs+LXOOdp1LPm3AEFCra1nxeoe4p+CPAhkCl4sfcUVpaphj33tEYUGXRtor8V9sDb8OGArKgokKNaguzJuuCWBd4l9RDC2Nu7Uzw3jitwmuNiWocW8Qr2HgfMZLXd3oPXaPuFPRILAJFUhMogSIJkDI5SqBIAqRMjroSqN6NKBnbrrIQjkKgyme0XaPvGCwcKOaBuSO+3aRhQdXPlrtFPDhQWFAjT/iDDKi3CRSFKX8ueG73ABVzMpZDZeEchRp6h9JwBg8HSnc9fLX+/eNSb1/7SLeFdVS9PTh703kZUEe6hRk7LCjtoxqXD20Pzk67ogzE3UcxaTFDEyL1ZgT67RwCRRIUKIEiCZAyOUqgSAKkTI4SKJIAKcuOirD7Jdc8XZafHNIWffoKLjJhMpG+Fonolb3NVHYVL3KRpy2zLEn66jYDe6pN2UilLlL7dZptqoksBs0ey4rAUMxuM4ppqt1J47n4B2CHZ7eyygRwAAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKhSURBVHhe7ZuLcqMwDEX5/59OQxqo4+pxDCE4+DLTaWcRBh1fPRCz0y04pmm6jfQTsrBOlnCii690LvN5Kp3NjK8ExvPFY7CCWgxGgEF8rHm8gCILjGQzw1qOx19Sk739JZcV1EhKafF1UdX9928LoCNW1QOUjpjAU0wClQlFoDJCz/MCJVCQADSTogQKEoBmUpRAQQLQ7DBFXW1c0wTKm3RamzIsqGwcXMMaEpQFqRzNWC/VAlW9QLtj0+KjBMyXXZuhHBWpo1bbOg0cDZQHIgPSAjebh9EiQu2stAGfwR+zZKC8eCEh6eW+ck1aRKhdBCmClYbekaAsVc7380BF9tbGkLSw3C/z8+Ogsp4rAlWfi5RHlE42pdqcz4Ve1G950s92myjTs6F57RRFteSTlsRLnM7uneTWzynKS+BRlYzUQEK5DDEKylH+dlAkYWahQUMrWycL6+xtIup409DLFj8aFGkz6meMqma0KbvagwgUuWkkey//ZNXMui/9N8+fTNVIUaRJI6V2S37IrqHVbEsTa1zDPoCSqmI9eMtDWr0SvS+1a6mkuI+KEtxI53DojQQlaDlY6I0MS4qCuy9QAgUJQDMpSqAgAWgmRX0zKG8UA306xKxLRQkU3GuBEihIAJhFYxVw+WEm3eUogYJ7XY9+vVEwXO5tZl0rqh6wvc3rDQt1Bapl7r3B112XCBTE1zWonvopgfo2RWWfpc6uft0oykrk1aeiU//fc5eg6miIIMLI2W32FaB66Ke6AEUUQ2x2yyZYoAtQRzr4rrUFCpIUKIGCBKCZFNUKaiamwyawVtylTxEoH9SDUdnQCdYrgUVNKyipKlbTP1DKVX/ASjW9gOrhnaqH0PdGOma5O3v+cwawzOewL2gZqF3BNtqgHxjMwFBwPuWLAAAAAElFTkSuQmCC"></span>
+                            </div>
+                            <div class="infosgarantie">
+                                <div class="garantie"> Garantie constructeur <span class="emphase">2 ans</span><span> étendue à <span class="emphase">7 ans</span> pour <span class="emphase">69 €</span></span></div>
+                                <div class="dispopieces"> Disponibilité pièces détachées <span class="emphase">Aucune</span></div>
+                            </div>
+
+                            <!--<div class="lignesinfoconteneur">
+                                <div>
+                                    <div class="ligneinfo">
+                                        <div class="infogauche">Prochaine commande</div>
+                                        <div class="infodroite emphase">-</div>
+                                    </div>
+                                    <div class="ligneinfo">
+                                        <div class="infogauche">001181 PERMANENT</div>
+                                        <div class="infodroite emphase">mer. 28/09 (21:00)</div>
+                                    </div>
+                                    <div class="ligneinfo">
+                                        <div class="infogauche">Livraison</div>
+                                        <div class="infodroite emphase">30/09</div>
+                                    </div>
+                                </div>
+                            </div>-->
+                        </div>
+                    </div>
+                    <div class="boutonpanierconteneur">
+                        <button class="cta cta--filter jsboutonpanier">Ajouter au panier</button>
+                    </div>
+                    <div class="detailsconteneur">
+                        <div class="separateurinfosdetails"></div>
+                        <div class="colonnedetail">
+                            <div class="titredetail">Les caractéristiques détaillées</div>
+                            <div>
+                                <div class="infodetail">Type de produit : Machine à laver - chargement frontal</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Capacité de charge : 9 kg</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Classe énergétique : Classe A++</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Programme de lavage standard : Coton</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Consommation d'énergie annuelle : 243 kWh</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Consommation d'eau annuelle : 12100 litres</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Classe d'efficacité d'essorage : Classe B</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Vitesse d’essorage : Variable - 1200 tours/min (maximum)</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Taux d'humidité résiduelle atteint : 53%</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Niveau sonore (lavage) : 58 dB</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Niveau sonore (essorage) : 78 dB</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Niveau sonore maximum : 78 dB</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Facteur de forme : Indépendant (peut être intégré)</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Type d'installation : Sous-plan</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Charnière de porte : Gauche</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Détection d'absence de la balance : Oui</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Détails sur la durée du programme : 210 min - lavage - pleine charge - 60 °C ¦ 175 min - lavage - charge partielle - 60 °C ¦ 165 min - lavage - charge partielle - 40 °C</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Couleur Extérieure : Blanc</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Capacité de lavage du tambour : 59 litres</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Matériau du tambour : Acier inoxydable</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Nombre de programmes : 15</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Durée moyenne du cycle : 210 minutes</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Fonctions du minuteur : Départ différé, témoins lumineux DEL</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Départ différé : 12 heures</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Témoins : Fin de cycle, indicateur de progression du lavage</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Classe de lavage : Classe A</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Options et programmes spéciaux : Lavage rapide, prélavage, laine, lavage à froid, délicats/soie, vidange, rinçage sans lavage, sans essorage, rinçage+</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Fonctions de sécurité : Système de protection antidébordement, Protection anti-inondation, contrôle anti-mousse</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Fonctions personnalisables : Top amovible</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Normes de conformité : Directive 1061/2010/EU</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Consommation d'énergie par cycle : 1.56 kWh</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Détails de la consommation énergétique : 1.56 kWh - lavage - pleine charge - 60 °C ¦ 0.75 kWh - lavage - charge partielle - 60 °C ¦ 0.73 kWh - lavage - charge partielle - 40 °C</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Consommation d'eau par cycle : 57 litres</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Détails de la consommation d'eau : 57 litres - lavage</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Raccordement d'eau : Froid</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Puissance électrique : 2200 Watt</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Consommation électrique en mode Eteint : 0.5 Watt</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Consommation d'énergie en mode sous tension : 1 Watt</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Alimentation : 220 - 240 V / 50 Hz</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Courant nominal : 10 A</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Longueur du cordon : 1.5 m</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Type de prise : Européen</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Largeur : 60 cm</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Profondeur : 58.2 cm</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Hauteur : 84.5 cm</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Poids : 75.5 kg</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Largeur (emballée) : 64.1 cm</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Profondeur (emballée) : 64 cm</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Hauteur (Expédition) : 88.1 cm</div>
+                            </div>
+                            <div>
+                                <div class="infodetail">Poids (Expédition) : 77.5 kg</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
+

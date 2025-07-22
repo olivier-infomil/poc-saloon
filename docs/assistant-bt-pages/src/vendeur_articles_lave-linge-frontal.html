@@ -1,0 +1,1031 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href="css/assistantBT.css" rel="stylesheet" />
+
+    <script src="includes/jquery-3.3.1.min.js"></script>
+    <script src="scripts/articles-lave-linge.js" charset="UTF-8"></script>
+    <script src="scripts/bascule-vendeur.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        $(document).ready(function () { init(); initVendeur(); });
+    </script>
+</head>
+
+<body>
+    <section class="conteneurprincipal">
+
+        <header class="header">
+            <div class="partiegauche">
+                <div class="header-menu js-headerMenu">
+                    <div class="burgerconteneur">
+                        <button class="menu"><span></span></button>
+                    </div>
+                </div>
+                <div class="logoassistant" onclick="location.href = './vendeur_index.html'"><img src="assets/images/logo.svg"></div>
+            </div>
+            <div class="header-navbar">
+                <div class="euroconteneur" onclick="location.href = './vendeur_connexion_caisse.html'">
+                    <img class="euro" />
+                </div>
+                <div class="rechercheconteneur">
+                    <img src="assets/icones.svg#loupe-view" class="rechercheicone">
+                    <input type="search" placeholder="Rechercher" class="recherchetexte">
+                </div>
+                <div class="caddieconteneur" onclick="location.href = './vendeur_panier.html'">
+                    <img src="assets/icones.svg#caddie-view" class="caddie">
+                    <div class="badge">
+                        <div class="badgenumero">1</div>
+                    </div>
+                </div>
+                <div class="identification">
+                    <div class="nomutilisateur">
+                        <div class="nomtexte">J. MARILLON</div>
+                        <div class="vendeuroupas"> (Vendeur) </div>
+                    </div>
+                    <img src="assets/icones.svg#chevron-left-view">
+                    <div class="menuidentification">
+                        <div class="optionmenu" onclick="location.href = './articles_tv.html'">Passer en mode gestionnaire</div>
+                        <div class="optionmenu">Déconnexion</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="bandeaucomparatif jscomparatif" hidden>
+            <div class="contenubandeaucomparatif">
+                <div class="zoneproduit">
+                    <div class="contenuproduit jsproduit1" hidden>
+                        <img class="imageproduit" src="assets/images/fiche_lave-linge1.png">
+                        <img class="croixproduit" src="assets/icones.svg#croix_gris-view">
+                        <div class="designationproduit">Beko LLF10W5 - Machine à laver - indépendant - largeur</div>
+                    </div>
+                </div>
+                <div class="zoneproduit">
+                    <div class="contenuproduit jsproduit2" hidden>
+                        <img class="imageproduit" src="assets/images/fiche_lave-linge4.png">
+                        <img class="croixproduit" src="assets/icones.svg#croix_gris-view">
+                        <div class="designationproduit">Brandt WF129L - Machine à laver - indépendant</div>
+                    </div>
+                </div>
+                <div class="zoneproduit"></div>
+                <div class="zoneboutons">
+                    <div class="boutonscentre">
+                        <div class="boutonconteneur">
+                            <button class="cta cta--filter jsboutonvalider desactive">Valider le comparatif</button>
+                        </div>
+                        <div class="boutonconteneur">
+                            <button class="cta cta--clear cta--flat">Supprimer le comparatif</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bandeaunavigation">
+            <div>
+                <div class="filariane">
+                    <div class="titresniveauxconteneur">
+                        <div class="titreniveauconteneur">
+                            <div class="titreniveau">...</div>
+                            <div class="separateurchevron">&gt;</div>
+                        </div>
+                        <div class="titreniveauconteneur" onclick="location.href = './vendeur_categorie_lave-linge.html'">
+                            <div class="titreniveau">LAVE LINGE</div>
+                            <div class="separateurchevron">&gt;</div>
+                        </div>
+                        <div class="titredernierniveau">LAVE LINGE FRONTAL <span>(256)</span></div>
+                    </div>
+                </div>
+                <div class="onglets">
+                    <div class="onglet">
+                        <div class="titreonglet">SYNTHÈSE</div>
+                    </div>
+                    <div class="onglet desactive">
+                        <div class="titreonglet">SECTEURS</div>
+                    </div>
+                    <div class="onglet estactif">
+                        <div class="titreonglet">ARTICLES</div>
+                    </div>
+                    <div class="curseuractif onglet3"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pageconteneur jspageconteneur">
+            <div class="articlesconteneur">
+                <div>
+                    <div class="boutonfiltresconteneur jstotalavantfiltre">
+                        <div class="boutonfiltres">
+                            <div class="boutonfiltrestexte">Filtres</div>
+                            <img src="assets/icones.svg#pointe_bleu-view">
+                        </div>
+                        <div class="totalarticles">256 articles</div>
+                    </div>
+
+                    <div class="boutonfiltresconteneur jstotalapresfiltre">
+                        <div class="boutonfiltres">
+                            <div class="boutonfiltrestexte">Filtres</div>
+                            <img src="assets/icones.svg#pointe_bleu-view">
+                        </div>
+                        <div class="totalarticles">3 articles</div>
+                        <div class="filtrebadge">
+                            <img src="assets/icones.svg#croix_blanc-view">
+                            <div class="filtrebadgetexte">En stock</div>
+                        </div>
+                        <div class="filtrebadge">
+                            <img src="assets/icones.svg#croix_blanc-view">
+                            <div class="filtrebadgetexte">Chargement à partir de 8kg</div>
+                        </div>
+                    </div>
+
+                    <div class="voile"></div>
+
+                    <div class="filters js-filters">
+                        <div class="filtersList">
+                            <div class="filtersList-header">
+                                <div class="croixconteneur">
+                                    <img src="assets/icones.svg#croix_gris-view">
+                                </div>
+                                <div class="filtersList-header__label">Filtrer<span></span></div>
+                            </div>
+                            <div class="filtersList-content">
+                                <div class="filtersList-form">
+                                    <div class="filtreextensible">
+                                        <div class="titreextensible ouvert"> <div class="textecontenu">Disponibilité articles</div> </div>
+                                        <div class="contenuextensible">
+                                            <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> En stock <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Présent sur BTLEC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            <div id="filtresSous_PresentBTLEC" class="sousfiltres">
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Sélectionnés <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Non pointés <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Exclus de l'offre <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Suspendus <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div id="filtresSi_PresentBTLEC">
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Avec stock centrale <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Nouveaux produits <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Planning 48h <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                            <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Absent sur BTLEC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Commandable <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> En promo <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            <div id="filtresSous_EnPromo" class="sousfiltres">
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Avec TEL <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Avec BRII <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filtreextensible">
+                                        <div class="titreextensible ouvert"> <div class="textecontenu">Eléments de structure</div> </div>
+                                        <div class="contenuextensible">
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> LAVE LINGE FRONTAL 5-6 KG <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> LAVE LINGE FRONTAL 7-8 KG <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> LAVE LINGE FRONTAL 9 KG &amp;PLUS <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filtreextensible">
+                                        <div class="titreextensible ouvert"> <div class="textecontenu">Marques</div> </div>
+                                        <div class="contenuextensible">
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> ALTUS <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> BEKO <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> BOSCH <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> BRANDT <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> CANDY <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> CURTISS <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> DAEWOO <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> ELECTROLUX <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> FAGOR <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> FAURE <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> HAIER <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> HARROW <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> HISENSE <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> HOOVER <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> HOTPOINT <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> HOTPOINT ARISTON <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> INDESIT <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> LADEN <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> LG <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> PANASONIC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> SAMSUNG <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> SHARP <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> SIEMENS <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TUCSON <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> VEDETTE <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> WHIRL <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> WHIRLPOOL <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filtreextensible">
+                                        <div class="titreextensible ouvert"> <div class="textecontenu">PVC</div> </div>
+                                        <div class="contenuextensible">
+                                            <div class="nstSlider" id="nst-slider-6" data-range_min="0" data-range_max="100" data-cur_min="0" data-cur_max="100">
+                                                <div class="bar" style="left: 0px; width: 300px;"></div>
+                                                <div class="leftGrip" style="left: 0px;"></div>
+                                                <div class="rightGrip" style="left: 264px;"></div>
+                                            </div>
+                                            <div class="bornesconteneur">
+                                                <div class="bornemini">169 €</div>
+                                                <div class="bornemaxi">800 €</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="separateurhorizontal"></div>
+                                        <div class="filtersList-form__title">Lave-linge &amp; Sèche-linge (99)</div>
+
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Type de produit</div> </div>
+                                            <div class="contenuextensible">
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Machine à laver <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Type de chargement</div> </div>
+                                            <div class="contenuextensible">
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Chargement frontal <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Capacité de charge</div> </div>
+                                            <div class="contenuextensible jspoigneeavant">
+                                                <div class="nstSlider" id="nst-slider-7" data-range_min="0" data-range_max="100" data-cur_min="0" data-cur_max="100">
+                                                    <div class="bar" style="left: 0px; width: 300px;"></div>
+                                                    <div class="leftGrip" style="left: 0px;"></div>
+                                                    <div class="rightGrip" style="left: 264px;"></div>
+                                                </div>
+                                                <div class="bornesconteneur">
+                                                    <div class="bornemini">5 kg</div>
+                                                    <div class="bornemaxi">13 kg</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="contenuextensible jspoigneeapres">
+                                                <div class="nstSlider" id="nst-slider-0" data-range_min="0" data-range_max="100" data-cur_min="37.5" data-cur_max="100">
+                                                    <div class="bar nst-animating" style="left: 99px; width: 201px;"></div>
+                                                    <div class="leftGrip nst-animating" tabindex="0" style="left: 99px;"></div>
+                                                    <div class="rightGrip nst-animating" tabindex="0" style="left: 264px;"></div>
+                                                </div>
+                                                <div class="bornesconteneur">
+                                                    <div class="bornemini">8 kg</div>
+                                                    <div class="bornemaxi">13 kg</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Nombre de programmes</div> </div>
+                                            <div class="contenuextensible">
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="nstSlider" id="nst-slider-8" data-range_min="0" data-range_max="100" data-cur_min="0" data-cur_max="100">
+                                                    <div class="bar" style="left: 0px; width: 300px;"></div>
+                                                    <div class="leftGrip" style="left: 0px;"></div>
+                                                    <div class="rightGrip" style="left: 264px;"></div>
+                                                </div>
+                                                <div class="bornesconteneur">
+                                                    <div class="bornemini">8 </div>
+                                                    <div class="bornemaxi">18 </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Niveau sonore maximum</div> </div>
+                                            <div class="contenuextensible">
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="nstSlider" id="nst-slider-9" data-range_min="0" data-range_max="100" data-cur_min="0" data-cur_max="100">
+                                                    <div class="bar" style="left: 0px; width: 300px;"></div>
+                                                    <div class="leftGrip" style="left: 0px;"></div>
+                                                    <div class="rightGrip" style="left: 264px;"></div>
+                                                </div>
+                                                <div class="bornesconteneur">
+                                                    <div class="bornemini">72 dB</div>
+                                                    <div class="bornemaxi">83 dB</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Classe énergétique</div> </div>
+                                            <div class="contenuextensible">
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Classe A <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Classe A+ <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Classe A++ <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Classe A+++ <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Vitesse d'essorage maximale</div> </div>
+                                            <div class="contenuextensible">
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="nstSlider" id="nst-slider-10" data-range_min="0" data-range_max="100" data-cur_min="0" data-cur_max="100">
+                                                    <div class="bar" style="left: 0px; width: 300px;"></div>
+                                                    <div class="leftGrip" style="left: 0px;"></div>
+                                                    <div class="rightGrip" style="left: 264px;"></div>
+                                                </div>
+                                                <div class="bornesconteneur">
+                                                    <div class="bornemini">1 000 tours/min</div>
+                                                    <div class="bornemaxi">1 400 tours/min</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Largeur</div> </div>
+                                            <div class="contenuextensible">
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="nstSlider" id="nst-slider-11" data-range_min="0" data-range_max="100" data-cur_min="0" data-cur_max="100">
+                                                    <div class="bar" style="left: 0px; width: 300px;"></div>
+                                                    <div class="leftGrip" style="left: 0px;"></div>
+                                                    <div class="rightGrip" style="left: 264px;"></div>
+                                                </div>
+                                                <div class="bornesconteneur">
+                                                    <div class="bornemini">59,00 cm</div>
+                                                    <div class="bornemaxi">68,60 cm</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Hauteur</div>  </div>
+                                            <div class="contenuextensible">
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="nstSlider" id="nst-slider-12" data-range_min="0" data-range_max="100" data-cur_min="0" data-cur_max="100">
+                                                    <div class="bar" style="left: 0px; width: 300px;"></div>
+                                                    <div class="leftGrip" style="left: 0px;"></div>
+                                                    <div class="rightGrip" style="left: 264px;"></div>
+                                                </div>
+                                                <div class="bornesconteneur">
+                                                    <div class="bornemini">84,00 cm</div>
+                                                    <div class="bornemaxi">102,00 cm</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Profondeur</div>  </div>
+                                            <div class="contenuextensible">
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="nstSlider" id="nst-slider-13" data-range_min="0" data-range_max="100" data-cur_min="0" data-cur_max="100">
+                                                    <div class="bar" style="left: 0px; width: 300px;"></div>
+                                                    <div class="leftGrip" style="left: 0px;"></div>
+                                                    <div class="rightGrip" style="left: 264px;"></div>
+                                                </div>
+                                                <div class="bornesconteneur">
+                                                    <div class="bornemini">42,00 cm</div>
+                                                    <div class="bornemaxi">80,70 cm</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Consommation d'énergie annuelle</div> </div>
+                                            <div class="contenuextensible">
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="nstSlider" id="nst-slider-14" data-range_min="0" data-range_max="100" data-cur_min="0" data-cur_max="100">
+                                                    <div class="bar" style="left: 0px; width: 300px;"></div>
+                                                    <div class="leftGrip" style="left: 0px;"></div>
+                                                    <div class="rightGrip" style="left: 264px;"></div>
+                                                </div>
+                                                <div class="bornesconteneur">
+                                                    <div class="bornemini">115 kWh</div>
+                                                    <div class="bornemaxi">374 kWh</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Consommation d'eau annuelle</div> </div>
+                                            <div class="contenuextensible">
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="nstSlider" id="nst-slider-15" data-range_min="0" data-range_max="100" data-cur_min="0" data-cur_max="100">
+                                                    <div class="bar" style="left: 0px; width: 300px;"></div>
+                                                    <div class="leftGrip" style="left: 0px;"></div>
+                                                    <div class="rightGrip" style="left: 264px;"></div>
+                                                </div>
+                                                <div class="bornesconteneur">
+                                                    <div class="bornemini">7 400 litres</div>
+                                                    <div class="bornemaxi">23 200 litres</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Capacité de lavage</div> </div>
+                                            <div class="contenuextensible">
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="nstSlider" id="nst-slider-16" data-range_min="0" data-range_max="100" data-cur_min="0" data-cur_max="100">
+                                                    <div class="bar" style="left: 0px; width: 300px;"></div>
+                                                    <div class="leftGrip" style="left: 0px;"></div>
+                                                    <div class="rightGrip" style="left: 264px;"></div>
+                                                </div>
+                                                <div class="bornesconteneur">
+                                                    <div class="bornemini">40,00 litres</div>
+                                                    <div class="bornemaxi">98,00 litres</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Classe d'efficacité d'essorage</div> </div>
+                                            <div class="contenuextensible">
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Classe A <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Classe B <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Classe C <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Classe de lavage</div> </div>
+                                            <div class="contenuextensible">
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Classe A <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Inconnus C NET</div> </div>
+                                            <div class="contenuextensible">
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Oui <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filtersList-cta">
+                                    <button class="cta cta--clear">Réinitialiser</button>
+                                    <button class="cta cta--filter jsboutonfiltrer">Filtrer<span></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="infomil-table">
+                    <tbody>
+                        <tr class="table-header">
+                            <th class="table-header__item icones"></th>
+                            <th class="table-header__item designation cliquable colonnetriee"><div class="item-label">Désignation</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                            <th class="table-header__item stockdispo alignedroite cliquable"><div class="item-label">Stock <br>disponible</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                            <th class="table-header__item stockbtlec alignedroite cliquable"><div class="item-label">Stock <br>BTLEC</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                            <th class="table-header__item pvc alignedroite cliquable"><div class="item-label">PVC</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="interface-container">
+                    <table class="infomil-table jstableavantfiltre">
+                        <tbody>
+                            <tr class="table-row" id="id_7332543680801">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">%LL F 8KG/1200T EW2F7810ED,,1P, ELECTROLUX</div>
+                                    <div class="ean">7332543680801</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 3 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 499,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_8690842188558">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">%LL FR/6KG/1000T/A++-WF610LW,,1, ALTUS</div>
+                                    <div class="ean">8690842188558</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 0 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 219,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_8690842188572">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">%LL FR/7KG/1000T/A++---WF710LW, ALTUS</div>
+                                    <div class="ean">8690842188572</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 0 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 199,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_8690842188589">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">%LL FR/8KG/1200T-WF820LW,,1P, ALTUS</div>
+                                    <div class="ean">8690842188589</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 0 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 259,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_6133826002720">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">%LL FRONT 7KG/A+++/BLC,,1P, BRANDT</div>
+                                    <div class="ean">6133826002720</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 0 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 399,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_4974019905372">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">%LL FRONT 8KG ES-GFB8143W3,,1P, SHARP</div>
+                                    <div class="ean">4974019905372</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 4 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 299,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_6133826003093">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">%LL FRONT 8KG/A+++/BL VAL82WS,1, VEDETTE</div>
+                                    <div class="ean">6133826003093</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 0 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 399,99&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_7332543680955">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">%LL FRONT/8KG/A+++ EW2F6811BS, ELECTROLUX</div>
+                                    <div class="ean">7332543680955</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 0 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> 6 </td>
+                                <td class="table-row__item pvc alignedroite"> 369,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_3614704675111">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">%LL FRONTAL NS963CWFR,,1P, HOTPOINT ARISTON</div>
+                                    <div class="ean">3614704675111</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> _ </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 499,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_8690842984495">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Beko WMB 71436 - Machine à laver - indépendant - largeur : 60 cm - profondeur : 52 cm - hauteur : 84 cm - chargement frontal - 50 litres - 7 kg - 1400 tours/min - blanc</div>
+                                    <div class="ean">8690842984495</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 0 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 339,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_8690842140518">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Beko WMDY81487 - Machine à laver - indépendant - largeur : 60 cm - profondeur : 54 cm - hauteur : 84 cm - chargement frontal - 55 litres - 8 kg - 1400 tours/min - blanc</div>
+                                    <div class="ean">8690842140518</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> _ </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 329,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_8690842064746">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Beko WMY1112430 - Machine à laver - indépendant - largeur : 60 cm - profondeur : 62.5 cm - hauteur : 84 cm - chargement frontal - 72 litres - 11 kg - 1200 tours/min - blanc</div>
+                                    <div class="ean">8690842064746</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> _ </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> _ </td>
+                            </tr>
+                            <tr class="table-row" id="id_4242002711010">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Bosch Maxx 6 VarioPerfect WAE24264FF - Machine à laver - indépendant - largeur : 60 cm - profondeur : 59 cm - hauteur : 84.8 cm - chargement frontal - 55 litres - 6 kg - 1200 tours/min - blanc</div>
+                                    <div class="ean">4242002711010</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> _ </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> _ </td>
+                            </tr>
+                            <tr class="table-row" id="id_4242002809045">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Bosch Serie 2 Classixx WAE24071FF - Machine à laver - indépendant - hauteur : 82 cm - chargement frontal - 55 litres - 7 kg - 1200 tours/min - blanc</div>
+                                    <div class="ean">4242002809045</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 0 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 349,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_4242002952536">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Bosch Serie 2 WAE28217FF - Machine à laver - indépendant - hauteur : 85 cm - chargement frontal - 55 litres - 7 kg - 1400 tours/min - blanc</div>
+                                    <div class="ean">4242002952536</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> _ </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> _ </td>
+                            </tr>
+                            <tr class="table-row" id="id_4242002899428">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Bosch WAN24200FF - Machine à laver - indépendant - largeur : 59.8 cm - profondeur : 55 cm - hauteur : 84.8 cm - chargement frontal - 55 litres - 8 kg - 1200 tours/min - blanc</div>
+                                    <div class="ean">4242002899428</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 0 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> 18 </td>
+                                <td class="table-row__item pvc alignedroite"> 409,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_3660767939899">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Brandt BWF5Q2YCW - Machine à laver - indépendant - largeur : 59.5 cm - profondeur : 56.5 cm - hauteur : 85 cm - chargement frontal - 60 litres - 12 kg - 1400 tours/min - blanc</div>
+                                    <div class="ean">3660767939899</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 0 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 799,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_3660767953792">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Brandt WF129L - Machine à laver - indépendant - largeur : 60 cm - profondeur : 58.2 cm - hauteur : 84.5 cm - chargement frontal - 59 litres - 9 kg - 1200 tours/min - blanc</div>
+                                    <div class="ean">3660767953772</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 0 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 379,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_3660767577831">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Brandt WFK1418F - Machine à laver - indépendant - largeur : 59 cm - profondeur : 59 cm - hauteur : 85 cm - chargement frontal - 60 litres - 8 kg - 1400 tours/min - blanc</div>
+                                    <div class="ean">3660767577831</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> _ </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> _ </td>
+                            </tr>
+                            <tr class="table-row" id="id_8016361845510">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Candy GrandÓ GC 1472 D - Machine à laver - indépendant - largeur : 60 cm - profondeur : 54 cm - hauteur : 85 cm - chargement frontal - 7 kg - 1400 tours/min</div>
+                                    <div class="ean">8016361845510</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> _ </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> _ </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="infomil-table jstableapresfiltre">
+                        <tbody>
+                            <tr class="table-row" id="id_8690842276484">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Beko LLF10W5 - Machine à laver - indépendant - largeur : 60 cm - profondeur : 64 cm - hauteur : 84 cm - chargement frontal - 64 litres - 10 kg - 1200 tours/min - blanc</div>
+                                    <div class="ean">8690842276484</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 1 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite">
+                                    <div>399,00&nbsp;€</div>
+                                </td>
+                            </tr>
+                            <tr class="table-row" id="id_3660767953772">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Brandt WF129L - Machine à laver - indépendant - largeur : 60 cm - profondeur : 58.2 cm - hauteur : 84.5 cm - chargement frontal - 59 litres - 9 kg - 1200 tours/min - blanc</div>
+                                    <div class="ean">3660767953772</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 2 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> 10 </td>
+                                <td class="table-row__item pvc alignedroite">
+                                    <div>379,00&nbsp;€</div>
+                                </td>
+                            </tr>
+                            <tr class="table-row" id="id_8016361915329">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Candy GrandÓ Vita GVS1410DWC3-47 - Machine à laver - indépendant - largeur : 60 cm - profondeur : 54 cm - hauteur : 85 cm - chargement frontal - 62 litres - 10 kg - 1400 tours/min - blanc</div>
+                                    <div class="ean">8016361915329</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 5 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite">
+                                    <div>369,00&nbsp;€</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="fauxvoletchargement">
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+
+            <div class="voletnavigationconteneur jsvolet1">
+                <div class="croixettitre">
+                    <div class="croixconteneur">
+                        <img src="assets/icones.svg#croix_gris-view">
+                    </div>
+                    <div class="titredesignation">Beko LLF10W5 - Machine à laver - indépendant - largeur : 60 cm - profondeur : 64 cm - hauteur : 84 cm - chargement frontal - 64 litres - 10 kg</div>
+                </div>
+                <div class="voletinfosconteneur">
+                    <div class="prixetpromo">
+                        <div class="prix">399,<span class="decimales">00</span> €</div>
+                    </div>
+                    <div class="articleconteneur">
+                        <div class="infosconteneur">
+                            <div class="intermediaireconteneur">
+                                <div class="colonnedetail">
+                                    <div class="photoconteneur">
+                                        <img src="assets/images/fiche_lave-linge1.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stockconteneur">
+                                <div class="stockinfos">
+                                    <div class="stock">1 </div>
+                                    <div class="label">STOCK (UVC)</div>
+                                </div>
+                            </div>
+                            <div class="indicereparabilite">
+                                <img class="logoir" src="assets/images/logo-indice-5.svg">
+                                <p class="indiceir">8,1</p>
+                            </div>
+                            <div class="etiquettesconteneur">
+                                <span class="etiquette"><img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAB/////////+AAAAAHAAAAAAAAADgAAAAYAAAAAAAAAA4AAAAwAAAAAAAAAAMAAAAgAAAAAAAAAAEhAABgAAAAAAAAAAGAAABAAAAAAAAAAACAAADAAAAAAAAAAADAAACAP////////4BAAACAf////////8B2Z++Af////////8BAAACAf///4H///8BAAACAf//+AA///8BA+H+Af//wAAP//8BAAACAf//gAAD//8BA+H+Af/+AAAB//8BAAACAf/8AAAAf/8BA+H+Af/4AAAAf/8BAAACAf/wAAAAH/8BAAACAf/gAAAAH/8BAAACAf/gAAAAD/8BAAFCAf/AAAAAD/8BAAACAf/AAAAAB/8BIk0CAf+AAAAAA/8BAAACAf8AAAAAA/8BAAACAf8AAAAAA/8BAAACAf8AAAAAA/8BMk0CAf8AAAAAAf8BAAACAf8AAAB+Af8BAAACAf8AAAH/Af8BAAACAf8AAAf/gf8BhAACAf8AAA//wf8BplgCAf8AAB//wf8BAAACAf8AAP//wf8B7IACAf8AA///wf8BhAACAf8AD///gf8BAAACAf8D////g/8BEAACAf+D////g/8BAAACAf+B////B/8BhAACAf/B///+B/8B///+Af/A///+B/8BA//+Af/Af//8D/8BAAACAf/wP//4H/8BAAACAf/wH//gH/8BAAACAf/4B//Af/8BA8D+Af/8AP4Af/8BAAACAf/+AAAB//8BHANCAf//gAAD//8BAAACAf//wAAH//8B0k0CAf//8AA///8BAAACAf///wH///8BA8L+Af////////8BAAACAf////////8BA8D+Af////////8BAAACAf////////8BA8L+AAAAAAAAAAABAAACAAAAAAAAAAABA8D+Af////////8B24gCAf////////8BAAACAfHx////wA8BNDACAeDg////wA8BhAACAeDg////wA8BFIQCAeDg////wA8BAAACAfHx////wA8BAAACAf////////8B/AACAP////////4BxIADAAAAAAAAAAAD///9AAAAAAAAAAACAAABgAAAAAAAAAAGAAAAgAAAAAAAAAAEVmBQwAAAAAAAAAAMAAAAcAAAAAAAAAA4AAAAHAAAAAAAAADgAAAAB/////////+ALZ+8AAA=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALlSURBVHhe7ZyBkoIwDET5/5/2Tk+4EpPsBipT7TLjnEoamtdtmiJzyy05lmW5zfRKWXgnWzhZ4286h2Je2mCR8TeBiWKJGGygVoMZYDAxWh47UIyDmWzusNbj8U5q8oe/5bKBmkkplVhXVf3+/SsBdOSqeoDSkRN4ikmgkFAEChF6nhcogSIJkGaUosKSvtkwk9f7WDMIKrpz0BapM6yaKSirJPT5Y+VCdLwEym51MrUxdyR224Om6GX8onSQ9dXjgu6aUKAi4FFATcnv3vTbNpnFm4J2unvBZX2q2NuYu4HycpbdGkWf2xyHpnd03oNf6ZMd3EtBRcqJgrLTJQvUUw6yR/6tTyd9+FsYct5uG+pMDUj2Fh6jEC8wVnHM9D8FykvAXk7KRq+Hopi8WekDWvioHNVD5lVFMddkfFbyZDaDUlDRKsNMi+oKFZUTCAZaIBAoFKOJddzbLChPoinT6zxUVK8LsX4YBbC+etoNCypbqnsCYH0NB8rLGWww77QbEtQ7Az7q+zJQo00lCwwtGt1A2SQcdeToiFbaob54vi4BRV7kkt8OUV/Yij4Y6LyOYrctbHFotzzZVmO1tUWuTfpMgeu1iYrnU6C8bUX0ndcBC7Knv8wXAxEpkcpRWYDZKKHRQgpklIb65imR8XtaUUjylUSZgYogIzCkMl6e3iHbcTnK5pboM7v0XgmqkiKSwR4f1FGFDTX1vDnfjkoka5Sj0PkoP3p1VLZyF/LsOUV5q8pRUFVfCKaXHlCbw1MvKtJm+p4qD2YCEsUqUKQKBEqgSAKkmRQlUCQB0kyKEiiSAGkmRQkUSYA0k6IEiiRAmklRAkUSIM2kKIEiCZBmUpRAkQRIMylKoEgCpJkUJVAkAdJMihIokgBpJkVVQa0/PZPtpjLbfoK/Ry1Q8dhvzy+soATrFdbuKZj1tED5oDY+LSjB+odln7PSPwM0QgoffPPSWGT8zcsdijl93K5tPMP7TAg/nrF3i+EFF3IAAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMMSURBVHhe7ZwJcsMgDEV9/0unTRtcUJH0xQ6WZzpt4g9GD212OrlewnFd1+tJPyKL3MkYjjT4pHOazVdsrCY+CQxnC8fgBhUET4CB2Eh5JKCQCZ6kecMKx89ftd50asjGXG5QNZ5yKqjgRJ/fvy1AzXE6qI99dZDi0KXAcwCl95AKzPV1dKNbbl43UJIx1ADpNXouSbpMk9wgYtp71L/S+ln8XUGi1xwMi5YD1aJQRXO0B0WN5MBJ4UG9Mme0Ftq5OUo8a0ro0ZyGQAweI2m5zWmRq7qDyoUP6m1S6OXmkK5V4kWZwtI+9JJGLUqulqqWq6Zckdg+mUs5ggsJrfxr57XQLvGuZqFXcvEWY1rkH2Qd24HS2g7E6BLNtqBalX0U2nagcvkHNbZGtyWoGoNLxzookNxQULmyDq7zliF9lHVORL8VKAlS7zZhGCikSZR2FoVE2wfEWxDNEFC14WKFFN/OIBAQTXdQmpGGRSafWHP3jL1CsBsoDZAlRJAigGiQTeE0XUChkJAQQQGgulJYR4NCNgIFNwRUWEzJrlvGWLQoILL2+gd3XHLVkq62YIvxFq12XXq+i0cpCZGtXrlxFuMtWgdFPtOzAhla9dyjKrenJDQsYyxaqymeo0BiDspB1f8rU6a1adtHzUjm3G0T6DCq7JjQ65nI3xSXBxUtUmxUHdTfbp75PKr2dkS7R9Qe5ahJxyjYIvS48JNgGTmo8m1AWWCpVhcItgIV7OvdCghpY0wfVbCRywwZ6lHLWF2wEAcFQnNQDgokAMrco1YHFZd4cK1TZdM8ykGB++6gHBRIAJS5R1WAysEb+YRAWvoyydwK6a0feSwBigtDDd5jQVHDHdQ3EeSZkoMSQMW5x0ERUPQxb+5JpvTeiFy1RDLnIIz+pAVqDyaV2+SrTrRQo+BGeFLi7eHFqAvXXGdGRx+cqMnXItUYD7j8LRkNKlzvx5niHNHL4JJ5KZTRkGikLf3VbUi/VbIJyJjYmxKP4so0MulJGvaWKmfkDDefDVuzWbwN13qZ085Lm/UFZupeltES4gEAAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMcSURBVHhe7ZyLksMgCEXz/z/dnXZrx1LgAqKJxszs7CNo5HgFtN0eD+U6juNxpy+VBXezhqM1Xuke8vmonUXGK4GRfJEYfEAVgzvAsPhIeXyBsnRwJ5snrHK9foqqafWlWnP5gIooZXVQRUTv7/8lQOS6C6i3nzFI9ZJFoDmg2t8+caGq4+hESvVdjyzeHZTmDAVlKWw5gLQdncAM1Q8DRR3kfudAoXZFyRr0lmRFnj926X2lXGaLJC0drp20RDV1NsTifqBQHJFUZG23HChpCXHxhFsqP1XyW4kIVEQ9XJvUGKUFVS1DouyHMuZ0wTw6YA8ILX5JqrtE1suSdms/GTC0MTQvvVYHo+1RzIr2K7WbHhS33LMhVfE1Xh70GJS1z1GQpgdlBZphN+3Sy3De08cGZaQ1HBTamhjHzb6EZm0bsRsGStuk0lSPHMmCjZ7DFLf9s54FVH06YCj+flTlcdxrO0RR0gkB3f9ZQGnAvc577E8BhfZrETVZIHvAUNvuoDQ1eQeOlq+3P4/9cFCewSHlLVWZZzljOcKJToKl3XBFRYKxBDtrEqYDJQXkDQq8AoPKh+UVhYJ0uY8y5q1AaapB5UAk3lniEWczPJgrg/h569EGRWhZg7UHXFQ5UrvhiuIyWzTWRNtFIHYHhTKX5T6Y5fC7BT3ATgFVqwplNs8G2eO413YIKE41UrzxOLDc0rOC8kBqWbLe51TP6n/CqRWR0tYFObSkopDTV78/LEZdHQQa3waFCL3vb1AblJGA0WwraoMyEjCabUVtUEYCRrNURdWVsvH505h1B7UKvNNAFYCzSOoUUDOqrDsoTjEbFPPfmtYXBLQzK+2Ipp6IjMNAKRR0V1QWKK2fHmddFNhQUJxDmiKke1I/dElnJozLghJmVPxAHW7pZmbUpUBJcS4D2JSgLI5nZ9apQaGYlAnrdFB1wNUcu0zWew6k9eIclZynjtP4ggpVa7+pfpVBtoJatX2B3fSxSKvCobXaS0z1H1d33OtfvXT3R7cJ9Ghlvz8MkIASEwXKMF65zmqP6i61LrDu/lex0yb5D8sV4QVgHmlkAAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALTSURBVHhe7ZoJcsMgDEV9/0unjRtcmWj5YrExyDOdZopY9PiSQc32Up5t214r/agsuEYKR+s8U5vl80adtYxnAiP5IjE4QCWDFWAgPuY8TqCQAVayecNKz/4p1MRvP+VygFpJKR5fk6p+f/8dAeLRVbWDikcn8BFTgLKEEqAsQp/2ABWgQAKgWShqNFBSBQJc525WWsXwzGHc//q/9QIUsF2aEoDu/3etwtqYZ47bFGWFC+qENU6rzbgFFOJcDSi0bwu7bm89BJLn6sSN1wIAOkZzUCgg70V8KlBeSMsqqhco7WjhVSYaarld09DTwqPmHNVrAzzQuoKiC7kalCesEWBNQWkT3gGqJaxHg0ob0/uwSe6ZY9/10KNBjWqt8HuEoiwnLGWh/YHUMbaiUEdDUSgpoWbl6C6aThV6JOmeinwBiiGAJn4vvFAUSGx4UF6FeO1BTimUx33red5kHlsUUHb0GBeUJ0EHKOGfCq0u3Yi6hs9R1qnbKsEgEBCbqUEhAFCbx4CSclXPvMSE9tjJPN/1K8oqwpz9QaESH9XustAbFQC6rgAFkgpQAQokAJqFogIUSAA0C0UFKJAAaBaKClAgAdAsFFUDSqs75235rR65wHKVAG0cdE7UzrPmrB52vhRrpQurUPZuzwb/+iI9WjKxxqFr8YzpEULyhw29NBBHXlqcZouMQ5VI568FoKnMWjOzJl5R+Y7SgbW2bBd2Uw2wpJzSOaz5PBEDhd6VoDgV9wal5XFhY/05qiXEXKlS6KFKKbHTQpy02aA4MGjIWHkCXKQZwkhu9a7ZFXqaRNG2XMpov1HszLdezUK1vFMz7h19LwH1dDWJOeqOHRt9zrjrgTt0gKJXD7DvMmZH6kgxuIznTkePm0Z+4HOOM7X56c1ND1VTe13g3Kkaop26C8aepsvXVYp6NsOZp3anJAbsV1lWBGb5rH7nR6rdzPp3TY0/pAgozH+RPTEAAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKASURBVHhe7ZyBbgMhCIbv/V+6a2/1Qi8KP4qoJ5csWyo6+PxFNG2PF/Mcx/Ha6YdlkWukcLjOT2qTYj5osJLxk8CUYikxuEAlgx1gIDHeefyAQgbYyeYDKz3nX6Gm/PRTLheonZSiiTWp6v37vwSIh1fVCSoensBXTAFKEkqAkgh92wNUgAIJgGahqNGgam8c2NO7cJMBxlxl1k1R1qDQ8aooAJ2WAIVC6lk4dwMlTVIu+FwfyU5ql/xA25cHRQ/0Pe/ShoDSqOBuW6M6VDXARuJ7hEGC1wSnAa8Zl9q6K8o6KOvxSiCXBlXaDWtVM83Ss5x9T0hkw/DJUVagvCENB1WzREZAcgVloaZRkJYCNRLSMqBGQ1oaVE1+a+njVkfVVuMWua0FUOrrAqol2Ja+FoAClJLikooqJff0upIBZB6gIEzXm1j6HmFa8oyknpaxQUanmYuiNA7NahugwJkJUAEKJACahaICFEgANAtFBSiQAGgWiloJVO0VDBijidkUiuJAcUcYEwLgIEuD6nlbcOf3CFCfIHo/S4GiMLzzWoACpegOCrlfKilnG0UhkO75hvbZFhS5Ofz5gDcHxOtGc9iuV0q+UuCSCsEU02zmlqM0RaVWUY8qDyxAbZGjrEHd81vz2hIGWGrpFRKsy8d8h4PSJPMtll6uFNCWBwmUBLfHMnRTVAmKFLRUHnjseMT3/qdvTg2aRO99GL757Qeqx7LwGNN16XkE1Ot/BCiQ7AXKKymCfk1lduXFlNWn8m4iZ5KI4muRmElJajrFRLfAiSZyCldoSoqvbitMCVXTj6K8T+RTSCbjRPH6OedwyXjW4Cz8kmJmy3LkrPUkGw74HznNOuQycSkiAAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAD/////////+AA8D8H//////////gb4gEf//////////4AAAA///////////8AAAA///////////8hAAB///////////+3IQB///////////+AAAD////////////AAAD/////////////AAD////////////fQAD////////////AAAD////////////AAAD////////////AAAD////////////1xw3////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAACAAAAAAAAf///AAACAAAAAAAAP///cn0CAAAAAAAAD///AAACAAAAAAAAD///AAACAAAAAAAAA///AAACAAAAAAAAAf//cn0CAAAAAAAAAP//AAACAAAAAAAAAH//AAAC8A8AAAAAAB//AAAC8A8AAAAAAA//gAACeB4AAAAAAAf/AAACeB4BwAHAAcP/hAACeB4BwAHAAcD/fQACeB4BwAHAAcB/AAACP/wBwAHAAcA/BAACP/wBwAHAAcAPAAACP/wBwAHAAcAPMO4WPDwBwAHAAcADAAACHDh//3//f/4B///+Hnh//3//f/4DAAACHnh//3//f/4Hm2g2DnABwAHAAcAfAAACDnABwAHAAcA/AAACDnABwAHAAcB/A8D+D/ABwAHAAcD/AAACB+ABwAHAAcH/AAHCB+ABwAHAAcf/AAACB+ABwAHAAc//IlECB+AAAAAAAB//AAACA8AAAAAAAD//gc0CA8AAAAAAAP//AAACAAAAAAAAAf//QcECAAAAAAAAA///AAACAAAAAAAAB///cn0CAAAAAAAAH///AAACAAAAAAAAP///4hUCAAAAAAAAf///AAAD////////////ALED////////////AAAD////////////AEED////////////AAAD////////////cn0D////////////AAAD////////////IhUD////////////AAAD////////////AMED////////////AAAD////////////AGEB///////////+AAAB///////////+cn0A///////////8AAAA///////////8YhEAf//////////4AAAAH//////////gAMEAB/////////+AAAAAAAA=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANrSURBVHhe7ZyLcsQgCEXz/z/dx7amxgL3Imge68502kkMwhGumHa6fRifbds+3unLZCHdrOFYDz/pHop5q4NFg58ERotFY7CDKgPeAQYTY8vjAIox8E5jvmGVz+unlU3y8tdcdlDvlCmeWEtWfX3/aQE8nyuIfo/fnhj3kvtrkfohnQVs9ry/8/GgWgdnO9yuck+G9DwTBqVtBGovUpU5GmPJgVZ2yGbtr0duukExzZrktHUcaoNAMLRGuWdelGVDQUnZhkr3sB1X50wJinXtX7PY2PJKxjBQwo7xusSCQtmklU2bsawfwzIKOco6yJQJyiatZGsf0QJNASWVi7Y7eRxG5XOL0pNEOWNlPdA1UChLe3Y+t0YxO5OmEz0aVcoHia+2m7ISkF56yOBT73dl1FNhWHEtUOSqL1ALFEmAHLYy6kxQVnvA+BV9XmphmHmnibnWy2jnNs2xKCitGY7ASis9BImFlRFkho0WagooyzGP06i7ZjIiw4Y0zxBQ0hms9whSjjARSB4bQA74d+YGbfV3g+zZL5oNVvkzoKeJOQOxXV1G25ggkR3GxqVAKSJ5yEbvrieN99pAIFM0it3mWa3wBnlrUJ7djskydjHKOC/sUzIqAsnbVWtALg8qCskDyrObooxB91M1KgNSBBTa+cp9BGVYwykFxwo301Kw+nR5UFmZlCnEl9SoQU6F/gpwkE9jjzBeTcgIMsOGcGbNBYW0AoHLCDLDxgKFVkq4n9IeoAzyrq53fGTnZJmlgGInu/O4BYpcvQVqgSIJkMNWRp0Jqt61SD/cw2bMkd5HtVEyQXhaAMkeM4ebvvHAkNJjgligvlaFAdW+mpHeHHivZWaQUiWxs15P6UmgpCzTMo9djCx400oPQWjBfY/XrknXPaXcA+8UUFpJoTOjsAuZ/2qgB4j2zBRQWpm01yOgLD3LADYclKUlCIxVTrO161RQjNaw2fiojCoCjbRGA6g9x1yPlt/UjFqgmuXyHDkYrUGAH5FRknbUgS9Qwv9SQJnWZg67Y942o6LCecXnh4j5FQON+rSDkgQzavwpz+8SUPqWpwSWHcd+QK8bvOxJ7m6vZNOLUb2F3z2wbP8PrUzb62RPdld7dTYdMqo9Y901wKjf6kFcMmw1e1FHrvo8itl8Ye59Z3T38dYifgLhaNn+BZANnQAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANtSURBVHhe7ZwBU+wwCIT7//+0eqftpBF2lyTt5XI44/ieJS18LJBGx+0LfGzb9vVJn5CFdbGEgxavdI3FvJXBMuOVwHixeAwOULvBJ8BQYqx5nEApN/gkmwes/eP5L0VNs5Wl4nNvUstnHKBapl+vI63r70zarqqfr79bALW53ekk86kVdGRdEa8PqSzLU70acN1pUdgyG5QwazqrVeCtVZP+Z6eBYtmtN6ZHEwSb1joRTN1KP/U2yKo/YF85DpQVSJ017/+eemvHGcx/Y71SP/PnclBWxqzgkaOs9NRSsZSq+tcNygvCy2AxLU7bDytYr2yjavJK2eqvnn9DQZ32F460WzKIykpV08tLz2qSIzKIoEcnXd0jmXqDfRE3c2UyodJhzdNLgAWJ9bARiWsuvcjmbFVbaR+1avCRuBKUSCtBJSiRgGiWikpQIgHRLBWVoEQColkqKkGJBESzJkWpRyLW6QF6V7Pe+dTThOj7onoSUcXAX4q9F9SWl1QviQhU/RxmG7VnwgopynMuGjh4O3cP+FDgYpD/fnYZqQwZ1MiyYKBY4OoZEiv9twMVcdgLPtLLvDaCEhRWVJ1Nr0eVjjMQrN8wBbJG7j2f+WUAfW0zZ6CsZLA1yvBZElTvdGVg2f3l0lMypE6/2g5lNrLfYQphsIb0qHcAFZ2GEfspFIUcHqkoNhSmV1QUVMsUs4CzUp1u6nlbjmjv6rFnm9xpSs+Chcou2pij9s7Aee0+Cg0KNLa94NXpW26KL1EUu+mK15tKb0UQLKYExQj9XU9QCUokIJqlohKUSEA0S0UlKJGAaJaKSlAiAdEsFXUnqMjhmujXdGZDFMUOxaaLusGh20G9q/ouA6WcCTUk9mVLEpSI/jJQdYkpR7HIZo/HsrFiVe1ETvtvwsSOguubK818BCgF5MM3lCQVjBPj9aAsRSDg9Vm5kgzvGSMGyG2ldwUoSz3199APJyLqmhYUUxvrQex6BFIBf77SU/qgEmwNTFkDhsO6oLzyjAI7Sq+nlnsabekwaro9z+ht5sf6nXqUMmrQnnOod7CAWrYHI0pvF5H8Z5EiryWqOkolM1DWRPMqYVQz3+/zfHapjFZVrbrulMi6hFYNOhpXqaaTokZNiKhDs9m7/RXsG+Af4JotwF5/WI+Emyg0aVa8hmB/A5PHQZfznfg0AAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANVSURBVHhe7ZuLboMwDEX5/5/u1q4g49m+13mVklSaNhUH4pPrRyK2PYLPtm2PmX5CFtZFCScafKdryOdNOouM7wTG88VjcIDaDWaAwfioeZxAMTeYyeYJa/+8/lpqspdfcjlAzaSUjK+7qn5//7UALT+6pfjmyip8aQtJhrK3CAzIlgtXe6/3fPuD0opdoN5LZ3XzXr/WOuxr1ROkiTGKEknx37YI5TArhK3GsFfDPDT0MqCi/eXR14h9qM6LrVU1HJQHAG2j3G2Fs2mfAhQKwyjX9cp3l1SUFVpR7hlRQYeBsnJIxvmMbeuwE3PvX/UyoDLVDLUhraANVZSeNJOgvQqXDc9aYJcHFSlGg+7VQw0PPVZR1l4x6qtkpesFq5uiaqV+tfELFLkiC9QCRRIgzZaiFiiSAGm2FDUSVK/ehfRhiFm1orI7d+ZALmpMM88reZZHvQpUdkOKumvvLAmNA865b+NkpFgMyps8O2lvU4vU1HtcU0WVSJo5KbAU5YUaCsHScc1AlYZBVmnWxpjdVGcgsuGXDr2rgvJOEDIqjaAVg2JzBfHwU7KV9hllXA4Um2yRpJmKOT0oBlI2R91OUSykqUFlIE0LKgtpgUq+3deiUc1U0mYNZ2nVQxUs25Ci+328M28BCrUOkQLYPSZqjPfr7FzSDWcLUNm9InKaVSNSIdEcl797wD4cOYtWmFUSWkj0nG45ipXut9tVh963A2Dnv0CRpBaoBYokQJotRS1QJAHSbCnqrqBKG0Z9GkHyOcygomomlp0MsvdOEtC4/XrN+BBUzY3ZyWfsPrloLii0t2LOiSy5S2e142hhPHv5nCjE9P2tuTy/sz5pUFmA3uTY73XYSCeyG23mmZ5q06EXrUqkoH2lkBI9RVgORI5rldXMTYwN5Xb6x2wULuzktcS1OjzlRN/3WsRLgdIrLkGCcDgWMsphl1GUV4KRwoLE+boUJXhWQS3mFuYoFOeWE1GCZSqSV8EioDr/eQUALRqxKP5RsJU7onxihZAMCZTMPdCXB5VpCO9se4SerkJ3djrr26HyPVyyN5jF/siBVtKeBQLy85RfZZVAA2e7furnvHI6GxTt778GVhpEvcQs4NwWhulRZoCERBK+eBB12ne8FgniB7fzmjBaaHz1AAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALFSURBVHhe7ZwLjsMgDERz/0t322yJHAT22G4MIY5UbVUGYr8M31a7vZhr27bXk14si1YhhcNVXqlMynmjyUrilcD0cukxOEAVwRNgIDnWPE6gkAaepPnAKtf+Lt3UfvyUywHqSU7R5Fpc9f77vwTIi3fVDiovnsDXTAlKMoob1F26rTdOF6g7LU69sZpBeW8sWf2Kck/MJlCeG14BQNOmNXY1KOuNNMlcrbXkoAJlucHVSVvb1+YCg6INr/heAp6gwF0JDIpunFdYyV/W9Y6jBnI0LNl11nItJGIS3RbGcqNZoFljV3U9mqz1hiOBeWI2g7rbmOWBZO56LWeNdApy76GbYiTAVTSurrcKBCSPBIVQemuGgOptgbiYLXVABpAsFBSyR2xFLdWDMnWKhoKqlxitmUmC5J3NUH5hoOqEe4vXeh/Zq8e1hyav0U0BSjM2oYA1EBDt1KAk10jlCABUMwSUMrju7yKWB8UN0JqulaC+tCQQUjnqXEQ3pOvRKb3lrhK4BEIqRwCgmmGgkC4mgZDKUQiILkEhlCL3er9YcNY5paMIEStg0CiwbOqu19oLogM9TAAUhoHqbYC5Wc9aB8xdJQsFhSTeip5boNabaFX2CnE4KA4WF3cPliJXl3QIKFfEgyonKBB8gkpQIAFQlo5KUCABUJaOSlAgAVCWjkpQIAFQlo5KUCABUJaOmhXUr86faDtgri5ZqKO4c6WShXT2JIF20WAqh4FqOUD6rBzKtc7NI79YIGdouh/kW54a2lU0UNA2LfHWdYY6qpUA6jLylEP+FUGCAu2WoO4ASupmvZmw9TmYr1l2OCriax/t8mAWUEfcZWA041ZUlNZBksvoA42a9Y5lCp1BFDk/Qloexs6IWvwR2SuSPDm4HgsU7SwtpW46OSp6ETcr5d7Y19y/RA2UM8GScmY3epbd/J3rcA/uDy9dom6gTgdgAAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK5SURBVHhe7ZyLbsMgDEXz/z/drd2IHOrHhZBAbEeaVrUOxYdrsB1t20u5tm17RfpRWXAfUjjazZ4+s3zeqLOWsScwki8Sgx1UMYgAA/Gx5nEAhQwQyeYNq1yfV6kmfvkplx1UJKW0+FpU9fv7LwXIS1fVB1ReOoF/MbWBiqjAZlB1lh5FiU2gpFImAiwYlFXveYcFgapT+kNuQYpmz7BMUFzd85XaB4ClghKLQybv8l5MQ6DqkJLSA89pgxl6Wq/K854kiCMTTmvRl1CUlnpYDuwtEKZljd6L2E0HZeVnSB16RyI8FRTnIO2NoYdDOFA0BNCackTYLh96GgwkL7PCFgGA2jw69MKA4vYjad+Skl6p7kQOAVRNZJ5z86iefUarQdFDwD0oaW9DD4AWQFWeNk9R1j5ThxB6ALgKvR5lIGCvUNZSpx6SR4UDZa06qjYEXM+etEz3oBeU5rQ15hlgjwu9BEXay73K6L0PUdpURZ3JzLXOa7iEE1lp5KRsHUdZhHkJ5wgn7hhjeujd4eSI70hQIMUElaBAAqBZKipBgQRAs1RUggIJgGapqAQFEgDNUlEJCiQAmqWiEhRIADRbQlHcAwKtz3TXAwVmDvP6UZrTZaIImCvbwKQTOwcUdY6DIoEiEz/8QeaVsKaGHgdKacNCUNAxwa1pN3scKE1ltdJaYWj2KijpaUbr+9IE0NW3QvT9uRa6I4BBoOhE6KpJJxM6MTegJCnXikIdrgFaSmnd4KeFnjRRCqoXEnL0Pw4UdxyPPIpbEs4lN3MtVM4qCd3HVrFrTg9GKmkVCMg8mkFJpx7yZU+26QL1ZId7576DqnOl3gE93rdvNyWcPDo5wqciovy3SArNQ85Ic5MRK+BpjEMdWSdxnhw948tXqUYHi5ZIciAlBmx7MyIwy2e1D8zVYZ7f00L1B25VsV8giz9wAAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALASURBVHhe7ZyBjsMgCIb7/i+9u211oQbht0K1hSaXW64U5fMX1Gu2vYRr27ZXpB+RBXeTwpEeftI9LeaNBqsZPwlMK5YWgx+oYhABBhJjzeMACnGg2aA5TfOzwv13LOX6fLJSEwqJdmAFINo0/DAqoKw6jMKyas/bTxnU/9/fJYDnxcHzbM/SN+n79ZC8B8YSFElNfqCkaWgdjKe/PQ4fUDUkWjRSUfuwcpASVKX5FqQERUBJkBKUMt3qJHvFcsQ6sZslc01J1h2/2p8JqKdDMllHRYA0DCoKpCFQkSA1QWlVKRqkU6AiQuoGFRVSF6jIkGBQ0SFBoBLSdw/Arsxbh21XbxtWag8GtVKnZ/QFBhV9Cp4Gdbej3FEVJiiQoMkxC9iWaDZaQLjnLfpVfEwH1QJE/64FPApZ8z90eoA4R2y4ItGrjseDkiopWmUlRSIDhdpMnXoojFYw2rRFISB2CQqh1NrCgM8Om/Uk7LoxJLcNd5A4WEpRPUmZgzw6lSWwtwTVAhIKFFmzHN5vrxZ+7KuUYUBR6aOq0Sqf1Z50qamXoBpZ8syCE1GQxxS8naKAymT2KjijcJ9XE7V1zBlFhQTVqnC9m2KkImqDpt2fOvVaAZ7NMWef0yAtccyiwUKCCKOoHhizbJeYerOC72k3QYG0ElSCAgmAZqmoBAUSAM1SUQkKJACaLaEobW8362hlmdMDbVOsbW8kgKBQYLOpitL+kyLt4bgN8GM3xRwoboh7oKA+YSnthsspSgOlnRQkqOq7GZD/0vSqRrJPRYE0lwM1kuDrKgoygMx+oN4fZlxIidfg0b575KifzzISM0C11lLMYu/w/TFX5qgyEKZfizQLtle7ZUA+A0pLrleDd/V7mNb12uSuQVn3m6rpoCjPqmEdhKe/VkFgy51H9fAMbtQ3sk8U1wVnjjju/IwE/A/QwclHs03CJQAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKbSURBVHhe7ZyBbsMgDETz/z/dtV1BjGHfQRPihIs0rVqugF/ODnG1bg/n2LbtsdKPy6J1soTjvflO51DMWxksEt8JjBWLxSCDSoIVYDAx1jz+gGIGWEnzgpWO9yu5qX35Sy4Z1EpO6Yk1uer5+3cLoMN31RuUDp/Ax0wChYwiUIjQ57xACRRJgJTJUQJFEiBlcpRAkQRImRx1Jqi6I0quJbRsyFGoubc8KK93XtphaVDMBwy5wVV9IBE6p8jF0aln9pELKMuD8lKpdW7Z1GNAsTXKSuFWBjBaRvMam9VZmUilXq9DLD2qcx5sxrl7zBsOVKueWaAsbatu1n9j4DH1fKqjUHqx6dtz02BuQi8NOk4D1UrDerF7aFC6p/OhQKFFI8dZQXlA0ZzTQDFFtnXXQTUKuYuBWs+LXOOdp1LPm3AEFCra1nxeoe4p+CPAhkCl4sfcUVpaphj33tEYUGXRtor8V9sDb8OGArKgokKNaguzJuuCWBd4l9RDC2Nu7Uzw3jitwmuNiWocW8Qr2HgfMZLXd3oPXaPuFPRILAJFUhMogSIJkDI5SqBIAqRMjroSqN6NKBnbrrIQjkKgyme0XaPvGCwcKOaBuSO+3aRhQdXPlrtFPDhQWFAjT/iDDKi3CRSFKX8ueG73ABVzMpZDZeEchRp6h9JwBg8HSnc9fLX+/eNSb1/7SLeFdVS9PTh703kZUEe6hRk7LCjtoxqXD20Pzk67ogzE3UcxaTFDEyL1ZgT67RwCRRIUKIEiCZAyOUqgSAKkTI4SKJIAKcuOirD7Jdc8XZafHNIWffoKLjJhMpG+Fonolb3NVHYVL3KRpy2zLEn66jYDe6pN2UilLlL7dZptqoksBs0ey4rAUMxuM4ppqt1J47n4B2CHZ7eyygRwAAAAAElFTkSuQmCC"></span>
+                            </div>
+
+                            <div class="boutoncomparer">
+                                <button class="cta cta--clear jscomparer1">Comparer</button>
+                            </div>
+
+                            <div class="infosgarantie">
+                                <div class="garantie">Garantie <span class="emphase">24 mois </span></div>
+                                <div class="dispopieces">Disponibilité pièces détachées : <span class="emphase">5 années</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boutoncommandeconteneur">
+                        <div class="commandearticleconteneur">
+                            <div class="textecommander">Ajouter au panier</div>
+                        </div>
+                    </div>
+                    <div class="voirficheconteneur">
+                        <div class="voirfichetexte" onclick="location.href = './vendeur_fiche-article-lave-linge1.html'">Voir la fiche</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="voletnavigationconteneur jsvolet2">
+                <div class="croixettitre">
+                    <div class="croixconteneur">
+                        <img src="assets/icones.svg#croix_gris-view">
+                    </div>
+                    <div class="titredesignation">Brandt WF129L - Machine à laver - indépendant - largeur : 60 cm - profondeur : 58.2 cm - hauteur : 84.5 cm - chargement frontal - 59</div>
+                </div>
+                <div class="voletinfosconteneur">
+                    <div class="prixetpromo">
+                        <div class="prix">379,<span class="decimales">00</span> €</div>
+                    </div>
+                    <div class="articleconteneur">
+                        <div class="infosconteneur">
+                            <div class="intermediaireconteneur">
+                                <div class="colonnedetail">
+                                    <div class="photoconteneur">
+                                        <img src="assets/images/fiche_lave-linge4.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stockconteneur">
+                                <div class="stockinfos">
+                                    <div class="stock">2 </div>
+                                    <div class="label">STOCK (UVC)</div>
+                                </div>
+                                <div class="stockinfos">
+                                    <div class="stock">10</div>
+                                    <div class="label">STOCK BTLEC</div>
+                                </div>
+                            </div>
+                            <div class="indicereparabilite">
+                                <img class="logoir" src="assets/images/logo-indice-4.svg">
+                                <p class="indiceir">7,6</p>
+                            </div>
+                            <div class="etiquettesconteneur">
+                                <span class="etiquette">
+                                    <img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAB/////////+AAAAAHAAAAAAAAADgAAAAYAAAAAAAAAA4AAAAwAAAAAAAAAAMAAAAgAAAAAAAAAAEhAABgAAAAAAAAAAGAAABAAAAAAAAAAACAAADAAAAAAAAAAADAAACAP////////4BAAACAf////////8B2Z++Af////////8BAAACAf///4H///8BAAACAf//+AA///8BA+H+Af//wAAP//8BAAACAf//gAAD//8BA+H+Af/+AAAB//8BAAACAf/8AAAAf/8BA+H+Af/4AAAAf/8BAAACAf/wAAAAH/8BAAACAf/gAAAAH/8BAAACAf/gAAAAD/8BAAFCAf/AAAAAD/8BAAACAf/AAAAAB/8BIk0CAf+AAAAAA/8BAAACAf8AAAAAA/8BAAACAf8AAAAAA/8BAAACAf8AAAAAA/8BMk0CAf8AAAAAAf8BAAACAf8AAAB+Af8BAAACAf8AAAH/Af8BAAACAf8AAAf/gf8BhAACAf8AAA//wf8BplgCAf8AAB//wf8BAAACAf8AAP//wf8B7IACAf8AA///wf8BhAACAf8AD///gf8BAAACAf8D////g/8BEAACAf+D////g/8BAAACAf+B////B/8BhAACAf/B///+B/8B///+Af/A///+B/8BA//+Af/Af//8D/8BAAACAf/wP//4H/8BAAACAf/wH//gH/8BAAACAf/4B//Af/8BA8D+Af/8AP4Af/8BAAACAf/+AAAB//8BHANCAf//gAAD//8BAAACAf//wAAH//8B0k0CAf//8AA///8BAAACAf///wH///8BA8L+Af////////8BAAACAf////////8BA8D+Af////////8BAAACAf////////8BA8L+AAAAAAAAAAABAAACAAAAAAAAAAABA8D+Af////////8B24gCAf////////8BAAACAfHx////wA8BNDACAeDg////wA8BhAACAeDg////wA8BFIQCAeDg////wA8BAAACAfHx////wA8BAAACAf////////8B/AACAP////////4BxIADAAAAAAAAAAAD///9AAAAAAAAAAACAAABgAAAAAAAAAAGAAAAgAAAAAAAAAAEVmBQwAAAAAAAAAAMAAAAcAAAAAAAAAA4AAAAHAAAAAAAAADgAAAAB/////////+ALZ+8AAA==">
+                                </span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALlSURBVHhe7ZyBkoIwDET5/5/2Tk+4EpPsBipT7TLjnEoamtdtmiJzyy05lmW5zfRKWXgnWzhZ4286h2Je2mCR8TeBiWKJGGygVoMZYDAxWh47UIyDmWzusNbj8U5q8oe/5bKBmkkplVhXVf3+/SsBdOSqeoDSkRN4ikmgkFAEChF6nhcogSIJkGaUosKSvtkwk9f7WDMIKrpz0BapM6yaKSirJPT5Y+VCdLwEym51MrUxdyR224Om6GX8onSQ9dXjgu6aUKAi4FFATcnv3vTbNpnFm4J2unvBZX2q2NuYu4HycpbdGkWf2xyHpnd03oNf6ZMd3EtBRcqJgrLTJQvUUw6yR/6tTyd9+FsYct5uG+pMDUj2Fh6jEC8wVnHM9D8FykvAXk7KRq+Hopi8WekDWvioHNVD5lVFMddkfFbyZDaDUlDRKsNMi+oKFZUTCAZaIBAoFKOJddzbLChPoinT6zxUVK8LsX4YBbC+etoNCypbqnsCYH0NB8rLGWww77QbEtQ7Az7q+zJQo00lCwwtGt1A2SQcdeToiFbaob54vi4BRV7kkt8OUV/Yij4Y6LyOYrctbHFotzzZVmO1tUWuTfpMgeu1iYrnU6C8bUX0ndcBC7Knv8wXAxEpkcpRWYDZKKHRQgpklIb65imR8XtaUUjylUSZgYogIzCkMl6e3iHbcTnK5pboM7v0XgmqkiKSwR4f1FGFDTX1vDnfjkoka5Sj0PkoP3p1VLZyF/LsOUV5q8pRUFVfCKaXHlCbw1MvKtJm+p4qD2YCEsUqUKQKBEqgSAKkmRQlUCQB0kyKEiiSAGkmRQkUSYA0k6IEiiRAmklRAkUSIM2kKIEiCZBmUpRAkQRIMylKoEgCpJkUJVAkAdJMihIokgBpJkVVQa0/PZPtpjLbfoK/Ry1Q8dhvzy+soATrFdbuKZj1tED5oDY+LSjB+odln7PSPwM0QgoffPPSWGT8zcsdijl93K5tPMP7TAg/nrF3i+EFF3IAAAAASUVORK5CYII="></span>
+                                <span class="etiquette">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALnSURBVHhe7ZyLbsMgDEXz/z/dbV0SERfbFzDYSV1p2joMxCfXD1Jt20t4bdv2+qYvkUVtsIQjTX7SmObzVjqrGT8JDOcLx+AEdRh8AwzER8rjAgpZ4Jts/mAdr/dPo2p6asiWXE5QI0p5KqhDRPv3/xZg5PV0ULt/Y5DK0KXAawCl3yEVmOvr6I22vHnTQEnOUAek9+jYJekyTbJBxNgr6qO07hd/VpDiPQejxZYDZVGoijXsQVEnOXBSeFBV1pzWQru2Ro+yXEKP5jQE4qEYyZa7ORa5ajqoWvigapNCr7aGtFePiiqFxT70Lo1akVxbqlqtmnJF4vbJXMoRXEho5V8b10K7R11modezucUci/yDXMftQGltB+J0j81tQVmVfRTa7UDV8g/q7IjdLUGNONw7N0GB5MKAkvqjskcC/TI3CwFKg0QrnTkFYEF3UCgkb1iuoLQOWxsHhGBmEg4U9awGy8z7hoUSFAgrQd0VFG0FMvT2OymBiAKpODaNP7gDFfxh1tIe9O5hMc81Rx0OILAsnB1ZIwSo2hOB1Y9RNIghQCGK8j7vuYNCIeURhnz8XYZAHmGA1kBK9Fo+mTHuFnpoj4TazYBTUff6PqoFQIvtLGDhFcW1DrOAcOuGBxUloYcCVeuVIoSd+1lPU4s2vjL83BSFHFuiqMldUa2wViqI7uWqKKQL9z7jkcZ3fR/lqY6evcMoqufiV85JUCDtBJWgQAKgWSoqOqiymQSv1dXMTVEJCrzvCSpBgQRAs1TUAKgaPOnjLHArE7MwybwV0urDcghQXBhq8EykAi4SChTzDOjyF/ReuS0UKBpOqahf6SBJOkERUPSRMHmqmKF3KIYDI6nOreo5bayqBQlRsHB1m53XcEi/e6WFEz2q3iEik3+LNIuVFp6z9qXp4C2m8pezN25Zn6rHU00foFbnKg0cl6O0eRbjH2ouF/W4axZOWa7BHqlqm3wjMM1n8WNirZd52rikzB9nbifpgjqlrwAAAABJRU5ErkJggg==">
+                                </span>
+                                <span class="etiquette">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALgSURBVHhe7ZyLbsMgDEXz/z/dtV2JCPXjGgwp4EjTpuEYfLgYcKcdD+E5juOx05fIgmrM4Ugvr9SmxXzkwWrGK4HhYuEYnKCSwQ4wkBhLHhdQiIOdbF6w0vP+KdRET3/O5QS1k1IssSZVPb//HwHikVX1BhWPTOAjpgClCSVAaYQ+7QEqQIEEQLNQ1K+B4ioQ4Di/zKSKRq1P6b1hivICZSn5eAIbAspr9i2QvA/R3UFpwVlmXfNFtVv837b0kMDQQJCli9ig/ZV23RSFQLJcnVC1oHZWYO6gUECWHGJRyhSgrJBQRfUK3qIqV0UFKBC9NPOW5cMk0svHZuCQ3My6KiofZS0o5L3cxo1M4cgVFHAO+fowVQusZjlbNgqt/9S+NCh0s0BgLQ/KC9YSoF6KkJYoohjNZmpQyO7ola+WAiUpS1OM1v7zoLjgucCQ44QGhWoPUCC1ABWgrn8pCPJgzaZVFHc+2jpHWRJ6r5LMFIpCt/1easr67/9HGh5B1F6QW/PTFqA8IE0HSrvTlYrzgjQlqKI+RF6GPQENr0f1GPxIn8N2vZFB9egrQIFUA1SAAgmAZqGoAAUSAM1CUQEKJACahaICFEgANAtFtYCSqoTUDT3/Xdkv58viB7VF7coqhDRm8VIsFdmQ4pl2w0fLJZqfcoLQsVmEkGrz5NJLjijy3OAkW8RPPqt5/xaoVlDamIkxXUvB3EBzx+Vsa51KgDnl1PZhGYumSmjpSQOtDaKQ8jlplIpr+0BBSXmcAUgrSkqOnhBLpSKKpoAjKUPqC8jNOigKDLpkLMA1WyRHaoqi8h4Yi5yjJImibdIRAvVxp52667UMTso7LX7veHcIqNnVlC3V/p8U36ECzz5JRXl2sIqvE1TablcJzDOOM3WkNejpfCVf55mtPIStFGRrLJedOz9stTpe7f08JcW/bmNm9+sqldutcOZpVTXHgDxE7QhMi1k8bSLFsJVsJDX+AcQDqztfl8XYAAAAAElFTkSuQmCC">
+                                </span>
+                                <span class="etiquette">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKASURBVHhe7ZyBbgMhCIbv/V+6a2/1Qi8KP4qoJ5csWyo6+PxFNG2PF/Mcx/Ha6YdlkWukcLjOT2qTYj5osJLxk8CUYikxuEAlgx1gIDHeefyAQgbYyeYDKz3nX6Gm/PRTLheonZSiiTWp6v37vwSIh1fVCSoensBXTAFKEkqAkgh92wNUgAIJgGahqNGgam8c2NO7cJMBxlxl1k1R1qDQ8aooAJ2WAIVC6lk4dwMlTVIu+FwfyU5ql/xA25cHRQ/0Pe/ShoDSqOBuW6M6VDXARuJ7hEGC1wSnAa8Zl9q6K8o6KOvxSiCXBlXaDWtVM83Ss5x9T0hkw/DJUVagvCENB1WzREZAcgVloaZRkJYCNRLSMqBGQ1oaVE1+a+njVkfVVuMWua0FUOrrAqol2Ja+FoAClJLikooqJff0upIBZB6gIEzXm1j6HmFa8oyknpaxQUanmYuiNA7NahugwJkJUAEKJACahaICFEgANAtFBSiQAGgWiloJVO0VDBijidkUiuJAcUcYEwLgIEuD6nlbcOf3CFCfIHo/S4GiMLzzWoACpegOCrlfKilnG0UhkO75hvbZFhS5Ofz5gDcHxOtGc9iuV0q+UuCSCsEU02zmlqM0RaVWUY8qDyxAbZGjrEHd81vz2hIGWGrpFRKsy8d8h4PSJPMtll6uFNCWBwmUBLfHMnRTVAmKFLRUHnjseMT3/qdvTg2aRO99GL757Qeqx7LwGNN16XkE1Ot/BCiQ7AXKKymCfk1lduXFlNWn8m4iZ5KI4muRmElJajrFRLfAiSZyCldoSoqvbitMCVXTj6K8T+RTSCbjRPH6OedwyXjW4Cz8kmJmy3LkrPUkGw74HznNOuQycSkiAAAAAElFTkSuQmCC">
+                                </span>
+                                <span class="etiquette">
+                                    <img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAD/////////+AA8D8H//////////gb4gEf//////////4AAAA///////////8AAAA///////////8hAAB///////////+3IQB///////////+AAAD////////////AAAD/////////////AAD////////////fQAD////////////AAAD////////////AAAD////////////AAAD////////////1xw3////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAACAAAAAAAAf///AAACAAAAAAAAP///cn0CAAAAAAAAD///AAACAAAAAAAAD///AAACAAAAAAAAA///AAACAAAAAAAAAf//cn0CAAAAAAAAAP//AAACAAAAAAAAAH//AAAC8A8AAAAAAB//AAAC8A8AAAAAAA//gAACeB4AAAAAAAf/AAACeB4BwAHAAcP/hAACeB4BwAHAAcD/fQACeB4BwAHAAcB/AAACP/wBwAHAAcA/BAACP/wBwAHAAcAPAAACP/wBwAHAAcAPMO4WPDwBwAHAAcADAAACHDh//3//f/4B///+Hnh//3//f/4DAAACHnh//3//f/4Hm2g2DnABwAHAAcAfAAACDnABwAHAAcA/AAACDnABwAHAAcB/A8D+D/ABwAHAAcD/AAACB+ABwAHAAcH/AAHCB+ABwAHAAcf/AAACB+ABwAHAAc//IlECB+AAAAAAAB//AAACA8AAAAAAAD//gc0CA8AAAAAAAP//AAACAAAAAAAAAf//QcECAAAAAAAAA///AAACAAAAAAAAB///cn0CAAAAAAAAH///AAACAAAAAAAAP///4hUCAAAAAAAAf///AAAD////////////ALED////////////AAAD////////////AEED////////////AAAD////////////cn0D////////////AAAD////////////IhUD////////////AAAD////////////AMED////////////AAAD////////////AGEB///////////+AAAB///////////+cn0A///////////8AAAA///////////8YhEAf//////////4AAAAH//////////gAMEAB/////////+AAAAAAAA==">
+                                </span>
+                                <span class="etiquette">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANYSURBVHhe7ZyNbusgDIXz/i+9u/UuGaW2z7ExpFAqTZsSfuyPY2OotOPL+BzH8fVJPyYL6WUJx+q80jvk81E6ixqvBEbzRWNwgTobfAIMxseaxxMoZoBPavMD6/w8/tpqkpe/5HKB+iSleHw9VfX9+38J4Pm8Q9KP2O3x8Qq5vxIpDukuYKPn/Z2PB1UbONrgepUjCon0aQalbQRqLVKEOWpjpQMt7NCYpb2edBMGxRRrktHWcah2AsHQCuXIvEhlXUFJakOh+7QdF+dMCYr17KVYrMbypoxuoIQd4/GIBYXUpIVNrVjWjm6KQoayBjJhgtSkhWxpI1qgIaCkcNF2J4/BKHymCD0pKWesrAe6BgqpNLLzuXMUszNpeSKSo87wQclX203ZFJAeemjAVd+HFLUqDMuvDYpc9Q1qgyIJkM22ou4GZZUIyLZIX608QGUFsqUqL/j7KOfAobt4LygGknbkcvqTC0qr2hmjIn2nBIUqZKJWefkKHwH2KhCNJ71PTebWyiLjMvuiuSLvU0Ax0teMa+mrneMiIFCf6UEh0AgA+74LKOmGgVWUp6/UtiVHEvkzd9fzOlsb6EnOSFG7jvqla0H1AEchmBJ6xnY6pOD0hDUCAsaaN/SIvPLyzU8E1tKKas2VJdANipTXEqDOpJ2dK5dSlGfXa7lBmF5RHlBklInNlgPVcrgmdtC5ywOmOm9RU7F7zg1KukXIOrpUY+eDal3Bd+vfLUe9m6Ot9mxQJMENaoMiCZDNuigqe8dBRxPS16Zmt4HyXKpJ4EcsRvezHuPEBvW9DAyo+q5IKhq9z5piC3S+LfQkUJLKNOWxi5EFbxgoBEG7jWRASWe9LEBdjzBs8q3bocOtkFzNfzWQCWuIorQwyQRl5bMMYN1BWbkEKcjaGZmQzAA0LPRQ0vXA0kKPed4KbaiifiarP1oiRgmaDedWQLcoaoOqlo3d9bSSwHqOkjYK9ajCuoee5FipLCYpIyUukaOQE+zOZuU2NEdURcK4+84cwewSemjSGd9foKQ8MKNDPWy+0sO5y/SYZIUxTxHtf4tkrOappoeYyi18BQVk+vBUytS1TuZEM49VqulJUXVFPLOTLbar50hp0F5HgRYHevdFPpvVpucaZIW21mL8AyJ3LbkRBE/MAAAAAElFTkSuQmCC">
+                                </span>
+                                <span class="etiquette">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM8SURBVHhe7ZyLcuMwCEX9/z+dNmnlkQiPi4RlWyYzO+022IbDBSFlt9tLeW3b9nrSH5UF92YNR7t4pfesmLc6WMt4JTBSLBKDHVQxeAIMJEbKowGF3OBJNm9Y5fX5DlHT1coS8Xk0qfUzdlA9q9+oI73Xz0xaUdXv178RAG1uM520fOoF7bmuileGVJdlU68MXHG1qGwtGy1h3OqMVoF0LZr0fzsMlJVdOpjuTVAZWmkiLHUj/VQakFF/lLkyDhQXCM2a9HdJvdRxC+bXsk7Ub/lzOCguY1zwmqNW6aGlwikV9W8YlBSElMFqtWjGDy5YqWy9apJKmeuvkn+hoJr5QpB2Twa1skLVdHrpcU0yIoMadO9KR3ukpV5nX9SbObIyaaVjNU8pARwkq4dFJK679DzD2aq20By1avCeuBIUSCtBJSiQAGiWikpQIAHQLBWVoEACoFkqKkGBBECzEEVxezVtTybZW8c43qMY1B5hNQxKC5oL/Gr2CKRqo22fHig76q/PBD0nCdxu3zo1iLz/EqAkIFE/RyEdpijtMIwLUjq5jFSO9AwU1lCP8ma2OIU28wQlfM5Hs7sMKO3YVZP64xSFlBIdEShADpp03+jVEO1Pw81cexCnKG9PW6r0JFgeUNIquRQoDxBv4DMAouU3NB4ggUh9pe5dKMByjWeh0GY6FFJIj7ra3s3rDwprWFHaiID0L3Ri1lZHZB9KV18UEFmB+zbF3ofd2T5EUXcGgPqeoEBSCSpBgQRAs1RUggIJgGapqAQFEgDNUlEJCiQAmqWiZoJCN7agT5c0C1GUdXh3ycidTk0HdVf1HQYKOYtyJvVU8wQF4j8MFC0x5IhWsyEnjc2vQbnNCSfSzCNAISDf0LQkgQL6MpumKE4R1Bv00xjrXgkK/J/xGvDlFGWpzfpUxnrfC+yypaeB8gQZpa7lQXHN3QOa9EP9V45YN0ZWPasBWwGNPGN0N7BfX5y0gHimbck5rXdYAfWMBxGl977Hh1GdzR5YnmxT5RQnLEWdNXCW2HZQo6rqAXyHa5pE0mzdIYAZPtZqahSFyn+Gk2c+Q+yvnFNWYz0zkKOebcWs/psfazO72vtaEn4Am+ZrbZkhlvoAAAAASUVORK5CYII=">
+                                </span>
+                                <span class="etiquette">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANtSURBVHhe7ZwLcsMwCER9/0u3aRt7CAV2QbLiyMpMp2mNLPG0IHA/21fw2rbt604fIQvrooQTDZ7pGvJ5k84i45nAeL54DA5Qu8EdYDA+ah4voJgb3MnmB9b++n231GRvv+RygLqTUjK+7qp6fP4rAXq+dEnxySer8KUvJBnK3iYwIHtuXOu9nus9H5RW7AL13Dqrmvfqtd5h36qeIE2MUZRIiv/aIpTDrBC2CsOzCuahoZcBFfWXR10j+lCdF3urajgoDwBqo9y2wmnabwEKhWGU687Kd5dUlBVaUe4ZcYIOA2XlkIzzGdveYSfWfv6plwGVOc1QGdIL2lBF6UUzCdo74bLh2Qrs8qAixWjQZ9VQw0OPVZTVK0Z1lTzpzoJ1mqJapX618QsUuSML1AJFEiDNlqIWKJIAabYUNRJUtXYZ0cySHKBZs6KqzmZ6NOYhHno0U12napVqTXHG2agq3+/jbStblTNzNKo/D8pbPNTwwyAz1lMCUkh1HNisHKhqKFQ6/qrD1XHdQFXDAEGSja1nyzbVGbUxEVB6etACKjs247D3BKGyAcHBwIeeTrzIGTmpTqRobPV6dVykrmHlgbX4VoeqeQjN20VR6Ahm6plKDsqEEAKBrl8GFJurkEPTK2qBcn4ZDYHprYyqEi+RzDO5KzopK/nNu5+V97oVnJVkzvZwGZhV1aBx04DywhhtIDvuY0GJ9iHVTLeMe1t50BJ6qEdEvVqrktT8fAuDFjbr9eYWZlYwTs5bikIbvhSFCD2vL1ALFEmANFuKWqBIAqTZxylKP4om/fw104+iC2P98qBlYZmFMLYtjp4KqnVhjPMZm3dumht6qEfyIOrve1/LHbb6uaAxPS5JcNZ7/byJWYv3jCoNKgswAuc5Zykn+p63Jj2GWYun2jCZW6qJdsXKA0hhWk1eLkGgork9xbJrE/e2k3kEqjo5E7IoZLJzZ+2t8Csrqjq5B0orQi4WhMPxF/ZeqFXXKvNkN1A9FsOGIZrLuk9LWoChh04mlMN0ko1qGSuxW/Mbu/x+RXnhYAHwHGATJntyXRZUpiCc2fbIUVamn9nxjG+H2vcQywy+k+0uovVvkYJdfzlk5HF6J6Uwvr7Uc17dwdxoZpt/BWx05M4MwvPNbbOsAVGrMSs85HP4009UCM52PRLBN2T8Xmy6cjcpAAAAAElFTkSuQmCC">
+                                </span>
+                                <span class="etiquette">
+                                    <img _ngcontent-xmg-c45="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALFSURBVHhe7ZwLjsMgDERz/0t322yJHAT22G4MIY5UbVUGYr8M31a7vZhr27bXk14si1YhhcNVXqlMynmjyUrilcD0cukxOEAVwRNgIDnWPE6gkAaepPnAKtf+Lt3UfvyUywHqSU7R5Fpc9f77vwTIi3fVDiovnsDXTAlKMoob1F26rTdOF6g7LU69sZpBeW8sWf2Kck/MJlCeG14BQNOmNXY1KOuNNMlcrbXkoAJlucHVSVvb1+YCg6INr/heAp6gwF0JDIpunFdYyV/W9Y6jBnI0LNl11nItJGIS3RbGcqNZoFljV3U9mqz1hiOBeWI2g7rbmOWBZO56LWeNdApy76GbYiTAVTSurrcKBCSPBIVQemuGgOptgbiYLXVABpAsFBSyR2xFLdWDMnWKhoKqlxitmUmC5J3NUH5hoOqEe4vXeh/Zq8e1hyav0U0BSjM2oYA1EBDt1KAk10jlCABUMwSUMrju7yKWB8UN0JqulaC+tCQQUjnqXEQ3pOvRKb3lrhK4BEIqRwCgmmGgkC4mgZDKUQiILkEhlCL3er9YcNY5paMIEStg0CiwbOqu19oLogM9TAAUhoHqbYC5Wc9aB8xdJQsFhSTeip5boNabaFX2CnE4KA4WF3cPliJXl3QIKFfEgyonKBB8gkpQIAFQlo5KUCABUJaOSlAgAVCWjkpQIAFQlo5KUCABUJaOmhXUr86faDtgri5ZqKO4c6WShXT2JIF20WAqh4FqOUD6rBzKtc7NI79YIGdouh/kW54a2lU0UNA2LfHWdYY6qpUA6jLylEP+FUGCAu2WoO4ASupmvZmw9TmYr1l2OCriax/t8mAWUEfcZWA041ZUlNZBksvoA42a9Y5lCp1BFDk/Qloexs6IWvwR2SuSPDm4HgsU7SwtpW46OSp6ETcr5d7Y19y/RA2UM8GScmY3epbd/J3rcA/uDy9dom6gTgdgAAAAAElFTkSuQmCC">
+                                </span>
+                                <span class="etiquette">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALASURBVHhe7ZyBbsMgDETz/z/drV2JCMO+MySBGEeaNgWT4sdhbDJ1eynXtm2vlX5UFrXGHI7W2VMb8nnLnUXGnsBIvkgMdlDJYAUYjI8ljwMo5gEr2bxhpevzV6ipPv05lx3USkqx+JpU9fv7LwWIS1fVB1RcOoGvmGygVlSgGVSZpa+iRBMoqZRZARYNCtV73mFRoMqU/pBbZEWzZ1gQVK3u+ZfaLwBLBSUWh5W8y3sxTYEql5SUHnhOG+DS086qPMckQRyRcKJJn0JRWurBHK619EdgplMUys+kOpTpd2YNO1RRNWfzszFtc7h7l50KVC53VFMGqC8tDQSCaI0/jP1UikoxBYG4I3i7COZMIGdUYrEZqqj97YbyNlpLeBEwCwhk6wKUBBw5b2kfDgqpwpoLofhmgVPZhceUMJJTPc729NUgDlWU5lSrw639kNKGgUIOoXa2BkQA2PbHgUIAUTsLZqo8qnXpXRHbEMBhiqoVv2dk5lfVgENBSbCY5YPSCqQQa/twUBos5IwEC/VraZ8CVMvA7+4ToEjiASpAkQRIs1BUgCIJkGahqABFEiDNQlEBiiRAmoWiAhRJgDQLRQUokgBpFop6EqjauVI+fnRIh/qTLFSz4YrSIKSRLw+qdr6N7mnn6swRcqu6hiqKfRFQA8C8iWmFUuv3OFDScqzdvw1UmrXyA633pQG3KGpqUCkulIOUdiZ2Jt2AejusBddeuaPArT1/yhhVOpQvPVYVzPKzOG+xZRWu2dHBHOUyPYNBCSNSXh4aeicOTCj3j2QSrB5IT+lLKwrtNk9xuHWcZlB5gG/90Cf2awL1REd7x7yDKnOl3gd76r/H5rScPDl3pi9JRPG1SArVQ86Y72hnzoSHZx1yNK2G8+Bsqw9l8R9fBliQlLL7alp+VSnQOrt39EM+q/ULqvG8tWsT8gPQi89BNCoRYgAAAABJRU5ErkJggg==">
+                                </span>
+                                <span class="etiquette">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALISURBVHhe7ZyBcsMgCIbz/i/drV3sUSf8fyxEE+ndbruIKJ+A6LJtD+OzbdtjpS+TRatRwrE636kN2bxJY5HwncBotmgM3qCKwAowGBtrHh+gGAVIhs1pSM8M7U9byuf1k5c3sZDkBGYAgsLwxaiA8powC8trvGg9ZVF/v/+VAJGfFrzI8Tx1i7mfDyl6YTxBidQUB8oKQ29jIvXtdsSAqiHJTSM9al/WFqQEVfm8BilBCVAWpAQFwq1OsmeUI96J3S2ZI0/ynvjZ+lxA3R2SSx21AqSvQa0C6StQK0FSQaFdaTVIXaBWhHQY1KqQDoFaGRINanVIFKiE9HcGaFbm2mXb2ceGmcajQc006RFzoUGtHoLdoK52lfutFyYokqDLNQs5linWs4H09Omd63BQmrHyecs41K8XiNZvOlD1vXrrgI4goUN9D8ShoKydtKctcmeeFpS16j0Qe7xI9rkcKOQ1qL0X2DSgWAMQCNTOjlPLTQPKStCNEFBffEtQOy0EArXfxqNQeYBAoPZbgGJCDIFA7QmKDM1lQNWhqexObm85F/1T7XpM6LVyGNuv15vEmDGvJqKJ9VbYWr+o/DQclLbDtWoqy2u0Ggwt1JH2oaFXxb/6524tg9ANwhEIjOwUoCzPsow4w5OmSObMSs4iM41HzQJEm0eCIlcoQSUokgAplh6VoEgCpFh6VIIiCZBiU3iU19lO6iHtp8WGg2J+qYDOdQg0TcMQHAqq5QHo2bO9dTbUnnlAErrH30cdOfxaUKLCbzqPQlcq1Wn+35Vvgqr+NwNzy+kVdpcMvfSonQBK5sNBld3E010ZXUfLgxGg3nMsMcgYFiGD6iDkZXKRI5L5uySR220EiCvrLOBfjKQ7X9moiLl/eGsd9xEDXlGn9KYPj6or3isa5zFnLc81zy8RSdHDiCgdWgErxzMPej0n9yv3sRbiB+j8om5yegpOAAAAAElFTkSuQmCC">
+                                </span>
+                                <span class="etiquette">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKbSURBVHhe7ZyBbsMgDETz/z/dtV1BjGHfQRPihIs0rVqugF/ODnG1bg/n2LbtsdKPy6J1soTjvflO51DMWxksEt8JjBWLxSCDSoIVYDAx1jz+gGIGWEnzgpWO9yu5qX35Sy4Z1EpO6Yk1uer5+3cLoMN31RuUDp/Ax0wChYwiUIjQ57xACRRJgJTJUQJFEiBlcpRAkQRImRx1Jqi6I0quJbRsyFGoubc8KK93XtphaVDMBwy5wVV9IBE6p8jF0aln9pELKMuD8lKpdW7Z1GNAsTXKSuFWBjBaRvMam9VZmUilXq9DLD2qcx5sxrl7zBsOVKueWaAsbatu1n9j4DH1fKqjUHqx6dtz02BuQi8NOk4D1UrDerF7aFC6p/OhQKFFI8dZQXlA0ZzTQDFFtnXXQTUKuYuBWs+LXOOdp1LPm3AEFCra1nxeoe4p+CPAhkCl4sfcUVpaphj33tEYUGXRtor8V9sDb8OGArKgokKNaguzJuuCWBd4l9RDC2Nu7Uzw3jitwmuNiWocW8Qr2HgfMZLXd3oPXaPuFPRILAJFUhMogSIJkDI5SqBIAqRMjroSqN6NKBnbrrIQjkKgyme0XaPvGCwcKOaBuSO+3aRhQdXPlrtFPDhQWFAjT/iDDKi3CRSFKX8ueG73ABVzMpZDZeEchRp6h9JwBg8HSnc9fLX+/eNSb1/7SLeFdVS9PTh703kZUEe6hRk7LCjtoxqXD20Pzk67ogzE3UcxaTFDEyL1ZgT67RwCRRIUKIEiCZAyOUqgSAKkTI4SKJIAKcuOirD7Jdc8XZafHNIWffoKLjJhMpG+Fonolb3NVHYVL3KRpy2zLEn66jYDe6pN2UilLlL7dZptqoksBs0ey4rAUMxuM4ppqt1J47n4B2CHZ7eyygRwAAAAAElFTkSuQmCC">
+                                </span>
+                            </div>
+
+                            <div class="boutoncomparer">
+                                <button class="cta cta--clear jscomparer2">Comparer</button>
+                            </div>
+
+                            <div class="infosgarantie">
+                                <div class="garantie">Garantie <span class="emphase">24 mois </span><span> étendue à <span class="emphase">84 mois </span> pour <span class="emphase">69€</span></span></div>
+                                <div class="dispopieces">Disponibilité pièces détachées : <span class="emphase">5 années</span></div>
+                            </div>
+                            <div class="lignesinfoconteneur">
+                                <div>
+                                    <div class="ligneinfo">
+                                        <div class="infogauche">Prochaine commande</div>
+                                        <div class="infodroite emphase">-</div>
+                                    </div>
+                                    <div class="ligneinfo">
+                                        <div class="infogauche">001181 PERMANENT</div>
+                                        <div class="infodroite emphase">mer. 28/09 (21:00)</div>
+                                    </div>
+                                    <div class="ligneinfo">
+                                        <div class="infogauche">Livraison</div>
+                                        <div class="infodroite emphase">30/09</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boutoncommandeconteneur">
+                        <div class="commandearticleconteneur">
+                            <div class="textecommander">Ajouter au panier</div>
+                        </div>
+                    </div>
+                    <div class="voirficheconteneur">
+                        <div class="voirfichetexte" onclick="location.href = './vendeur_fiche-article-lave-linge2.html'">Voir la fiche</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="voletnavigationconteneur jsvolet3">
+                <div class="croixettitre">
+                    <div class="croixconteneur" tabindex="0">
+                        <img src="assets/icones.svg#croix_gris-view">
+                    </div>
+                    <div class="titredesignation"> Candy GrandÓ Vita GVS1410DWC3-47 - Machine à laver - indépendant - largeur : 60 cm - profondeur : 54 cm - hauteur : 85 cm - chargement frontal - 62 litres - 10 kg - 1400 tours/min - blanc<span>, Candy</span></div>
+                </div>
+                <div class="voletinfosconteneur">
+                    <div class="prixetpromo">
+                        <div class="prix">369,<span class="decimales">00</span> €</div>
+                    </div>
+                    <div class="articleconteneur">
+                        <div class="infosconteneur">
+                            <div>
+                                <div class="colonnedetail">
+                                    <div class="photoconteneur">
+                                        <img src="assets/images/fiche_lave-linge6.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stockconteneur">
+                                <div class="stockinfos">
+                                    <div class="stock">5 </div>
+                                    <div class="label">STOCK (UVC)</div>
+                                </div>
+                            </div>
+                            <div class="indicereparabilite">
+                                <img class="logoir" src="assets/images/logo-indice-5.svg">
+                                <p class="indiceir">8,1</p>
+                            </div>
+                            <div class="etiquettesconteneur">
+                                <span class="etiquette"><img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAB/////////+AAAAAHAAAAAAAAADgAAAAYAAAAAAAAAA4AAAAwAAAAAAAAAAMAAAAgAAAAAAAAAAEhAABgAAAAAAAAAAGAAABAAAAAAAAAAACAAADAAAAAAAAAAADAAACAP////////4BAAACAf////////8B2Z++Af////////8BAAACAf///4H///8BAAACAf//+AA///8BA+H+Af//wAAP//8BAAACAf//gAAD//8BA+H+Af/+AAAB//8BAAACAf/8AAAAf/8BA+H+Af/4AAAAf/8BAAACAf/wAAAAH/8BAAACAf/gAAAAH/8BAAACAf/gAAAAD/8BAAFCAf/AAAAAD/8BAAACAf/AAAAAB/8BIk0CAf+AAAAAA/8BAAACAf8AAAAAA/8BAAACAf8AAAAAA/8BAAACAf8AAAAAA/8BMk0CAf8AAAAAAf8BAAACAf8AAAB+Af8BAAACAf8AAAH/Af8BAAACAf8AAAf/gf8BhAACAf8AAA//wf8BplgCAf8AAB//wf8BAAACAf8AAP//wf8B7IACAf8AA///wf8BhAACAf8AD///gf8BAAACAf8D////g/8BEAACAf+D////g/8BAAACAf+B////B/8BhAACAf/B///+B/8B///+Af/A///+B/8BA//+Af/Af//8D/8BAAACAf/wP//4H/8BAAACAf/wH//gH/8BAAACAf/4B//Af/8BA8D+Af/8AP4Af/8BAAACAf/+AAAB//8BHANCAf//gAAD//8BAAACAf//wAAH//8B0k0CAf//8AA///8BAAACAf///wH///8BA8L+Af////////8BAAACAf////////8BA8D+Af////////8BAAACAf////////8BA8L+AAAAAAAAAAABAAACAAAAAAAAAAABA8D+Af////////8B24gCAf////////8BAAACAfHx////wA8BNDACAeDg////wA8BhAACAeDg////wA8BFIQCAeDg////wA8BAAACAfHx////wA8BAAACAf////////8B/AACAP////////4BxIADAAAAAAAAAAAD///9AAAAAAAAAAACAAABgAAAAAAAAAAGAAAAgAAAAAAAAAAEVmBQwAAAAAAAAAAMAAAAcAAAAAAAAAA4AAAAHAAAAAAAAADgAAAAB/////////+ALZ+8AAA=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALlSURBVHhe7ZyBkoIwDET5/5/2Tk+4EpPsBipT7TLjnEoamtdtmiJzyy05lmW5zfRKWXgnWzhZ4286h2Je2mCR8TeBiWKJGGygVoMZYDAxWh47UIyDmWzusNbj8U5q8oe/5bKBmkkplVhXVf3+/SsBdOSqeoDSkRN4ikmgkFAEChF6nhcogSIJkGaUosKSvtkwk9f7WDMIKrpz0BapM6yaKSirJPT5Y+VCdLwEym51MrUxdyR224Om6GX8onSQ9dXjgu6aUKAi4FFATcnv3vTbNpnFm4J2unvBZX2q2NuYu4HycpbdGkWf2xyHpnd03oNf6ZMd3EtBRcqJgrLTJQvUUw6yR/6tTyd9+FsYct5uG+pMDUj2Fh6jEC8wVnHM9D8FykvAXk7KRq+Hopi8WekDWvioHNVD5lVFMddkfFbyZDaDUlDRKsNMi+oKFZUTCAZaIBAoFKOJddzbLChPoinT6zxUVK8LsX4YBbC+etoNCypbqnsCYH0NB8rLGWww77QbEtQ7Az7q+zJQo00lCwwtGt1A2SQcdeToiFbaob54vi4BRV7kkt8OUV/Yij4Y6LyOYrctbHFotzzZVmO1tUWuTfpMgeu1iYrnU6C8bUX0ndcBC7Knv8wXAxEpkcpRWYDZKKHRQgpklIb65imR8XtaUUjylUSZgYogIzCkMl6e3iHbcTnK5pboM7v0XgmqkiKSwR4f1FGFDTX1vDnfjkoka5Sj0PkoP3p1VLZyF/LsOUV5q8pRUFVfCKaXHlCbw1MvKtJm+p4qD2YCEsUqUKQKBEqgSAKkmRQlUCQB0kyKEiiSAGkmRQkUSYA0k6IEiiRAmklRAkUSIM2kKIEiCZBmUpRAkQRIMylKoEgCpJkUJVAkAdJMihIokgBpJkVVQa0/PZPtpjLbfoK/Ry1Q8dhvzy+soATrFdbuKZj1tED5oDY+LSjB+odln7PSPwM0QgoffPPSWGT8zcsdijl93K5tPMP7TAg/nrF3i+EFF3IAAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMMSURBVHhe7ZwJcsMgDEV9/0unTRtcUJH0xQ6WZzpt4g9GD212OrlewnFd1+tJPyKL3MkYjjT4pHOazVdsrCY+CQxnC8fgBhUET4CB2Eh5JKCQCZ6kecMKx89ftd50asjGXG5QNZ5yKqjgRJ/fvy1AzXE6qI99dZDi0KXAcwCl95AKzPV1dKNbbl43UJIx1ADpNXouSbpMk9wgYtp71L/S+ln8XUGi1xwMi5YD1aJQRXO0B0WN5MBJ4UG9Mme0Ftq5OUo8a0ro0ZyGQAweI2m5zWmRq7qDyoUP6m1S6OXmkK5V4kWZwtI+9JJGLUqulqqWq6Zckdg+mUs5ggsJrfxr57XQLvGuZqFXcvEWY1rkH2Qd24HS2g7E6BLNtqBalX0U2nagcvkHNbZGtyWoGoNLxzookNxQULmyDq7zliF9lHVORL8VKAlS7zZhGCikSZR2FoVE2wfEWxDNEFC14WKFFN/OIBAQTXdQmpGGRSafWHP3jL1CsBsoDZAlRJAigGiQTeE0XUChkJAQQQGgulJYR4NCNgIFNwRUWEzJrlvGWLQoILL2+gd3XHLVkq62YIvxFq12XXq+i0cpCZGtXrlxFuMtWgdFPtOzAhla9dyjKrenJDQsYyxaqymeo0BiDspB1f8rU6a1adtHzUjm3G0T6DCq7JjQ65nI3xSXBxUtUmxUHdTfbp75PKr2dkS7R9Qe5ahJxyjYIvS48JNgGTmo8m1AWWCpVhcItgIV7OvdCghpY0wfVbCRywwZ6lHLWF2wEAcFQnNQDgokAMrco1YHFZd4cK1TZdM8ykGB++6gHBRIAJS5R1WAysEb+YRAWvoyydwK6a0feSwBigtDDd5jQVHDHdQ3EeSZkoMSQMW5x0ERUPQxb+5JpvTeiFy1RDLnIIz+pAVqDyaV2+SrTrRQo+BGeFLi7eHFqAvXXGdGRx+cqMnXItUYD7j8LRkNKlzvx5niHNHL4JJ5KZTRkGikLf3VbUi/VbIJyJjYmxKP4so0MulJGvaWKmfkDDefDVuzWbwN13qZ085Lm/UFZupeltES4gEAAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMVSURBVHhe7ZwJbgMhDEXn/pdOlTRExPHyDWYdIlVtM4bBj++FqZrrobyu63rc6UtlwV3M4WiDd7pm+XzlzlrGO4GRfJEYfEAlgzvAQHykPL5AIRPcyeYJK71eP5WqafdQzbl8QJUoZXdQSUTv7/8tQMnrLqDefpZBykPWAs0B1d775IWsj6MbKfV3Lap4c1CaMxQU0thyAOk4uoERqu8GijrI/c6BssYlJWvQa4oVuX/f0PsqucwRSQodbpwUopo6K3JxO1BWHpFUhI7bDpQUQlw+4ULlp0t+K9ECVaIebkxojtKSqlYhrepnVczlknnpgj0gtPwlqW6Kqhcl7dp5ImBoa6gOvVoHS8dbOat0Xmnc8qC4cI+GlOXX8vagxaLQOXtBWh4UCjTCbtnQi3DeM8cBBdLqCso6llhrjj6/Wfdjera2yVxzkJZ5ozyrf2P0OO617aIoBFT+ZIA6gY7X5vCCEdbQTlHS0wF69pOc1Majc9RC6tIeaL2OBQEBgcwxPagIJ6ymMuIeCMimOcpyElmgZXNAWYTe13tsRvMc1bpa9VLTVKC8pb0npCVB1Xb3YET/mHVN5lQ1XlWMgjREUVbX7T3ClCrEO66rorjFoVXLqz4vCMt+CVCjIS0RejNAag6q5Kxm5TBvG2GFFHq9aehxoHJHEbWgOQx1uNSuOSgJFgLJMzbNVwrCGjcNKG9b0Lun6gIqQShxznNebJm/uoKy5D3z9QMK3J0D6oACCYBmR1EHFEgANDuKOqBAAqDZUdQIUHkXDd5/GbNQRXGgdoE3DFTr0360VIeAWlFlzUFxO3tAMf+tiT4m0R7SaY9p8o0oeYyDhmhzRUWB0uaped41JSjOIU0R0jVpHhrSkQWjq6I8oOhOW8rkQhdVC2K3FSgpzyEgLJslQVlOUWCIvWWzNCgrJ0W2IcNB5QlXc2yaqvdcSO3Lc9ajjiPhgvRJnE2YX2mRtRPuOj6JqOpjkXaFQ1uZl5jyN3d33OtfnpLOR7cJ9Ghnfz4MkICSqi9b7iJ7EK/cR9lbPqt9gXXG2u26tkl/kdT18JeiF6AAAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALgSURBVHhe7ZyLbsMgDEXz/z/dtV2JCPXjGgwp4EjTpuEYfLgYcKcdD+E5juOx05fIgmrM4Ugvr9SmxXzkwWrGK4HhYuEYnKCSwQ4wkBhLHhdQiIOdbF6w0vP+KdRET3/O5QS1k1IssSZVPb//HwHikVX1BhWPTOAjpgClCSVAaYQ+7QEqQIEEQLNQ1K+B4ioQ4Di/zKSKRq1P6b1hivICZSn5eAIbAspr9i2QvA/R3UFpwVlmXfNFtVv837b0kMDQQJCli9ig/ZV23RSFQLJcnVC1oHZWYO6gUECWHGJRyhSgrJBQRfUK3qIqV0UFKBC9NPOW5cMk0svHZuCQ3My6KiofZS0o5L3cxo1M4cgVFHAO+fowVQusZjlbNgqt/9S+NCh0s0BgLQ/KC9YSoF6KkJYoohjNZmpQyO7ola+WAiUpS1OM1v7zoLjgucCQ44QGhWoPUCC1ABWgrn8pCPJgzaZVFHc+2jpHWRJ6r5LMFIpCt/1easr67/9HGh5B1F6QW/PTFqA8IE0HSrvTlYrzgjQlqKI+RF6GPQENr0f1GPxIn8N2vZFB9egrQIFUA1SAAgmAZqGoAAUSAM1CUQEKJACahaICFEgANAtFtYCSqoTUDT3/Xdkv58viB7VF7coqhDRm8VIsFdmQ4pl2w0fLJZqfcoLQsVmEkGrz5NJLjijy3OAkW8RPPqt5/xaoVlDamIkxXUvB3EBzx+Vsa51KgDnl1PZhGYumSmjpSQOtDaKQ8jlplIpr+0BBSXmcAUgrSkqOnhBLpSKKpoAjKUPqC8jNOigKDLpkLMA1WyRHaoqi8h4Yi5yjJImibdIRAvVxp52667UMTso7LX7veHcIqNnVlC3V/p8U36ECzz5JRXl2sIqvE1TablcJzDOOM3WkNejpfCVf55mtPIStFGRrLJedOz9stTpe7f08JcW/bmNm9+sqldutcOZpVTXHgDxE7QhMi1k8bSLFsJVsJDX+AcQDqztfl8XYAAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKPSURBVHhe7ZyBjoQgDET9/5/eW/fEIIHOFCwi1GSzl9Cy9DnU0kvcPsK1bdtnpY/IIjcYw5GcZxpDMW9xsMh4JjClWEoMTlDBYAUYTIwpjwsoZoKVbHZY4fr95WrK3/6YywlqJaVoYg2q+n7/lwB+yar6gfJLJnCIyUEhoTgoROgYd1AOiiRAmrmiRgKFug/kWi9muTlr5mF9zBWFINXUcKU52aBr7ExBsZC0sJYAdR4wMw1BdKcReOTfMt5VUelC08ClQBAk69PFY6A0yZiBNBWoS29HsfWWBBW1LC7/tNBsu7h/FkNsyUHI13TrlQLSbLt4jjgY7RwIBBo3B4VgoQWWxpcDVZuEpwNllYinAlUK5o7KehpQKBA0jnJXqz+av1Ac398KZqrulmBbfLWQogeSg0LwzMoDVxRCf4wzW4Oxmb6OQhDQOLofrf5o/m7JHFXkrYG2+g8FSgOrcuH0wVo7f1dFhR+TqvPaAKZTVC2I0fzMyoPRAm1dj4MiCTooB0USIM1cUQ6KJECauaIcFEmANBtCUUxLhozHzGx4UBbHnxqarwYVINYErvWZAtQehPX1KlAxjN55zUGRUuwOSkrOuZwT2y+jKAZSmm8c1JGAUaeSgUvuniazbluvlHxbQTVFr3B+HNS+VukJxihqqvJAA6OUtJdI5neDSpWo2EVVpq/aemmEpSdiFQng9DgoTTJfYuuVknYNKOTzakXlQJWeaJJynoAUrd3+9B2CZx73GlAW6snN2S1H9QrI6nccFEnWQWlB9TgGkGsazuzMqyGrD7fCQRYUROSvRRJuSNxM9BdtAVBnaZPWOIMo/vFlpK1pfxlgckuK7WehEl3qBVyoGyGeX5gjx0w20n7/A9Yow03QqTT1AAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAD/////////+AA8D8H//////////gb4gEf//////////4AAAA///////////8AAAA///////////8hAAB///////////+3IQB///////////+AAAD////////////AAAD/////////////AAD////////////fQAD////////////AAAD////////////AAAD////////////AAAD////////////1xw3////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAACAAAAAAAAf///AAACAAAAAAAAP///cn0CAAAAAAAAD///AAACAAAAAAAAD///AAACAAAAAAAAA///AAACAAAAAAAAAf//cn0CAAAAAAAAAP//AAACAAAAAAAAAH//AAAC8A8AAAAAAB//AAAC8A8AAAAAAA//gAACeB4AAAAAAAf/AAACeB4BwAHAAcP/hAACeB4BwAHAAcD/fQACeB4BwAHAAcB/AAACP/wBwAHAAcA/BAACP/wBwAHAAcAPAAACP/wBwAHAAcAPMO4WPDwBwAHAAcADAAACHDh//3//f/4B///+Hnh//3//f/4DAAACHnh//3//f/4Hm2g2DnABwAHAAcAfAAACDnABwAHAAcA/AAACDnABwAHAAcB/A8D+D/ABwAHAAcD/AAACB+ABwAHAAcH/AAHCB+ABwAHAAcf/AAACB+ABwAHAAc//IlECB+AAAAAAAB//AAACA8AAAAAAAD//gc0CA8AAAAAAAP//AAACAAAAAAAAAf//QcECAAAAAAAAA///AAACAAAAAAAAB///cn0CAAAAAAAAH///AAACAAAAAAAAP///4hUCAAAAAAAAf///AAAD////////////ALED////////////AAAD////////////AEED////////////AAAD////////////cn0D////////////AAAD////////////IhUD////////////AAAD////////////AMED////////////AAAD////////////AGEB///////////+AAAB///////////+cn0A///////////8AAAA///////////8YhEAf//////////4AAAAH//////////gAMEAB/////////+AAAAAAAA=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOXSURBVHhe7ZyNcuMgDIT9/i/dpmntEiJpV0IQbJOZm+vEYEsfqz/fXLcv47Nt29ed/pgspIslHGvzla4hn7fSWbT4SmA0XzQGB6h9wR1gMD7WPF5AMTe405ofWPvn+dNSk3z8JZcD1J2U4vF1V9Xj798WwPOZIelH7Pb4eITcf4sUh/QpYKOf+/c8HlRt4GiD61OOKCSypxmUVgjUXqQIc7TGSgda2KF7lvZ60k0YFNOsSUZb41DtBIKhNcqR5yKVdQUlqQ2F7ks5LuZMCYr13VuzWN3LmzK6gRIqxvMrFhRSkxY2tWJZO7opChnKGsiECVKTFrKljeiAhoCSwkWrTh6DUficIvSkpJxxsh7oGiik0kjlc+copjJpeSKSo/bwQclXq6ZsCkgPPXTDq14PKeqqMCy/Fijy1BeoBYokQC5bivokKKs9QHahNqD3fu3+qYrSehltbpN6HNQPAUfEf6xFcJnraaAQJGbIRfeIQEKHxEAqGmX+Dad0Y22caenirXtKo4s1Q2bASlEUO7JYQ+4+qlgQmEPy7v+oouqHR5M7sy96SCygKo+2hR7R+r+9sGMMbQUlhT7zXEO540CxhkZzVJaalfv0AcU6i5yT8pfWWjCJnj0s4V75oCKQIj1US8X1AEupei2KQApApR31XkyeY4Clg4ooiSn7nvCz4DFQuifzLEha/rFgaRVuOkVlQ2KSNaOOqUD1gpTRB00NijlpFgJy9FSdOXJGA4eUiK4j2FG7uiXzlhLt2esBzkBmlV8cSFvD6XFWqlzMfsup1v0MsJQ+ijG0XMP2TajZzGp0h4FiHnT2NSmKOjsExv4FiqH0WLNALVAkAXJZF0WhCkfaZi4b8YzSgI+B8nTNEpQFStDRrUHVc5r0WsX7XUZIgzGpbYSxOmR29NAGXC1ELxt6ksO1s2hNOSeisSlbXcOSOZNnPM6jtdLw3QJvCCgtTJCirMo4OiS7g7JyCaMKBrIWki0KUvJuv2SOkq4HltAAvv0XX/S8KLyhipLyhgRKqoD1XkZpUSjG+7IxilqgqiNgKpzUTFrln+3VTht6USBWxdO6euv71jDsnqNQAmZbgEsqqvX0ZtzfRVEzOtpq0wEqu+VvNWym/Ud62JPgTMbNZMsuovVrkYxT2dX0FFNZwmc6yRlseent6l5nBgNnsKFU04uiejZsMzjO2qDOkcYQ6P4FXKwxM65D4485EXteg1xhrXWA31zAI7V/g7QzAAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANNSURBVHhe7ZyJcsMgDET9/z/dIw0eTCXtSmDHYHWm0yPCEU+rw6Tp9mV8bNv29aRPk4X0YA3HWrzSY2jPW71ZZLwSGG0vGoMdVDF4Agxmjy2PAyjmAk+y+YVVPl7fMWq6W1oyPvcGtX6OHVSk+/U6El1/ZdCKqn6+/o0AbHG70knkUxS0Z121Xx1SnZaHfBXgqt2iskU2VsCk7sxmgbaWDfrbjgOFotsOpnsRNIbWNhBI3Uw91QZk1h9jrhwHStpIGzXtZ029reMI5r+23qgf+XM6KCli0uYtR1HqsakiKZX1rxuUtgktglW3OIwf0ma1tPWqSUtlqb5q/g0FdZgvFGlHImilFaumj6eeVCRHRNCC7u10bY1E6nXWRbuYM53JSh1UPLUASJBQDRsRuHDqeYazVW2pOWrVzXv2laBIWgkqQZEESLNUVIIiCZBmqagERRIgzVJRCYokQJqFFOU9EmHu5Zh7NO3IpdcfhtVpoCQ47I0zAxZdn4VqHesIN+X49MAbcXS8oR2kMb/XjkbYQBQArBKr58OgrAii6CHHNIc/9fuuYxYPKC3nvRu/QjmS8oeAklKQKYbWOi/AkSk2HJRQ2Ki/V0BpNxLgKAV2KSoKiulgVqPwNIVpQbGQNNV5U3IZUGwt09TrTeOo/aWp55lRLIDLpx7bTaSoR5UwshsqsyEeOD3FPKImpBxmqLWCI/nkCebb9lxQ2rBqwUewb32vx6QE2+rrezrU9dgaVuCNtG988ykq0r1mXxNKvdk3HfE/QZHUElSCIgmQZqmoBEUSIM1SUQmKJECapaISFEmANEtFXQnKc1xB+nU7syGK8p4l3Y4C4dDloGZV32mgtCAlKPB2W+lwjlD8bUxOU1SrHObo1rKxTkElmtK1eqhPBYoB+QvDClIU1mWgmNSzXlDwdNYERb4zHr2CE1HVbRXVbgbVuPZVnWlrlDf1LFAeRYxS15SK8oCSirt3fXUN+1+OoAv3FNr62tYw2vMcvUPuvr4QQ0A807bmnFU70IYi48GI1Cv1j/63SCNAtalQF2EESlrbFnHvYIrEUXx6PXd9cbTwaY8fAtlG4WkwUKbsfNiC+hSAan2VADD1YjVwaM/m3/wwE/FKNlbwvwFGjtX0MO7e/wAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANtSURBVHhe7ZwLcsMwCER9/0u3aRt7CAV2QbLiyMpMp2mNLPG0IHA/21fw2rbt604fIQvrooQTDZ7pGvJ5k84i45nAeL54DA5Qu8EdYDA+ah4voJgb3MnmB9b++n231GRvv+RygLqTUjK+7qp6fP4rAXq+dEnxySer8KUvJBnK3iYwIHtuXOu9nus9H5RW7AL13Dqrmvfqtd5h36qeIE2MUZRIiv/aIpTDrBC2CsOzCuahoZcBFfWXR10j+lCdF3urajgoDwBqo9y2wmnabwEKhWGU687Kd5dUlBVaUe4ZcYIOA2XlkIzzGdveYSfWfv6plwGVOc1QGdIL2lBF6UUzCdo74bLh2Qrs8qAixWjQZ9VQw0OPVZTVK0Z1lTzpzoJ1mqJapX618QsUuSML1AJFEiDNlqIWKJIAabYUNRJUtXYZ0cySHKBZs6KqzmZ6NOYhHno0U12napVqTXHG2agq3+/jbStblTNzNKo/D8pbPNTwwyAz1lMCUkh1HNisHKhqKFQ6/qrD1XHdQFXDAEGSja1nyzbVGbUxEVB6etACKjs247D3BKGyAcHBwIeeTrzIGTmpTqRobPV6dVykrmHlgbX4VoeqeQjN20VR6Ahm6plKDsqEEAKBrl8GFJurkEPTK2qBcn4ZDYHprYyqEi+RzDO5KzopK/nNu5+V97oVnJVkzvZwGZhV1aBx04DywhhtIDvuY0GJ9iHVTLeMe1t50BJ6qEdEvVqrktT8fAuDFjbr9eYWZlYwTs5bikIbvhSFCD2vL1ALFEmANFuKWqBIAqTZxylKP4om/fw104+iC2P98qBlYZmFMLYtjp4KqnVhjPMZm3dumht6qEfyIOrve1/LHbb6uaAxPS5JcNZ7/byJWYv3jCoNKgswAuc5Zykn+p63Jj2GWYun2jCZW6qJdsXKA0hhWk1eLkGgork9xbJrE/e2k3kEqjo5E7IoZLJzZ+2t8Csrqjq5B0orQi4WhMPxF/ZeqFXXKvNkN1A9FsOGIZrLuk9LWoChh04mlMN0ko1qGSuxW/Mbu/x+RXnhYAHwHGATJntyXRZUpiCc2fbIUVamn9nxjG+H2vcQywy+k+0uovVvkYJdfzlk5HF6J6Uwvr7Uc17dwdxoZpt/BWx05M4MwvPNbbOsAVGrMSs85HP4009UCM52PRLBN2T8Xmy6cjcpAAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALFSURBVHhe7ZwLjsMgDERz/0t322yJHAT22G4MIY5UbVUGYr8M31a7vZhr27bXk14si1YhhcNVXqlMynmjyUrilcD0cukxOEAVwRNgIDnWPE6gkAaepPnAKtf+Lt3UfvyUywHqSU7R5Fpc9f77vwTIi3fVDiovnsDXTAlKMoob1F26rTdOF6g7LU69sZpBeW8sWf2Kck/MJlCeG14BQNOmNXY1KOuNNMlcrbXkoAJlucHVSVvb1+YCg6INr/heAp6gwF0JDIpunFdYyV/W9Y6jBnI0LNl11nItJGIS3RbGcqNZoFljV3U9mqz1hiOBeWI2g7rbmOWBZO56LWeNdApy76GbYiTAVTSurrcKBCSPBIVQemuGgOptgbiYLXVABpAsFBSyR2xFLdWDMnWKhoKqlxitmUmC5J3NUH5hoOqEe4vXeh/Zq8e1hyav0U0BSjM2oYA1EBDt1KAk10jlCABUMwSUMrju7yKWB8UN0JqulaC+tCQQUjnqXEQ3pOvRKb3lrhK4BEIqRwCgmmGgkC4mgZDKUQiILkEhlCL3er9YcNY5paMIEStg0CiwbOqu19oLogM9TAAUhoHqbYC5Wc9aB8xdJQsFhSTeip5boNabaFX2CnE4KA4WF3cPliJXl3QIKFfEgyonKBB8gkpQIAFQlo5KUCABUJaOSlAgAVCWjkpQIAFQlo5KUCABUJaOmhXUr86faDtgri5ZqKO4c6WShXT2JIF20WAqh4FqOUD6rBzKtc7NI79YIGdouh/kW54a2lU0UNA2LfHWdYY6qpUA6jLylEP+FUGCAu2WoO4ASupmvZmw9TmYr1l2OCriax/t8mAWUEfcZWA041ZUlNZBksvoA42a9Y5lCp1BFDk/Qloexs6IWvwR2SuSPDm4HgsU7SwtpW46OSp6ETcr5d7Y19y/RA2UM8GScmY3epbd/J3rcA/uDy9dom6gTgdgAAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALASURBVHhe7ZyBbsMgDETz/z/drV2JCMO+MySBGEeaNgWT4sdhbDJ1eynXtm2vlX5UFrXGHI7W2VMb8nnLnUXGnsBIvkgMdlDJYAUYjI8ljwMo5gEr2bxhpevzV6ipPv05lx3USkqx+JpU9fv7LwWIS1fVB1RcOoGvmGygVlSgGVSZpa+iRBMoqZRZARYNCtV73mFRoMqU/pBbZEWzZ1gQVK3u+ZfaLwBLBSUWh5W8y3sxTYEql5SUHnhOG+DS086qPMckQRyRcKJJn0JRWurBHK619EdgplMUys+kOpTpd2YNO1RRNWfzszFtc7h7l50KVC53VFMGqC8tDQSCaI0/jP1UikoxBYG4I3i7COZMIGdUYrEZqqj97YbyNlpLeBEwCwhk6wKUBBw5b2kfDgqpwpoLofhmgVPZhceUMJJTPc729NUgDlWU5lSrw639kNKGgUIOoXa2BkQA2PbHgUIAUTsLZqo8qnXpXRHbEMBhiqoVv2dk5lfVgENBSbCY5YPSCqQQa/twUBos5IwEC/VraZ8CVMvA7+4ToEjiASpAkQRIs1BUgCIJkGahqABFEiDNQlEBiiRAmoWiAhRJgDQLRQUokgBpFop6EqjauVI+fnRIh/qTLFSz4YrSIKSRLw+qdr6N7mnn6swRcqu6hiqKfRFQA8C8iWmFUuv3OFDScqzdvw1UmrXyA633pQG3KGpqUCkulIOUdiZ2Jt2AejusBddeuaPArT1/yhhVOpQvPVYVzPKzOG+xZRWu2dHBHOUyPYNBCSNSXh4aeicOTCj3j2QSrB5IT+lLKwrtNk9xuHWcZlB5gG/90Cf2awL1REd7x7yDKnOl3gd76r/H5rScPDl3pi9JRPG1SArVQ86Y72hnzoSHZx1yNK2G8+Bsqw9l8R9fBliQlLL7alp+VSnQOrt39EM+q/ULqvG8tWsT8gPQi89BNCoRYgAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKpSURBVHhe7ZyLbsMgDEXz/z/drQ8iNzX2BQw44EjTJuEAPlw7mGY9HsJ1HMdjpx+RBddI4Ug3r9Sm+XxQZzXjlcDkfMkxOEElgx1gID5eeXyBQjrQbNCcpvXjof3pS7pef1mpCYVEJ+ABiBaGL0YJlNWEUVhW4/XuJy3q/+/3FqDnxcHrOZ5l32Tu4yH1XhhLUCQ19QMlhaG1Mz37+/jRB9QVEn1ohKI+y8pBClAXzecgBSgCSoIUoJRwuybZEdsR68Rulsw1JVlPfHR/JqBWh2Syj9oBUjOoXSA1gdoJUhaU9lTaDVIVqB0hFYPaFVIRqJ0hwaB2hwSBCkjvGoDdmecO20aXDZ7Gg0F5mvSMucCgdg/BalB3O8ptVWGAAgmaHLOAY7Fm0qc0tE0bg+tHu6ekfQlQI57SrkCVrDC1DVAAOSl0gdthk6mKat1yaPkNpgAYugJVkrxJWZF9xxTwHzZxC6rm8LBVoRI196ByG1tOfduASiuqOZxr1+6D44wxnKooQOo/r0xKMAIUfeG04h8EWpR0UXmf96NaJoiGl7ZFsCrebx96y4PS8onWzqm15h5U9VMVhYZXoTNm78wz9eScHIWETUmOWVZR1mXI0qAkWGjIoRvV0v7chF7LxEffOzWZj3a2ZbwABdILUAEKJACahaICFEgANAtFBSiQAGjmQlFczcfsiou+0QP0HzabDkoqjHOlCVJMwwRAw6mgqMMcFKmG4wrgZYtiDhR6IIecZYFigczcKUoDpZ0UoPAhOsQoQIHEAtRdQbUk+KfP3UOv5GwaXATIrHR7MCNHnXNMKwF51sGoZMM5C9SLEZVsBw637jIt4glqtqq80qQpKb66LbNKVE1fiur51PCqGHSD+wOKS5Z3crJ2rkidKH6ejlTqK9lIoP8AR0f8FGd+YKsAAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKGSURBVHhe7ZyBbsMgDETz/z+9rd2IGML2I02KGy7StGm5Evw4O9Stsn05x7ZtXyv9uCx6J2s43ovvdC6KeauDjcR3AmPFYjHYQRXBCjBIjC2Pf6DIACtpHrDK8fxLbuovf81lB7WSU0ZiLa76+f27BdDhu+oJSodP4M9MAhUZRaAiQn/nBUqgIAEok6MEChKAMjlKoCABKJOjZoJqO6JwLqllhxwVNfeWB+X1zms7LA2KfMCwN7iaDyRS5xScHE49s49cQVkelJdKvXPLph4BRWuUlcK9DCBaonmMTXVWJqLUG3WIpY/qnAebOPeM66YD1atnFihL26ub7f8IPFLP3+qoKL1o+o7cNMhN6KGJjmmgemnYTvYMTZTu5XwqUNGkI8dZQXlAo2u+DRQpsr27TlSjIncRqO11I9d451HqeRc8Aioq2tb1vEI9UvCPADsEqhQ/ckfpaUkxHr2jEVB10baK/EvbA2/DFgVkQY0KdVRbyJysBbEW+JTUiyZGbu0keG+cXuG1xoxqHC3iDex4H3Ekr+/0Glyj7hT0kVgEClITKIGCBKBMjhIoSADK5KhPBHVkxwzjfFmWylECBdaTvhUBQ10iSeMogYLrK1ACBQkA2Wj7BQx5uiRFjfJavHVX8vToBwZMCaptEg7Ec5k0HaioRXwZiWDg6aCi+jTasr0KZCpQdZDZdulpQWWrU1NBRa5p74ZXpRUZ92NAzd4mTAVFVjKLRqDgSgiUQEECUCZHCRQkAGVylEBBAlC2O2r2hg7Od4psf4dQ3ldNmcUHXLSYSI9FcharbvPoQVsBqHJaj24zQLVNQz0MsAFltXe633TN1At6V72PYna/Ekx72nfReYvyDR+HhZlAmzd2AAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKhSURBVHhe7ZuLcqMwDEX5/59OQxqo4+pxDCE4+DLTaWcRBh1fPRCz0y04pmm6jfQTsrBOlnCii690LvN5Kp3NjK8ExvPFY7CCWgxGgEF8rHm8gCILjGQzw1qOx19Sk739JZcV1EhKafF1UdX9928LoCNW1QOUjpjAU0wClQlFoDJCz/MCJVCQADSTogQKEoBmUpRAQQLQ7DBFXW1c0wTKm3RamzIsqGwcXMMaEpQFqRzNWC/VAlW9QLtj0+KjBMyXXZuhHBWpo1bbOg0cDZQHIgPSAjebh9EiQu2stAGfwR+zZKC8eCEh6eW+ck1aRKhdBCmClYbekaAsVc7380BF9tbGkLSw3C/z8+Ogsp4rAlWfi5RHlE42pdqcz4Ve1G950s92myjTs6F57RRFteSTlsRLnM7uneTWzynKS+BRlYzUQEK5DDEKylH+dlAkYWahQUMrWycL6+xtIup409DLFj8aFGkz6meMqma0KbvagwgUuWkkey//ZNXMui/9N8+fTNVIUaRJI6V2S37IrqHVbEsTa1zDPoCSqmI9eMtDWr0SvS+1a6mkuI+KEtxI53DojQQlaDlY6I0MS4qCuy9QAgUJQDMpSqAgAWgmRX0zKG8UA306xKxLRQkU3GuBEihIAJhFYxVw+WEm3eUogYJ7XY9+vVEwXO5tZl0rqh6wvc3rDQt1Bapl7r3B112XCBTE1zWonvopgfo2RWWfpc6uft0oykrk1aeiU//fc5eg6miIIMLI2W32FaB66Ke6AEUUQ2x2yyZYoAtQRzr4rrUFCpIUKIGCBKCZFNUKaiamwyawVtylTxEoH9SDUdnQCdYrgUVNKyipKlbTP1DKVX/ASjW9gOrhnaqH0PdGOma5O3v+cwawzOewL2gZqF3BNtqgHxjMwFBwPuWLAAAAAElFTkSuQmCC"></span>
+                            </div>
+
+                            <div class="boutoncomparer">
+                                <button class="cta cta--clear">Comparer</button>
+                            </div>
+
+                            <div class="infosgarantie">
+                                <div class="garantie"> Garantie constructeur <span class="emphase">2 ans</span><span> étendue à <span class="emphase">7 ans</span> pour <span class="emphase">89 €</span></span></div>
+                                <div class="dispopieces"> Disponibilité pièces détachées <span class="emphase">Aucune</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boutoncommandeconteneur">
+                        <div class="commandearticleconteneur">
+                            <div class="textecommander">Ajouter au panier</div>
+                        </div>
+                    </div>					
+                    <div class="voirficheconteneur" onclick="location.href = './vendeur_fiche-article-lave-linge3.html'">
+                        <button class="cta cta--clear cta--flat"> Voir la fiche </button>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+</body>
+
+</html>
+

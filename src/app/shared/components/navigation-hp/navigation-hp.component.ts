@@ -24,6 +24,10 @@ export class NavigationHpComponent {
       route: "abaco-mobile"
     },
     {
+      title: "Assistant BT",
+      route: "assistant-bt"
+    },
+    {
       title: "Scapmarée",
       route: "scapmaree"
     },

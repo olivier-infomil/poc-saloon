@@ -1,2 +1,15 @@
 <app-back-hp />
-<p>abaco-mobile works!</p>
+
+<div class="screenMax lock-portrait">
+    <img [src]="'appli/abaco-mobile/' + currentImg + '.png'" alt="" width="800" height="1280" />
+
+    <div class="screenMax imgNav">
+        <button class="previous emptyBtn" (click)="previousImg()"></button>
+        <button class="next emptyBtn" (click)="nextImg()"></button>
+    </div>
+</div>
+
+@if (this.orientation !=='portrait') {
+    <app-orientation-splash />
+}
+

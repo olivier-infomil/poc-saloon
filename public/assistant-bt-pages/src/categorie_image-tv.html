@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href="css/assistantBT.css" rel="stylesheet" />
+
+    <script src="includes/jquery-3.3.1.min.js"></script>
+    <script src="scripts/categories.js" charset="UTF-8"></script>
+    <script src="scripts/bascule-vendeur.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        $(document).ready(function () { init(); initVendeur(); });
+    </script>
+</head>
+
+<body>
+    <section class="conteneurprincipal">
+
+        <header class="header">
+            <div class="partiegauche">
+                <div class="header-menu js-headerMenu">
+                    <div class="burgerconteneur">
+                        <button class="menu"><span></span></button>
+                    </div>
+                </div>
+                <div class="logoassistant" onclick="location.href = '../index.html'"><img src="assets/images/logo.svg"></div>
+            </div>
+            <div class="header-navbar">
+                <div class="rechercheconteneur">
+                    <img src="assets/icones.svg#loupe-view" class="rechercheicone">
+                    <input type="search" placeholder="Rechercher" class="recherchetexte">
+                </div>
+                <div class="identification">
+                    <div class="nomutilisateur">
+                        <div class="nomtexte">J. MARILLON</div>
+                        <div class="vendeuroupas"> (Gestionnaire) </div>
+                    </div>
+                    <img src="assets/icones.svg#chevron-left-view">
+                    <div class="menuidentification">
+                        <div class="optionmenu selectionvendeur" onclick="location.href = './vendeur_categorie_image-tv.html'">Passer en mode vendeur</div>
+                        <div class="optionmenu">Déconnexion</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="bandeaunavigation">
+            <div>
+                <div class="filariane">
+                    <div class="titresniveauxconteneur">
+                        <div class="titreniveauconteneur" onclick="location.href = '../index.html'">
+                            <div class="titreniveau">...</div>
+                            <div class="separateurchevron">&gt;</div>
+                        </div>
+                        <div class="titreniveauconteneur" onclick="location.href = './categories.html'">
+                            <div class="titreniveau">Tableau de bord</div>
+                            <div class="separateurchevron">&gt;</div>
+                        </div>
+                        <div class="titredernierniveau">IMAGE-TV <span>(658)</span></div>
+                    </div>
+                </div>
+                <div class="onglets">
+                    <div class="onglet">
+                        <div class="titreonglet">SYNTHÈSE</div>
+                    </div>
+                    <div class="onglet estactif">
+                        <div class="titreonglet">GROUPES</div>
+                    </div>
+                    <div class="onglet">
+                        <div class="titreonglet">ARTICLES</div>
+                    </div>
+                    <div class="curseuractif onglet2"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pageconteneur">
+            <div class="categoriesconteneur">
+                <div class="partievisible">
+
+                    <div class="categoriebloc jsbloc3">
+
+                        <div class="recto">
+                            <div class="infosphotocategorie" onclick="location.href = './categorie_tv.html'">
+                                <div class="imagetitreconteneur">
+                                    <div class="imageconteneur">
+                                        <img src="">
+                                    </div>
+                                </div>
+                                <div class="titrecategorie">
+                                    <span class="emphase">TV</span> (644)
+                                </div>
+                                <div class="infoscategorie">
+                                    <div class="info">
+                                        <div class="quantite">173</div>
+                                        <div class="infotitre">STOCK <span class="indice">(UVC)</span></div>
+                                    </div>
+                                    <div class="info">
+                                        <div class="quantite emphase">898&nbsp;€</div>
+                                        <div class="infotitre">CA TTC</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btlecconteneur">
+                                <div class="blocinfosbriques" onclick="location.href = './articles_tv_btlec.html'">
+                                    <div class="infosbrique">
+                                        <div class="quantite"> 113 </div>
+                                        <div class="unite">COMMANDABLES</div>
+                                    </div>
+                                    <img class="iconebrique" src="assets/icones.svg#screen_blue-view">
+                                </div>
+
+                                <div class="voirplusconteneur jsflecherecto3">
+                                    <div class="voirplustexte">Voir +</div>
+                                    <img class="iconefleche" src="assets/images/fleche.svg">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="verso" hidden>
+
+                            <div class="ligneinfobrique">
+                                <div class="blocinfosbriques">
+                                    <div class="infosbrique">
+                                        <div class="quantite"> 25 </div>
+                                        <div class="unite">PROMOS</div>
+                                    </div>
+                                    <img class="iconebrique" src="assets/icones.svg#promo_orange-view">
+                                </div>
+                            </div>
+
+                            <div class="ligneinfobrique">
+                                <div class="blocinfosbriques">
+                                    <div class="infosbrique">
+                                        <div class="quantite"> 11 </div>
+                                        <div class="unite">NOUVEAUX</div>
+                                    </div>
+                                    <img class="iconebrique" src="assets/icones.svg#new_pink-view">
+                                </div>
+                            </div>
+
+                            <div class="voirplusconteneur jsflecheverso3">
+                                <img class="iconefleche" src="assets/images/fleche.svg">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="categoriebloc jsbloc4">
+
+                        <div class="recto">
+                            <div class="infosphotocategorie">
+                                <div class="imagetitreconteneur">
+                                    <div class="imageconteneur">
+                                        <img src="">
+                                    </div>
+                                </div>
+                                <div class="titrecategorie">
+                                    <span class="emphase">VIDEOPROJECTION</span> (14)
+                                </div>
+                                <div class="infoscategorie">
+                                    <div class="info">
+                                        <div class="quantite">20</div>
+                                        <div class="infotitre">STOCK <span class="indice">(UVC)</span></div>
+                                    </div>
+                                    <div class="info">
+                                        <div class="quantite emphase">0&nbsp;€</div>
+                                        <div class="infotitre">CA TTC</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btlecconteneur">
+                                <div class="blocinfosbriques">
+                                    <div class="infosbrique">
+                                        <div class="quantite"> 6 </div>
+                                        <div class="unite">COMMANDABLES</div>
+                                    </div>
+                                    <img class="iconebrique" src="assets/icones.svg#screen_blue-view">
+                                </div>
+
+                                <div class="voirplusconteneur jsflecherecto4">
+                                    <div class="voirplustexte">Voir +</div>
+                                    <img class="iconefleche" src="assets/images/fleche.svg">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="verso" hidden>
+
+                            <div class="ligneinfobrique">
+                                <div class="blocinfosbriques noncliquable">
+                                    <div class="infosbrique">
+                                        <div class="quantite"> 0 </div>
+                                        <div class="unite">PROMOS</div>
+                                    </div>
+                                    <img class="iconebrique" src="assets/icones.svg#promo_orange-view">
+                                </div>
+                            </div>
+
+                            <div class="ligneinfobrique">
+                                <div class="blocinfosbriques">
+                                    <div class="infosbrique">
+                                        <div class="quantite"> 1 </div>
+                                        <div class="unite">NOUVEAUX</div>
+                                    </div>
+                                    <img class="iconebrique" src="assets/icones.svg#new_pink-view">
+                                </div>
+                            </div>
+
+                            <div class="voirplusconteneur jsflecheverso4">
+                                <img class="iconefleche" src="assets/images/fleche.svg">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
+
