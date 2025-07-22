@@ -1,0 +1,519 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href="css/assistantBT.css" rel="stylesheet" />
+
+    <script src="includes/jquery-3.3.1.min.js"></script>
+    <script src="scripts/bascule-vendeur.js" charset="UTF-8"></script>
+    <script src="scripts/infos-client.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        $(document).ready(function () { initVendeur(); initInfosClient(); });
+    </script>
+</head>
+
+<body>
+    <section class="conteneurprincipal">
+
+        <header class="header">
+            <div class="partiegauche">
+                <div class="header-menu js-headerMenu">
+                    <div class="burgerconteneur">
+                        <button class="menu"><span></span></button>
+                    </div>
+                </div>
+                <div class="logoassistant" onclick="location.href = './vendeur_index.html'"><img src="assets/images/logo.svg"></div>
+            </div>
+            <div class="header-navbar">
+                <div class="euroconteneur" onclick="location.href = './vendeur_connexion_caisse.html'">
+                    <img class="euro" />
+                </div>
+                <div class="rechercheconteneur">
+                    <img src="assets/icones.svg#loupe-view" class="rechercheicone">
+                    <input type="search" placeholder="Rechercher" class="recherchetexte">
+                </div>
+                <div class="caddieconteneur">
+                    <img src="assets/icones.svg#caddie-view" class="caddie">
+                    <div class="badge">
+                        <div class="badgenumero">2</div>
+                    </div>
+                </div>
+                <div class="identification">
+                    <div class="nomutilisateur">
+                        <div class="nomtexte">J. MARILLON</div>
+                        <div class="vendeuroupas"> (Vendeur) </div>
+                    </div>
+                    <img src="assets/icones.svg#chevron-left-view">
+                    <div class="menuidentification">
+                        <div class="optionmenu" onclick="location.href = '../index.html'">Passer en mode gestionnaire</div>
+                        <div class="optionmenu">Déconnexion</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="bandeaunavigation">
+            <div class="infosfichearticle">
+                <div class="etapespanierconteneur">
+                    <div class="etapepanier" onclick="location.href = './vendeur_panier.html'">
+                        <div class="designation">Panier</div>
+                        <img class="iconechevron" src="assets/icones.svg#chevron-left-view" />
+                    </div>
+
+                    <div class="etapepanier etapecourante">
+                        <div class="designation">Informations client</div>
+                        <img class="iconechevron" src="assets/icones.svg#chevron-left-view" />
+                    </div>
+
+                    <div class="etapepanier noncliquable">
+                        <div class="designation">Livraison</div>
+                        <img class="iconechevron" src="assets/icones.svg#chevron-left-view" />
+                    </div>
+
+                    <div class="etapepanier noncliquable">
+                        <div class="designation">Récapitulatif</div>
+                        <img class="iconechevron" src="assets/icones.svg#chevron-left-view" />
+                    </div>
+
+                    <div class="etapepanier noncliquable">
+                        <div class="designation">Paiement</div>
+                    </div>
+                </div>
+
+                <div class="totalpanierconteneur">
+                    <div class="quantite">992,<span class="centimes">99</span> €</div>
+                    <div class="unite">TTC</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pageconteneur">
+            <div class="informationsclientconteneur">
+
+                <div class="typeclientconteneur">
+                    <div class="typeclient">
+                        <div class="titretype numero1">
+                            <div class="titretypeonglet actif">CLIENT EXISTANT</div>
+                        </div>
+                        <div class="partieopacite">
+                            <div class="conteneurrecherche">
+
+                                <div class="champrechercheconteneur">
+                                    <div class="group jschamprecherche">
+                                        <div class="titrechamp">Recherche client</div>
+                                        <input type="search" id="searchClient" required="">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Nom, prénom, n° carte fidélité</label>
+                                        <div class="loupe"></div>
+                                    </div>
+                                    <div class="nombreresultats jsnombreresultats" hidden>
+                                        <span class="emphase">7 résultats trouvés</span>
+                                    </div>
+
+                                    <div class="resultatsconteneur jsresultats" hidden>
+                                        <div>
+                                            <div class="resultats">
+                                                <div class="labelstable">
+                                                    <div class="checkboxconteneur"></div>
+                                                    <div class="prenom"><span>Prénom</span></div>
+                                                    <div class="nom"><span>Nom</span></div>
+                                                    <div class="codepostal"><span>CP</span></div>
+                                                    <div class="commune"><span>Commune</span></div>
+                                                    <div class="cartefidelite"><span>Carte fidélité</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="clientsconteneur">
+                                                <div class="resultats">
+                                                    <div class="client jsclientselection">
+                                                        <div class="checkboxconteneur">
+                                                            <span class="radiomark"></span>
+                                                        </div>
+                                                        <div class="prenom"><span>Alexandra</span></div>
+                                                        <div class="nom"><span>DUBOIS</span></div>
+                                                        <div class="codepostal">
+                                                            <span>31200</span>
+                                                        </div>
+                                                        <div class="commune">
+                                                            <span>TOULOUSE</span>
+                                                        </div>
+                                                        <div class="cartefidelite"><span>2950476258756</span></div>
+                                                    </div>
+                                                    <div class="client">
+                                                        <div class="checkboxconteneur">
+                                                            <span class="radiomark"></span>
+                                                        </div>
+                                                        <div class="prenom"><span>Juliette</span></div>
+                                                        <div class="nom"><span>DUBOIS</span></div>
+                                                        <div class="codepostal">
+                                                            <span>31400</span>
+                                                        </div>
+                                                        <div class="commune">
+                                                            <span>TOULOUSE</span>
+                                                        </div>
+                                                        <div class="cartefidelite"><span>2950001558756</span></div>
+                                                    </div>
+                                                    <div class="client">
+                                                        <div class="checkboxconteneur">
+                                                            <span class="radiomark"></span>
+                                                        </div>
+                                                        <div class="prenom"><span>François</span></div>
+                                                        <div class="nom"><span>DUBOIS</span></div>
+                                                        <div class="codepostal">
+                                                            <span>34100</span>
+                                                        </div>
+                                                        <div class="commune">
+                                                            <span>BEZIERS</span>
+                                                        </div>
+                                                        <div class="cartefidelite"><span>2950003174196</span></div>
+                                                    </div>
+                                                    <div class="client">
+                                                        <div class="checkboxconteneur">
+                                                            <span class="radiomark"></span>
+                                                        </div>
+                                                        <div class="prenom"><span>Isabelle</span></div>
+                                                        <div class="nom"><span>DUBOIS</span></div>
+                                                        <div class="codepostal">
+                                                            <span>31100</span>
+                                                        </div>
+                                                        <div class="commune">
+                                                            <span>SAINT-SIMON</span>
+                                                        </div>
+                                                        <div class="cartefidelite"><span>2950004694358</span></div>
+                                                    </div>
+                                                    <div class="client">
+                                                        <div class="checkboxconteneur">
+                                                            <span class="radiomark"></span>
+                                                        </div>
+                                                        <div class="prenom"><span>Quentin</span></div>
+                                                        <div class="nom"><span>DUBOIS</span></div>
+                                                        <div class="codepostal">
+                                                            <span>19100</span>
+                                                        </div>
+                                                        <div class="commune">
+                                                            <span>BRIVE-LA-GAILLARDE</span>
+                                                        </div>
+                                                        <div class="cartefidelite"><span>2950007758093</span></div>
+                                                    </div>
+                                                    <div class="client">
+                                                        <div class="checkboxconteneur">
+                                                            <span class="radiomark"></span>
+                                                        </div>
+                                                        <div class="prenom"><span>Renaud</span></div>
+                                                        <div class="nom"><span>DUBOIS</span></div>
+                                                        <div class="codepostal">
+                                                            <span>51200</span>
+                                                        </div>
+                                                        <div class="commune">
+                                                            <span>EPERNAY</span>
+                                                        </div>
+                                                        <div class="cartefidelite"><span>2950147009601</span></div>
+                                                    </div>
+                                                    <div class="client">
+                                                        <div class="checkboxconteneur">
+                                                            <span class="radiomark"></span>
+                                                        </div>
+                                                        <div class="prenom"><span>Marion</span></div>
+                                                        <div class="nom"><span>DUBOIS</span></div>
+                                                        <div class="codepostal">
+                                                            <span>33000</span>
+                                                        </div>
+                                                        <div class="commune">
+                                                            <span>BORDEAUX</span>
+                                                        </div>
+                                                        <div class="cartefidelite"><span>295007650536</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--<div class="separateurvertical"></div>-->
+
+                    <div class="typeclient">
+                        <div class="titretype numero2 jstitrenouveau">
+                            <div class="titretypeonglet">NOUVEAU CLIENT</div>
+                        </div>
+                        <div class="partieopacite jsformulaire existant" hidden>
+                            <div class="choixradio">
+                                <div class="titrechamp">Civilité</div>
+                                <div class="radio pluspetit">
+                                    <div class="boutonradio">
+                                        <div class="radioconteneur estcochee">
+                                            <span class="radiomark"></span>
+                                            <div class="label">
+                                                <div class="labeltexte">Madame</div>
+                                            </div>
+                                            <input type="radio" id="madame" name="sexe" value="madame">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="radio pluspetit">
+                                    <div class="boutonradio">
+                                        <div class="radioconteneur">
+                                            <span class="radiomark"></span>
+                                            <div class="label">
+                                                <div class="labeltexte">Monsieur</div>
+                                            </div>
+                                            <input type="radio" id="monsieur" name="sexe" value="monsieur">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="champconteneur">
+                                <div class="champtexte">
+                                    <input type="text" required="" id="champ_prenom0" value="Alexandra">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Prénom</label>
+                                </div>
+                            </div>
+                            <div class="champconteneur">
+                                <div class="champtexte">
+                                    <input type="text" required="" id="champ_nom0" value="DUBOIS">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Nom</label>
+                                </div>
+                            </div>
+                            <div class="champconteneur">
+                                <div class="champtexte">
+                                    <input type="text" required="" id="champ_adresse0" value="17 rue George Sand, 31200 TOULOUSE">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Adresse postale</label>
+                                </div>
+                            </div>
+                            <div class="champconteneur">
+                                <div class="champtexte">
+                                    <input type="text" required="" id="champ_mail0" value="a.dubois@mail.fr">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Adresse éléctronique<span class="texteoptionnel"> (Optionnel)</span></label>
+                                </div>
+                            </div>
+                            <div class="champconteneur">
+                                <div class="champtexte">
+                                    <input type="text" required="" id="champ_telephone0" value="0725649812">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Téléphone<span class="texteoptionnel"> (Optionnel)</span></label>
+                                </div>
+                            </div>
+                            <div class="champconteneur">
+                                <div class="boutoncheckbox">
+                                    <label class="checkboxcontainer">
+                                        <span class="label">Prévenir par e-mail</span>
+                                        <span class="checkmark"></span>
+                                        <input type="checkbox">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="champconteneur">
+                                <div class="boutoncheckbox">
+                                    <label class="checkboxcontainer" [ngClass]="{'estcochee': sTelephone && oSelectionClient.oClient.fAccepteSMS, 'desactive': !sTelephone}" (click)="ToggleSMS($event)">
+                                        <span class="label">Prévenir par SMS</span>
+                                        <span class="checkmark"></span>
+                                        <input type="checkbox">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="champconteneur switchconteneur">
+                                <div class="switch jsswitch">
+                                    <input type="checkbox" id="switcharticle" name="switchSelection" class="switch__input" checked>
+                                    <label for="switcharticle" class="switch__label"></label>
+                                </div>
+
+                                <div class="textefiltre">Utiliser cette adresse pour la livraison</div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="partieopacite jsformulaire nouveau" hidden>
+                            <div class="choixradio">
+                                <div class="titrechamp">Civilité</div>
+                                <div class="radio pluspetit">
+                                    <div class="boutonradio">
+                                        <div class="radioconteneur jscivilite">
+                                            <span class="radiomark"></span>
+                                            <div class="label">
+                                                <div class="labeltexte">Madame</div>
+                                            </div>
+                                            <input type="radio" id="madame" name="sexe" value="madame">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="radio pluspetit">
+                                    <div class="boutonradio">
+                                        <div class="radioconteneur jscivilite">
+                                            <span class="radiomark"></span>
+                                            <div class="label">
+                                                <div class="labeltexte">Monsieur</div>
+                                            </div>
+                                            <input type="radio" id="monsieur" name="sexe" value="monsieur">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="champconteneur">
+                                <div class="champtexte">
+                                    <input type="text" required="" id="champ_prenom" value="">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Prénom</label>
+                                </div>
+                            </div>
+                            <div class="champconteneur">
+                                <div class="champtexte">
+                                    <input type="text" required="" id="champ_nom">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Nom</label>
+                                </div>
+                            </div>
+                            <div class="champconteneur">
+                                <div class="champtexte">
+                                    <input type="text" required="" id="champ_adresse">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Adresse postale</label>
+                                </div>
+                            </div>
+                            <div class="champconteneur">
+                                <div class="champtexte">
+                                    <input type="text" required="" id="champ_mail">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Adresse éléctronique<span class="texteoptionnel"> (Optionnel)</span></label>
+                                </div>
+                            </div>
+                            <div class="champconteneur">
+                                <div class="champtexte">
+                                    <input type="text" required="" id="champ_telephone">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Téléphone<span class="texteoptionnel"> (Optionnel)</span></label>
+                                </div>
+                            </div>
+                            <div class="champconteneur">
+                                <div class="boutoncheckbox">
+                                    <label class="checkboxcontainer jscheckboxemail"
+                                           [ngClass]="{'estcochee': oSelectionClient.oClient.sEmail && oSelectionClient.oClient.fAccepteEmail, 'desactive': !oSelectionClient.oClient.sEmail || !oSelectionClient.fEmailCorrect}"
+                                           (click)="ToggleCourriel($event)">
+                                        <span class="label">Prévenir par e-mail</span>
+                                        <span class="checkmark"></span>
+                                        <input type="checkbox">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="champconteneur">
+                                <div class="boutoncheckbox">
+                                    <label class="checkboxcontainer" [ngClass]="{'estcochee': sTelephone && oSelectionClient.oClient.fAccepteSMS, 'desactive': !sTelephone}" (click)="ToggleSMS($event)">
+                                        <span class="label">Prévenir par SMS</span>
+                                        <span class="checkmark"></span>
+                                        <input type="checkbox">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="champconteneur switchconteneur">
+                                <div class="switch jsswitch">
+                                    <input type="checkbox" id="switcharticle" name="switchSelection" class="switch__input" checked>
+                                    <label for="switcharticle" class="switch__label"></label>
+                                </div>
+
+                                <div class="textefiltre">Utiliser cette adresse pour la livraison</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="redevanceconteneur">
+                    <div class="redevance">
+                        <div class="titreredevance">Informations redevance</div>
+                        <div class="souscategorie">Utilisation :</div>
+                        <div class="choixradio">
+                            <div class="radio">
+                                <div class="boutonradio">
+                                    <div class="radioconteneur estcochee jsutilisation">
+                                        <span class="radiomark"></span>
+                                        <div class="label">
+                                            <div class="labeltexte">Privé en résidence principale</div>
+                                        </div>
+                                        <input type="radio" value="prive" id="prive" name="utilisation" checked>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="radio">
+                                <div class="boutonradio">
+                                    <div class="radioconteneur jsutilisation">
+                                        <span class="radiomark"></span>
+                                        <div class="label">
+                                            <div class="labeltexte">A demeure en résidence secondaire</div>
+                                        </div>
+                                        <input type="radio" value="demeure" id="demeure" name="utilisation">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separateurhorizontal"></div>
+                        <div class="souscategorie">Informations complémentaires :</div>
+                        <div class="choixradio">
+                            <div class="radio">
+                                <div class="boutonradio">
+                                    <div class="radioconteneur jsnaissance">
+                                        <span class="radiomark"></span>
+                                        <div class="label">
+                                            <div class="labeltexte">Né(é) en France</div>
+                                        </div>
+                                        <input type="radio" value="france" id="france" name="naissance">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="radio">
+                                <div class="boutonradio">
+                                    <div class="radioconteneur jsnaissance">
+                                        <span class="radiomark"></span>
+                                        <div class="label">
+                                            <div class="labeltexte">Né(e) à l'étranger</div>
+                                        </div>
+                                        <input type="radio" value="etranger" id="etranger" name="naissance">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="champconteneur">
+                            <div class="champtexte">
+                                <input type="text" required="" id="champ_commune_naissance">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Commune de naissance</label>
+                            </div>
+                        </div>
+                        <div class="champconteneur">
+                            <div class="champtexte">
+                                <input type="text" required="" id="champ_date_naissance">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Date de naissance</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="boutonsactionconteneur">
+                    <button class="cta cta--filter boutonprimaire avecchevron desactive jsboutonsuivant">Suivant</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
+

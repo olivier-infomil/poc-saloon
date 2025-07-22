@@ -1,0 +1,1204 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href="css/assistantBT.css" rel="stylesheet" />
+
+    <script src="includes/jquery-3.3.1.min.js"></script>
+    <script src="scripts/vendeur_articles.js" charset="UTF-8"></script>
+    <script src="scripts/bascule-vendeur.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        $(document).ready(function () { init(); initVendeur(); });
+    </script>
+</head>
+
+<body>
+    <section class="conteneurprincipal">
+
+        <header class="header">
+            <div class="partiegauche">
+                <div class="header-menu js-headerMenu">
+                    <div class="burgerconteneur">
+                        <button class="menu"><span></span></button>
+                    </div>
+                </div>
+                <div class="logoassistant" onclick="location.href = './vendeur_index_panier.html'"><img src="assets/images/logo.svg"></div>
+            </div>
+            <div class="header-navbar">
+                <div class="euroconteneur" onclick="location.href = './vendeur_connexion_caisse.html'">
+                    <img class="euro" />
+                </div>
+                <div class="rechercheconteneur">
+                    <img src="assets/icones.svg#loupe-view" class="rechercheicone">
+                    <input type="search" placeholder="Rechercher" class="recherchetexte">
+                </div>
+                <div class="caddieconteneur" onclick="location.href = './vendeur_panier.html'">
+                    <img src="assets/icones.svg#caddie-view" class="caddie">
+                    <div class="badge">
+                        <div class="badgenumero">1</div>
+                    </div>
+                </div>
+                <div class="identification">
+                    <div class="nomutilisateur">
+                        <div class="nomtexte">J. MARILLON</div>
+                        <div class="vendeuroupas"> (Vendeur) </div>
+                    </div>
+                    <img src="assets/icones.svg#chevron-left-view">
+                    <div class="menuidentification">
+                        <div class="optionmenu" onclick="location.href = './articles_tv.html'">Passer en mode gestionnaire</div>
+                        <div class="optionmenu">Déconnexion</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="bandeaunavigation">
+            <div>
+                <div class="filariane">
+                    <div class="titresniveauxconteneur">
+                        <div class="titreniveauconteneur">
+                            <div class="titreniveau">...</div>
+                            <div class="separateurchevron">&gt;</div>
+                        </div>
+                        <div class="titreniveauconteneur" onclick="location.href = './vendeur_categorie_image-tv.html'">
+                            <div class="titreniveau">IMAGE-TV</div>
+                            <div class="separateurchevron">&gt;</div>
+                        </div>
+                        <div class="titredernierniveau">TV <span>(605)</span></div>
+                    </div>
+                </div>
+                <div class="onglets">
+                    <div class="onglet">
+                        <div class="titreonglet">SYNTHÈSE</div>
+                    </div>
+                    <div class="onglet" onclick="location.href = './vendeur_categorie_tv.html'">
+                        <div class="titreonglet">SECTEURS</div>
+                    </div>
+                    <div class="onglet estactif">
+                        <div class="titreonglet">ARTICLES</div>
+                    </div>
+                    <div class="curseuractif onglet3"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pageconteneur">
+            <div class="articlesconteneur">
+                <div>
+                    <div class="boutonfiltresconteneur jstotalavantfiltre">
+                        <div class="boutonfiltres">
+                            <div class="boutonfiltrestexte">Filtres</div>
+                            <img src="assets/icones.svg#pointe_bleu-view">
+                        </div>
+                        <div class="totalarticles">605 articles</div>
+                    </div>
+
+                    <div class="boutonfiltresconteneur jstotalapresfiltre">
+                        <div class="boutonfiltres">
+                            <div class="boutonfiltrestexte">Filtres</div>
+                            <img src="assets/icones.svg#pointe_bleu-view">
+                        </div>
+                        <div class="totalarticles">6 articles</div>
+                        <div class="filtrebadge">
+                            <img src="assets/icones.svg#croix_blanc-view">
+                            <div class="filtrebadgetexte">En stock</div>
+                        </div>
+                        <div class="filtrebadge">
+                            <img src="assets/icones.svg#croix_blanc-view">
+                            <div class="filtrebadgetexte">LG</div>
+                        </div>
+                        <div class="filtrebadge">
+                            <img src="assets/icones.svg#croix_blanc-view">
+                            <div class="filtrebadgetexte">Classe de diagonale (métrique) à partir de 123,60 cm</div>
+                        </div>
+                    </div>
+
+                    <div class="voile"></div>
+
+                    <div class="filters js-filters">
+                        <div class="filtersList">
+                            <div class="filtersList-header">
+                                <div class="croixconteneur">
+                                    <img src="assets/icones.svg#croix_gris-view">
+                                </div>
+                                <div class="filtersList-header__label">Filtrer<span></span></div>
+                            </div>
+                            <div class="filtersList-content">
+                                <div class="filtersList-form">
+                                    <div class="filtreextensible">
+                                        <div class="titreextensible ouvert">
+                                            <div class="textecontenu">Disponibilité articles</div>
+                                        </div>
+                                        <div class="contenuextensible">
+                                            <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> En stock <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            <div class="filtersList-form__wrapper">
+                                                <label class="checkboxcontainer"> Présent sur BTLEC <input type="checkbox"><span class="checkmark"></span></label>
+                                            </div>
+                                            <div id="filtresSous_PresentBTLEC" class="sousfiltres">
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Sélectionnés <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Non pointés <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Exclus de l'offre <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Suspendus <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div id="filtresSi_PresentBTLEC">
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Avec stock centrale <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Nouveaux produits <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Planning 48h <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                            <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Absent sur BTLEC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Commandable <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> En promo <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            <div id="filtresSous_EnPromo" class="sousfiltres">
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Avec TEL <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Avec BRII <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filtreextensible">
+                                        <div class="titreextensible ouvert"> <div class="textecontenu">Eléments de structure</div> </div>
+                                        <div class="contenuextensible">
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TV LED <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div>
+                                                    <div class="sousfiltres">
+                                                        <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TV LED INF 21,5 POUCES <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                    </div>
+                                                    <div class="sousfiltres">
+                                                        <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TV LED 21,5-29,5 POUCES <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                    </div>
+                                                    <div class="sousfiltres">
+                                                        <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TV LED 32 POUCES <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                    </div>
+                                                    <div class="sousfiltres">
+                                                        <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TV LED 39-43 POUCES <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                    </div>
+                                                    <div class="sousfiltres">
+                                                        <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TV LED 46-52 POUCES <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                    </div>
+                                                    <div class="sousfiltres">
+                                                        <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TV LED 55 POUCES <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                    </div>
+                                                    <div class="sousfiltres">
+                                                        <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TV LED 58-60 POUCES <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                    </div>
+                                                    <div class="sousfiltres">
+                                                        <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TV LED 65 POUCES ET + <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TV OLED <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div>
+                                                    <div class="sousfiltres">
+                                                        <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TV OLED MOINS DE 55 POUCES <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                    </div>
+                                                    <div class="sousfiltres">
+                                                        <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TV OLED 55 POUCES <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                    </div>
+                                                    <div class="sousfiltres">
+                                                        <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TV OLED 65 POUCES ET + <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TV LCD <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> AUTRE TV <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filtreextensible">
+                                        <div class="titreextensible ouvert"> <div class="textecontenu">Marques</div> </div>
+                                        <div class="contenuextensible">
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> AKAI <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> HAIER <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> HISEN <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> HISENSE <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> LG <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> MUSE <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> PANAS <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> PANASONIC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> PHILIPS <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> SAMSU <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> SAMSUNG <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> SCHAUB LORENZ <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> SCHNEIDER <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> SONY <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TCL <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TELEFUNKEN <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TEST <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> THOMSON <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TOKAI <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TOSHIBA <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                            <div>
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TUCSON <input type="checkbox"><span class="checkmark"></span></label></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filtreextensible">
+                                        <div class="titreextensible ouvert"> <div class="textecontenu">PVC</div> </div>
+                                        <div class="contenuextensible">
+                                            <div class="nstSlider" id="nst-slider-0" data-range_min="0" data-range_max="100" data-cur_min="0" data-cur_max="100">
+                                                <div class="bar" style="left: 0px; width: 300px;"></div>
+                                                <div class="leftGrip" style="left: 0px;"></div>
+                                                <div class="rightGrip" style="left: 264px;"></div>
+                                            </div>
+                                            <div class="bornesconteneur">
+                                                <div class="bornemini">0 €</div>
+                                                <div class="bornemaxi">6 991 €</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="separateurhorizontal"></div>
+                                        <div class="filtersList-form__title">Télévision (357)</div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Inconnus C NET</div> </div>
+                                            <div class="contenuextensible">
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Oui <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Type</div> </div>
+                                            <div class="contenuextensible">
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TV LCD <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TV LCD avec rétroéclairage par LED <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TV OLED <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> TV QLED <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Classe de diagonale (métrique)</div> </div>
+                                            <div class="contenuextensible jspoigneeavant">
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="nstSlider" id="nst-slider-1" data-range_min="0" data-range_max="100" data-cur_min="0" data-cur_max="100">
+                                                    <div class="bar" style="left: 0px; width: 300px;"></div>
+                                                    <div class="leftGrip" tabindex="0" style="left: 0px;"></div>
+                                                    <div class="rightGrip" tabindex="0" style="left: 264px;"></div>
+                                                </div>
+                                                <div class="bornesconteneur">
+                                                    <div class="bornemini">25,70 cm</div>
+                                                    <div class="bornemaxi">207,00 cm</div>
+                                                </div>
+                                            </div>
+                                            <div class="contenuextensible jspoigneeapres">
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="nstSlider" id="nst-slider-0" data-range_min="0" data-range_max="100" data-cur_min="53.9988968560397" data-cur_max="100">
+                                                    <div class="bar nst-animating" style="left: 142px; width: 158px;"></div>
+                                                    <div class="leftGrip nst-animating" tabindex="0" style="left: 142px;"></div>
+                                                    <div class="rightGrip nst-animating" tabindex="0" style="left: 264px;"></div>
+                                                </div>
+                                                <div class="bornesconteneur">
+                                                    <div class="bornemini">123,60 cm</div>
+                                                    <div class="bornemaxi">207,00 cm</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Format d'affichage</div> </div>
+                                            <div class="contenuextensible">
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 4K UHD (2160p) <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 8K <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 720p <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 1080p (Full HD) <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Super UHD 4K (2160p) <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Résolution</div> </div>
+                                            <div class="contenuextensible">
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 1366 x 768 <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 1920 x 1080 <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 3840 x 2160 <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 7680 x 4320 <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">TV intelligente</div> </div>
+                                            <div class="contenuextensible">
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Smart TV <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Mode Surround</div> </div>
+                                            <div class="contenuextensible">
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Non <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Oui <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Nombre de ports HDMI</div> </div>
+                                            <div class="contenuextensible">
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="nstSlider" id="nst-slider-2" data-range_min="0" data-range_max="100" data-cur_min="0" data-cur_max="100">
+                                                    <div class="bar" style="left: 0px; width: 300px;"></div>
+                                                    <div class="leftGrip" style="left: 0px;"></div>
+                                                    <div class="rightGrip" style="left: 264px;"></div>
+                                                </div>
+                                                <div class="bornesconteneur">
+                                                    <div class="bornemini">1 </div>
+                                                    <div class="bornemaxi">4 </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Nombre de ports USB</div> </div>
+                                            <div class="contenuextensible">
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="nstSlider" id="nst-slider-3" data-range_min="0" data-range_max="100" data-cur_min="0" data-cur_max="100">
+                                                    <div class="bar" style="left: 0px; width: 300px;"></div>
+                                                    <div class="leftGrip" style="left: 0px;"></div>
+                                                    <div class="rightGrip" style="left: 264px;"></div>
+                                                </div>
+                                                <div class="bornesconteneur">
+                                                    <div class="bornemini">1 </div>
+                                                    <div class="bornemaxi">3 </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Largeur</div> </div>
+                                            <div class="contenuextensible">
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="nstSlider" id="nst-slider-4" data-range_min="0" data-range_max="100" data-cur_min="0" data-cur_max="100">
+                                                    <div class="bar" style="left: 0px; width: 300px;"></div>
+                                                    <div class="leftGrip" style="left: 0px;"></div>
+                                                    <div class="rightGrip" style="left: 264px;"></div>
+                                                </div>
+                                                <div class="bornesconteneur">
+                                                    <div class="bornemini">24,50 cm</div>
+                                                    <div class="bornemaxi">183,80 cm</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Hauteur</div> </div>
+                                            <div class="contenuextensible">
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="nstSlider" id="nst-slider-5" data-range_min="0" data-range_max="100" data-cur_min="0" data-cur_max="100">
+                                                    <div class="bar" style="left: 0px; width: 300px;"></div>
+                                                    <div class="leftGrip" style="left: 0px;"></div>
+                                                    <div class="rightGrip" style="left: 264px;"></div>
+                                                </div>
+                                                <div class="bornesconteneur">
+                                                    <div class="bornemini">15,70 cm</div>
+                                                    <div class="bornemaxi">105,40 cm</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Connectivité</div> </div>
+                                            <div class="contenuextensible">
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Bluetooth <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> LAN <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Wi-Fi <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Wifi (en option) <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Interface vidéo</div> </div>
+                                            <div class="contenuextensible">
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Composant <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Composite <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> HDMI <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> SCART <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Fréquence de rafraîchissement améliorée</div> </div>
+                                            <div class="contenuextensible">
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 50 HZ <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 60 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 100 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 120 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 200 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 300 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 400 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 500 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 700 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 800 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 900 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 1000 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 1100 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 1200 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 1300 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 1400 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 1500 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 1600 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 1700 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 1800 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 1900 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 2000 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 2100 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 2200 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 2300 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 2400 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 2500 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 2600 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 2700 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 2800 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 2900 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 3000 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 3100 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 3200 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 3300 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 3400 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 4300 Hz <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Classe énergétique</div> </div>
+                                            <div class="contenuextensible">
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Classe A <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Classe A+ <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Classe A++ <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Classe B <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Classe D <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Luminosité</div> </div>
+                                            <div class="contenuextensible">
+                                                <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                <div class="nstSlider" id="nst-slider-6" data-range_min="0" data-range_max="100" data-cur_min="0" data-cur_max="100">
+                                                    <div class="bar" style="left: 0px; width: 300px;"></div>
+                                                    <div class="leftGrip" style="left: 0px;"></div>
+                                                    <div class="rightGrip" style="left: 264px;"></div>
+                                                </div>
+                                                <div class="bornesconteneur">
+                                                    <div class="bornemini">160 cd/m²</div>
+                                                    <div class="bornemaxi">1 000 cd/m²</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Écran incurvé</div> </div>
+                                            <div class="contenuextensible">
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Non <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Oui <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Rapport de contraste d'image</div> </div>
+                                            <div class="contenuextensible">
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> NC <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 700:1 <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 1000:1 <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 3000:1 <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 3500:1 <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 4000:1 <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 5000:1 <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 5500:1 <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 6000:1 <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> 100000 <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">3D</div> </div>
+                                            <div class="contenuextensible">
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Non <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Oui <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="filtreextensible">
+                                            <div class="titreextensible ouvert"> <div class="textecontenu">Inconnus C NET</div> </div>
+                                            <div class="contenuextensible">
+                                                <div>
+                                                    <div class="filtersList-form__wrapper"><label class="checkboxcontainer"> Oui <input type="checkbox"><span class="checkmark"></span></label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filtersList-cta"><button class="cta cta--clear">Réinitialiser</button><button class="cta cta--filter jsboutonfiltrer">Filtrer<span></span></button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="infomil-table">
+                    <tbody>
+                        <tr class="table-header">
+                            <th class="table-header__item icones"></th>
+                            <th class="table-header__item designation cliquable colonnetriee"><div class="item-label">Désignation</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                            <th class="table-header__item stockdispo alignedroite cliquable"><div class="item-label">Stock <br>disponible</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                            <th class="table-header__item stockbtlec alignedroite cliquable"><div class="item-label">Stock <br>BTLEC</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                            <th class="table-header__item pvc alignedroite cliquable"><div class="item-label">PVC</div><div class="item-arrow"><div class="item-arrow--up"></div><div class="item-arrow--down"></div></div></th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="interface-container">
+                    <table class="infomil-table jstableavantfiltre">
+                        <tbody>
+                            <tr class="table-row" id="id_5901292511432">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">%TV 50P SMART HDR 50UD6306,,1P, THOMSON</div>
+                                    <div class="ean">5901292511432</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 2 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 349,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_4548736095809">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">%TV LED 43P 4K SMAR 43XG7004,,1, SONY</div>
+                                    <div class="ean">4548736095809</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 1 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 499,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_4905193001345">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Akai ATE-48B4544K - Classe 48" TV LED - 4K UHD (2160p) 3840 x 2160 - noir</div>
+                                    <div class="ean">4905193001345</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 0 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> 27 </td>
+                                <td class="table-row__item pvc alignedroite"> 249,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_4905193001406">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Akai ATE-55B4744K - Classe 55" (55" visualisable) TV LED - 4K UHD (2160p) 3840 x 2160 - noir</div>
+                                    <div class="ean">4905193001406</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> _ </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 399,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_4905193001284">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Akai ATE-55N4244K - Classe 55" TV LED - 4K UHD (2160p) 3840 x 2160 - noir</div>
+                                    <div class="ean">4905193001284</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> _ </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 399,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_6925876325849">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Haier LDF48V180 - Classe 48" V180 Series TV LED - 1080p (Full HD) 1920 x 1080 - D-LED Backlight</div>
+                                    <div class="ean">6925876325849</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> _ </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 329,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_6925876325917">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Haier LE32K6000T - Classe 32" TV LED - 720p 1366 x 768</div>
+                                    <div class="ean">6925876325917</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> _ </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> _ </td>
+                            </tr>
+                            <tr class="table-row" id="id_6925876326051">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Haier LE50K6500U - Classe 50" K6500U Series TV LED - Smart TV 3840 x 2160 - HDR - D-LED Backlight</div>
+                                    <div class="ean">6925876326051</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> _ </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 390,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_6925876313860">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Haier LE55Q6500U - Classe 55" incurvé TV LED - Smart TV - 4K UHD (2160p) 3840 x 2160 - beige</div>
+                                    <div class="ean">6925876313860</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 0 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 499,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_6925876312986">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Haier LEF48V200S - Classe 48" TV LED - Smart TV - 1080p (Full HD) 1920 x 1080</div>
+                                    <div class="ean">6925876312986</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 0 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 359,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_6925876312481">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Haier LEU48V300S - Classe 48" TV LED - Smart TV - 4K UHD (2160p) 3840 x 2160 - système de rétroéclairage en bordure par DEL Edge-Lit</div>
+                                    <div class="ean">6925876312481</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> _ </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 349,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_6942147437445">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Hisense 39NEC2010 - Classe 39" TV LED - 1080p (Full HD) 1920 x 1080</div>
+                                    <div class="ean">6942147437445</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> _ </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 279,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_6942147435625">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Hisense 43NEC5600 - Classe 43" TV LED - Smart TV - VIDAA - 4K UHD (2160p) 3840 x 2160 - HDR</div>
+                                    <div class="ean">6942147435625</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> _ </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> _ </td>
+                            </tr>
+                            <tr class="table-row" id="id_6942147431955">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Hisense 50MEC3350 - Classe 50" TV LED - Smart TV - 4K UHD (2160p) 3840 x 2160 - LED à éclairage direct</div>
+                                    <div class="ean">6942147431955</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> _ </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 529,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_6942147435663">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Hisense 50NEC5200 - Classe 50" TV LED - Smart TV - VIDAA - 4K UHD (2160p) 3840 x 2160</div>
+                                    <div class="ean">6942147435663</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> _ </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 575,25&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_6942147441169">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Hisense 55A6100 - Classe 55" A6100 Series TV LED - Smart TV - VIDAA - 4K UHD (2160p) 3840 x 2160 - HDR</div>
+                                    <div class="ean">6942147441169</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 0 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 499,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_6942147435649">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Hisense 55NEC6700 - Classe 55" TV LED - Smart TV - VIDAA - 4K UHD (2160p) 3840 x 2160 - HDR - ULED</div>
+                                    <div class="ean">6942147435649</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 0 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 599,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_6942147443743">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Hisense H32AE5000 - Classe 32" AE5000 Series TV LED - 720p 1366 x 768 - D-LED Backlight - noir</div>
+                                    <div class="ean">6942147443743</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 0 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 159,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_6942147436455">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Hisense H32NEC2000S - Classe 32" TV LED - 720p 1366 x 768 - D-LED Backlight - noir</div>
+                                    <div class="ean">6942147436455</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 0 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 179,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_6942147430798">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">Hisense H40M2100C - Classe 40" TV LED - 1080p (Full HD) 1920 x 1080 - noir</div>
+                                    <div class="ean">6942147430798</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 0 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 269,00&nbsp;€ </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="infomil-table jstableapresfiltre">
+                        <tbody>
+                            <tr class="table-row" id="id_8806098408887">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">LG 55SM8200PLA - Classe 55" TV LED - Smart TV - webOS, ThinQ AI - Super UHD 4K (2160p) 3840 x 2160 - HDR - système de rétroéclairage en bordure par DEL Edge-Lit, Nano Cell Display</div><div class="ean">8806098408887</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 1 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> 141 </td>
+                                <td class="table-row__item pvc alignedroite"> 699,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_8806098152162">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">LG 55UK6950 - Classe 55" TV LED - Smart TV - webOS, ThinQ AI - 4K UHD (2160p) 3840 x 2160 - HDR - système de rétroéclairage en bordure par DEL Edge-Lit, local dimming</div><div class="ean">8806098152162</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 1 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 509,99&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_8806098152049">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">LG 65UK6950 - Classe 65" TV LED - Smart TV - ThinQ AI, webOS - 4K UHD (2160p) 3840 x 2160 - HDR - système de rétroéclairage en bordure par DEL Edge-Lit, local dimming</div><div class="ean">8806098152049</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 1 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 699,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_8806098425006">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">LG 65UM7510PLA - Classe 65" TV LED - Smart TV - webOS, ThinQ AI - 4K UHD (2160p) 3840 x 2160 - HDR - LED à éclairage direct</div><div class="ean">8806098425006</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 2 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> 427 </td>
+                                <td class="table-row__item pvc alignedroite"> 759,00&nbsp;€ </td>
+                            </tr>
+                            <tr class="table-row" id="id_8806098144136">
+                                <td class="table-row__item icones"></td>
+                                <td class="table-row__item not-visible designation">
+                                    <div class="emphase">LG OLED55B8PLA - Classe 55" B8 Series TV OLED - Smart TV - webOS, ThinQ AI - 4K UHD (2160p) 3840 x 2160 - HDR</div><div class="ean">8806098144136</div>
+                                </td>
+                                <td class="table-row__item stockdispo alignedroite"> 1 </td>
+                                <td class="table-row__item stockbtlec alignedroite"> _ </td>
+                                <td class="table-row__item pvc alignedroite"> 1 490,00&nbsp;€ </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="fauxvoletchargement">
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+
+            <div class="voletnavigationconteneur jsvolet1">
+                <div class="croixettitre">
+                    <div class="croixconteneur">
+                        <img src="assets/icones.svg#croix_gris-view">
+                    </div>
+                    <div class="titredesignation">LG 55SM8200PLA - Classe 55" TV LED - Smart TV - webOS, ThinQ AI - Super UHD 4K (2160p) 3840 x 2160 - HDR - système de rétroéclairage en bordure par DEL Edge-Lit, Nano Cell Display<span>, LG</span></div>
+                </div>
+                <div class="voletinfosconteneur">
+                    <div class="prixetpromo">
+                        <div class="prix">699,<span class="decimales">00</span> €</div>
+                    </div>
+                    <div class="articleconteneur">
+                        <div class="infosconteneur">
+                            <div class="intermediaireconteneur">
+                                <div class="colonnedetail">
+                                    <div class="photoconteneur">
+                                        <img src="assets/images/fiche_tv3.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stockconteneur">
+                                <div class="stockinfos">
+                                    <div class="stock">1 </div>
+                                    <div class="label">STOCK (UVC)</div>
+                                </div>
+                                <div class="stockinfos">
+                                    <div class="stock">141</div>
+                                    <div class="label">STOCK BTLEC</div>
+                                </div>
+                            </div>
+                            <div class="indicereparabilite">
+                                <img class="logoir" src="assets/images/logo-indice-3.svg">
+                                <p class="indiceir">5,1</p>
+                            </div>
+                            <div class="etiquettesconteneur">
+                                <span class="etiquette">
+                                    <img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAB/////////+AAAAAHAAAAAAAAADg1I0IcAAAAAAAAAAY///8gAAAAAAAAAAMAAAAgAAAAAAAAAAEAAABgAAAAAAAAAAGAAABAAAAAAAAAAACAAADAA//7//P/4AD/cA+AA//7//P/8ABAAACAA//7//P/+AB1I0KAA4AAAAAAPAB///+AA4AAAAAAHABAAACAA4AD//MAHABAAACAA4AD//MAHABAAACAA4AD//MAHABAAACAA4AAAAMAPAB/cA+AA4AAAAMAeABAAACAA4AD//P/8AB1I0KAA4AD//P/4AB///+AA4AD//P/wABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAAB+cA+AAAAAAAAA4ABAAACAAAAAAAAB8AB1I0KAAAAAAAABmAB///+AAAAAAAAAGABAAACAAAAAAAAAGABAAACDg8M9GYOx+HhAAACHx+N/GYfxuPxAAACMZjNjGYZzGMx+cA+MBANjGYYzGMBAAACP5AM7GYOzGP51I0KP5AMfGYHzGP5///+MZjMDGcAzGMZAAACO5nMzGeMxuMxAAACHw+M+GbPh+HxAAACAAAMAAAAAAABAAACAAAMAAAAAAAB+cA+AAAMAGAAAAABAAACAAAMAGAAAAAB1I0KAAAMAAAAAAAB///+AAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAf/8A//D/+ABAAACAf/8H//j//wB+cA+Af/8P//j//8BAAACAf/8f//j//8B+cA+AfwAf8Hj//+B///+AfwA/wAD/D/BAAACAfwA/gAD+B/BAAACAfwB/gAD+B/BAAACAfwB/AAD+B/hAAACAfwB/AAD+A/h9cA+AfwB/AAD+A/hAAACAfwB/AAD+A/h9cA+AfwB/AAD+A/h///+AfwB/AAD+A/hAAACAfwB/AAD+B/hAAACAfwA/gAD+B/B0aWiAfwA/wAD+D/BAAACAfwAf4Dj+H+B9cA+AfwAf//j//+BAAACAfwAP//j//8B1I0LAfwAH//j//4D///9AfwAD//j//gCAAABgfwAA//D//AGAAAAgAAAAAAAAAAEAAAAwAAAAAAAAAAMAAAAcAAAAAAAAAA49cA8HAAAAAAAAADgAAAAB/////////+A1I0IAAA==">
+                                </span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALOSURBVHhe7ZwBj8MgCIX7///0Lr3NxjGB96y2ptDkksuKnXw+EFm27WVc27a9Iv2ZLFo3azjW4Cfd83zeamc94yeB0XzRGBygikEEGIiPkscXKOQBkWx2WOX6/y/V1F7+mssBKoJS0B1c5u2PmN4lQISrF9RnXAxITL0obRNUlZ+t0ig8KAlH29RCg2opKEGJpKNW35+zbeYokZMUID95P1zoeWfZDD1HSccxJUPv3DEtXOj1nj4SFEguQSUokABolopaBZRXt4DzvN1sqqJk74dpc6Bjrf7SSLrTQLUc0CaONNNaY3vH9QCcAkpzAHFWtmCBHtFPvx9VIwNsOCg2FCynPIe9DoB2bmMAiaPNmFawFwrsBGdAZOcQCtQO/Ow1NPSk1L3QYXZBrW/UCi9mI0EBDgXFOIMkdi/HaAsRFpQWOl5OtHZMVElTctRZRfWMR2GxYJS5nE92SCixk2Vy3Mj8aPiyJqh9wgwspljtXLT7QHkgvPvIsYiFsqSiRhWVdcLvhQuUK/cpqhVeWoL2kj06rkdhS9RRyM6FhNiM+mnJ8qBXEb3jGGVNVRQzkdVtExS4QgkqQYEEQLNUVIICCYBmqagEBRIAzS5VlFc5IxX6jHMcwuoyUBYEcUygvkiJODnC5hJQrZas91rpBrQUdIeqbgNl9Hy+PvnVoLRAj1COc/ie02ZphRTQ8/n6AlOCahBDw1H2sGYq6ZI2SyqKXEJPKRbQUKEnQ4VxnrEl148yP7XrFSfQd2QKTq22YsMZnZtnp4LyIFy9PXuOzL7fBSoapCp1/NZRmqIiQqJBRYVEgYoMCQYVHRIEKiG991N31/PKhNnb8irPP0CV/o9W6LWKRTlmFadGz+PwvUirfgMNzB1Ns9GOs88rgsifRTLI1aknf2jLAXWkI5mXWGk+1V5uZPljgGKltZKo2TCPWD95PpufLKC731PsrDTyB+ffwFCjqyrZAAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM7SURBVHhe7ZwBTsMwDEV7/0sDg7XKQuz/7HRspJ6EQKqbxC/fjmMQ24fz2bbt40pfLovRwxaO9/JKz5TPW+usMl4JjOWLxeAAtRtcAQbxsefxAIoMcCWbG6z98/1TqWm8/S2XA9SVlBLxdVfV1/efEqA+vqq+QdXHJ3AXU4FSQilQitD9eYEqUJAANCtFFShIAJq5irLaK97YmXeOK0LX0iGX1r+qAU1Qqgc1ciLzjgXJqu28OaA4UmZDUP1iyI6P3rHGoZB7u9k5UoS88mAWVLsg0t+i4WqNReaYgXR7N3TqeQqZ2W0CKjo3UeMoUkReZFeY6GJJ6PVqIKrp8xeZp1HFQ0sp+K4GRQaMJlqlQiuEnwUKnOY2qJHzYMCH39yQY16FQVTNZE6y+d26YqD2CVQeyDj3zNCLliIDRevQs2LcU0IElArbyFjqhItGSfjUyyREWmq8EpQC+1JQJIecncxPD72ozKP29DDwcmC0qPUg9afoaH3DgtOK4SiQyKmiTr1M2DsOD/+eAmzg72Tu5YzRDih7sms9jDMdtcammzlU1IxMMydKNIwyc9BDReROVh6Q02FVG1dRqzqd8atAQWoFqkBBAtCsFFWgIAFoVor6C1BWNU7mtvpO3v1u5h2yptQVRg2srixgUvnnkJk5VLtG+XVqZT66DgTvTLJVnJkj8w4FF85R0Q6CdY9TYWQ9p/NH748KWBhUf2H2QBBIVldBgVS5jK5LAer8nb8Uq9DrHfdAqLFGzlGlWRujgKUVFdlR5Zgai7RV3h4UceIZoHplvDWoLKQbuEjo7VC8+d4W1AykKCiSmP8NKJUMvTwUCU0LyFuCypxKlwcVVVJfh5E6qrWhynl5wXmGmlSO6p9byVyVFdY4mc0N11GjJJ5J7KTyVnOp3HbWpjbAeWWuFr8/V7tGQI0UQcbPbBxcLwelBlz1eTj0VgWh/CpQitD9eYEqUJAANCtFFShIAJqVogoUJADNSlEFChKAZoeirHYHHGdps+PuuF8+l/Z2wrmjzdPe0ifGW/LVtltR/2jL2eKH7upuR3o9S8rGcKrnUf8MsANlNRWHXTvagVxJYcpnt71JW7+r2Hkb/wnYSYdfsgnchQAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANFSURBVHhe7ZyBbuQgDETz/z+9bbclItT2DMYhS+KVTlc1QPBjbAZWd9vL+Gzb9nrSH5OF9LCGY3W+0zMU81YHixrfCYwWi8ZgB1UaPAEGE2PL4wCKGeBJbX5glc/7p1STvPw1lx3Uk5TSE2tR1fffvxYgP7aq3qDyYxP4E9MRlGUwGaB3VGg4qDtCqjY7XVGMgp7QBirKOt5ItsJy9lpK1+NUO4xoWVTXXG1I7Bza2Ih+fYrqOSTvZs04XDOgLMht/7at9Rw9a+bPFXMpaO13/+x/BaoXjNUevV9T6MFIKnOrFTeUegd7TypmNDBJWT3grVKije0u5lIuI0sRqTCUWowCBbWI92506qEVaBWi7YBRoND4TKq1mxBjaU5PPU8xR4pBikap2PZHG0Vo6mm7ByNxBNN6ztY8ND+rPqmgNHlH/t7yLJHviRpLTL2owa1xEhRJOUGRoFZrdlnqJajVCJDzTUXNBCUZRHbHY1wx8kCMW2ffA8by3Zmj65b2pah9fchmjKrWXgM7AsudekzQbSBMnwi4nvegDAwBZa2+dvxg+kjKGBmvt0QIc+xLPeuFnsmw43ngsn1OUxRbQNEEWtWwgWlwWehWfZPm7E49Y7DDBRgC5Q1sWVDomoLZxVAhZ9TmBU8uaF+NQgEhWWu7Ehp3aVA9SkIgkJ1YFtQIpLOC/rjUi4I00yt5rEvj2/prlOel2hGCVQGjQq/dOK2Y94JiYbB1yjNe75yHnbm1aqwRLUBQCnvObZ4+0xTFbPneAFA/1vzW4yAwyg49XqMYUE1hHHLwyKtJmwTTB2REP6jeFVm9fehZb3UY1vwTFLm6CSpBkQTIZqmoBEUSIJulohIUSYBsNl1R1jFi5NBKxutulqBIdAkqQZEEyGapqDuBQvdRI9cnJKdyJTTvmsWz6z0eFAJAXHtM+0fjl9YoL6gr/NZyoK6AVF0rf3aNqlNw5AsCtnAbX1asAeoqNS2lqCshHUDN8CLtV0itxC0YV4La310CGMlhtm+Ej2LfFdWuiGjqf4sUAUqyFVFQNJW/xVQezki/FUHtfGpQM2CdtfrR45ZF/QcKFdvoiXzqeJrqRRN1lbG7Eh6K2XSb6Dx2t+fWQn0BvNagKl8Xj74AAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAD/////////+AAAAAH//////////gAAAAf//////////4AAAA///////////8AAAA///////////8AAAB///////////+AAAB///////////+AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAACAAAAAAAAf///AAACAAAAAAAAP///AAACAAAAAAAAD///AAACAAAAAAAAD///AAACAAAAAAAAA///AAACAAAAAAAAAf//AAACAAAAAAAAAP//AAACAAAAAAAAAH//AAACAAAAHgHgAB//AAACAAAAHgHgAA//AAACAAAADwPAAAf/AAACAAAADwPAAAP/AAACAAAADwPAAAD/AAACAAAADwPAAAB/AAACAAAAB/+AAAA/AAACAAAAB/+AAAAPAAACAAAAB/+AAAAPAAACAAAAB4eAAAADAAACAAAAA4cAAAABAAACAAAAA88AAAADAAACAAAAA88AAAAHAAACAAAAAc4AAAAfwCECAAAAAc4AAAA/AAACAAAAAc4AAAB/AAACAAAAAf4AAAD/AAACAAAAAPwAAAH/UF0CAAAAAPwAAAf/AAACAAAAAPwAAA//AAACAAAAAPwAAB//AAACAAAAAHgAAD//ADkCAAAAAHgAAP//AAACAAAAAAAAAf//AAACAAAAAAAAA///AAACAAAAAAAAB///aGECAAAAAAAAH///AAACAAAAAAAAP///AAACAAAAAAAAf///AAAD////////////KFkD////////////AAAD////////////AAAD////////////AAAD////////////aGED////////////AAAD////////////AAAD////////////AAAD////////////+F0D////////////AAAD////////////AAAB///////////+AAAB///////////+SF0A///////////8AAAA///////////8EAAAf//////////4DxAIH//////////gCUAMB/////////+AAAAAAAA=="></span><span class="etiquette"><img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAB/////////+AAAAAHAAAAAAAAADg1RkIcAAAAAAAAAA4///8wAAAAAAAAAAMAAAAgAAAAA8AAAAEAAABgAAAAAkAAAAGAAABAAAAAAEAAAACAAADDIjOJk8cRHODkBgqDImJJkkSREbBAAACDImYJlkwREQB1RkKDImfJlk+REfB///+DImZJlkyZEbBAAACDNmZJkkyZETBAAACDPvPJk8efPOBAAACDAGAJgAAAEABAAACDAGAJkAAAEABkBgqDAAAJkAAAAABAAACAAAAAAAAAAAB1RkKAAAAAAAAAAAB///+AAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAQYAAAABAAACAAAAAQYAAAAB+BQqAAAAAQYAAAABAAACAAAAAQsAAAAB1RkKAAAAAQsAAAAB///+AAAAAQkAAAABAAACAAAAARkAAAABAAACAAAAARmAAAABAAACAAAAB9GAAAABAAACAAAAB/CAAAAB+BQqAAAAAAAAAAABAAACAAAAAAAAAAAB1RkKAAAAAAAAAAAB///+AAAAAAAAAAABAAACAAAAAAAAAAABAAACAACAAD////ABAAACAAHHHD////gBAAACAAHPHj////gB+BQqAAPPHh////gBAAACAAfPHgAAAHgB1RkKAD+PHAAAAHgB///+AD8ePAAAAHgBAAACAB4+PAAAAHgBAAACAAB8PAAAAHgBAAACAAD4eAAAAHgBAAACAB/w+AAAAHgB+BQqAD/g8AAAAHgBAAACAD/B4AAAAHgB1RkKAB4D4AAAAHgB///+AAAPwAAAAHgBAAACAAA/gAAAAHgBAAACAAH+AAAAAHgBAAACAB/8AAAAAHgBAAACAD/wAAAAAHgB+BQqAB+AAAAAAHgBAAACAAAAAAAAAHgB+BQqAAAAAAAAAHgB///+AHAAAAAAAHgBAAACAHgAAAAAAHgBAAACAHgAAAAAAHgBAAACAHgAAAAAAHgBAAACAHgAAAAAAHgB+BQqAH////////gBAAACAH////////gB1RkLAH////////gD///9AD////////ACAAABgAAAAAAAAAAGAAAAgAAAAAAAAAAEAAAAwAAAAAAAAAAMAAAAcAAAAAAAAAA49BQoHAAAAAAAAADgAAAAB/////////+A1RkIAAA=="></span><span class="etiquette"><img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAB/////////+AAAAAHAAAAAAAAADg1RkIcAAAAAAAAAA4///8wAAAAAAAAAAMAAAAgAAAAAAAAAAEAAABgAAAAAAAAAAGAAABAAAAAAAAAAACAAADAAAAAAAAAAADFBgqAAAAAAAAAAABAAACAAAAAAAAAAAB1RkKAAAAAAAAAAAB///+AAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABEBgqABwODwgPA4ABAAACADYIEAgQBEAB1RkKACIIMAgQCEAB///+AAYIPwgfCEABAAACAA4IMQwRCEABAAACABgIEQwRBEABAAACADAeDgoOA4ABAAACACIIAAAAAAABtBgqADYIBAACAAABAAACABwAAgACAAAB1RkKAAAAAAAAAAAB///+AAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABtBgqAAAAAAAAAAABAAACAAAAAAAAAAAB1RkKCAAAAAAAAAAB///+GA4GAAABgYDhAAACHA4GAAABgYDhAAACHA4GAAADgYDhAAACHAYHAAADg4DBAAACHAYHAAAHA4DBtBgqDAcDwAAPA4DBAAACDAcB+AB+BwHB1RkKDgOA+AD8BwHB///+DgOAOADgDgGBAAACBgHAAAAADgOBAAACBwDgAAAAHAMBAAACAwBwAAAAeAcBAAACA4B8AAAA8AYBtBgqAcAfAAAD4A4BAAACAcAP8AB/wBwB1RkKAOAD/AD/ADgB///+AHAAeAD4AHgBAAACADgAAAAAAPABAAACABwAAAAAAeABAAACAA8AAAAAA8ABAAACAAeAAAAAD4ABsBgqAAPgAAAAPgABAAACAAD8AAAA/AABsBgqAAB/gAAP8AAB///+AAAP/AD/wAABAAACAAAB/AD+AAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABsBgqAAAAAAAAAAABAAACAAAAAAAAAAAB1RkLAAAAAAAAAAAD///9AAAAAAAAAAACAAABgAAAAAAAAAAGAAAAgAAAAAAAAAAEAAAAwAAAAAAAAAAMAAAAcAAAAAAAAAA4sBgoHAAAAAAAAADgAAAAB/////////+A1RkIAAA=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJrSURBVHhe7ZyBkoMgDET9/5/2rnfFSSmQDSSCus7cXDtGCI8lRLRse+PYtm1/0l+TRemkhNO6+E7ntDZvsrGa8Z3A1NpSY3CASgZPgIG0MefxAQop4Ek2L1jp+PtENZW7X3I5QK2klNpMO8PHpKrf//8pwErHaqDe/lwD0szOXA6UltzOUj1BgeSXAqWpiUPv3asEBcgbgfR4RZUgySR4hfvPJWJUDuq4ZSgs8QDiDDGZDqqmJioq6++amghKgGqpiaAaqUAeXDSQIcGoUui0GIWmAy07ggIfaBAUQdk0wBgF8iIoggIJgGZUFEGBBEAzKoqgQAIXNJt2C3M1VgQF9hhBERRIADSjoggKJACafSmqJ8lrrXuDfixhBqzfi7fKOh4RARV0v1ksCXqsilp8LdS9Lij5dDgCVKt8gspGTQICqC1OUT3BZ+TJsRYvLQ9cT1UUQQkCWi9aYV1WUdYg2pqpEGgEBb55TFB3B6UNF2BaNf0y4rKKIqjjJzBxeZR1IrDkOTKrRpLGl42l/FPzKIIC86hRUNpNcR4WtJzOTVFaPHrqea5wgj1PUAQFEgDN3BQ1GrTPvB5k82HmAurMRnrVZYXlCspa+Qz7BNpaN0GBxAiKoMoElh16uWNnf6/d4oBCOszCh57XLNVTTgnG0oqSyxv5ckjk92VBldaHrBKPtJeqtNbjMvTyBTGrE2fYO0Da3TaxGXEmEtaoX2mkuG6LNOqUN7BRf2Twd99oa9Q5L1gefsi4G7J1W890HnVNL/ivnE8W5NEL+ZQfBQAptwdSjUFx8yhPYD3OzrhGa3Nzly2k1+5k0+qgH4icT3tEBj2xAAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,Qk22AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHgDAADEDgAAxA4AAAAAAAAAAAAAAAAAAP///wD+AAAAAAAAAB/AAAD4/////////8fAAADj//////////HAAADP//////////zAAADf//////////7AAACf//////////5AAAC///////////9AAAA///////////8AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB//4B/8B/AD/+AAAB//wA/wA/AAf+AAAB//gAfgAfAAf+AAAB//AAfgAPAAP+AAAB//B4PB4PB4H+AAAB//D4PD8PB8H+AAAB//D8PD8PB8H+AAAB/+D8Pj8PB8H+AAAB/+D8H/4PB8H+AAAB/+D8H/wPB8H+AAAB/+D8H/gfB4P+AAAB/+D8H/AfAAP+AAAB/+D8H+A/AAf+AAAB/+D8H4B/AA/+AAAB/+D8HwH/AAf+AAAB/+D8HwP/B4P+AAAB/+D8Hgf/B4P+AAAB/+D8Hg//B8P+AAAB/+D8Hh8/B8P+AAAB/+D8Hh8PB4P+AAAB/+D8Hg4PBwP+AAAB/+D8HgAPAAP+AAAB/+D8HwAfAAf+AAAB/+D8HwA/AA/+AAAB/+D8H8B/AD/+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAA///////////8AAAC///////////9AAACf//////////5AAADf//////////7AAADP//////////zAAADj//////////HAAAD4/////////8fAAAD+AAAAAAAAAB/AAAA="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMFSURBVHhe7ZyNbsMgDITz/i/dtd0SUWa4OzvQ/DjStGpxsP1xOECyLo/OsSzL404/XRbWyRJO7+IrnUM5L2WyyPhKYFq5tBhsoFaDO8Bgcqx5fIBiGriTzQvWerw/pZrs7i+5bKDupBQl11VVz9+/U4A8+qp6g8qjT+BPTAkKCSUM6izDNhpnCNSZJqfRWN2goo6R1Eecj8TsAhVxOAKA0qY3dhmU15GSzGhbTw4SKI+D0Ul721dzoUGVDV/xMwKeoMhVCQ2qXDhfYSY/bOhtWw3F1jCS61HPq5AKkWhLGI+jo0Dzxi4NvTJZr8NvAovE7AZ1tpoVgeQeepayvqkUxvdXF8VMgFexCQ29q0Bg8khQDKWnjQuUWhh7S55WnJ5rUM6RNmVQtbNIcK0Cy64lke/WdKbVfq89CZTlgGj84yWPelphwbI6Q/WNIDFxGG3gmXmgF8yHqy1l9hSrqtladtXrVLZNqCg0DNgaU9uhABml1UlbsbB+0DxrGChUP1ACnqSRz0ibEihrXI8MTlWhGovSWRDU3sEqRTlyO0fQlDgKgeBizhTGQcH9ezUS+UHnVUhTQQWCa75DioAwNYm5IUwD5YG0Z5Kt0cBCmgJqL0jRoR+NY2gxjwbHqIoZfnvEMRWUJ6k97rrKNABMoMfc9TwBKksYtsZ44mh00HFAWZPa1nyqTEYBzCj7q6DYCWTPrjznBcXGYbQ/R1FqgIySmLshC743lOVi7pHtFa5JUGQvJqgERRIgzVJRCYokQJqlohIUSYA0S0UlKJIAaZaKSlAkAdIsFXVUUGhbVlnpr7ZkriGzqYpitlluD8racEN/W/eHrN3LPbZ3FYlNU1RrZ5J5eNCCwrapAGnZHhoU2r1MUNV/PKWiDJ2zdet16W0UhaAccuj1nkDsUQxrBSjDSbHdK9aync3/msQIJ+iuVncQUllpP2vobdOUsrdnwDqTj3L2n1+01em5DwXXRfNMPT4y1notmV8GWNFu1T7zxYNZhXKkItS2Uc7dNzQ8q/kzX9OD+wMsoKNRMpdFSgAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALYSURBVHhe7ZwBbsMgDEVz/0t3a1ciwrD9IJAQcKRpU+KA/fgGQ9VtL+Xatu210o/KIvcwhqO9PNMzK+YtDtYyngmMFIvEYAcVDFaAQWJMeRxAkQZWsnnDCtfnL1dTfvhjLjuolZRSEmtQ1e/vvxLAL11VH1B+6QS+YioDtaICi0GlVfoqSiwCJW1lVoCFQVn7vdlhIVBpSX+oLaJN88ywTFC5fc+/0n4BWCoocXOYqbtm30wjUGlKSeXBzGWDmXraWdXMc5IgDi84rUFvriirjCidy0rtyWFcTZtDg2qxCyADZ6kpOoa6JvVKAs8FSAKSFh6p9qMLUHNFUelrQbfaKmkDUzJolyqKOGalSamiSJ+0zUsURR12UMmHqCQ943N8Oo9o8xNVjuFbv8mcqkkrbFuA0tRKIHZPPQcFztnPLvFnIOdS992edh+sxH1Sr3WgJEVim8eUBw4Kfg7ooBwUmwXIcn12Im9dR4WJPERYqvZu5UGpI7V1lNWPVe2TQe+617MCINolbdTYkHcuO+GscYYckdTYSLVTmo631VFENU+x6TZHPQUA9dNBQVIOykFBAtDMFeWgIAFo5opyUJAANHNFOShIAJq5ohwUJADNXFEOChKAZkMoyjo2pqeUsR2MH5vdDkqDEKJYHlROAda9cCqZO0FtcaoqSexWRdFUKYFC28Q59zV8HCgpHXP3S2Fo9iqoMDppA6X3DTmb3z6l6fju5xZFSZ3mQNU4SN8ZHpQ0QikoGrCkzDBBW/1Jdtb7LVIQzVEpiBhULSSy9GvzjrTCnfXn9Kpn1TJnRi3XdtzeI1JPcrjXyJ0B3vNdlHoarJ7OjdR2Mah4wh0pkN6+VIHq7dSI7e+g4iV2REfv9Gmfj0M63enMyH0HEfm/RVJG6VAzxoXdyCN7h2+Hqj+tgO9waMQ+/23VrCp4xCB6+iQeBuQ6Xa3yjutDqQJQvwhj7fFme64p9QcjMCTsj5KrfgAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAB/////////+AAAAAHAAAAAAAAADg1nkIcAAAAAAAAAA4///8wAAAAAAAAAAMAAAAgAAAAAAAAAAEAAABgAAAAAAAAAAGAAABAAAAAAAAAAACAAADAAAAAAAAAAADBFg+AAAAD/+AAAABAAACAAAAf//wAAAB1nkKAAAB///8AAAB///+AAAD///+AAABAAACAAAH////AAABAAACAAAP/4//gAABAAACAAAf/wP/wAABAAACAAAf/wH/4AABQFg+AAA//wD/4AABAAACAAA//wB/8AAB1nkKAAB//wA/8AAB///+AAB//wAf8AABAAACAAB//wAP+AABAAACAAD//wQH+AABAAACAAD//wYD+AABAAACAAD+PwcD+AABQFg+AAD8HweB+AABAAACAAD8DweB/AAB1nkKAAD+BwcB/AAB///+AAH+AwYD/AABAAACAAH/AQQH/AABAAACAAH/gAAP/AABBAACAAH/wAAf/AABAAACAAH/4AA//AABQFg+AAH/8AB//AABAAACAAH/+AD//AAB1nkKAAH//AH//AAB///+AAH//gP//AABAAACAAH//AH//AABAAACAAH/+AD//AABAAACAAH/8AB//AABAAACAAH/4AA//AABPFg+AAH/wAAf/AABAAACAAH/gAAP/AAB1nkKAAH/AQQH/AAB///+AAD+AwYD/AABAAACAAD+BwcB/AABAAACAAD8DweB/AABAAACAAD8HweB+AABAAACAAD+PwcD+AABPFg+AAD//wYD+AABAAACAAD//wQH+AAB1nkKAAB//wAP+AAB///+AAB//wAf8AABAAACAAB//wA/8AABAAACAAA//wB/8AABAAACAAA//wD/4AABAAACAAAf/wH/4AABPFg+AAAf/wP/wAABAAACAAAP/4//gAAB1nkKAAAH////gAAB///+AAAD////AAABAAACAAAB///8AAABAAACAAAAf//wAAABAAACAAAAD/+AAAABAAACAAAAAAAAAAABPFg+AAAAAAAAAAABAAACAAAAAAAAAAAB1nkLAAAAAAAAAAAD///9AAAAAAAAAAACAAABgAAAAAAAAAAGAAAAgAAAAAAAAAAEAAAAwAAAAAAAAAAMAAAAcAAAAAAAAAA4PFg8HAAAAAAAAADgAAAAB/////////+A1nkIAAA=="></span><span class="etiquette"><img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAB/////////+AAAAAHAAAAAAAAADg1GkIcAAAAAAAAAA4///8wAAAAAAAAAAMAAAAgAAAAAAAAAAEAAABgAAAAAAAAAAGAAABAAAAAAAAAAACAAADAAAAAAAAAAADBADaAAAAAAAAAAABAAACAAAAAAAAAAAB1GkKAAAAAAAAAAAB///+AAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAB/+AAAABAAACAAAAP//wAAABZ/zWAAAA///8AAABAAACAAAD////AAAB1GkKAAAH////gAAB///+AAAf////wAABAAACAAA/////8AABAAACAAB/////+AABAAACAH////////gBAAACAf////////4BZ/zWA/////////8BAAACB////4AAAAeB1GkKD////+AAAAPB///+H////+AAAAHhAAACH/////AAAADhAAACH/Pn+fBwADBhBAACP+HD8PD4AHhxAAACP+HD8PD4AHhxZ/zWP8CD8PD4AHhxAAACP8CB8PD4AHhx1GkKP8AB8PD/4Hhx///+P8AB8PD/8HhxAAACP4AA8PD/8HhxAAACP4AA8PD/4HhxAAACP4AA8PD4AHhxAAACPwAA+fD4ADBxZ/zWPwwYf/D4AABxAAACPwwYefD/+DBx1GkKPwwYcPD//Hhx///+PwwYcPB//HhxAAACHx48efB//HhhAAACH/////gAAADhAAACH/////gAAAHhAAACD/////wAAAPBZ/zWB/////4AAAeBAAACA/////////8B1GkKAf////////4B///+AH////////gBAAACAAB/////+AABAAACAAA/////8AABAAACAAAf////4AABAAACAAAH////gAABY/zWAAAD////AAABAAACAAAA///8AAAB1GkKAAAAP//wAAAB///+AAAAB/+AAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABY/zWAAAAAAAAAAABAAACAAAAAAAAAAAB1GkLAAAAAAAAAAAD///9AAAAAAAAAAACAAABgAAAAAAAAAAGAAAAgAAAAAAAAAAEAAAAwAAAAAAAAAAMAAAAcAAAAAAAAAA4Y/zUHAAAAAAAAADgAAAAB/////////+A1GkIAAA=="></span><span class="etiquette"><img src="data:image/png;base64,Qk1gFgAAAAAAAGYAAAAoAAAASgAAAEoAAAABAAgAAAAAAPoVAADDDgAAww4AAAwAAAAMAAAAAAAAAPPz8wD19fUA9vb2APj4+AD5+fkA+vr6APv7+wD8/PwA/f39AP7+/gD///8ACwsLCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsLCwsLCwsAAAsLCwsLAAAACwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwAAAAsLCwsLAAALCwsAAAALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwAAAAsLCwAACwsAAAsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwAACwsAAAsLAAsLCwsLCwsLCwsLCwsLCwsLCwAAAAAAAAALCwAAAAsLCwsLAAAACwsAAAALCwsLAAAACwsLCwsLCwsLCwsLCwsLCwsLAAsLAAALAAALCwsLCwsLCwsLCwsLCwsLCwsAAAAAAAAACwsAAAALCwsLCwAAAAsLAAAACwsLAAAAAAsLCwsLCwsLCwsLCwsLCwsLCwAACwAACwALCwsLCwsLCwsLCwsLCwsLCwsLAAAACwsLCwsLCwAAAAAAAAAAAAsLCwAAAAsLAAAAAAALCwsLCwsLCwsLCwsLCwsLCwsLAAsAAAAACwsLCwsLCwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsAAAAAAAAAAAALCwsAAAALCwAAAAAACwsLCwsLCwsLCwsLCwsLCwsLCwAACwsACwsLCwsLCwsLCwsLCwsLCwsLCwsAAAALCwsLCwsLAAAACwsLAAAACwsLAAAACwAAAAAAAAsLCwsLCwsLCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsAAAsLCwAACwsLCwAAAAsAAAsAAAALCwsLCwsLCwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLAAAACwAAAAsLCwsAAAAAAAALAAAACwsLCwsLCwsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwAAAAsAAAALCwsLAAAAAAALCwAAAAsLCwsLCwsLCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLAAAAAAALCwsLCwAAAAAACwsAAAALCwsLCwsLCwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLCwAAAAAACwsLCwsAAAAACwsLAAAACwsLCwsLCwsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwsAAAAAAAsLCwsLAAAACwsLCwAAAAsLCwsLCwsLCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLAAoLAAsLCwsLCwsLCwsLCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsLCwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsLCwALCgALCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALCwsLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwsLCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsLCwsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsAAAsLAAAKCwAACwsAAAsLAAALCgAACwsAAAgLAAALCwsLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLAAALCwAACgsAAAsLAAALCwAACwoAAAsLAAAICwAACwsLCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwAACwsAAAkLAAALCwAACwsAAAsKAAALCgAACAsAAAsLCwsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsAAAMLAAAFCwAACwsAAAsLAAALBwAACwcAAAYLAAALCwsLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwsLCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsLCwsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALCwsLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwsLCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsLCwsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALCwsLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwsLCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsLCwsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALCwsLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwsLCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsLCwsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsAAAAAAAAAAAAAAAAAAAAAAAAJCQkICAQLCwsLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLCwsLAAAAAAAAAAAAAAAAAAAAAAAACwsLCwsKCwsLCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAsLCwsLCgsLCwsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsKCAQAAAAAAAAAAAAAAAELBgoLCwsLCwoKCgoLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLCwsLCwoKAAAAAAAAAAAAAAABCwsLCwsLCwsLCwsJCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwsLCwsKCgAAAAAAAAAAAAAAAQsLCwsLCwsLCwsLCQsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsLCgoAAAAAAAAAAAAAAAELCwsLCwsLCwsLCwkLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLCwsLCwoECgoKCgoKCgoJBgoJCwsLCwsLCwsLCwsKCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwsLCwsICgkKCgoKCgoJCQcDCAsLCwsLCwsLCwsLCgsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsLCgkKCgoKCgoKCwoHCAUFCQsLCwsLCwsLCwoLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLCwsLCwoKCgsLCwsLCwsLCgkIBQgKCgoKCwsLCwsKCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwsLCwsKCgoLCwsLCwsLCwsLCggGBQkJCQsLCwsLCgsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsJCgoKCgoKCgoKCgoKCgoHBgUDBgcJBAoKCgkLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALCwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLCwsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKCwsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLAAsLAAALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLAAALCwsACwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwALCwsLAAALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwAACwsLCwsACwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsACwsLCwsLAAALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsAAAsLCwsLCwsAAAALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLCwsAAAALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsLCwsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALCwsLCwsLCwsAAA=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJzSURBVHhe7ZyJjsMgDETz/z/dbbsBOcjH0CAgMJGqPXDAfh4oUJrj5VzHcbx2erkstEIJx7t5pbIo5kMGGxmvBMaKxWKQQSWDHWAgMZY8LqCQCnay+cBK1/c3qklPv+SSQe2klJpYk6reP/+nALx8VX1B8fIJnGIiqEgoBBUROssJiqBAAqAZFUVQIAHQjIoiKJAAaEZFERRIADSjoggKJACaUVEEBRIAzagoggIJgGZUFEGBBEAzKoqgQAKgGRVFUCAB0IyKaglKOx8F1r+MWago7xDZMhSAQFxQ2jmhXc9PNQPlAbRU+UmkdZ93TymAmrY18SDJrwYVNRSp0OvK8gwE2uXRJNxNyG1QpQO/gNKUVQKIbLzylNxUZ/l3ShCgTP2QRoUkL8eGfnGoFrjVbWXbiP+yh3QBpTVYk7k7oNC2ZdfWfGsKqiagXqC0sQ0Z8JFYihjwrhdVHo1RUZfxxouatj0/ahIIgSqDigZYrRwZhCMbpN4a36Ju53RR/8Sd9hZsDYLlQB5BQLJrgbIS6fkW+a35L9qZ72hi7TuWNr9r+b/TH4KKoBJUROgsJ6ingwL972Y2raK6EQAbIqiVQFlzGzDGJmaPUNT2oLQZv7bAjVYGTSQTVDJUURYobWHsLWO2AxXtLPQAYrUxjaKsxbGER1DyC87igRQlPIIiKF8DyG6oNW71Vtejxiht57EXsMeBGgVrKKheamjRDkGBFAmKoEACoFlW1KhBEvRzqFmexqS5ylBvJm48L9JnWU/NyEruhfFBW06GLvtjMy0+Z1JVubPKhwEW2bE+zlc/T7eMZ8p4a1+imN2DB9527YplHvw/dEgeD+pwB5EAAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJfSURBVHhe7ZyBbsMgDETz/z/dtV2IKLXPRzqKRy7StE0YA4+zaQB1u4Fn27bblX4gC6uwhoMqr1QWjXmrBxsZrwTGG4vH4ABVDK4Agxljy+MFFOPgSjYPWOV5/iU12dNfczlAXUkpPWMtqrr//v0IoAer6glKDyawi0mgIqEIVERoLxcogSIJkGZSlECRBEgzKUqgSAKkmRQlUCQB0kyKEiiSAGkmRQkUSYA0k6IEiiRAmklRAkUSIM2kKIEiCZBmUpRAkQRIMynqr0BZd6NI36nNem/tQEWhC2SpKRCds0ChE3MXFHK06snycFBIxp4qH5Pu1UN1WrFEIdT6KvVRtACRvB+pRx2IGozKUe5jQz4Cyk4S015X6EWzGYWrB6etZ6kA2XjqbEOp/n9ojopA1R22FBUNqOS+CHjkx2u77v8UUFYHvgUKtd0CrRehoaAi+WdTFFLQVFCfhswnodc7iUxfDdD2RbJoNYjKrVzCdLDXr5X8rbBjk3kdok0K8W/coWXc68xZyVuK8iAwbZ/NUe1qWfnJdTXRUh3xVjLUxP0cNbTVwLlAkfQFSqBIAv/YLGWOyshToMhZESiBIgmQZikVpY8HxOx573lE1aEmqRTF7AAMpQGcpwZl7W8J1J0As70iUA2oWUC8dlOHnrUvNAtgWlBow24GrFSg2F1LgZpBgGwznaLIfn/dTKBI5ALVC8o6yyJ9LG92rMBltVl+xCcHeJw3ZnqnOjmWYdVeTpdLKwq/d941E311m6PH9hVKXwbYgPJ2WM2LBxm3Y4clot1xNGZ4QwPtEa1YhibjB+6Za8Fb2RuGAAAAAElFTkSuQmCC"></span><span class="etiquette">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHXSURBVHhe7dyBToMwFIVh3v+l50CKBXvbn4ER6E9i1HFY1m9nMOPNhldlG4bh1dNX1aK0M8epHfykfa01D/liW+EnwURriQwWqBToAYOsceuxgiJ30FNmxErb9JNtKj/9ucsC1VNT9qw1ter9/fstgFu9VROUW11gLpNQraII1RKa9wslFBSAMRslFBSAMRslFBSAMRslFBSAMRslFBSAMRslFBSAMRslFBSAMRslFBSAMRslFBSAMRslFBSAMRv1X1ClSZBwOiSYvcofe226Zju3lY77i4mc0xt1BtRqMGKDGSFGx8DCNGOXgYraELVmzHfZKAqVDUwIlQ+NbFvzSKhoka2TbguqdL+3PkcJVblGfHrVI+eo7Qm89Ht0W/Oy1gjc6qonVD5Qmr1vIu3Y0+AjrbpMoz59T9Q1FP0T5tbnqCP1vvKxp7/0rrzYI49NKKgnlFBQAMZslFBQAMZslFBQAMZslFBQAMZslFBQAMZslFBQAMZslFBQAMZslFBQAMZslFBQAMZs1F6ofMgBHttNbPnf4bhioeLnfRk1SlBi/cZajSCl3UKVoRafHEqsH6y8TdOrLncsDT10c9aeFxoZFD8TqUew1pqrHx5VGi988m21V88X5qOCxqbUAsgAAAAASUVORK5CYII=">
+                                </span>
+                            </div>
+
+                            <div class="boutoncomparer">
+                                <button class="cta cta--clear">Comparer</button>
+                            </div>
+
+                            <div class="infosgarantie">
+                                <div class="garantie">Garantie <span class="emphase">24 mois </span><span> étendue à <span class="emphase">84 mois </span> pour <span class="emphase">119€</span></span></div>
+                                <div class="dispopieces">Disponibilité pièces détachées : <span class="emphase">NC</span></div>
+                            </div>
+                            <div class="lignesinfoconteneur">
+                                <div>
+                                    <div class="ligneinfo">
+                                        <div class="infogauche">Prochaine commande</div>
+                                        <div class="infodroite emphase">-</div>
+                                    </div>
+                                    <div class="ligneinfo">
+                                        <div class="infogauche">001181 PERMANENT</div>
+                                        <div class="infodroite emphase">mer. 28/09 (21:00)</div>
+                                    </div>
+                                    <div class="ligneinfo">
+                                        <div class="infogauche">Livraison</div>
+                                        <div class="infodroite emphase">30/09</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boutoncommandeconteneur">
+                        <div class="commandearticleconteneur">
+                            <div class="textecommander">Ajouter au panier</div>
+                        </div>
+                    </div>
+                    <div class="voirficheconteneur" onclick="location.href = './vendeur_fiche-article.html'">
+                        <div class="voirfichetexte">Voir la fiche</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="voletnavigationconteneur jsvolet2">
+                <div class="croixettitre">
+                    <div class="croixconteneur">
+                        <img src="assets/icones.svg#croix_gris-view">
+                    </div>
+                    <div class="titredesignation">LG 55UK6950 - Classe 55" TV LED - Smart TV - webOS, ThinQ AI - 4K UHD (2160p) 3840 x 2160 - HDR - système de rétroéclairage en bordure par DEL Edge-Lit, local dimming<span>, LG</span></div>
+                </div>
+                <div class="voletinfosconteneur">
+                    <div class="prixetpromo">
+                        <div class="prix">509,<span class="decimales">99</span> €</div>
+                    </div>
+                    <div class="articleconteneur">
+                        <div class="infosconteneur">
+                            <div class="intermediaireconteneur">
+                                <div class="colonnedetail">
+                                    <div class="photoconteneur">
+                                        <img src="assets/images/fiche_tv4.png">
+                                    </div>
+                                </div>
+                                <div class="colonnedetail">
+                                    <div class="titredetail">Les points forts</div>
+                                    <div>
+                                        <div class="infodetail">Haute résolution pour une image extrêmement nette</div>
+                                    </div>
+                                    <div>
+                                        <div class="infodetail">Une image authentique</div>
+                                    </div>
+                                    <div>
+                                        <div class="infodetail">Luminosité renforcée</div>
+                                    </div>
+                                    <div>
+                                        <div class="infodetail">4K Active HDR pour des images ultra-réalistes</div>
+                                    </div>
+                                    <div>
+                                        <div class="infodetail">Le TV LG UHD traite les images scène par scène avec des réglages dynamiques.</div>
+                                    </div>
+                                    <div>
+                                        <div class="infodetail">Sophistiqué à l'intérieur comme à l'extérieur</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stockconteneur">
+                                <div class="stockinfos">
+                                    <div class="stock">1 </div>
+                                    <div class="label">STOCK (UVC)</div>
+                                </div>
+                            </div>
+                            <div class="indicereparabilite">
+                                <img class="logoir" src="assets/images/logo-indice-3.svg">
+                                <p class="indiceir">5,1</p>
+                            </div>
+                            <div class="etiquettesconteneur">
+                                <span class="etiquette">
+                                    <img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAB/////////+AAAAAHAAAAAAAAADg1I0IcAAAAAAAAAAY///8gAAAAAAAAAAMAAAAgAAAAAAAAAAEAAABgAAAAAAAAAAGAAABAAAAAAAAAAACAAADAA//7//P/4AD/cA+AA//7//P/8ABAAACAA//7//P/+AB1I0KAA4AAAAAAPAB///+AA4AAAAAAHABAAACAA4AD//MAHABAAACAA4AD//MAHABAAACAA4AD//MAHABAAACAA4AAAAMAPAB/cA+AA4AAAAMAeABAAACAA4AD//P/8AB1I0KAA4AD//P/4AB///+AA4AD//P/wABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAAB+cA+AAAAAAAAA4ABAAACAAAAAAAAB8AB1I0KAAAAAAAABmAB///+AAAAAAAAAGABAAACAAAAAAAAAGABAAACDg8M9GYOx+HhAAACHx+N/GYfxuPxAAACMZjNjGYZzGMx+cA+MBANjGYYzGMBAAACP5AM7GYOzGP51I0KP5AMfGYHzGP5///+MZjMDGcAzGMZAAACO5nMzGeMxuMxAAACHw+M+GbPh+HxAAACAAAMAAAAAAABAAACAAAMAAAAAAAB+cA+AAAMAGAAAAABAAACAAAMAGAAAAAB1I0KAAAMAAAAAAAB///+AAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAf/8A//D/+ABAAACAf/8H//j//wB+cA+Af/8P//j//8BAAACAf/8f//j//8B+cA+AfwAf8Hj//+B///+AfwA/wAD/D/BAAACAfwA/gAD+B/BAAACAfwB/gAD+B/BAAACAfwB/AAD+B/hAAACAfwB/AAD+A/h9cA+AfwB/AAD+A/hAAACAfwB/AAD+A/h9cA+AfwB/AAD+A/h///+AfwB/AAD+A/hAAACAfwB/AAD+B/hAAACAfwA/gAD+B/B0aWiAfwA/wAD+D/BAAACAfwAf4Dj+H+B9cA+AfwAf//j//+BAAACAfwAP//j//8B1I0LAfwAH//j//4D///9AfwAD//j//gCAAABgfwAA//D//AGAAAAgAAAAAAAAAAEAAAAwAAAAAAAAAAMAAAAcAAAAAAAAAA49cA8HAAAAAAAAADgAAAAB/////////+A1I0IAAA==">
+                                </span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALOSURBVHhe7ZwBj8MgCIX7///0Lr3NxjGB96y2ptDkksuKnXw+EFm27WVc27a9Iv2ZLFo3azjW4Cfd83zeamc94yeB0XzRGBygikEEGIiPkscXKOQBkWx2WOX6/y/V1F7+mssBKoJS0B1c5u2PmN4lQISrF9RnXAxITL0obRNUlZ+t0ig8KAlH29RCg2opKEGJpKNW35+zbeYokZMUID95P1zoeWfZDD1HSccxJUPv3DEtXOj1nj4SFEguQSUokABolopaBZRXt4DzvN1sqqJk74dpc6Bjrf7SSLrTQLUc0CaONNNaY3vH9QCcAkpzAHFWtmCBHtFPvx9VIwNsOCg2FCynPIe9DoB2bmMAiaPNmFawFwrsBGdAZOcQCtQO/Ow1NPSk1L3QYXZBrW/UCi9mI0EBDgXFOIMkdi/HaAsRFpQWOl5OtHZMVElTctRZRfWMR2GxYJS5nE92SCixk2Vy3Mj8aPiyJqh9wgwspljtXLT7QHkgvPvIsYiFsqSiRhWVdcLvhQuUK/cpqhVeWoL2kj06rkdhS9RRyM6FhNiM+mnJ8qBXEb3jGGVNVRQzkdVtExS4QgkqQYEEQLNUVIICCYBmqagEBRIAzS5VlFc5IxX6jHMcwuoyUBYEcUygvkiJODnC5hJQrZas91rpBrQUdIeqbgNl9Hy+PvnVoLRAj1COc/ie02ZphRTQ8/n6AlOCahBDw1H2sGYq6ZI2SyqKXEJPKRbQUKEnQ4VxnrEl148yP7XrFSfQd2QKTq22YsMZnZtnp4LyIFy9PXuOzL7fBSoapCp1/NZRmqIiQqJBRYVEgYoMCQYVHRIEKiG991N31/PKhNnb8irPP0CV/o9W6LWKRTlmFadGz+PwvUirfgMNzB1Ns9GOs88rgsifRTLI1aknf2jLAXWkI5mXWGk+1V5uZPljgGKltZKo2TCPWD95PpufLKC731PsrDTyB+ffwFCjqyrZAAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,Qk0uGgAAAAAAADYEAAAoAAAASgAAAEoAAAABAAgAAAAAAAAAAADEDgAAxA4AAAABAAAAAQAAAAAA//////8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wEBAQEBAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEBAQEBAAABAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEBAQAAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEAAAEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAAABAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAAAAAAAAAAAAAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAAAAAQEBAQEBAQEBAQEBAQAAAAAAAAAAAAABAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQAAAAEBAQEBAQEBAQEBAQEAAAAAAAAAAAAAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAAAABAQEBAQEBAQEBAQEBAAAAAAAAAAAAAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAAAAAQEBAQEBAQEBAQEBAQAAAAAAAAAAAAABAQEBAQEAAAAAAAAAAAABAQEAAAAAAAAAAAABAQEAAAAAAAEBAQEBAQAAAAAAAQEBAQAAAAEAAAAAAQEBAQEBAQEAAAAAAAAAAAAAAQEBAQEBAAAAAAAAAAAAAQEBAAAAAAAAAAAAAQEAAAAAAAAAAQEBAQAAAAAAAAABAQEAAAAAAAAAAAABAQEBAQEBAAAAAAAAAAAAAAEBAQEBAQAAAAEBAQEBAQEBAQEBAQAAAAEBAQEBAAAAAQEAAAABAQEAAAABAAAAAQEBAAAAAAEBAAAAAAEBAQEBAQAAAAAAAAAAAAABAQEBAQEBAAAAAQEBAQEBAQEBAQEAAAABAQEBAAAAAQEBAAAAAQEAAAABAQEAAAABAQAAAAEBAQEAAAABAQEBAQEAAAAAAAAAAAAAAQEBAQEBAQEAAAABAQEBAQEBAQEBAAAAAQEBAQAAAAEBAQAAAAEBAAAAAQEBAAAAAQEAAAABAQEBAAAAAQEBAQEBAAAAAAAAAAAAAAEBAQEBAQEBAQAAAAABAQEBAQEBAQAAAAEBAQEAAAABAQEAAAABAQAAAAEBAQAAAAEBAAAAAQEBAQAAAAEBAQEBAQAAAAAAAAAAAAABAQEBAQEBAQEBAAAAAAEBAQEBAQEAAAABAQEBAAAAAAAAAAABAQEAAAABAQEAAAABAQAAAAEBAQEAAAABAQEBAQEAAAAAAAAAAAAAAQEBAQEBAQEBAQEAAAAAAQEBAQEBAAAAAQEBAQAAAAEAAAABAQEBAAAAAQEBAAAAAQEAAAAAAQEAAAAAAQEBAQEBAAAAAAAAAAAAAAEBAQEBAQEBAQEBAQAAAAEBAQEBAQAAAAEBAQEAAAABAQEBAQEBAQAAAAEBAQAAAAEBAAAAAAAAAAAAAQEBAQEBAQAAAAAAAAAAAAABAQEBAQEAAAABAQEAAAABAQEAAQEAAAABAQEBAAAAAQEBAQEBAQEAAAABAQEAAAABAQAAAAEAAAAAAQEBAQEBAQEAAAAAAAAAAAAAAQEBAQEBAAAAAQEBAAAAAQEBAAAAAAAAAQEBAQEAAAABAQAAAAEBAQAAAAEAAAABAQEBAQEBAQEBAQEBAQEBAQEBAAAAAAAAAAAAAAEBAQEBAQEAAAAAAAAAAQEBAQEAAAAAAAEBAQEBAAAAAAAAAAEBAQEAAAAAAAAAAQEBAQEBAQEBAQEBAQEBAQEBAQAAAAAAAAAAAAABAQEBAQEBAQAAAAAAAQEBAQEBAQAAAAABAQEBAQEBAAAAAAEBAQEBAQAAAAAAAQEBAQEBAQEBAQEBAQEBAQEBAQEAAAAAAAAAAAAAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAAAAAAAAAAAAAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQAAAAAAAAAAAAABAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAAAAAAEBAQEBAQEBAAAAAAEBAQAAAAAAAQEBAAAAAQEBAQEBAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQAAAAABAQEBAQEAAAAAAAABAQEAAAAAAAEBAQAAAAEBAQEBAQEBAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEAAAAAAQEBAQAAAAAAAAAAAQEBAAAAAAABAQEAAAABAQEAAAAAAAEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQEBAQEBAQEAAAEBAQAAAAEBAAAAAAABAQEAAAAAAAEBAQAAAAEBAQAAAAAAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEBAQEBAQEBAAABAQAAAAEBAQAAAAAAAQEBAAAAAAABAQEAAAABAQEAAAAAAAEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAABAQEAAAAAAAAAAAEBAQEAAAAAAAEBAQAAAAAAAQEBAAAAAQEBAAAAAAAAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQAAAQEBAAAAAAAAAQEBAQEBAAAAAAABAQEBAQEBAQEBAQAAAAEBAQAAAAAAAAEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAEBAQAAAAAAAAEBAQEBAQAAAAAAAQEBAQEBAQEBAQEAAAABAQEAAAAAAAABAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQABAQEAAAAAAQAAAAEBAQEAAAAAAAEBAQAAAAAAAQEBAAAAAQEBAAAAAAAAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQEBAAAAAAEBAAAAAQEBAAAAAAABAQEAAAAAAAEBAQAAAAEBAQAAAAAAAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEBAQAAAAABAQEAAAABAQAAAAAAAAEBAQAAAAAAAQEBAAAAAQEBAAAAAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQEAAAAAAQEBAQAAAAAAAAAAAAABAQEAAAAAAAEBAQAAAAEBAQEBAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEBAAAAAAEBAQEBAQAAAAAAAAAAAQEBAAAAAAABAQEAAAABAQEBAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEBAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEBAQEAAAAAAQEBAQEBAQEAAAAAAQEBAAAAAAABAQEAAAAAAQEBAQEAAAAAAAEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEBAQEBAQEAAAABAQEBAQEBAQAAAAABAQEAAAAAAAEBAQAAAAEBAQEBAQAAAAABAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAQAAAQEBAQAAAQEBAAAAAAAAAAAAAQEBAAAAAAABAQEAAAABAQEAAQEBAAAAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQAAAAABAQEAAAEBAQAAAAAAAAAAAAEBAQAAAAAAAQEBAAAAAQEBAAEBAQEBAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAAAAAAEBAQAAAQEBAAAAAAAAAAAAAQEBAAAAAAABAQEAAAEBAQAAAQEBAQEBAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQAAAAABAQEAAAEBAQAAAAAAAAAAAAEBAQAAAAAAAQEBAAEBAQEAAAABAQEAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEAAAAAAQEBAAABAQEAAAAAAAAAAAABAQEAAAAAAAEBAQEBAQEBAAAAAQEBAAEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQAAAAABAQEAAAEBAQAAAAAAAAAAAAEBAQAAAAAAAQEBAQEBAQEAAAABAQEBAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEAAAAAAQEBAAABAQEAAAAAAAAAAAABAQEAAAAAAAEBAQAAAQEBAQAAAAEBAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAAAAAAEBAQAAAQEBAAAAAAAAAAAAAQEBAAAAAAABAQEAAAABAQEAAAABAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEAAAAAAQEBAAABAQEAAAAAAAAAAAABAQEAAAAAAAEBAQAAAQEBAAAAAAEBAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAAAAAAEBAQAAAQEBAAAAAAAAAQEBAQEBAQEBAAABAQEBAQEBAQAAAAABAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQAAAAABAQEAAAEBAQAAAAAAAAEBAQEBAQEBAQAAAQEBAQEBAQEAAAAAAAEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAAABAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQAAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEAAAEBAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQEBAAABAQEBAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAQEBAQAA"></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM7SURBVHhe7ZwBTsMwDEV7/0sDg7XKQuz/7HRspJ6EQKqbxC/fjmMQ24fz2bbt40pfLovRwxaO9/JKz5TPW+usMl4JjOWLxeAAtRtcAQbxsefxAIoMcCWbG6z98/1TqWm8/S2XA9SVlBLxdVfV1/efEqA+vqq+QdXHJ3AXU4FSQilQitD9eYEqUJAANCtFFShIAJq5irLaK97YmXeOK0LX0iGX1r+qAU1Qqgc1ciLzjgXJqu28OaA4UmZDUP1iyI6P3rHGoZB7u9k5UoS88mAWVLsg0t+i4WqNReaYgXR7N3TqeQqZ2W0CKjo3UeMoUkReZFeY6GJJ6PVqIKrp8xeZp1HFQ0sp+K4GRQaMJlqlQiuEnwUKnOY2qJHzYMCH39yQY16FQVTNZE6y+d26YqD2CVQeyDj3zNCLliIDRevQs2LcU0IElArbyFjqhItGSfjUyyREWmq8EpQC+1JQJIecncxPD72ozKP29DDwcmC0qPUg9afoaH3DgtOK4SiQyKmiTr1M2DsOD/+eAmzg72Tu5YzRDih7sms9jDMdtcammzlU1IxMMydKNIwyc9BDReROVh6Q02FVG1dRqzqd8atAQWoFqkBBAtCsFFWgIAFoVor6C1BWNU7mtvpO3v1u5h2yptQVRg2srixgUvnnkJk5VLtG+XVqZT66DgTvTLJVnJkj8w4FF85R0Q6CdY9TYWQ9p/NH748KWBhUf2H2QBBIVldBgVS5jK5LAer8nb8Uq9DrHfdAqLFGzlGlWRujgKUVFdlR5Zgai7RV3h4UceIZoHplvDWoLKQbuEjo7VC8+d4W1AykKCiSmP8NKJUMvTwUCU0LyFuCypxKlwcVVVJfh5E6qrWhynl5wXmGmlSO6p9byVyVFdY4mc0N11GjJJ5J7KTyVnOp3HbWpjbAeWWuFr8/V7tGQI0UQcbPbBxcLwelBlz1eTj0VgWh/CpQitD9eYEqUJAANCtFFShIAJqVogoUJADNSlEFChKAZoeirHYHHGdps+PuuF8+l/Z2wrmjzdPe0ifGW/LVtltR/2jL2eKH7upuR3o9S8rGcKrnUf8MsANlNRWHXTvagVxJYcpnt71JW7+r2Hkb/wnYSYdfsgnchQAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMLSURBVHhe7ZyBbsMgDETz/z/dtd0SEWb7DjAhBFeaNjWGwMsZznTq9jJe27a9VvoxWUgXUzhW4yddQ3Pe0smi4CeB0eaiMThA7QErwGDmmPM4gWI6WCnmA2t/ff8KNcmPP+VygFpJKSVz3VX1/v1rAeJlq+oLKl42gT8xnUFZBpMB+kSFuoN6IqRks9MVxShohRioKKu8kWyF5ey1lE77SXYY0bKorjnZkNgx5HMj2pUpqqRIPsyaUVwzoCzIefs81rqOrmXj5xZzadLae//sfwKqFIwVj+6vKfRkJJWxpYprSr2TvScV0zoxSVkl4K2lROu7ejGXchlZCk+FodRiFCioRTx3o1MPPYFcIdoO6AUK9c+kWr4JMZame+rVLOZIMUjRKBXz9mijcE09bfdgJI5gWtfZNQ+Nz1qfVFCavD3ftzyL5328+hJTz6tzq58ARVIOUCSo2cKGpV6Amo0AOd5Q1F1ASeaR3Q0Zx4z8EckBhnVXVAkoVC+icqrkXpBMFtAVFHK7jGu3bIQFllUjC6wbKKZ+skBpZUtrGxZMHucOCj1lbaCacqx0qmkzNSgWxieuRWm1kJINw+8DUHSEwSzIrenVY1F3Tz0lt81/AllSUQGqMsGZNAhFveEGKFJhAcoRVF6vMbtebRty2P/CbrHrSYVti19iVFwK7LagmDoRVQGpQS0F072EqbEHmnoYZSBYrYCysfk58xZQUgoyqmDU1wqse+q1DvAu7QMU+SQCVIAiCZBhoagARRIgw0JRAYokQIaFou4KSvvkxCqMybl0DbtcUQGKfJ4BKkCRBMiwUFRHUOjMiTmKIYenhk2xmC8PCgGwVGClcKt6pPZDFVULijki9oY1HagRkBIz3O/M3DpDrzlfvzrl9jEOVVQpqFFqmkpRIyGdQF3hRfLCt0RRI0Ed994n4L1TGNus+F0wGoyRkFI2l34tUk0Jg2xEz2zY7/0Flq7svVU1I6iDT7YF9mY1Tf+pmk6KQovtNDNsHKimetFtjjJ2jXNsao7mbNpyZiF9UoxF+gdYZhXRaLvCMwAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAD/////////+AAAEAH//////////gAAAAf//////////4AAAA///////////8AAAA///////////8AAAB///////////+AAAB///////////+AMkD////////////AAAD////////////AAAD////////////AAAD////////////A8L/////////////AAAD////////////HAAD////////////AAAD////////////hAAD////////////AAAD////////////AAAD////////////AAAD////////////AAACAAAAAAAAf///AAACAAAAAAAAP///AAACAAAAAAAAD///AAACAAAAAAAAD///AAACAAAAAAAAA///AAACAAAAAAAAAf//AAACAAAAAAAAAP//AAACAAAAAAAAAH//AAACAAAPAPAAAB//AAACAAAPAPAAAA//AAACAAAHgeAAAAf/ZpQGAAAHgeA4AAP/AAACAAAHgeA4AAD/AAACAAAHgeA4AAB/AAACAAAD/8A4AAA/vogGAAAD/8A4AAAPhAACAAAD/8A4AAAPAowGAAADw8A4AAADHANCAAABw4//wAABAAACAAAB54//wAADAAACAAAB54//wAAHAAACAAAA5wA4AAAfAAACAAAA5wA4AAA/AAACAAAA5wA4AAB/AAACAAAA/wA4AAD/AAACAAAAfgA4AAH/AAACAAAAfgA4AAf/AAACAAAAfgA4AA//AAACAAAAfgAAAB//AAACAAAAPAAAAD//gAACAAAAPAAAAP//AAACAAAAAAAAAf//AAACAAAAAAAAA///AAACAAAAAAAAB///AAACAAAAAAAAH///AAACAAAAAAAAP///AAACAAAAAAAAf///AAAD////////////AAAD////////////AAAD////////////A8D/////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAD////////////AAAB///////////+AAAB///////////+AAAA///////////8AAAA///////////8A8H8f//////////4AAAAH//////////gQIAAB/////////+AAccgAAA=="></span><span class="etiquette"><img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAB/////////+AAAAAHAAAAAAAAADg1RkIcAAAAAAAAAA4///8wAAAAAAAAAAMAAAAgAAAAA8AAAAEAAABgAAAAAkAAAAGAAABAAAAAAEAAAACAAADDIjOJk8cRHODkBgqDImJJkkSREbBAAACDImYJlkwREQB1RkKDImfJlk+REfB///+DImZJlkyZEbBAAACDNmZJkkyZETBAAACDPvPJk8efPOBAAACDAGAJgAAAEABAAACDAGAJkAAAEABkBgqDAAAJkAAAAABAAACAAAAAAAAAAAB1RkKAAAAAAAAAAAB///+AAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAQYAAAABAAACAAAAAQYAAAAB+BQqAAAAAQYAAAABAAACAAAAAQsAAAAB1RkKAAAAAQsAAAAB///+AAAAAQkAAAABAAACAAAAARkAAAABAAACAAAAARmAAAABAAACAAAAB9GAAAABAAACAAAAB/CAAAAB+BQqAAAAAAAAAAABAAACAAAAAAAAAAAB1RkKAAAAAAAAAAAB///+AAAAAAAAAAABAAACAAAAAAAAAAABAAACAACAAD////ABAAACAAHHHD////gBAAACAAHPHj////gB+BQqAAPPHh////gBAAACAAfPHgAAAHgB1RkKAD+PHAAAAHgB///+AD8ePAAAAHgBAAACAB4+PAAAAHgBAAACAAB8PAAAAHgBAAACAAD4eAAAAHgBAAACAB/w+AAAAHgB+BQqAD/g8AAAAHgBAAACAD/B4AAAAHgB1RkKAB4D4AAAAHgB///+AAAPwAAAAHgBAAACAAA/gAAAAHgBAAACAAH+AAAAAHgBAAACAB/8AAAAAHgBAAACAD/wAAAAAHgB+BQqAB+AAAAAAHgBAAACAAAAAAAAAHgB+BQqAAAAAAAAAHgB///+AHAAAAAAAHgBAAACAHgAAAAAAHgBAAACAHgAAAAAAHgBAAACAHgAAAAAAHgBAAACAHgAAAAAAHgB+BQqAH////////gBAAACAH////////gB1RkLAH////////gD///9AD////////ACAAABgAAAAAAAAAAGAAAAgAAAAAAAAAAEAAAAwAAAAAAAAAAMAAAAcAAAAAAAAAA49BQoHAAAAAAAAADgAAAAB/////////+A1RkIAAA=="></span><span class="etiquette"><img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAB/////////+AAAAAHAAAAAAAAADg1RkIcAAAAAAAAAA4///8wAAAAAAAAAAMAAAAgAAAAAAAAAAEAAABgAAAAAAAAAAGAAABAAAAAAAAAAACAAADAAAAAAAAAAADFBgqAAAAAAAAAAABAAACAAAAAAAAAAAB1RkKAAAAAAAAAAAB///+AAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABEBgqABwODwgPA4ABAAACADYIEAgQBEAB1RkKACIIMAgQCEAB///+AAYIPwgfCEABAAACAA4IMQwRCEABAAACABgIEQwRBEABAAACADAeDgoOA4ABAAACACIIAAAAAAABtBgqADYIBAACAAABAAACABwAAgACAAAB1RkKAAAAAAAAAAAB///+AAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABtBgqAAAAAAAAAAABAAACAAAAAAAAAAAB1RkKCAAAAAAAAAAB///+GA4GAAABgYDhAAACHA4GAAABgYDhAAACHA4GAAADgYDhAAACHAYHAAADg4DBAAACHAYHAAAHA4DBtBgqDAcDwAAPA4DBAAACDAcB+AB+BwHB1RkKDgOA+AD8BwHB///+DgOAOADgDgGBAAACBgHAAAAADgOBAAACBwDgAAAAHAMBAAACAwBwAAAAeAcBAAACA4B8AAAA8AYBtBgqAcAfAAAD4A4BAAACAcAP8AB/wBwB1RkKAOAD/AD/ADgB///+AHAAeAD4AHgBAAACADgAAAAAAPABAAACABwAAAAAAeABAAACAA8AAAAAA8ABAAACAAeAAAAAD4ABsBgqAAPgAAAAPgABAAACAAD8AAAA/AABsBgqAAB/gAAP8AAB///+AAAP/AD/wAABAAACAAAB/AD+AAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABsBgqAAAAAAAAAAABAAACAAAAAAAAAAAB1RkLAAAAAAAAAAAD///9AAAAAAAAAAACAAABgAAAAAAAAAAGAAAAgAAAAAAAAAAEAAAAwAAAAAAAAAAMAAAAcAAAAAAAAAA4sBgoHAAAAAAAAADgAAAAB/////////+A1RkIAAA=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJrSURBVHhe7ZyBkoMgDET9/5/2rnfFSSmQDSSCus7cXDtGCI8lRLRse+PYtm1/0l+TRemkhNO6+E7ntDZvsrGa8Z3A1NpSY3CASgZPgIG0MefxAQop4Ek2L1jp+PtENZW7X3I5QK2klNpMO8PHpKrf//8pwErHaqDe/lwD0szOXA6UltzOUj1BgeSXAqWpiUPv3asEBcgbgfR4RZUgySR4hfvPJWJUDuq4ZSgs8QDiDDGZDqqmJioq6++amghKgGqpiaAaqUAeXDSQIcGoUui0GIWmAy07ggIfaBAUQdk0wBgF8iIoggIJgGZUFEGBBEAzKoqgQAIXNJt2C3M1VgQF9hhBERRIADSjoggKJACafSmqJ8lrrXuDfixhBqzfi7fKOh4RARV0v1ksCXqsilp8LdS9Lij5dDgCVKt8gspGTQICqC1OUT3BZ+TJsRYvLQ9cT1UUQQkCWi9aYV1WUdYg2pqpEGgEBb55TFB3B6UNF2BaNf0y4rKKIqjjJzBxeZR1IrDkOTKrRpLGl42l/FPzKIIC86hRUNpNcR4WtJzOTVFaPHrqea5wgj1PUAQFEgDN3BQ1GrTPvB5k82HmAurMRnrVZYXlCspa+Qz7BNpaN0GBxAiKoMoElh16uWNnf6/d4oBCOszCh57XLNVTTgnG0oqSyxv5ckjk92VBldaHrBKPtJeqtNbjMvTyBTGrE2fYO0Da3TaxGXEmEtaoX2mkuG6LNOqUN7BRf2Twd99oa9Q5L1gefsi4G7J1W890HnVNL/ivnE8W5NEL+ZQfBQAptwdSjUFx8yhPYD3OzrhGa3Nzly2k1+5k0+qgH4icT3tEBj2xAAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,Qk22AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHgDAADEDgAAxA4AAAAAAAAAAAAAAAAAAP///wD+AAAAAAAAAB/AAAD4/////////8fAAADj//////////HAAADP//////////zAAADf//////////7AAACf//////////5AAAC///////////9AAAA///////////8AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB//4B/8B/AD/+AAAB//wA/wA/AAf+AAAB//gAfgAfAAf+AAAB//AAfgAPAAP+AAAB//B4PB4PB4H+AAAB//D4PD8PB8H+AAAB//D8PD8PB8H+AAAB/+D8Pj8PB8H+AAAB/+D8H/4PB8H+AAAB/+D8H/wPB8H+AAAB/+D8H/gfB4P+AAAB/+D8H/AfAAP+AAAB/+D8H+A/AAf+AAAB/+D8H4B/AA/+AAAB/+D8HwH/AAf+AAAB/+D8HwP/B4P+AAAB/+D8Hgf/B4P+AAAB/+D8Hg//B8P+AAAB/+D8Hh8/B8P+AAAB/+D8Hh8PB4P+AAAB/+D8Hg4PBwP+AAAB/+D8HgAPAAP+AAAB/+D8HwAfAAf+AAAB/+D8HwA/AA/+AAAB/+D8H8B/AD/+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAB///////////+AAAA///////////8AAAC///////////9AAACf//////////5AAADf//////////7AAADP//////////zAAADj//////////HAAAD4/////////8fAAAD+AAAAAAAAAB/AAAA="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL4SURBVHhe7ZoLjsMgDERz/0t3226JKALP2A4EqCOttioO2I+x+ajHQ3iO43j80p/IotaYw5Fe3qkNxXzkwSLjncC0YmkxOEElg1+AwcRY8vgCxXTwSzYvWOl5fwo11ac/53KC+iWlaGJNqnr+/98CxCOr6g0qHpnAR0wBCgnFDWqVtPX66QK10ubU66sZlHdgJPUe7R6fTaA8A/YAoOnT6rsalHUgTTC9bS0xqEBZBugdtLV/bSw0qLzjHT8j4AGKPJXQoPKD8w47+W6pd141ZFfDSK6ztmshZSLRHWEsA80Czeq7KvXyYK0D3gnM47MZ1Go1ywPJnHo1Zd2pFGbsWw/FjIO72LhSbxcITBwBiqH0tDGB0hZG6cjT8tPyjqWvchzQB7+PYjuubVBbwZfOsWdJUgyq305cAqoWgORsyx71U5sM9A4LDU2KGxSrhtamtDwftpQpKVarZgRP0x+sUSgN2LqgncnavudqVU0B6srZbNU7NIamLKC+VIoqjy1lOqHBvAFrFIB80fYFQWlTRuugBPvKLQJbO93F3KuGmhqRIi0LCJooa1YMU5SlEFsXEk1tQpNVCKTfhtOiJHYlZYP0pl0WQz9QFiVpFMGk2vSgroZkrS/LgWJmHy3bqB2NYX2/azG3OKU5wmhrlEfh04FqFX8UJDMpjM0t+yi0vOftUh1h9lMMBMZmKVCtzW0KtBYMA4GxuQwUKpa7tqtr1K4gUFwBChH6tAeoAEUSIM1CUQGKJECahaICFEmANAtFBSiSAGkWigpQJAHSbLiitPdKzFUNGavLbCgoKWh0tcK86yIBXh4GqnZJh75LV721eyTP3ZIF6K2g2Au4FpTWDakFBHpnalCtdKx9jwL1tgcokmCAWgEUKuZTpl5aYUjAJjNmiUfwcj9HFfNznFfUI0ClcaSlfVZQb9/zAExS2filNHEnqJGqWonrV6qXRXOlQHr6mqvpS1FlDenpxMx9txaJ6s/tRq0oMwFDMYu/S2SuOXaykSbuD+Xd8QNbQqO9AAAAAElFTkSuQmCC"></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALYSURBVHhe7ZyNbsMgDITz/i/dLd0SEYrtO1PyYxxp2rQYsD8OMO605aU8y7K8ZvpSWbRelnC0xpHeWTEvZbCWcSQwUiwSgx3UZjADDCTGmscBFNLBTDYrrO15/5Rqak9/yWUHNZNSmFg3Vf1+/0sB8tFV9QaVj07gX0wcqBkVSIOqs/RZlEiBkq4yM8CCQVn3veiwIFB1Sn/ILYpLc2RYJqjWvecjtZ8AlgpKvBw28q7ol2kIVL2kpPQgctpgLj2tVhV5TxLEkQmnNelfV5SVRrB7GWtvVWu9CfOtQXmDkiq2PQnz10FpEmYCbwVlLQ/p0JHyQObwOQ1UL6S1PftoYzL+FIVNzglmJvYyavWxF7uXjASFTMApikJnzzoIkICs/alQB1X+vi0ob0DIPoVOXAP6uKXncYpZrojKNKUi7U/ZoxIUcAr1HvE9kCVVen0aukf1BjqqvaffKUF5DoqwoCzVWO9PrR6wzlhHO3pCIYphfRumKO+mqSWMDCgL1m1BsUFagSK5ljRZLKSheZTHGc/Ss8axrkXoHfK0pXeFoqxcivFpGCjGiSfYJihwlhJUggIJgGapqAQFEgDNUlEJCiQAmqWiEhRIADRLRSUokABolopKUCAB0CwV9SRQVtkYKb5ZBTyQh2h2uaI0CFbhDWnbC6jyYdzfHmiOloG2oEig1t+3FDRSVZcqqgWqBZaBgvbJKu1xoDSV1UpjYQDqby+9bXbqDtjfSw6gs28t0fKTFLRPFqKqKGnQFiiPg2ib24OSpFyDQgOWlGkp4hGgWrBKUF5IyNHPnoSX7VGlAqykj13zVt/S+1tu5tpS6VVSD9gr2tLpwcik7goA6Jg0qHIfQAeJYOcCFSFwNoYdVHlEs51Et9+3m205RQ/YG98movy3SArBQ85Y5iZe6lHbHW4NdRIXNWg2ro+rmpUFswM83V4sBrQCmy3zRu6Jah3YuuNFe6+thh+20w0E+wj2DAAAAABJRU5ErkJggg=="></span><span class="etiquette"><img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAB/////////+AAAAAHAAAAAAAAADg1nkIcAAAAAAAAAA4///8wAAAAAAAAAAMAAAAgAAAAAAAAAAEAAABgAAAAAAAAAAGAAABAAAAAAAAAAACAAADAAAAAAAAAAADBFg+AAAAD/+AAAABAAACAAAAf//wAAAB1nkKAAAB///8AAAB///+AAAD///+AAABAAACAAAH////AAABAAACAAAP/4//gAABAAACAAAf/wP/wAABAAACAAAf/wH/4AABQFg+AAA//wD/4AABAAACAAA//wB/8AAB1nkKAAB//wA/8AAB///+AAB//wAf8AABAAACAAB//wAP+AABAAACAAD//wQH+AABAAACAAD//wYD+AABAAACAAD+PwcD+AABQFg+AAD8HweB+AABAAACAAD8DweB/AAB1nkKAAD+BwcB/AAB///+AAH+AwYD/AABAAACAAH/AQQH/AABAAACAAH/gAAP/AABBAACAAH/wAAf/AABAAACAAH/4AA//AABQFg+AAH/8AB//AABAAACAAH/+AD//AAB1nkKAAH//AH//AAB///+AAH//gP//AABAAACAAH//AH//AABAAACAAH/+AD//AABAAACAAH/8AB//AABAAACAAH/4AA//AABPFg+AAH/wAAf/AABAAACAAH/gAAP/AAB1nkKAAH/AQQH/AAB///+AAD+AwYD/AABAAACAAD+BwcB/AABAAACAAD8DweB/AABAAACAAD8HweB+AABAAACAAD+PwcD+AABPFg+AAD//wYD+AABAAACAAD//wQH+AAB1nkKAAB//wAP+AAB///+AAB//wAf8AABAAACAAB//wA/8AABAAACAAA//wB/8AABAAACAAA//wD/4AABAAACAAAf/wH/4AABPFg+AAAf/wP/wAABAAACAAAP/4//gAAB1nkKAAAH////gAAB///+AAAD////AAABAAACAAAB///8AAABAAACAAAAf//wAAABAAACAAAAD/+AAAABAAACAAAAAAAAAAABPFg+AAAAAAAAAAABAAACAAAAAAAAAAAB1nkLAAAAAAAAAAAD///9AAAAAAAAAAACAAABgAAAAAAAAAAGAAAAgAAAAAAAAAAEAAAAwAAAAAAAAAAMAAAAcAAAAAAAAAA4PFg8HAAAAAAAAADgAAAAB/////////+A1nkIAAA=="></span><span class="etiquette"><img src="data:image/png;base64,Qk24AwAAAAAAAD4AAAAoAAAASgAAAEoAAAABAAEAAAAAAHoDAAB0DgAAdA4AAAAAAAAAAAAA////AAAAAAAB/////////+AAAAAHAAAAAAAAADg1GkIcAAAAAAAAAA4///8wAAAAAAAAAAMAAAAgAAAAAAAAAAEAAABgAAAAAAAAAAGAAABAAAAAAAAAAACAAADAAAAAAAAAAADBADaAAAAAAAAAAABAAACAAAAAAAAAAAB1GkKAAAAAAAAAAAB///+AAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAB/+AAAABAAACAAAAP//wAAABZ/zWAAAA///8AAABAAACAAAD////AAAB1GkKAAAH////gAAB///+AAAf////wAABAAACAAA/////8AABAAACAAB/////+AABAAACAH////////gBAAACAf////////4BZ/zWA/////////8BAAACB////4AAAAeB1GkKD////+AAAAPB///+H////+AAAAHhAAACH/////AAAADhAAACH/Pn+fBwADBhBAACP+HD8PD4AHhxAAACP+HD8PD4AHhxZ/zWP8CD8PD4AHhxAAACP8CB8PD4AHhx1GkKP8AB8PD/4Hhx///+P8AB8PD/8HhxAAACP4AA8PD/8HhxAAACP4AA8PD/4HhxAAACP4AA8PD4AHhxAAACPwAA+fD4ADBxZ/zWPwwYf/D4AABxAAACPwwYefD/+DBx1GkKPwwYcPD//Hhx///+PwwYcPB//HhxAAACHx48efB//HhhAAACH/////gAAADhAAACH/////gAAAHhAAACD/////wAAAPBZ/zWB/////4AAAeBAAACA/////////8B1GkKAf////////4B///+AH////////gBAAACAAB/////+AABAAACAAA/////8AABAAACAAAf////4AABAAACAAAH////gAABY/zWAAAD////AAABAAACAAAA///8AAAB1GkKAAAAP//wAAAB///+AAAAB/+AAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABAAACAAAAAAAAAAABY/zWAAAAAAAAAAABAAACAAAAAAAAAAAB1GkLAAAAAAAAAAAD///9AAAAAAAAAAACAAABgAAAAAAAAAAGAAAAgAAAAAAAAAAEAAAAwAAAAAAAAAAMAAAAcAAAAAAAAAA4Y/zUHAAAAAAAAADgAAAAB/////////+A1GkIAAA=="></span><span class="etiquette"><img src="data:image/png;base64,Qk1gFgAAAAAAAGYAAAAoAAAASgAAAEoAAAABAAgAAAAAAPoVAADDDgAAww4AAAwAAAAMAAAAAAAAAPPz8wD19fUA9vb2APj4+AD5+fkA+vr6APv7+wD8/PwA/f39AP7+/gD///8ACwsLCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsLCwsLCwsAAAsLCwsLAAAACwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwAAAAsLCwsLAAALCwsAAAALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwAAAAsLCwAACwsAAAsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwAACwsAAAsLAAsLCwsLCwsLCwsLCwsLCwsLCwAAAAAAAAALCwAAAAsLCwsLAAAACwsAAAALCwsLAAAACwsLCwsLCwsLCwsLCwsLCwsLAAsLAAALAAALCwsLCwsLCwsLCwsLCwsLCwsAAAAAAAAACwsAAAALCwsLCwAAAAsLAAAACwsLAAAAAAsLCwsLCwsLCwsLCwsLCwsLCwAACwAACwALCwsLCwsLCwsLCwsLCwsLCwsLAAAACwsLCwsLCwAAAAAAAAAAAAsLCwAAAAsLAAAAAAALCwsLCwsLCwsLCwsLCwsLCwsLAAsAAAAACwsLCwsLCwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsAAAAAAAAAAAALCwsAAAALCwAAAAAACwsLCwsLCwsLCwsLCwsLCwsLCwAACwsACwsLCwsLCwsLCwsLCwsLCwsLCwsAAAALCwsLCwsLAAAACwsLAAAACwsLAAAACwAAAAAAAAsLCwsLCwsLCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsAAAsLCwAACwsLCwAAAAsAAAsAAAALCwsLCwsLCwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLAAAACwAAAAsLCwsAAAAAAAALAAAACwsLCwsLCwsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwAAAAsAAAALCwsLAAAAAAALCwAAAAsLCwsLCwsLCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLAAAAAAALCwsLCwAAAAAACwsAAAALCwsLCwsLCwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLCwAAAAAACwsLCwsAAAAACwsLAAAACwsLCwsLCwsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwsAAAAAAAsLCwsLAAAACwsLCwAAAAsLCwsLCwsLCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLAAoLAAsLCwsLCwsLCwsLCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsLCwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsLCwALCgALCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALCwsLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwsLCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsLCwsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsAAAsLAAAKCwAACwsAAAsLAAALCgAACwsAAAgLAAALCwsLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLAAALCwAACgsAAAsLAAALCwAACwoAAAsLAAAICwAACwsLCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwAACwsAAAkLAAALCwAACwsAAAsKAAALCgAACAsAAAsLCwsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsAAAMLAAAFCwAACwsAAAsLAAALBwAACwcAAAYLAAALCwsLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwsLCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsLCwsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALCwsLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwsLCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsLCwsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALCwsLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwsLCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsLCwsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALCwsLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwsLCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsLCwsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsAAAAAAAAAAAAAAAAAAAAAAAAJCQkICAQLCwsLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLCwsLAAAAAAAAAAAAAAAAAAAAAAAACwsLCwsKCwsLCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAsLCwsLCgsLCwsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsKCAQAAAAAAAAAAAAAAAELBgoLCwsLCwoKCgoLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLCwsLCwoKAAAAAAAAAAAAAAABCwsLCwsLCwsLCwsJCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwsLCwsKCgAAAAAAAAAAAAAAAQsLCwsLCwsLCwsLCQsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsLCgoAAAAAAAAAAAAAAAELCwsLCwsLCwsLCwkLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLCwsLCwoECgoKCgoKCgoJBgoJCwsLCwsLCwsLCwsKCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwsLCwsICgkKCgoKCgoJCQcDCAsLCwsLCwsLCwsLCgsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsLCgkKCgoKCgoKCwoHCAUFCQsLCwsLCwsLCwoLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLCwsLCwoKCgsLCwsLCwsLCgkIBQgKCgoKCwsLCwsKCwsAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsAAAALCwsLCwsLCwsLCwsKCgoLCwsLCwsLCwsLCggGBQkJCQsLCwsLCgsLAAAACwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsJCgoKCgoKCgoKCgoKCgoHBgUDBgcJBAoKCgkLCwAAAAsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALCwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLCwsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKCwsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLAAsLAAsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwALCwALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsACwsACwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLAAsLAAALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLAAALCwsACwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwALCwsLAAALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwAACwsLCwsACwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsACwsLCwsLAAALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsAAAsLCwsLCwsAAAALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwAAAAsLCwsLCwsLCwsAAAALCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLAAAACwsLCwsLCwsLCwsLCwsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALCwsLCwsLCwsAAA=="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJzSURBVHhe7ZyJjsMgDETz/z/dbbsBOcjH0CAgMJGqPXDAfh4oUJrj5VzHcbx2erkstEIJx7t5pbIo5kMGGxmvBMaKxWKQQSWDHWAgMZY8LqCQCnay+cBK1/c3qklPv+SSQe2klJpYk6reP/+nALx8VX1B8fIJnGIiqEgoBBUROssJiqBAAqAZFUVQIAHQjIoiKJAAaEZFERRIADSjoggKJACaUVEEBRIAzagoggIJgGZUFEGBBEAzKoqgQAKgGRVFUCAB0IyKaglKOx8F1r+MWago7xDZMhSAQFxQ2jmhXc9PNQPlAbRU+UmkdZ93TymAmrY18SDJrwYVNRSp0OvK8gwE2uXRJNxNyG1QpQO/gNKUVQKIbLzylNxUZ/l3ShCgTP2QRoUkL8eGfnGoFrjVbWXbiP+yh3QBpTVYk7k7oNC2ZdfWfGsKqiagXqC0sQ0Z8JFYihjwrhdVHo1RUZfxxouatj0/ahIIgSqDigZYrRwZhCMbpN4a36Ju53RR/8Sd9hZsDYLlQB5BQLJrgbIS6fkW+a35L9qZ72hi7TuWNr9r+b/TH4KKoBJUROgsJ6ingwL972Y2raK6EQAbIqiVQFlzGzDGJmaPUNT2oLQZv7bAjVYGTSQTVDJUURYobWHsLWO2AxXtLPQAYrUxjaKsxbGER1DyC87igRQlPIIiKF8DyG6oNW71Vtejxiht57EXsMeBGgVrKKheamjRDkGBFAmKoEACoFlW1KhBEvRzqFmexqS5ylBvJm48L9JnWU/NyEruhfFBW06GLvtjMy0+Z1JVubPKhwEW2bE+zlc/T7eMZ8p4a1+imN2DB9527YplHvw/dEgeD+pwB5EAAAAASUVORK5CYII="></span><span class="etiquette"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJfSURBVHhe7ZyBbsMgDETz/z/dtV2IKLXPRzqKRy7StE0YA4+zaQB1u4Fn27bblX4gC6uwhoMqr1QWjXmrBxsZrwTGG4vH4ABVDK4Agxljy+MFFOPgSjYPWOV5/iU12dNfczlAXUkpPWMtqrr//v0IoAer6glKDyawi0mgIqEIVERoLxcogSIJkGZSlECRBEgzKUqgSAKkmRQlUCQB0kyKEiiSAGkmRQkUSYA0k6IEiiRAmklRAkUSIM2kKIEiCZBmUpRAkQRIMynqr0BZd6NI36nNem/tQEWhC2SpKRCds0ChE3MXFHK06snycFBIxp4qH5Pu1UN1WrFEIdT6KvVRtACRvB+pRx2IGozKUe5jQz4Cyk4S015X6EWzGYWrB6etZ6kA2XjqbEOp/n9ojopA1R22FBUNqOS+CHjkx2u77v8UUFYHvgUKtd0CrRehoaAi+WdTFFLQVFCfhswnodc7iUxfDdD2RbJoNYjKrVzCdLDXr5X8rbBjk3kdok0K8W/coWXc68xZyVuK8iAwbZ/NUe1qWfnJdTXRUh3xVjLUxP0cNbTVwLlAkfQFSqBIAv/YLGWOyshToMhZESiBIgmQZikVpY8HxOx573lE1aEmqRTF7AAMpQGcpwZl7W8J1J0As70iUA2oWUC8dlOHnrUvNAtgWlBow24GrFSg2F1LgZpBgGwznaLIfn/dTKBI5ALVC8o6yyJ9LG92rMBltVl+xCcHeJw3ZnqnOjmWYdVeTpdLKwq/d941E311m6PH9hVKXwbYgPJ2WM2LBxm3Y4clot1xNGZ4QwPtEa1YhibjB+6Za8Fb2RuGAAAAAElFTkSuQmCC"></span><span class="etiquette">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHXSURBVHhe7dyBToMwFIVh3v+l50CKBXvbn4ER6E9i1HFY1m9nMOPNhldlG4bh1dNX1aK0M8epHfykfa01D/liW+EnwURriQwWqBToAYOsceuxgiJ30FNmxErb9JNtKj/9ucsC1VNT9qw1ter9/fstgFu9VROUW11gLpNQraII1RKa9wslFBSAMRslFBSAMRslFBSAMRslFBSAMRslFBSAMRslFBSAMRslFBSAMRslFBSAMRslFBSAMRslFBSAMRv1X1ClSZBwOiSYvcofe226Zju3lY77i4mc0xt1BtRqMGKDGSFGx8DCNGOXgYraELVmzHfZKAqVDUwIlQ+NbFvzSKhoka2TbguqdL+3PkcJVblGfHrVI+eo7Qm89Ht0W/Oy1gjc6qonVD5Qmr1vIu3Y0+AjrbpMoz59T9Q1FP0T5tbnqCP1vvKxp7/0rrzYI49NKKgnlFBQAMZslFBQAMZslFBQAMZslFBQAMZslFBQAMZslFBQAMZslFBQAMZslFBQAMZslFBQAMZs1F6ofMgBHttNbPnf4bhioeLnfRk1SlBi/cZajSCl3UKVoRafHEqsH6y8TdOrLncsDT10c9aeFxoZFD8TqUew1pqrHx5VGi988m21V88X5qOCxqbUAsgAAAAASUVORK5CYII=">
+                                </span>
+                            </div>
+
+                            <div class="boutoncomparer">
+                                <button class="cta cta--clear">Comparer</button>
+                            </div>
+
+                            <div class="infosgarantie">
+                                <div class="garantie">Garantie <span class="emphase">24 mois </span><span> étendue à <span class="emphase">84 mois </span> pour <span class="emphase">99€</span></span></div>
+                                <div class="dispopieces">Disponibilité pièces détachées : <span class="emphase">NC</span></div>
+                            </div>
+                            <div class="lignesinfoconteneur">
+                                <div>
+                                    <div class="ligneinfo">
+                                        <div class="infogauche">Prochaine commande</div>
+                                        <div class="infodroite emphase">-</div>
+                                    </div>
+                                    <div class="ligneinfo">
+                                        <div class="infogauche">001181 PERMANENT</div>
+                                        <div class="infodroite emphase">mer. 28/09 (21:00)</div>
+                                    </div>
+                                    <div class="ligneinfo">
+                                        <div class="infogauche">Livraison</div>
+                                        <div class="infodroite emphase">30/09</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boutoncommandeconteneur">
+                        <div class="commandearticleconteneur">
+                            <div class="textecommander">Ajouter au panier</div>
+                        </div>
+                    </div>
+
+                    <div class="voirficheconteneur" onclick="location.href = './vendeur_fiche-article.html'">
+                        <div class="voirfichetexte">Voir la fiche</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
+
